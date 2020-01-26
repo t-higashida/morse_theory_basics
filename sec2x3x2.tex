@@ -1,0 +1,101 @@
+\subsection{ベクトル場}
+
+多様体$M$の各点$p$に，その点における接ベクトル$\boldsymbol{v}$を1つずつ対応させたものを，
+$M$上の\textbf{ベクトル場}（vector field）という（図\ref{fig2x11}をみよ）．
+
+$U$が$M$の座標近傍で座標系$(x_1,x_2,	\cdots	,	x_m)$が付随している場合には，
+$U$上のベクトル場$X$は
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=45.0mm,height=36.2mm]{fig2x11.bmp}
+	\caption{ベクトル場}
+	\label{fig2x11}
+\end{figure}
+\begin{equation}
+	X	=	\xi_1	\frac{\partial }{\partial x_1}	+
+			\xi_2	\frac{\partial }{\partial x_2}	+
+			\cdots	+
+			\xi_m	\frac{\partial }{\partial x_m}
+\label{eq2x74}
+\end{equation}
+と表される．$\xi_1	,	\xi_2,	\cdots	,	\xi_m$は$U$上の関数である．
+式（\ref{eq2x74}）の意味は，$X$が，$U$上の各点$p$に，接ベクトル
+\[
+	\xi_1	(	p	)	\left(	\frac{\partial }{\partial x_1}
+							\right)_p	+
+	\xi_2	(	p	)	\left(	\frac{\partial }{\partial x_2}
+							\right)_p	+
+	\cdots
+	\xi_m	(	p	)	\left(	\frac{\partial }{\partial x_m}
+							\right)_p
+\]
+を対応させるベクトル場であるという意味である．ここに出てきた関数
+$\xi_1	,	\xi_2,	\cdots	,	\xi_m$がすべて$C^{\infty}$級のとき，
+$X$は$U$上の$C^\infty$級ベクトル場であるという．
+また，$M$上のベクトル場が$C^\infty$級であるとは，それがすべての座標近傍上で
+$C^\infty$級であることである．
+
+\例{2.28}
+$f$を座標近傍$U$上の関数とする．$U$に付随した座標近傍を
+$(x_1,	x_2,	\cdots	,	x_m)$として，$U$上のベクトル場$X$を
+\begin{equation}
+	X_f	=	\frac{\partial f}{\partial x_1}	\frac{\partial }{\partial x_1}	+
+				\frac{\partial f}{\partial x_2}	\frac{\partial }{\partial x_2}	+
+				\cdots
+				\frac{\partial f}{\partial x_m}	\frac{\partial }{\partial x_m}
+\label{eq2x75}
+\end{equation}
+と定義する．ベクトル場の係数の関数$\xi_i$として，$\displaystyle	\frac{\partial f}{\partial x_i}$
+を選んだ場合である．ベクトル場$X_f$を関数$f$の\textbf{勾配ベクトル場}（gradient vector field）という．
+\■
+
+ベクトル場は各点で「接ベクトル」という形の微分操作を与えているから，
+それ自身一種の微分作用素である．ここで定義した勾配ベクトル場$X_f$で$f$を微分してみよう．
+\begin{align*}
+	X_f	\cdot	f	&	=	\left(	\sum_{i=1}^{m}	\frac{\partial f}{\partial x_i}	\frac{\partial }{\partial x_i}
+								\right)	\cdot	f	\notag	\\
+							&=	\sum_{i=1}^{m}	\left(	\frac{\partial f}{\partial x_i}
+																	\right)^2	\notag	\\
+							&\geqq	0	\label{eq2x76}
+\end{align*}
+得られた関数$X_f	\cdot	f$の値$(X_f	\cdot	f)	(p)$は
+\[
+	\frac{\partial f}{\partial x_1}(p)	=
+	\frac{\partial f}{\partial x_2}(p)	=
+	\cdots	=
+	\frac{\partial f}{\partial x_m}(p)	=0
+\]
+でないかぎり（すなわち，$p$が$f$の臨界点でないかぎり）$X_f	\cdot	f>0$である．
+言い換えれば，\textbf{$f$の勾配ベクトル場は，$f$の臨界点以外の点においては，
+$f$の増加する方向を向いている}ということがわかる.
+
+$f$がMorse 型の標準形
+\begin{equation}
+	f	=	-x^2	-	\dots	x_\lambda^2	+	x_{\lambda+1}^2	+	\cdots	+	x_m^2
+\label{eq2x77}
+\end{equation}
+の場合の勾配ベクトル場が図\ref{fig2x12}に示されている．式で書けば
+\begin{equation}
+	-2x_1	\frac{\partial }{\partial x_1}	-	\cdots
+	-2x_\lambda	\frac{\partial }{\partial x_\lambda}	
+	+2x_{\lambda	+1}	\frac{\partial }{\partial x_{\lambda+1}}	+	\cdots
+	+	2x_m	\frac{\partial }{\partial x_m}
+\label{eq2x78}
+\end{equation}
+このベクトル場は後で重要になる．
+
+図\ref{fig2x12}は$0	<	\lambda	<	m$の場合であるが，$\lambda	=	0$の場合と
+$\lambda	=	m$の場合はそれずれ図\ref{fig2x13}の左と右に示されている．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=80.2mm,height=62.8mm]{fig2x12.bmp}
+	\caption{$f=-x_1^2	-	\cdots	-	x_\lambda	+	\cdots	+	x_m^2$の勾配ベクトル場}
+	\label{fig2x12}
+\end{figure}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=145.8mm,height=59.4mm]{fig2x13.bmp}
+	\caption{勾配ベクトル場：$\lambda=0$の場合（左）と$\lambda=m$（右）}
+	\label{fig2x13}
+\end{figure}
+

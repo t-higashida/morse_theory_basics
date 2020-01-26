@@ -1,0 +1,742 @@
+\section{ハンドルを滑らせる}
+\label{sec3x3}
+
+この節の目標は「ハンドルを滑らせる」（handle sliding）という技法を
+説明することである．この技法により，ハンドル体の微分どう藻類を
+変えずに，ハンドルの接着写像を変えることができる．
+
+$M$を$m$次元の閉じた多様体とし，$f	:	M	\to	\R$を与えられた
+Morse関数とする．あらかじめ定理2.34により$f$を変形しておき，
+異なる臨界点は異なる臨界値をもつようにしておく．臨界点の個数は
+全部で$n+1$個あるとしよう．それらを臨界値の小さいほうから順に並べた
+ものが
+\[
+	p_0	,	p_1	,	\cdots	,	p_n
+\]
+であるとする．そして$f$に適合する上向きベクトル場$X$を$1$つ選び固定しておく．
+
+定理3.4により，$M$はハンドル体
+\begin{equation}
+	M	=	D^m	\cup_{\varphi_1}	
+			D^{\lambda_1}	\times	D^{m	-	\lambda_1}	\cup_{\varphi_2}	
+			\cdots	\cup_{\varphi_i}
+			D^{\lambda_i}	\times	D^{m-\lambda_i}	\cup_{\varphi_{i+1}}	\cdots
+			\cdots	\cup_{\varphi_n}	D^m
+\label{eq3x77}
+\end{equation}
+に分解さえる．ここに，$\lambda_i$は臨界点$p_i$の指数である．
+
+さて上のハンドル分解において$i$番目のハンドル$D^{\lambda_i}	\times	D^{m	-	\lambda_i}$に
+着目しよう．以下記号を簡単にするため，$0$番目から$j$番目までのハンドルを合わせて得られる
+「部分ハンドル体」$\mathcal{H}(D^m	;	\varphi_1,	\cdots	,	\varphi_j)$を
+\[
+	N_j
+\]
+という記号で表すことにすると，$i$番目のハンドルは接着写像
+\begin{equation}
+	\varphi_i	:	\partial	D^{\lambda_i}	\times	D^{m	-	\lambda_i}	\to	\partial	N_{i-1}
+\label{eq3x78}
+\end{equation}
+によって$N_{i-1}$についている．「ハンドル$D^{\lambda_i}	\times	D^{m-\lambda_i}$を滑らせる」とは，
+$\partial	N_{i-1}$の「アイソトピー」によって接着写像$\varphi_i$を変形することである．まず
+アイソトピーを定義しよう．
+
+\定義{3.20}（アイソトピー）
+$K$を$k$次元多様体とする．ある開区間$j$のなかの実数$t$の1つ1つに$K$の微分同相写像$h_t	:	K	\to	K$が
+$1$つずく対応しているとき，$\{h_t	\}_{t	\in	J}$を$K$の微分同相写像の族と言う．
+族$\{	h_t	\}_{t	\in	J}$が$K$の\textbf{アイソトピー}（isotopy）であるとは、次の2つの条件が成り立っていることである．
+
+\begin{list}{}{}
+	\item	（ⅰ）開区間$J$は閉区間$[0,1]$を含み，パラメータ$t$が$	\leqq	0$のとき$h_t$は$t$によらず一定で$K$の恒等写像である：
+$h_t	=	h_0	=	\text{id}_K$．また，$t	\geqq	1$のときも$h_t$は$t$によらずに一定で$h_1$に等しく，それは$K$のある微分同相写像
+$h$である：$h_t	=	h_1	=	h$．
+	\item	（ⅱ）$H(x,t)	=	(h_t	(x),	t)$により定義される写像$H	:	K	\times	J	\to	K	\times	J$は微分同相写像である．
+この意味で$h_t$はパラメータ$t$に滑らかに依存する．
+\end{list}
+\■
+
+Morse関数$f	:	M	\to	\R$とそれに適合した上向きベクトル場$X$が与えられている状況に戻ろう．
+（\ref{eq3x77}）は$f$と$X$から決まるハンドル分解であるとする．
+
+\定理{3.21}（ハンドルを滑らせる）
+臨界点の番号$i$を一つ固定する$(	0	\leqq	i	\leqq	n)$．部分ハンドル体$N_{i-1}$の境界
+$\partial N_{i-1}$のアイソトピー$\{h_t	\}_{t	\in	J}$が与えられると，
+$N_{i-1}$に付くハンドル$D^{\lambda}	\times	D^{m	-	\lambda_i}$の接着写像を
+$\varphi_i$から$h	\circ	\varphi_i$に変えることができる．ここに
+$h$はアイソトピー$\{	h_t	\}_{t	\in	J}$の$t=1$に対応する微分同相写像$h_1$である．
+また$i$番目のハンドルの接着写像を，このように変えても，ハンドル分解（\ref{eq3x77}）の中の
+各々の部分ハンドル体$N_j	(0	\leqq	j	\leqq	n)$の微分同相類は変わらない．
+
+\■
+
+図\ref{eq3x8}がハンドルを滑らせるというイメージを表している．
+
+定理3.21をもう少し正確に述べると次のようになる：
+
+ハンドル分解（\ref{eq3x77}）は Morse関数$f$とそれに適合する上向きベクトル場
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=63.0mm,height=48.8mm]{fig3x8.bmp}
+	\caption{ハンドルを滑らせる．}
+	\label{63.0}
+\end{figure}
+$X$で決まった事を思い出そう．$\partial	N_{i-1}$のアイソトピー$\{	h_t	\}_{t	\in	J}$が与えられたとき，
+Morse 関数$f$は変えずに，上向きベクトル場$X$を別の上向きベクトル場$Y$に変形し，
+新しく$f$と$Y$から決まる$M$のハンドル分解
+\begin{equation}
+	M	=	D^m	\cup_{\varphi_1}	D^{\lambda_1}	\times	D^{m	-	\lambda_1}	\cup_{\psi_2}	\cdots	\cup_{\psi_i}	D^{\lambda_1}	
+	\times	D^{m	-	\lambda_i}	\cup_{\psi_{i+1}}	\cdots	\cup_{\psi_n}	D^m
+\label{eq3x79}
+\end{equation}
+が次の性質（ⅰ），（ⅱ），（ⅲ）をもつようにできる，というのである．
+
+\begin{list}{}{}
+	\item	（ⅰ）$i-1$番目のハンドルまでは，接着写像まで込めてハンドル分解の構造は
+変わらない．すなわち，新しいハンドル分解（\ref{eq3x79}）において，$0$番目から$j$番目までの
+ハンドルをあわせた部分ハンドル体を$N_j'$とおくとき，$j$が$i-1$以下ならば，$N_J'	=	N_j$であり，かつ
+\begin{equation}
+	\psi_j	=	\varphi_j
+\label{eq3x80}
+\end{equation}
+である．
+	\item	（ⅱ）
+$i$番目のハンドルの接着写像$\varphi_i$は次の$\psi_i$に変わる．
+\begin{equation}
+	\psi_i	=	h	\circ	\varphi_i
+\label{eq3x81}
+\end{equation}
+ここに，$h	:	\partial	N_{i-1}	\to	\partial	N_{i-1}$ははじめに与えられたアイソトピー
+$\{h_t\}_{	t	\in	J}$の$t=1$に対応する微分同相写像である．
+	\item	（ⅲ）
+$j	\:	(	0	\leqq	j	\leqq	n)$が何であっても，$N_j'$の微分同相類は$N_j$のそれと変わらない．
+すなわち
+\begin{equation}
+	N_j'	\cong	N_j.
+\label{eq3x82}
+\end{equation}
+\end{list}
+定理3.21を証明しよう．
+
+\証明
+臨界点$p_j$における$f$の値$c_j$とする．ハンドル体（\ref{eq3x77}）から出発する．
+定理3.4の証明により，各$j$（$0	\leqq	j	\leqq	n$）につき，$M_{c_j	+	\varepsilon}$を
+部分ハンドル体$N_j	=	\mathcal{H}	(D^m	:	\varphi_1,	\cdots	,	\varphi_j)$と同一視することが
+できる．ただし$\varepsilon$は十分小さい正の数である．ここで$i$番目のハンドルに注目する．
+
+$i$番目のハンドルが$M_{c_i	-	\varepsilon}$に張り付くとき自然に決まっている接着写像
+（\ref{eq3x83}を
+\begin{equation}
+	\varphi	:	\partial	D^{\lambda_i}	\times	D^{m	-	\lambda_i}	\to	\partial	M_{c_i	-	\varepsilon}
+\label{eq3x83}
+\end{equation}
+と書く．また定理3.4の証明で与えた微分同相写像
+\begin{equation}
+	\varPhi	:	M_{c_1	+	\varepsilon}	\to	M_{c_i	-	\varepsilon}
+\label{eq3x84}
+\end{equation}
+を考える．すると$N_{i-1}$と$M_{c_{i-1}	+	\varepsilon}$を同一視した上で，
+$i$番目のハンドルが$N_{i-1}$に張り付くときの接着写像$\varphi_i$は
+\begin{equation}
+	\varphi_i	=	\varPhi^{-1}	\circ	\varphi	:	\partial	D^{\lambda_i}	\times	D^{m	-	\lambda_i}	\to	\partial N_{i-1}
+\label{eq3x85}
+\end{equation}
+である（定理3.4参照）．
+
+微分同相写像 $\varPhi$ のことを少し詳しく考えてみる．
+$c_{i-1}	+	\varepsilon$と$c_i	-	\varepsilon$の間には
+$f$の臨界値が存在しないので，前の章の定理2.31により，$f^{-1}	(	[	c_{i-1}	+	\varepsilon,	c_i	-	\varepsilon])$は
+$\partial M_{c_{i-1}	+	\varepsilon}	\times	[0	,	1]$に微分同相である：
+\begin{equation}
+	f^{-1}	([c_{i-1}+	\varepsilon,	c_i	-	\varepsilon	])	\simeq	\partial	M_{c_{i-1}	+	\varepsilon}	\times	[0,1].
+\label{eq3x86}
+\end{equation}
+そしてこの微分同相写像により両者を同一視すると，$\partial	M_{c_{i-1}+	\varepsilon}$の
+各点$p$につき，（\ref{eq3x86}）の右辺$	\{	p	\}	\times	[0,1]$は，
+左辺では上向きベクトル場$X$の$p$を通る積分曲線に対応している．
+
+実は（\ref{eq3x86}）の微分同相写像をもう少し広い範囲で定義することができる．
+それは，$[c_{i-1}	+	\varepsilon,	c_i	-	\varepsilon]$より少し広い範囲，
+例えば$[c_{i-1}	+	\varepsilon/2	,	c_i	-	\varepsilon	/	2]$，にも$f$の臨界点がないからで，
+$\delta$も十分小さい正数としたとき，微分同相写像（\ref{eq3x86}）は次の微分同相写像
+\begin{equation}
+	f^{-1}	([c_{i-1}	+	\varepsilon	/	2	,	c_i	-	\varepsilon	/2	])	\simeq		\partial	M_{c_{i-1}	+	\varepsilon	}
+	\times
+	[-	\delta	,	1	+	\delta	]
+\label{eq3x87}
+\end{equation}
+に拡張される．この両辺を同一視すると，やはり右辺の$\{	p	\}	\times	[-\delta	,	1	+	\delta	]$は
+左辺では$X$の積分曲線に対応している．
+
+問題にしている微分同相写像$\varPhi$を右辺の言葉で言うと，$\varPhi$は
+$\partial	M_{c_{i-1}	+	\varepsilon	}	\times	[	\delta	,	0]$を
+$\partial	M_{c_{i-1}	+	\varepsilon	}	\times	[	-\delta	,	1]$に引き伸ばす微分同相写像である．
+すなわち，
+\begin{equation}
+	\varPhi	:	(p	,	t)	\to	\left(	p,	\frac{1+	\delta}{\delta}	t	+	1
+													\right),
+	\quad	\forall	(p,t)	\in	\partial	M_{c_{i-1}+	\varepsilon}	\times	[	-\delta,	0	]
+\label{eq3x88}
+\end{equation}
+である．境界$\partial	M_{c_{i-1}	+	\varepsilon}$に制限してみると，
+（（\ref{eq3x87}）の右辺の言葉では）$\varPhi$は$(p,0)$を$(p,1)$に対応させる写像になっている．
+
+$N_{i-1}$と$M_{c_{i-1}	+	\varepsilon}$を同一視し，$\partial 	M_{c_{i-1}	+	\varepsilon}$の
+アイソトピー$\{	h_t	\}_{t	\in	J}$が与えられていると考えよう．アイソトピーの定義により，
+\[
+	H(x,t)	=	(h_t(x)	,	t)
+\]
+で定義される写像$H	:	\partial	M_{c_{i-1}	+	\varepsilon}	\times	J	\to	\partial	M_{c_{i-1}	+	\varepsilon}	\times	J$は
+微分同相写像である．アイソトピーの条件（ⅰ）から，$H$は$t	\leqq	0$と$	t	\geqq	1$の範囲では$t$によらず「一定」である．
+あとの都合で，$H$の上下をひっくり返した
+\[
+	\tilde{H}	(	x,	t)		=	(	h_{1-t}	(x)	,	t)
+\]
+を考える．$\tilde{H}	:	\partial	M_{c_{i-1}	+	\varepsilon	}	\times	J	\to	\partial	M_{c_{i-1}	+	\varepsilon}	\times	j$も
+微分同相写像であり，$t	\leqq	0$と$	t	\geqq	1$の範囲で一定である．$J$は$[0,1]$を含む開区間であるから，
+適当な長さに調節して$J$を（\ref{eq3x87}）の右辺に現れる$[	-	\delta	,	1	+	\delta	]$の内部の開区間$(-\delta,	1	+	\delta)$に同一視
+できる．
+
+（\ref{eq3x87}）の両辺を同一視すると，そこの含まれる開集合$M_{c_{i-1}	+	\varepsilon}	\times	(	-	\delta	,	1	+	\delta)$
+には上向きベクトル場$X$が載っているが，この積分曲線が	$\{p	\}	\times	(	-	\delta	,	1	+	\delta)$であるから，
+この開集合上では$X$のベクトル場
+\[
+	\frac{\partial	}{\partial	t}
+\]
+であると考えられる．微分同相写像$\tilde{H}	:	\partial	M_{c_{i-1}+	\varepsilon}	\times	(	-	\delta	,	1	+	\delta	)	\to	\partial	M_{c_{i-1}	+	\varepsilon	}	\times
+(	-	\delta	,	1	+	\delta)$により$X$を写した$\tilde{H}_*	(X)$を考えると，$\tilde{H}$が$t	\leqq	0$と$t	\geqq	1$の
+範囲で一定であることから，その範囲で$\tilde{H}_*	(X)$は$\displaystyle	\frac{d}{\partial	t}	(=X)$のままである．
+すなわち，開集合$\partial	M_{c_{i-1}		+	\varepsilon}	\times	(-\delta	,	1	+	\delta)$の上でベクトル場$X$を
+$\tilde{X}_*(X)$に変えても，つなぎ目$(t	\leqq	0	$と$t	\geqq	1$の範囲）のところでもとの$X$のままなので，開集合
+$\partial	M_{c_{i-1}	+	\varepsilon}	\times	(	-\delta	,	1	+	\delta)$の外ではもとの$X$に滑らかにつながる．
+こうした変形によって得られた$M$上の新しいベクトル場を$Y$とすると，開集合$\partial	M_{c_{i-1}	+	\varepsilon}	\times	(-	\delta	,	1	+	\delta)$
+の上での$Y$の積分曲線は，図\ref{fig3x9}に示されたようになっている．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=72.2mm,height=69.4mm]{fig3x9.bmp}
+	\caption{$Y$の積分曲線}
+	\label{fig3x9}
+\end{figure}
+
+ベクトル場$X$の積分曲線に沿って「流す」写像として微分同相写像
+$\varPhi	:	M_{c_{i-1}	+	\varepsilon}	\to	M_{c_i	-	\varepsilon}$が決まったように，
+ベクトル場$Y$の積分曲線に沿って流すことにより微分同相写像
+\begin{equation}
+	\varPsi	:	M_{c_{i-1}	+	\varepsilon}	\to	M_{c_i	-	\varepsilon}
+\label{eq3x89}
+\end{equation}
+が決まる．$\Psi$を境界$\partial	M_{c_{i-1}	+	\varepsilon	}$に制限すると，
+図\ref{fig3x9}からわかるように，$\Psi$は（\ref{eq3x87}）の右辺の記号で）
+点$(h(p)	,	0)$を点$(p,1)$に写すものになっている．
+ここに$p$は$\partial	M_{c_{i-1}	+	\varepsilon}$の任意の点である．
+
+したがって$f$と$Y$によって決まるハンドル分解においては，$i$番目のハンドルは
+$N_{i-1}	=	M_{c_{i-1}	+	\varepsilon}$に，接着写像
+\begin{equation}
+	\varPhi^{-1}	\circ	\varphi	=	h	\circ	\varphi_i
+\label{eq3x90}
+\end{equation}
+で張り付く．
+
+$i-1$番目以下のハンドル体の上では$X$と$Y$は同じであるので，$i-1$番目以下のハンドル体の構造は不変である．
+またどの番号$j$についても$N_j	=	M_{c_j	+	\varepsilon}$の微分同相類が変わらないことは，
+$M_{c_j	+	\varepsilon}$の定義（$M_{c_j	+	\varepsilon}	=	\{	p	\in	M	\:	|	\:	f(p)	\leqq	c_j	+	\varepsilon	\}$）
+が上向きベクトル場に無関係であることから明らかである．
+
+これで定理3.21（ハンドルを滑らせる）が証明された．
+
+\■
+
+定理3.21の応用として，次の定理を示そう．
+
+\定理{3.22}（臨界点の整列）
+$M$を$m$次元の閉じた多様体，$f	:	M	\to	\R$を
+その上の Morse 関数とする．このとき$f$を変形して，
+変形後の$f$が次の条件（＊）を満たすようにすることができる．
+\begin{list}{}{}
+	\item	（＊）$f$の任意の臨界点$p_i$と$p_j$について，$f(p_i)	<	f(p_j)$ならば
+$\text{index}	(p_i)	\leqq	\text{index}(p_j)$である．ここに$\text{index}$は臨界点の指数を表す．
+\end{list}
+\■
+
+臨界値が大きくなっていくに従って，指数のほうもしだいに（広義単調増加の意味で）大きくなるように
+することができるというのである．
+
+この定理は関数の変形について述べているが，証明は，与えられた$f:	M	\to	\R$に伴うハンドル分解を
+利用するもので，幾何的である．いくつかの補題を準備してから証明しよう．
+
+\補題{3.23}（一般の位置）$k$次元多様体$K$のなかに，次元がそれぞれ$s_1,	s_2$であるような
+コンパクト部分多様体$S_1$と$S_2$があるとする．もし
+\begin{equation}
+	s_1	+	s_2	<	k
+\label{eq3x91}
+\end{equation}
+であれば，$h_0	=	\text{id}_K$かつ
+\begin{equation}
+	h_1	(S_1)	\cap	S_2	=	\varnothing
+\label{eq3x92}
+\end{equation}
+であるような$K$のアイソトピー$\{h_t\}_{t	\in	J}$が存在する．
+\■
+
+すなわち，条件（\ref{eq3x91}）が満たされれば，$S_1$を$K$のアイソトピー$\{h_t\}_{t	\in	J}$で動かして
+$S_2$から引き離すことができるというのである．別の言葉で言えば，$K$の次元に較べて$S_1$と$S_2$の
+次元が（不等式（\ref{eq3x91}）が成り立つくらい）低いとき，$S_1$と$S_2$の位置関係としては，「交わらない」
+という位置関係が最も一般的な位置関係だというのである．
+
+\証明
+
+簡単のため「$S_1$は$S_1	\times	\text{int } (D^{k-s_1})$に微分同相な開近傍$U$をもっている」
+と仮定しよう．$\text{int }(D^{k-s_1})$は$k	-	s_1$次元円板$D^{k-s_1}$の内部である．
+また，部分多様体$S_1$自身は直積$S_1	times	\text{int } (D^{k-s_1})$のなかで
+$S_1	\times	\{	0	\}$に対応しているものとする．ただし$\boldsymbol{0}$は$D^{k-s_1}$の中心である．
+この本ではこの「」の条件が成り立っているときにしか補題3.23を使わないので，このような仮定をしても
+差し支えない．
+
+$U$を直積$S_1	\times	\text{int } (D^{k-s_1})$と同一視し，
+\begin{equation}
+	\pi	:	U	\to	\text{int	}	(D^{k-s_1})
+\label{eq3x93}
+\end{equation}
+を直積の第2因子$\text{int } (D^{k-s_1})$への射影とする．この$\pi$で$s_2	\cap	U$を
+$\text{int } (D^{k-s_1})$のなかへうつすと，仮定（\ref{eq3x91}）により
+\begin{equation}
+	\dim	(S_2	\cap	U)	=	s_2	<	k-s_1	-	\dim	(D^{k-s_1})
+\label{eq3x94}
+\end{equation}
+であるから，像$\pi(	S_2	\cap	U)	$は$\text{int } (D^{k-s_1})$のなかの次元の低い集合であり，
+したがって「疎な集合（nowhere dense subset）」になっている．すなわち，
+$\text{int } (D^{k-s_1})$のどの点$p$のどんな近くにも$\pi	(S_2	\cap	U)$に含まれない点が存在する．
+（厳密に言えば，この事実は次元差のある場合の Sard の定理の特別な場合である．文献[13] 参照．）
+
+$\text{in }(D^{k-s_1})$の中心$\boldsymbol{0}$の十分近くの点であって，
+$\pi	(S_2	\cap	U)$に含まれないもの$p_0$をとっておく．
+
+円板の内部$\text{int } (D^{k-s_1})$のアイソトピー$\{	j_t	\}_{t	\in	J}$で次の性質
+（ⅰ），（ⅱ）をもつものが存在する（演習問題3.2）．
+
+\begin{list}{}{}
+	\item	（ⅰ）$j_0	=	\text{id }$かつ$j_l	(	\boldsymbol{0})	=	p_0$，
+	\item	（ⅱ）任意の$t$について，$j_t$は$D^{k-s_1}$の半分の半径の同心円板$\displaystyle	\frac{1}{2}	D^{k	-	s_1}$の
+外では常に恒等写像である．
+\end{list}
+このアイソトピー$\{	j_t	\}_{t	\in	J}$を用いて，$U	=	S_1	\times	\text{int } (D^{k	-	s_1})$の
+アイソトピー$\{	h_t	\}_{t	\in	J}$を
+\begin{equation}
+	h_t	(	p	,\boldsymbol{x}	9	=	(p	,	j_t(\boldsymbol{x}	))	,	\quad
+	\forall		(p,	\boldsymbol{x}	\in	S_1	\times	\text{int} ( D^{k-s_1})	,		\forall	t	\in	J
+\label{eq3x95}
+\end{equation}
+のように構成する．アイソトピー$\{j_t\}_{t	\in	J}$の条件（ⅱ）により，いま構成したアイソトピー
+$\{	h_t	\}_{t	\in	J}$は太さが半分の直積$S_1	\times	\frac{1}{2}	D^{k	-	s_1}$の外では恒等写像であるから，
+$U$の外では恒等写像と定義することによって$K$全体のアイソトピーに拡張できる．拡張したアイソトピーを
+再び$\{	h_t	\}_{t	\in	J}$と書く．このアイソトピーで$S_1$を動かすと，構成
+（\ref{eq3x95}）からわかるように，$h_1	(S_1)$は$U$のなかの$S_1	\times	\{	p_0	\}$になるはずである．
+すると$p_0$の選び方から，$S_1	\times	\{	p_0	\}$は$S_2	\cap	U$に交わらない．したがって
+\[
+	h_1	(S_1)	\cap	S_2	=	\varnothing
+\]
+が成り立つ．これで補題3.23が証明された．
+\■
+
+先に進むために，次を定義する．Morse関数$f	:	M	\to	\R$とそれに適合した上向きベクトル場
+$X$が与えられている状況を考える．臨界点$p_i$の臨界値は$c_i$，指数は$\lambda_i$であるとする．
+
+\定義{3.24}
+（下向き円板と上向き円板）
+\[
+	M_{[c_{i-1}	+	\varepsilon	,	c_i	+	\varepsilon	]}
+	=
+	\{
+		p	\in	M	\:	|	\:
+		c_{i-1}	+	\varepsilon	\leqq	f(p)	\leqq	c_i	+	\varepsilon
+	\}
+\]
+の範囲にある点$p$であって，それを$X$の積分曲線に沿って動かしていくと，
+パラメータ$t$が$t	\to	+	\infty$のとき臨界点$p_i$に向かって収束していくようなもの
+全体からなる集合を\textbf{臨界点$\boldsymbol{p}_i$に付随する下向き円板}（left	-	hand disk）と呼ぶ．
+ただし，下向き円板には臨界点$\boldsymbol{p}_i$自身も含まれているものとする．また，同じ
+範囲$M_{[c_{i-1}+	\varepsilon	,	c_i	+	\varepsilon]}$にある点$p$であって，$X$の積分曲線上を
+$X$とは逆方向に動かしていくと，$t	\to	-	\infty$のとき臨界点$p_i$に収束してゆくようなもの全体から
+なる集合を\textbf{臨界点$\boldsymbol{p}_i$に付随する上向き円板}（right - hand disk）と呼ぶ．
+ただし，上向き円板には臨界点$p_i$自身も含まれていないものとする（図\ref{fig3x10}）．
+
+$p_i$に付随する下向き円板，上向き円板を記号でそれぞれ
+\[
+	D_l	(p_i)	,	\:	D_u	(p_i)
+\]
+と表す．添え字の$l$と$u$はそれぞれlower と upper からの連想による．
+\■
+
+\注意{}
+下向き円板と上向き円板に対応する英語表現が left - hand disk と right - hand diskであるのは
+奇異に感じられるかもしれないが，left - hand disk と right - hand disk は　 Milnor の本 [4] の
+述語であり，下向き円板，上向き円板の方は筆者による仮の述語である．
+
+Milnorの述語では「上向きベクトル場」の気分にそぐわないので，ここでは下向き，上向きという
+言葉を使うことにした．
+
+上向きベクトル場$X$が$p_i$の近傍では$f$の勾配ベクトル場になっていることと，下向き円板
+$D_l(p_i)$の定義および臨界点$p_i$のまわりの$f$の標準形（\ref{eq3x8}）
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=81.0mm,height=48.4mm]{fig3x10.bmp}
+	\caption{上向き円板と下向き円板}
+	\label{fig3x10}
+\end{figure}
+から
+\begin{equation}
+	D_l(p_i)	\cap	M_{	[	c_i	-	\varepsilon	,	c_i	+	\varepsilon	]	}
+	=
+	\{
+		(x_1,		\cdots	,	x_m)	\:	|	\:	x_1^2	+	\cdots	+	x_{\lambda_i}^2	\leqq	\varepsilon,
+		x_{\kappa_i	+	1}	=	\cdots	=	x_m	=	0
+	\}
+\label{eq3x96}
+\end{equation}
+がわかる．
+
+この共通部分は$\lambda_i$次元円板である．また
+\begin{equation}
+	D_l(p_i)	\cap	M_{[c_{i-1}	+	\varepsilon,	c_i	-	\varepsilon]}
+	\simeq
+	\text{上の$\lambda_i$次元円板の境界	}	\times	[c_{i-1}+	\varepsilon,	c_i	-	\varepsilon	]
+\label{eq3x97}
+\end{equation}
+である．
+
+
+
+$D_l	(p_i)$は（\ref{eq3x96}）と（\ref{eq3x97}）の和集合であるから，それ自身
+$\lambda_i$次元円板に微分同相である．
+
+同様に$D_u	(p_i)$は$m	-	\lambda_i$次元円板に微分同相である．
+
+$M_{c_i	+	\varepsilon}$を$M_{c_{i-1}	+	\varepsilon}$に$\lambda_i$-ハンドルを張り付けたものと考えたとき，
+下向き円板$D_l	(p_i)$は$\lambda_i$-ハンドルの心棒に相当し，上向き円板$D_u(D_i)$は太さを表す円板に相当している．
+
+下向き円板$D_l	(p_i)$の許可異$\partial D_l	(p_i)$は$\lambda_i$-ハンドルの接着写像$\varphi$によって
+$\partial	M_{c_{i-1}	+	\varepsilon}$に埋め込まれている．また，1つ前の臨界点$p_{i-1}$の上向き円板
+$D_n	(	p_{i-1}	)$の境界$\partial	D_u	(p_{i-1})$も同じ$\partial 	M_{c_{i-1}	+	\varepsilon}$に
+埋め込まれた球面になっていることを注意しよう．
+
+このとき次の補題が成り立つ．
+
+\補題{3.25}（ハンドルの引き離し）
+臨界点の番号$i$を1つ固定する．もし$\text{index }(p_{i-1})	\geqq	\text{index } (p_i)$であれば，
+Morse　関数 $f	:	M	\to	\R$はそのままで，上向きベクトル場$X$を別の上向きベクトル場$Y$に変形し，
+それによってセ着写像$\varphi_i$を$\psi_i$に変えて
+\begin{equation}
+	\psi_i	(	\partial	D_l	(	p_i	)	)	\cap	\partial	D_u	(p_{i-1})	=	\varnothing
+\label{eq3x98}
+\end{equation}
+となるようにすることができる．この変形は0番目から$i-1$番目までのハンドルの様子を変えない．
+
+\証明
+臨界点$p_{i-1}$と$p_i$の指数をそれぞれ$\lambda_{i-1}$と$\lambda_i$とする．仮定により
+\begin{equation}
+	\lambda_{i-1}	\geqq	\lambda_i
+\label{eq3x99}
+\end{equation}
+である．また，$D_u	(p_{i-1})	$と$D_l	(p_i)$の次元は
+\[
+	\dim	(D_u	(	p_{i-1}	)	)	=	m	-	\lambda_{i-1},	\quad	\dim	(D_l	(p_i))	=	\lambda_i
+\]
+である．これらの円板の境界になっている球面の次元を考え，不等式（\ref{eq3x99}）を使うと
+\begin{align*}
+	\dim	(	\partial	D_U	(	p_{i-1}))	+	\dim	(	\partial	D_l(p_i))	
+&=	(m	-	\lambda_{i-1}	-1)	+	(	\lambda_i	-1)	\\
+&=	m	-	2	+	(\lambda_i	-	\lambda_{i-1}	)	<	m-1
+\label{eq3x100}
+\end{align*}
+が得られる．$\dim	(	\dim	(\partial	M_{c_{i-1}	+	\varepsilon}	)	=	m-1$であるから，
+補題3.23（一般の位置）によって，像$\varphi_i	(	\partial	D_i	(	p_i	))$を
+$\partial	D_u	(	p_{i-1})$から引き離す$\partial	M_{c_{i-1}	+	\varepsilon}$のアイソトピー
+$\{	h_t\{_{t	\in	J}$が存在する．（補題3.23の証明のなかで仮定された「直積の形の近傍が
+存在する」という条件は，ハンドルの接着球面$\varphi_i	(	\partial	D_l	(	p_i	)$については
+満たされている．）このアイソトピーは
+\begin{equation}
+	h_1	(	\varphi_i	(	\partial	D_l	(	p_i)))	\cap	\partial	D_u	(p_{i-1})	=	\varnothing
+\label{eq3x101}
+\end{equation}
+という条件を満たしている．
+
+ここに定理3.21（ハンドルを滑らせる）をつかうと，$i$番目のハンドルの接着写像
+$\varphi_i$を$h_1	\circ	\varphi_i$に変えることができる．新しい接着写像を
+$psi_i$と書けば，式（\ref{eq3x101}）から明らかに$\psi_i	(	\partial	D_l	(p_i))	\cap	\partial	D_u	(	p_{i-1})	=	
+\varnothing$が成り立つ．
+
+$i-1$番目以下のハンドル体に変化のないのは定理3.21から明らかである．
+
+こでれ補題3.25が証明できた．
+\■
+
+次の保第でも，Morse関数$f	:	M	\to	\R$とそれに適合する上向きベクトル場$X$が固定されているとする．
+
+
+\補題{3.26}（臨界値の上げ下げ）
+Morse関数$f$の引き続く2つの臨界点$p_{i-1},	p_i$を含む範囲
+\begin{equation}
+	M_{[c_{i-2}	+	\varepsilon,	c_i	+	\varepsilon	]}
+\label{eq3x102}
+\end{equation}
+を考える．この範囲（\ref{eq3x102}）にある点$p$であって，それを$X$の積分曲線に沿って
+動かしていくとパラメータ$t$が$	t	\to	+	\infty$または$t	\to	-	\infty$のとき
+臨界点$p_{i-1}$に収束していくような点$p$の全体の集合を$K(p_{i-1})$とする．
+$K(p_{i-1})$に
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=80.2mm,height=59.4mm]{fig3x11.bmp}
+	\caption{$K	(p_{i-1}	$と$K	(p_i)$}
+	\label{fig3x11}
+\end{figure}
+は$p_{i-1}$自身も含まれているものとする．臨界点$p_i$に対応する同様の集合を
+$K(p_i)$とする（図\ref{eq3x11}）参照．
+
+このとき，もし
+\begin{equation}
+	K(	p_{i-1}	\cap	K	(p_i)	=	\varnothing
+\label{eq3x103}
+\end{equation}
+であれば，Morse関数$f:	M	\to	\R$んを別のMorse関数$g	:	M	\to	\R$に変えて，
+$g$が次の性質をもつようにすることができる．ただし，条件（ⅲ）のなかの
+$a,b$は予め任意に与えられた実数で，$c_{i-2}	+	\varepsilon	$より大きく
+$C_i	+	\varepsilon$より小さいものである．
+\begin{list}{}{}
+	\item	$g$は（\ref{eq3x102}）の領域の外では$f$に一致する．
+	\item	$g$と$f$について，臨界点の集合とそれらの指数は一致する．
+	\item	$g	(	p_{i-1}	)	=	a$かつ$g	(p_i)	=	b$である．
+\end{list}
+\■
+
+2つの集合$K	(	p_{i-1}	)$と$K(p_i)$に共通部分がなければ，臨界点$p_{i-1}$と
+$p_i$における関数値を自由に上げ下げして，それぞれ予め指定された実数$a$と$b$に
+なるようにすることができるというのである．
+
+\証明
+記号を簡単にするため
+\begin{equation}
+	\overline{M}	=	M_{[c_{i-2}	+	\varepsilon	,	c_i	+	\varepsilon]},
+	\partial_0	\overline{M}	=	f^{-1}	f^{-1}	(	c_{i-2}	+	\varepsilon)	,
+	\partial_1	\overline{M}	=	f^{-1}	(c_i	+	\varepsilon)
+\label{eq3x104}
+\end{equation}
+とおく．$\overline{M}$は境界のある多様体で，その境界は$\partial_0	\overline{M}$と
+$\partial_1	\overline{M}$Aの非交和である：
+\[
+	\partial	\overline{M}	=	\partial_0	\overline{M}	+	\partial_1	\overline{M}.
+\]
+$\overline{M}	-	K(p_{i-1}	)	\cup	K	(	p_i)$の点$p$を通る$X$の積分曲線は
+$\partial_0	\overline{M}$から入り$\partial_1	\overline{M}$に抜ける（図\ref{fig3x11}参照）．
+
+$\partial_0	\overline{M}$上の$C^\infty$級関数
+\begin{equation}
+	h	:	\partial_0	\overline{M}	\to	\R
+\label{eq3x105}
+\end{equation}
+で次の2条件（A）,	（B）を満たすものを選ぶ．このような関数$h$の存在は
+多様体論で知られている（[11] \S 14,例2参照）．
+\begin{list}{}{}
+	\item	（A		$	0	\leqq	h	\leqq	1$．
+	\item	（B)	$h$は$K(p_{i-1})	\cap	\partial_0	\overline{M}$のある開近傍上で$0$になり，
+$K(p_i)	\cap	\partial_0	\overline{M}$のある開近傍上で$1$になる．
+\end{list}
+
+関数$h$を使って，$\overline{M}$上の$C^\infty$級関数
+\begin{equation}
+	\overline{h}	:	\overline{M}	\to	\R
+\label{eq3x106}
+\end{equation}
+を次のように構成する：$\overline{M}	-	K(p_{i-1})	\cup	K(p_i)$の点$p$については，
+$p$を通る$X$の積分曲線が$\partial_0	\overline{M}$と交わる点$q$が唯一確定するから，
+\[
+	\overline{h}(p)	=	h	(	q)
+\]
+とおく．また$K(p_i)$上での$\overline{h}$の値は$0$，$K	(p_i)$上での値は$1$と定める．
+$h$の条件（B）により，$\overline{h}$は多様体$\overline{M}$上の$C^\infty$級関数になる．
+また$X$の各点の積分曲線（または$K(p_{i-1})$や$K(p_i)$）上で$\overline{h}$の値は一定である．
+
+以下，補題3.26の証明が終わるまで，言葉の節約のために「積分曲線」を少し拡張された
+意味に使う．すなわち，ここで積分曲線と言えば，$X$の通常の積分曲線か，または$K(p_{i-1})$または
+$K	(p_i)$を差すことにする．
+
+補題3.26の証明のアイデアは，まず区間$[0,1]$内を動くパラメータ$s$があるとして，区間
+$[c_{i-2}	+	\varepsilon	,	c_i	+	\varepsilon]$上の$C^\infty$級の狭義単調増加関数の
+族$	\{	g_s	\}_{s	\in	[0,1]}$を，それがパラメータ$s	\:	(	0	\leqq	s	\leqq	1)$に
+$C^\infty$急に依存するように構成する．上に述べたように各積分曲線上で
+$\overline{h}$の値は一定である．1つの積分曲線に注目し，その上で
+$\overline{h}$の一定値が$s$だとすると，新しい関数$g$をその積分曲線上で，
+$g(p)	=	g_s	(f(p))$とおいて定義するのである．
+$g_s	(s)$が$x$に関して狭義単調増加であり，各積分曲線上で点が
+$\partial_0	\overline{M}$から$\partial_1	\overline{M}$まで動いて行くと，
+$f$は$c_{i-2}	+	\varepsilon$から$c_i	+	\varepsilon$まで
+単調に増加するので，$g_s	(f(p))$も積分曲線上で単調に増加する．
+また$s=0$のときは$g_0	(	f(p_{i-1}))	=	a	,	s=1$のときは
+$g_1	(f(p_i))	=	b$，となるように$g_s$を決めておけば，
+$g$に関する条件（ⅲ）も満たされることになる．これが証明のアイデアである．
+
+正確には次にようにして構成する．
+
+\begin{equation}
+	G	:	[	c_{i-2}	+	\varepsilon	,	c_i	+	\varepsilon]	\times	[	0	,1	]	
+	\to
+	[	c_{i-2}	+	\varepsilon	,	c_i	+	\varepsilon	]
+\label{eq3x107}
+\end{equation}
+を次の3条件（a），（b），（c）を満たす$C^\infty$級関数とする．
+\begin{list}{}{}
+	\item	（a）$s$を1つ止めるごとに，$G(x,s)$は$x$の関数として狭義単調増加であり，
+$x$が$c_{i-2}	+	\varepsilon$から$c_i	+	\varepsilon$まで増加すると
+$G	(x,s)$も$c_{i-2}	+	\varepsilon$から$c_i	+	\varepsilon$まで増加する．
+（証明のアイデアのところで述べた関数$g_s(x)$は$G(x,s)$に相当している．）
+	\item	（b）$G(f	(p_{i-1}),	0)	=	a$，$G(f(p_i)	,	1)	=	b$．
+	\item	（c）任意の$s$につき，$x$が$c_{i-2}	+	\varepsilon$または
+$c_i	+	\varepsilon$の十分小さい近傍に入っていれば$G(x,s)	=	x$が成り立つ．
+また臨界値$f(p_{i-1})$の近傍の$x$について
+\[
+	\frac{\partial }{\partial x}	G(x,0)	=1,
+\]
+臨界値$f(p_i)	$の近傍の$x$について
+\[
+	\frac{\partial }{\partial x}	G(x,1)	=	1
+\]
+が成り立つ．
+\end{list}
+このような関数$G(x,s)$が存在することの証明は演習問題としよう（演習問題
+3.3参照）．
+
+求める新しいMorse関数	$g	:	M	\to	\R$は
+\[
+	g(p)	=	G(	f(p)	,	\overline{h}	(p))
+\]
+と定義すればよい．$g$が条件（ⅰ），（ⅱ），（ⅲ）を満たすことは容易に
+確かめられる．
+
+これで補題3.26（臨界値の上げ下げ）が証明された．
+\■
+
+以上の準備をもとに，臨界点を整列させる定理3.22を証明しよう．
+$f	:	M	\to	\R$を与えられたMorse関数とし，
+$X$をそれに適合した上向きベクトル場とする．臨界点は
+$n+1$個あるとし，すべて異なる臨海地をもつと仮定する．それらを臨界値
+の小さい順に並べたものが
+\[
+	p_0,	p_1,	\cdots	,	p_n
+\]
+であったとしよう．$p_i$の臨界値を$c_i$と書くと
+\[
+	c_0	<	c_1	<	\cdots	,	c_n
+\]
+である．
+
+$p_i$の指数$\text{index }(p_i)$も小さい順にならんでいればよいが，
+ある番号$i$のところで
+\[
+	\text{index }(p_{i-1}	)	>	\text{index }(p_i)
+\]
+のように，指数の逆転が起こっているとする．補題3.25
+（ハンドルの引き離し）により，$f	M	\to	\R$に適合したベクトル場
+$X$を$Y$に変えて，$p\i$に付随する下向き円板$D_l	(p_i)$の境界
+$\partial	D_l(p_i)$と$p_{i-1}$に付随する上向き円板$D_u	(p_{i-1})$の
+境界$\partial	D_u	(p_{i-1})$が$f^{-1}	(	c_{i-1}	+	\varepsilon)
+=	(	\partial	M_{c_{i-1}	+	\varepsilon})$の中で交わらないようにすることが
+できる．すると$\partial	D_l	(p_i)$を$Y$を遡って下の方向に
+(
+	$M_{[c_{i-2}	+	\varepsilon],	c_{i-1}	+	\varepsilon	]}$
+の中に
+)流していっても$p_{i-1}$に向かって収束していくことはなく，また
+$\partial	D_u	(p_{i-1}	)$を$Y$に沿って上の方向に
+（$M_{	[	c_{i-1}	+	\varepsilon	,	c_i	+	\varepsilon	]}$の中に
+）流していっても$p_i$に向かって収束していくことはない（
+図\ref{fig3x11}参照）．
+
+したがって，$M_{[c_{i-2}	+	\varepsilon	,	c_i	+	\varepsilon]}$
+の中で，$K(p_{i-1})$と$K(p_i)$は交わらないので，補題3.26
+（臨界値の上げ下げ）が使える．この補題における$a$と$b$を
+$a	>	b$であるように選んでおけば，$f	:	M	\to	\R$を
+$M_{[c_{i_2	+	\varepsilon}	,	c_i	+	\varepsilon}$の中で変えて
+$g	:	M	\to	\R$とし，$g$については
+\[
+	g(	p_{i-1})	=	a	>	b	=	g(p_i)
+\]
+が成り立つようにできる．$p_{i-1}$と$p_i$以外の臨界点での
+$g$の値は$f$と変わらない．要するに，$p_{i-1}$は$p_i$より
+関数値が低いのに指数が大きかったのだが，その$p_{i-1}$の関数値が
+引き上げて，$p_i$よりも高い位置にもってきたのである．
+
+こうして，$p_{i-1}$の方が指数，臨界値ともに$p_i$より大きくなったので，
+$p_{i-1}$と$p_i$の名前を付けかえて，$p_{i-1}$を
+$p_i$，$p_i$を$p_{i-1}$と呼ぶことにし，あらためて$a$を
+$c_i$，$b$を$c_{i-1}$と考えれば，
+\[
+	g	(	p_{i-1}	<	g(p_i)	,	\quad	\text{index	} (p_{i-1})	<	\text{index }(p_i)
+\]
+となって，$i-1$番目と$i$場mmねの臨界値と指数の逆転現象は是正さえたわけである．
+このようにひとつずつ逆転を是正していけば，有限個のステップの後には，
+すべての逆転が是正されて，臨界値の大小の順と指数の順が一致するようになる．
+
+これで定理3.22（臨界点の整列）が証明された．
+
+指数の逆転を修正するプロセスがすべて終了した後の状況を，
+ハンドル分解の言葉で言うと，指数が同じかまたは増える順に1つずつハンドルを
+付けて$M$を表すハンドル体が出来ている，ということになる．
+
+じつは定理3.22の証明をもう少し詳しく見ると，同じ指数のハンドルは
+1つずつでなくとも，一遍に付けられる，ということがわかる．次の定理が
+それを言っている．
+
+定理{3.27}
+（同じ指数のハンドルは同時に付けられる）
+$m$次元多様体$M$とその上のMorse関数$g : M \to \R$が与えられたとき，
+$f$を別のMorse関数$g$に修正して，$g$については次の
+（ⅰ），（ⅱ），（ⅲ）が成り立つようにすることができる．
+\begin{list}{}{}
+	\item	（ⅰ）$f$と$g$とは同じ個数の臨界点をもつ．さらに任意の指数について，
+その指数をもつ臨界点の個数も$f$と$g$で共通である．
+	\item	（ⅱ）$g$の臨界点$p_i$と$p_j$について，$\text{index } (p_i)	=	\text{index }(p_j)$ならば
+$g	(p_i)	=	g(p_j)$である．
+	\item	（ⅲ）また，$\text{index } (p_i)=	\text{index }(p_j)$ならば$g	(p_i)	=	g(p_j)$である．
+\end{list}
+\■
+
+図\ref{fig3x12}がMorse関数$g$の臨界点の様子を表している．この図からわかるように，
+$\lambda	-	1$までの指数のハンドルをすべて付け終えたハンドル体
+$N_{\lambda	-	1}$に，$r$個の$\lambda$-ハンドルの非交和
+\[
+	D^\lambda	\times	D^{m	-	\lambda}	\sqcup	\cdots	\sqcup	D^\lambda	\times	D^{m	-	\lambda}
+\]
+を一遍に張り付けたものが$N_\lambda$である．ただし，$r$は指数$\lambda$のハンドルすべての
+個数である．
+
+\証明
+定理3.27の証明の概略を述べよう．定理3.22の証明のなかで
+$	f(	p_{i-1}	<	f(p_i)$かつ$\text{index } (p_{i-1})	>	\text{index } (p_i)$で
+あるような臨界点$p_{i-1}$と$p_i$に
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=63.8mm,height=41.6mm]{fig3x12.bmp}
+	\caption{同じ指数のハンドルは同時に付けられる．}
+	\label{fig3x12}
+\end{figure}
+ついて補題3.25（ハンドルの引き離し）を適用したが，
+補題3.25は$f	(	p_{i-1}	<	f(p_i)$かつ$\text{index } (p_{i-1})	=	\text{index } (p_i)$
+であるような臨界点$p_{i-1},	p_i$についても適用できる．
+そこで，$p_{i-1}$と$p_i$の指数が等しいとき，補題3.25を使って
+$K(p_{i-1})$と$K(	p_i	)$を交わらないようにする．そうすると
+補題3.26（臨界値の上げ下げ）を使って$p_{i-1}$と$p_i$の臨界値が自由に調整
+できるので，両者の臨界値が等しくなるように関数を変形すればよい．
+\■
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

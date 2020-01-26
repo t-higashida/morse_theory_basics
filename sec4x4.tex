@@ -1,0 +1,78 @@
+\section{交点形式}
+
+$M$を向きづけ可能な$m$次元多様体とし，$M$に向き$\langle	M \rangle$
+を入れておく．
+
+定義 4.3で説明したように，$\langle	M	\rangle$は局所的には，
+$m$個の1次独立なベクトル場を並べたもの
+\[
+	\langle	V_1,	V_2,	\cdots	,	V_m	\rangle
+\]
+として与えられる．このように$m$個のベクトル場を並べたものを
+$\langle	M \rangle$に適合する\textbf{$m$ベクトル枠}
+（m-frameofvectors）と呼ぶ．
+
+\subsection{部分多様体の交点数}
+
+$S_1,	S_2$を$M$の向きづけ可能な部分多様体で，次元がそれぞれ$p,q$であるようなものとする．
+$m=p+q$を仮定する．さらに，$S_1,S_2$にはそれぞれ向き
+$\langle	S_1	\rangle,	\langle	S_2	\rangle$が与えられていて，
+$M$のなかで，有限個の点$\{q_1,	q_2,	\cdots	,q_r	\}$で横断的に交わっているとしよう．
+
+交点の1つ$q_i$を考える．$q_i$の近傍で$	
+\langle	S_1\rangle
+$に適合する$S_1$上の$p$ベクトル枠
+$	\langle	V_1,	V_2,	\cdots	,	V_p	\rangle
+$と
+$	S_2
+$
+に適合する$S_2$上の$q$ベクトル枠
+$	\langle	W_1,	W_2,	\cdots	,	W_q	\rangle
+$
+を選んでおく．
+
+\定義{4.29}（交わりの符号）
+$
+	\langle	V_1	,	V_2,	\cdots	,	V_p	\rangle
+$と
+$
+	\langle	W_1	,	W_2,	\cdots	,	W_q	\rangle
+$
+をこの順に並べたもの
+\[
+	\langle	V_1	,	V_2,	\cdots	,	V_p,	W_1	,	W_2,	\cdots	,	W_q	\rangle
+\]
+が，$M$の向き$
+\langle	M	\rangle
+$
+に適合する$m$ベクトル枠か，
+$
+	\langle	M	\rangle
+$
+と反対の向きに適合する$m$ベクトル枠かに従って，交点$q_i$における交わりの符号
+（signofintersection）を$\varepsilon	(q_i)	=	\pm	1$または$\varepsilon	(q_i)	=	-1$と定義する．
+\□
+
+\定義{4.30}（交点数）$S_1	\cap	S_2	=	\{	q1,q_2,	\cdots	,	q_r	\}$であるとする．
+\[
+	\langle	S_1	\rangle	\cdots	\langle	S_2	\rangle	=	\sum_{i=1}^{r}	\varepsilon	(q_i)
+\]
+とおいて，この数を$\langle	S_1\rangle$と$\langle	S_2\rangle	$の\textbf{交点数}
+（intersection number）と呼ぶ．
+\□
+
+\補題{4.31}
+$S_1$と$S_2$の順序を入れ換えるとき，次の公式が成り立つ：
+\begin{equation}
+		\langle	S_1	\rangle \cdots	\langle	S_2	\rangle	=	(-1)^{pq}	
+		\langle	S_2	\rangle	\cdot	\langle	S_1	\rangle.
+\label{eq4x18}
+\end{equation}
+
+\証明
+$m$ベクトル枠のなかの2つのベクトルを入れ換えるごとに，
+その$m$ベクトル枠の決める向きが反対になる．ベクトルの入れ換えを$pq$回行えば
+$	\langle	V_1	,	\cdots	,	V_q,	W_1,	\cdots	,	W_q	\rangle$から
+$	\langle	W_1,	\cdots	,	W_q,	V_1,	\cdots	,	V_q	\rangle$へ移れる．
+これから公式（\ref{eq4x18}）を得る．
+\■

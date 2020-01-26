@@ -1,0 +1,495 @@
+\section{Hesse 行列}
+
+次に，2変数の実数値関数
+\begin{equation}
+	z=f(x,y)
+\label{eq1x4}
+\end{equation}
+を考える．$x$も$y$も実数である．実数の1組$(x,y)$
+は$xy$平面上の1点を表すと考えられる．そうすると，
+関数(\ref{eq1x4})は，平面の各点に1つずつ実数を対応させる関数
+(平面上の関数)になっている．そのグラフは，
+$x,y,z$の3つの直交軸をもった3次元空間の中に描くことができる．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=6cm,height=5cm]{fig1x3.bmp}
+	\caption{2変数関数のグラフの例}
+  \label{fig1x3}
+\end{figure}
+図\ref{fig1x3}がそのような2変数関数のグラフの例である．
+
+\定義{1.2}(2変数関数の臨界点)
+$xy$平面上の1点$p_0=(x_0, y_0)$が関数$z = f(x,y)$の\textbf{臨界点}であるとは，
+\begin{equation}
+	\frac{\partial f}{\partial x}(p_0) = 0 , \quad
+	\frac{\partial f}{\partial y}(p_0) = 0
+\label{eq1x5}
+\end{equation}
+が成り立つことである．
+
+ここでは，関数$f(x,y)$は$C^\infty$級(何回でも微分可能)であると仮定されている．
+以下，この本で考える関数はすべて$C^\infty$級である．
+
+\例{1.3}
+原点$\boldsymbol{0}=(0,0)$は，3つの関数
+\begin{equation}
+	z=x^2 + y^2,\quad
+	z=x^2 - y^2,\quad
+ 	z=-x^2 + y^2
+\label{eq1x6}
+\end{equation}
+のどれについても，その臨界点である(図\ref{fig1x4}参照)．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=12cm,height=5cm]{fig1x4.bmp}
+	\caption{左から順に，$z=x^2 + y^2 , z=x^2-y^2 , z=-x^2 -y^2$のグラフ}
+	\label{fig1x4}
+\end{figure}
+\□
+
+2変数の場合に，非退化な臨界点と退化した臨界点をどのように定義したらよいだろうか．
+
+ちょっと考えると
+\begin{equation}
+	\frac{\partial f}{\partial x^2} (p_0) \ne 0, \quad
+	\frac{\partial f}{\partial y^2} (p_0) \ne 0
+\label{eq1x7}
+\end{equation}
+を満たす臨界点$p_0$を非退化な臨界点と定義すればよさそうであるが，
+これはまずい定義である．なぜなら，同じ関数$f$と同じ臨界点$p_0$についても，
+座標系を変換するだけで，上の式(\ref{eq1x7})は一般には成り立たなくなってしまう
+からである．「非退化な臨界点」や「退化した臨界点」の概念は，座標系の取り方に
+無関係な概念であってほしい．次の定義がこの要求を満たしている．
+
+\定義{1.4}
+\begin{list}{}{}
+	\item	(ⅰ) 点$p_0=(x_0,y_0)$が関数$z = f(x,y)$の臨界点であるとき，
+\begin{equation}
+	\begin{pmatrix}
+		\\ 
+		\displaystyle
+			\frac{\partial^2 f}{\partial x^2}(p_0) & 
+		\displaystyle
+			\frac{\partial^2 f}{\partial x \partial y} (p_0) \\
+		\\
+		\displaystyle
+			\frac{\partial^2 f}{\partial y \partial x}(p_0) & 
+		\displaystyle
+			\frac{\partial^2 f}{\partial x^2} (p_0)
+		\\
+		\\
+	\end{pmatrix}
+\label{eq1x8}
+\end{equation}
+のように2次の偏微分係数を並べた行列を，臨界点$p_0$における関数$z=f(x,y)$の
+\textbf{Hesse行列}(Hessian)と呼ぶ．記号で
+\[
+  H_f (p_0)
+\]と表す
+	\item (ⅱ) 臨界点$p_0$が関数$z=f(x,y)$の\textbf{非退化な臨界点である}とは，$p_0$における
+$f$のHesse行列の行列式が$0$でないことである．すなわち
+\begin{equation}
+	\det H_f(p_0) = \frac{\partial^2 f}{\partial x^2} (p_0) \frac{\partial^2 f}{\partial y^2}(p_0)
+                 - \left(	\frac{\partial^2 f}{\partial x \partial y} (p_0) \right)^2 \ne 0
+\label{eq1x9}
+\end{equation}
+が成り立つことである．
+\end{list}
+反対に，$\det H_f (p_0) =0$のとき，$p_0$は\textbf{退化した臨界点}であるという．
+\□
+
+なお，$\displaystyle \frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{ \partial y\partial x}$
+であるから，$H_f(p_0)$は対称行列である．
+
+\例{1.5}
+例1.3の3つの関数について，その原点$\boldsymbol{0}$のおけるHesse行列を計算すると，
+\begin{list}{}{}
+	\item	(ⅰ) $z= x^2 + y^2$については，
+\[
+	\begin{pmatrix}
+		2 & 0 \\
+		0 & 2
+	\end{pmatrix}
+\]
+	\item (ⅱ) $z= x^2 - y^2$については，
+\[
+	\begin{pmatrix}
+		2 & 0 \\
+		0 & -2
+	\end{pmatrix}
+\]
+	\item (ⅲ) $z= -x^2 - y^2$については，
+\[
+	\begin{pmatrix}
+		-2 & 0 \\
+		0 & -2
+	\end{pmatrix}
+\]
+\end{list}
+となる．これらの行列の行列式は$0$でないから，これら3つの関数のどれについても，
+原点$\boldsymbol{0}$はその関数の非退化な臨界点である．
+\□
+
+\例{1.6}
+関数$z = xy$を考える．原点$\boldsymbol{0}$が臨界点になっている．
+そこでのHesse行列は
+\[
+	\begin{pmatrix}
+		0 & 1 \\
+    1 & 0
+	\end{pmatrix}
+\]
+であり，この行列式は$0$でないから，原点$\boldsymbol{0}$は非退化な臨界点である．
+実は，関数$z = xy$は前の例1.3の2番目の関数$z=x^2 - y^2$を座標変換したものである．
+\□
+
+\例{1.7}
+関数$z = x^2 + y^3$についても原点$\boldsymbol{0}$が臨界点であるが，
+$\boldsymbol{0}$におけるHesse行列は
+\[
+  	\begin{pmatrix}
+		  2  &  0 \\
+		  0  &  0 \\
+		\end{pmatrix}
+\]
+となり，その行列式が$0$となるので，$\boldsymbol{0}$は$z=x^2 +y^3$の退化した臨界点である．
+\□
+
+座標変換によってHesse行列はどのように変わるであろうか．
+
+\補題{1.8}
+点$p_0$が関数$z=f(x,y)$の臨界点であるとする．座標系$(x,y)$を使って計算した
+Hesse行列を$H_f(p_0)$とし，別の座標系$(X,Y)$を使って計算したHesse行列を
+${\cal H} _f(p_0)$とすると，次の関係式が成り立つ．
+\begin{equation}
+	{\cal H}_f(p_0) = \tr{J}(p_0) H_f(p_0) J(p_0)
+\label{eq1x10}
+\end{equation}
+ここに$J(p_0)$は座標変換に伴うJacobi行列(Jacobian matrix)で，
+次の式で定義される．
+\begin{equation}
+	J(p_0) = \begin{pmatrix}
+		         \displaystyle \frac{\partial x}{\partial X}(p_0) &
+		         \displaystyle \frac{\partial x}{\partial Y}(p_0) \\
+	\\
+		         \displaystyle \frac{\partial y}{\partial X}(p_0) &
+		         \displaystyle \frac{\partial y}{\partial Y}(p_0)
+	\\
+					 \end{pmatrix}
+\label{eq1x11}
+\end{equation}
+また，$\tr{J}(p_0)$は$J(p_0)$の転置行列である．
+
+\証明
+証明は単なる計算である．良く知られた偏微分の変数変換の公式
+\begin{align*}
+   \frac{\partial f}{\partial X} &= \frac{\partial	f}{\partial	x}\frac{\partial x}{\partial X}	 
+                                  +	\frac{\partial	f}{\partial	y}\frac{\partial y}{\partial X}, \\
+   \frac{\partial f}{\partial Y} &= \frac{\partial	f}{\partial	x}\frac{\partial x}{\partial Y}
+                                  +	\frac{\partial	f}{\partial	y}\frac{\partial y}{\partial Y}
+\end{align*}
+を2回使って，
+$\displaystyle \frac{\partial^2 f}{\partial X^2},
+               \frac{\partial^2 f}{\partial X \partial Y},
+               \displaystyle \frac{\partial^2 f}{\partial Y^2}$
+を
+$\displaystyle \frac{\partial^2 f}{\partial x^2},
+               \frac{\partial^2 f}{\partial x \partial y},
+               \displaystyle \frac{\partial^2 f}{\partial y^2}$
+で表せばよい．最後に$p_0$での値を求めるとき，$p_0$が$f$の臨界点であるから，
+$\displaystyle \frac{\partial f}{\partial x }(p_0) = 0.
+               \frac{\partial f}{\partial y }(p_0) = 0$
+であることに注意する．
+\begin{align*}
+	\frac{\partial^2 f}{\partial X^2}
+ &=\frac{\partial}{\partial X} \left( \frac{\partial f}{\partial x}\frac{\partial x}{\partial X}
+                                    +\frac{\partial f}{\partial y}\frac{\partial y}{\partial X}
+                               \right) \\
+ &=
+  \frac{\partial}{\partial X}\frac{\partial f}{\partial x}\frac{\partial x}{\partial X}
+ +\frac{\partial f}{\partial x}\frac{\partial}{\partial X}\frac{\partial x}{\partial X}
+ +\frac{\partial}{\partial X}\frac{\partial f}{\partial y}\frac{\partial y}{\partial X}
+ +\frac{\partial f}{\partial y}\frac{\partial}{\partial X}\frac{\partial y}{\partial X} \\
+ &=
+  \left( \frac{\partial^2 f}{\partial x^2}\frac{\partial x}{\partial X}
+        +\frac{\partial^2 f}{\partial x\partial y}\frac{\partial y}{\partial X}
+  \right) \frac{\partial x}{\partial X}
+  + \frac{\partial f}{\partial x	} \frac{\partial^2 x}{\partial X^2}
+  +
+  \left(   \frac{\partial^2 f}{\partial x \partial y}\frac{\partial x}{\partial X}
+         + \frac{\partial^2 f}{\partial y^2}\frac{\partial y}{\partial X}
+  \right)\frac{\partial y}{\partial X}
+  + \frac{\partial f}{\partial y	} \frac{\partial^2 y}{\partial X^2} \\
+ \frac{\partial^2 f}{\partial X \partial Y}
+ &=
+ \frac{\partial}{\partial X}
+ \left( \frac{\partial f}{\partial x}\frac{\partial x}{\partial Y} +
+        \frac{\partial f}{\partial y}\frac{\partial y}{\partial Y}
+ \right) \\
+ &=
+   \frac{\partial}{\partial X}\frac{\partial f}{\partial x}\frac{\partial x}{\partial Y}
+ + \frac{\partial f}{\partial x}\frac{\partial}{\partial X}\frac{\partial x}{\partial Y}
+ + \frac{\partial}{\partial X}\frac{\partial f}{\partial y}\frac{\partial y}{\partial Y}
+ + \frac{\partial f}{\partial y}\frac{\partial}{\partial X}\frac{\partial y}{\partial Y} \\
+ &=\left(  \frac{\partial^2 f}{\partial x^2} \frac{\partial x}{\partial X}
+         + \frac{\partial^2 f}{\partial x \partial y} \frac{\partial y}{\partial X}
+   \right)\frac{\partial x}{\partial Y}
+ + \frac{\partial f}{\partial x}\frac{\partial^2 x}{\partial X \partial Y}
+ +
+ \left(
+   \frac{\partial^2 f}{\partial y \partial x} \frac{\partial x}{\partial X}
+ + \frac{\partial^2 f}{\partial y^2} \frac{\partial y}{\partial X}
+ \right)\frac{\partial y}{\partial Y}
+ + \frac{\partial f}{\partial y}\frac{\partial^2 y}{\partial X \partial Y} \\
+ \frac{\partial^2 f}{\partial Y^2}
+ &=
+ \frac{\partial }{\partial Y}
+ \left(  \frac{\partial f}{\partial x}\frac{\partial x}{\partial Y}
+       + \frac{\partial f}{\partial y}\frac{\partial y}{\partial Y}
+ \right)\\
+ &= \frac{\partial }{\partial Y}\frac{\partial f}{\partial x}\frac{\partial x}{\partial Y}
+   +\frac{\partial f}{\partial x}\frac{\partial }{\partial Y}\frac{\partial x}{\partial Y}
+   +\frac{\partial }{\partial Y}\frac{\partial f}{\partial y}\frac{\partial y}{\partial Y}
+   +\frac{\partial f}{\partial y}\frac{\partial }{\partial Y}\frac{\partial y}{\partial Y} \\
+ &= \left( \frac{\partial^2 f}{\partial x^2}
+           \frac{\partial x}{\partial Y}
+           +
+           \frac{\partial^2 f}{\partial x \partial y}
+           \frac{\partial y}{\partial Y}
+    \right)\frac{\partial x}{\partial Y}
+    +\frac{\partial f}{\partial x}\frac{\partial^2 x}{\partial Y^2}
+    +
+    \left( \frac{\partial^2 f}{\partial x \partial y}
+           \frac{\partial x}{\partial Y}
+           +
+           \frac{\partial^2 f}{\partial y^2}
+           \frac{\partial y}{\partial Y}
+    \right)\frac{\partial y}{\partial Y}
+    +
+    \frac{\partial f}{\partial y}\frac{\partial^2 y}{\partial Y^2}
+\end{align*}
+一方，
+\begin{align*}
+	\tr{J(p_0)} H_f J(p_0)
+  &=
+  \begin{pmatrix}
+		\displaystyle \frac{\partial x}{\partial X}(p_0) &
+    \displaystyle \frac{\partial y}{\partial X}(p_0) \\
+    \\
+		\displaystyle \frac{\partial x}{\partial Y}(p_0) &
+    \displaystyle \frac{\partial y}{\partial Y}(p_0) \\
+	\end{pmatrix}
+  \begin{pmatrix}
+		\displaystyle \frac{\partial^2 f}{\partial x^2} &
+    \displaystyle \frac{\partial^2 f}{\partial x\partial y} \\
+    \\
+		\displaystyle \frac{\partial^2 f}{\partial y \partial x } &
+    \displaystyle \frac{\partial^2 f}{\partial^2 y} \\
+	\end{pmatrix}
+  \begin{pmatrix}
+		\displaystyle \frac{\partial x}{\partial X}(p_0) &
+		\displaystyle \frac{\partial x}{\partial Y}(p_0) \\
+    \\
+    \displaystyle \frac{\partial y}{\partial X}(p_0) &
+    \displaystyle \frac{\partial y}{\partial Y}(p_0) \\
+	\end{pmatrix} \\
+  &=
+  \begin{pmatrix}
+    \displaystyle \frac{\partial^2 f}{\partial x^2}
+                  \frac{\partial x}{\partial X}
+               +  
+                  \frac{\partial^2 f}{\partial y \partial x }
+                  \frac{\partial y}{\partial X}
+               &
+     \displaystyle\frac{\partial^2 f}{\partial x\partial y}
+                  \frac{\partial x}{\partial X}
+               +  \frac{\partial^2 f}{\partial y^2}
+                  \frac{\partial y}{\partial X}
+              \\
+              \\
+    \displaystyle \frac{\partial^2 f}{\partial x^2}
+                  \frac{\partial x}{\partial Y}
+               +  
+                  \frac{\partial^2 f}{\partial y \partial x }
+                  \frac{\partial y}{\partial Y}
+               &
+    \displaystyle	\frac{\partial^2 f}{\partial x\partial y}
+                  \frac{\partial x}{\partial Y}
+               +  \frac{\partial^2 f}{\partial y^2}
+                  \frac{\partial y}{\partial Y}
+	\end{pmatrix}
+  \begin{pmatrix}
+		\displaystyle \frac{\partial x}{\partial X}(p_0) &
+		\displaystyle \frac{\partial x}{\partial Y}(p_0) \\
+    \\
+    \displaystyle \frac{\partial y}{\partial X}(p_0) &
+    \displaystyle \frac{\partial y}{\partial Y}(p_0) \\
+	\end{pmatrix}
+\end{align*}
+\begin{align*}
+  =&
+      \left(\frac{\partial^2 f}{\partial x^2}
+                  \frac{\partial x}{\partial X}
+               +  
+                  \frac{\partial^2 f}{\partial y \partial x }
+                  \frac{\partial y}{\partial X}
+      \right)\frac{\partial x}{\partial X}
+       +
+      \left(\frac{\partial^2 f}{\partial x\partial y}
+                  \frac{\partial x}{\partial X}
+               +  \frac{\partial^2 f}{\partial y^2}
+                  \frac{\partial y}{\partial X}
+      \right)\frac{\partial y}{\partial X} \quad \text{(1.1)成分} \\
+   &  \left(\frac{\partial^2 f}{\partial x^2}
+                  \frac{\partial x}{\partial X}
+               +  
+                  \frac{\partial^2 f}{\partial y \partial x }
+                  \frac{\partial y}{\partial X}
+      \right)\frac{\partial x}{\partial Y}
+       +
+      \left(\frac{\partial^2 f}{\partial x\partial y}
+                  \frac{\partial x}{\partial X}
+               +  \frac{\partial^2 f}{\partial y^2}
+                  \frac{\partial y}{\partial X}
+      \right)\frac{\partial y}{\partial Y} \quad \text{(1.2)成分} \\
+   &  \left(\frac{\partial^2 f}{\partial x^2}
+                  \frac{\partial x}{\partial Y}
+               +  
+                  \frac{\partial^2 f}{\partial y \partial x }
+                  \frac{\partial y}{\partial Y}
+      \right)\frac{\partial x}{\partial X}
+       +
+      \left(\frac{\partial^2 f}{\partial x\partial y}
+                  \frac{\partial x}{\partial Y}
+               +  \frac{\partial^2 f}{\partial y^2}
+                  \frac{\partial y}{\partial Y}
+      \right)\frac{\partial y}{\partial X} \quad \text{(2.1)成分} \\
+   &  \left(\frac{\partial^2 f}{\partial x^2}
+                  \frac{\partial x}{\partial Y}
+               +  
+                  \frac{\partial^2 f}{\partial y \partial x }
+                  \frac{\partial y}{\partial Y}
+      \right)\frac{\partial x}{\partial Y}
+       +
+      \left(\frac{\partial^2 f}{\partial x\partial y}
+                  \frac{\partial x}{\partial Y}
+               +  \frac{\partial^2 f}{\partial y^2}
+                  \frac{\partial y}{\partial Y}
+      \right)\frac{\partial y}{\partial Y} \quad \text{(2.2)成分}
+\end{align*}
+で，各成分が一致する．
+\■
+
+\例{1.9}
+関数$z = xy$（例1.6)を
+\begin{equation}
+	\begin{cases}
+		\: x = X - Y \\
+		\: y = X + Y
+	\end{cases}
+\label{eq1x12}
+\end{equation}
+という座標変換によって書き換えると，
+\[
+	xy=(X-Y)(X+Y) = X^2 - Y^2
+\]
+となって，例1.3の2番目の関数になる．原点$\boldsymbol{0}$（臨界点）において，
+$xy$と$X^2 - Y^2$のHesse行列を座標系$(x,y)$と$(X,Y)$について計算すれば，それぞれ
+\[
+	\begin{pmatrix}
+		0 & 1 \\
+		1 & 0
+	\end{pmatrix}
+  \quad
+	\begin{pmatrix}
+		2 & 0 \\
+		0 & -2
+	\end{pmatrix}.
+\]
+また，座標変換(\ref{eq1x12})のJacobi行列は
+\[
+	\begin{pmatrix}
+		1 & -1 \\
+		1 & 1
+	\end{pmatrix}
+\]
+であるから，補題1.8が主張する関係
+\[
+	\begin{pmatrix}
+		1  & 1 \\
+		-1 & 1
+	\end{pmatrix}
+	\begin{pmatrix}
+		 0 & 1 \\
+			1 & 0
+	\end{pmatrix}
+	\begin{pmatrix}
+		1 & -1 \\
+		1 &  1
+	\end{pmatrix}
+  =
+	\begin{pmatrix}
+		1 & 1 \\
+		1 & -1
+	\end{pmatrix}
+	\begin{pmatrix}
+		1 & -1 \\
+		1 & 1
+	\end{pmatrix}
+  =
+	\begin{pmatrix}
+		2 & 0 \\
+		0 & -2
+	\end{pmatrix}
+\]
+が確かに成り立っている．
+\□
+
+\系{1.10}
+点$p_0$が関数$f$の非退化な臨界点であるということは，$p_0$の周りの座標系の選びかたに拠らない．
+退化した臨界点についても同じことがいえる．
+\□
+
+実際，補題1.8によれば${\cal H}_f(p_0) = \tr{J}(p_0) H_f(p_0) J(p_0)$であるから，
+両辺の行列式をとって,
+\begin{equation}
+	\det {\cal H}_f(p_0) = \det  {}\tr{J}(p_0) \det H_f(p_0)\det J(p_0).
+\label{eq1x13}
+\end{equation}
+座標変換のJacobi行列については，つねに
+\begin{equation}
+	\det J(p_0) \ne 0
+\label{eq1x14}
+\end{equation}
+であるから，
+\footnote{
+参考文献 [11] ,p.41-43, p107 参照,
+}
+$\det {\cal H}_f(p_0) \ne 0$と$\det H_f(p_0) \ne 0$とは同値である．
+これで系1.10が示された．
+\■
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

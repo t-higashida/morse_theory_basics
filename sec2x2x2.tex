@@ -1,0 +1,179 @@
+\subsection{$m$次元のMorse補題}
+
+居面の場合に証明したMorseの補題（定理1.11）は次のように拡張される．
+
+\定理{2.16}（$m$次元のMorseの補題）
+点$p_0$が$f	:	M	\to	\R$の非退化な臨界点であるとき，$p_0$のまわりの局所座標系
+$(X_1,	X_2,	\cdots	,	X_m)$をうまく選んで，その局所座標系によって表わした
+関数$f$の形が次の標準形になるようにすることができる．
+\begin{equation}
+	f=	-X_1^2	-	\cdots	-	X_{\lambda}^2	+	X_{\lambda	+1}^2	+	\cdots	+	X_m^2	+	c.
+	\label{eq2x23}
+\end{equation}
+ここに，$c$の定数$(=f(p_0)$である．また，$p_0$は$(X_1,	X_2,	\cdots	,	X_m)$の原点
+$(0,0,	\cdots	,	0)$になっている．
+
+この標準形に表れたマイナスの符号の個数$\lambda$は，Hesse行列$H_f	(p_0)$を対角化した
+ときのマイナスの対角成分の個数に等しい．Sylvestler の法則（[14]参照）により，
+$\lambda$はHesse行列の対角化の仕方によらずに決まる。したがって，$\lambda$は関数$f$と臨界点
+$p_0$で決まってしまう．
+
+\定義{2.17}
+$\lambda$を非退化な臨界点$p_0$の\textbf{指数}と呼ぶ．
+$m$次元の場合，$\lambda$は$0$から$m$までの値をとりうる．
+\■
+
+$m$次元のMorseの補題（定理2.16）を証明しよう．
+
+\証明
+臨界点$p_0$のまわりの任意の局所座標系$(x_1,	x_2,	\cdots	,	x_m)$を選ぶ．
+ただし，$p_0$はこの局所座標系の原点$(0,0,	\cdots	,	0)$であるとしておく．
+さらに，必要なら，$f$のかわりに$f-f(p_0)$を考える事にし，$f(p_0)=0$であると
+仮定してよい．
+
+2次元のMorseの補題（定理1.11）の証明中で使った「微分積分の基本事項」の$m$次元版によって、
+$f(0,0,	\cdots	,	0)	=	0$の仮定のもとで，$m$個の（原点の近傍で定義された）$C^\infty$級関数
+\begin{equation}
+	g_1(x_1,	\cdots	x_m),	g_2	(x_1,	\cdots	,	x_m),	\cdots	,	g_m	(x_1,	\cdots	,	x_m)
+\label{eq2x24}
+\end{equation}
+があって原点の近傍で
+\begin{equation}
+	f(x_1,	\cdots	,	x_m)	=	\sum_{i=1}^{m}	x_i	g_i	(x_1,	\cdots	,	x_m)
+\label{eq2x25}
+\end{equation}
+が成り立ち，かつ
+\begin{equation}
+	\frac{\partial f}{\partial x_i}	(0,	\cdots	,	0)
+=	g_i	(	0,	\cdots,	0)
+\label{eq2x26}
+\end{equation}
+であることがわかる．点$p_0	=	(0,		\cdots	,	0)$は$f$の臨界点なので，
+式（\ref{eq2x26}）の両辺は実は$0$である．
+したがって、$g_i(x_1,	\cdots	,	x_m)$にまた「微分積分の基本事項」が使えて，
+$m$個の（原点の近傍で定義された）$C^\infty$級関数
+\begin{equation}
+	h_{i1}	(	x_1,	\cdots	,	x_m)	,	h_{i2}	(x_1,	\cdots	,	x_m),	\cdots,	h_{im}	(x_1,	\cdots	,	x_m)
+\label{eq2x27}
+\end{equation}
+が存在し，原点の近傍で
+\begin{equation}
+	g_i(x_1	,	\cdots	,	x_m)	=	\sum_{j=1}^{m}	x_j	h_{ij}	(x_1,	\cdots	,	x_m)
+\label{eq2x28}
+\end{equation}
+が成り立つ．これを，式（\ref{eq2x25}）に代入して，
+\begin{equation}
+	f(x_1	,	\cdots	,	x_m)	=	\sum_{i,j=1}^{m}	x_i	x_j	h_{ij}	(x_1,	\cdots	x_m)
+\label{eq2x29}
+\end{equation}
+を得る．ここで，$H_{ij}	=	(h_{ij}	+	h_{ij}	)	/	2$とおくと，
+\begin{equation}
+	f(x_1	,	\cdots	,	x_m)	=	\sum_{i,j=1}^{m}	x_i	x_j	H_{ij}	(x_1	,	\cdots	,	x_m)
+\label{eq2x30}
+\end{equation}
+であり，かつ
+\begin{equation}
+	H_{ij}	(x_1,	\cdots	,	x_m)	=	H_{ji}	(x_1,	\cdots	,	x_m).
+\label{eq2x31}
+\end{equation}
+条件（\ref{eq2x31}）のもとで，式（\ref{eq2x30}）のような
+$f(x_1,	\cdots	,	x_m)$の表示を，$f$の「2次形式表示」とよぶことにしよう．
+証明すべき$f$の標準形（\ref{eq2x23}）を特別な形の2次形式表示である．
+
+以下の証明のアイデアは，$f$の2次形式表示に含まれる項の数に
+関する数学的帰納法により，$f$の表示（\ref{eq2x30}）を
+Morseの標準形の形の2次形式表示に直していくことである．
+
+さて，式（\ref{eq2x30}）の両辺の2次の微分係数を原点の計算すると
+\begin{equation}
+	\frac{\partial^2	f}{\partial x_i	\partial	x_j	}(0,0,	\cdots,	0)	=	2H_{ij}	(0,	\cdots	,	0).
+\label{eq2x32}
+\end{equation}
+
+2次元の Morse の 補題（定理1.11）の証明のときにやったように，
+臨界点$p_0$が非退化であるという仮定（$\det H_{ij}	(	0,	\cdots	,	0)	\ne	0$
+を使うと，あらかじめ局所座標系$(x_1,	x_2,	\cdots	,	x_m)$
+に適当な線形変換をほどこしておいて，
+\begin{equation}
+	\frac{\partial ^2 f}{\partial x_1^2}	(0,0,	\cdots	,	0)	\ne	0
+\label{eq2x33}
+\end{equation}
+と仮定できる．すると，式（\ref{eq2x32}）より，
+$H_{11}	(0,	\cdots	,	0)	\ne	0$である．$H_{11}$は連続であるから，
+\begin{equation}
+		\text{$H_{11}$は原点の近傍で$0$でない}
+\label{eq2x34}
+\end{equation}
+ということがわかる．そこで，$x_1$にかわる新しい局所座標$X_1$を
+\begin{equation}
+	X_1	=	\sqrt{|H_{11}|}	
+		\left(	x_1	+	\sum_{i=2}^m	x_i	\frac{H_{1i}}{H_{11}}
+		\right)
+\label{eq2x35 }
+\end{equation}
+という式で導入する．$x_1$以外の$x_2	,	\cdots	,	x_m$はそのままにしておく．原点において，
+$(X_1,	x_2	,	\cdots	,	x_m)$と$(x_1,	x_2,	\cdots	,	x_m)$の
+間の Jacobi 行列の行列式が$0$でないことが容易に計算できるので，
+$(X_1,	x_2	,	\cdots	,	x_m)$は確かに局所座標系になっている．
+$X_1$の2乗を計算すると
+\begin{align*}
+	X_1^2	&=	|H_{11}|	\left(
+											x_1	+	\sum_{i=2}^m	x_i	\frac{H_{1i}}{H_{11}}
+										\right)^2	\notag	\\
+				&=\begin{cases}
+							H_{11}	x_1^2	+	2	\sum_{i=2}^m	x_1	x_i	H_{1i}	+	
+							\left(
+								\sum_{i=2}^m	x_i	H_{1i}
+							\right)^2	\bigg/	H_{11}	\quad	(H_{11}	>	0)	\\
+						-H_{11}	x_1^2		-2	\sum_{i=2}^m	x_1	x_i	H_{1i}	-
+							\left(
+								\sum_{i=2}^m	x_i	H_{1i}
+							\right)^2	\bigg/	H_{11}	\quad	(H_{11}	<	0)	\\
+					\end{cases}
+	\label{eq2x36}
+\end{align*}
+この式（\ref{eq2x36}）と$f$の2次形式表示（\ref{eq2x30}）を較べると
+\begin{equation}
+	f	=	\begin{cases}
+					X_1^2	+	\sum_{i,j=2}^m	x_i	x_j	H_{ij}	
+					-
+					\left(	\sum_{i=2}^m	x_i	H_{1i}
+					\right)^2	\bigg/	H_{11}	\quad	(H_{11}	>	0)	\\
+					-X_1^2	+	\sum_{i,j=2}^m	x_i	x_j	H_{ij}	
+					-
+					\left(	\sum_{i=2}^m	x_i	H_{1i}
+					\right)^2	\bigg/	H_{11}	\quad	(H_{11}	<	0)	\\
+			\end{cases}
+\label{eq2x37}
+\end{equation}
+上の式（\ref{eq2x37}）の第2項以下は$x_2,	\cdots	,	x_m$に関する
+和になっている．したがって，この部分はもとの2次形式表示（\ref{eq2x30}）
+より項の数が少ない2次形式表示として整理できるので，これで
+項の数に関する数学的帰納法が進行して，
+$f$がMorseの標準形の形の用事に直せることが証明できる．
+\■
+
+Morseの補題が証明できたので，次の2つの事実が曲面のときと同様にしてわかる．
+
+\系{2.18}
+非退化な臨界点は孤立した臨界点である．
+\■
+
+\系{2.19}
+コンパクトな多様体上の Morse関数$f:	M	\to	\R$には有限個の臨界点しかない．
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

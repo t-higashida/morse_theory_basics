@@ -1,0 +1,548 @@
+\subsection{Morse関数の存在}
+
+いままで，曲面の場合の類似を追ってきたが，ここで，ひとつ新しいことを
+示そう．Morse関数の存在定理がそれである．
+
+\定理{2.20}（Morse関数の存在）
+$M$を閉じた$m$次元多様体とし，$g: M \to \R$を$M$上の任意の$C^\infty$級の関数とすると，
+$g	:	M	\to	\R$にいくらでも近いMorse 関数$	f	:	M	\to	\R$が存在する．
+
+\■
+
+$M$上の$C^\infty$級関数はいくらでも存在するから，この定理によって，
+Morse関数のほうもいくらでも存在することにがわかる．（例えば，$M$のすべての
+点に，ある定数$c_0$を対応させる定数関数も，$M$上の$C^\infty$級関数には違い
+ないから，そのそばに，Morse関数$f : M \to \R$が存在する!
+もちろん，Morse関数$f$のほうは定数関数ではない．）
+
+存在定理のなかの「$g$にいくらでも近い」という部分は，より正確には
+「$C^\infty$の意味で$g$にいくらでも近い」ということなのだが，
+この意味は，証明の中ではっきりすると思う．
+
+存在定理の証明のため，2つの補題を準備する．
+
+\補題{2.21}
+$\R^m	=	\{	(	x_1,	x_2	,	\cdots	,	x_m)	\}$を$m$次元のEuclid空間とし，
+$U$を$\R^m$のなかの勝手な開集合，そして，$f	:	U	\to	\R$を$U$上の任意の
+$C^\infty$級関数とする．そのとき，$m$個の実数$a_1,	a_2,	\cdots	,	a_m$を
+上手く選んで，
+\begin{equation}
+	f(x_1,	x_2,	\cdots	,	x_m)	-	(a_1	x_1	;	a_2	x_2	+	\cdots	+	a_m	x_m)
+\label{eq2x38}
+\end{equation}
+が$U$上のMorse関数になるようにすることができる．しかも，このような実数
+$a_1,	a_2,	\cdots	,	a_m$として，絶対値がいくらでも小さいものが選べる．
+\■
+
+この補題の直感的な「証明」は次のようなものである．
+
+関数（\ref{eq2x38}）の臨界点がすべて非退化であることを示せばよい．
+関数（\ref{eq2x38}）の臨界点$p_0	=	(x_1^0,	x_2^0	,	\cdots	,	x_m^0)$は
+どこに生じるかというと，点$p_0$上の，関数
+\[
+	y=	f(x_1,	x_2,	\cdots	,	x_m)
+\]
+のグラフの「接平面」の傾きが，ちょうど1次関数
+\[
+	y=a_1	x_1	+	a_2	x_2	+	\cdots	+	a_m	x_m
+\]
+の傾きと一致したとき，$p_0$はこの2つの差の関数（\ref{eq2x38}）の臨界点
+になる．
+
+また，いつ退化した臨界点になるかというと，点$p_0$上での，
+関数$y=f(x_1,	x_2	,	\cdots	,x_m)$のグラフの接平面がグラフにピッタリ
+（3次以上の接触で）接するときである．ところでグラフにピッタリ接するような
+接平面はそんなにたくさんはないだろうから，たいていの$a_1,	a_2	,	\cdots	,	a_m$を
+選んでおけば，そういう接平面の傾きと一致しない．そのとき，差の関数の臨界点は
+非退化なものばかりになる．これが直感的な「証明」である．
+
+厳密に証明するには，Sardの定理が必要である．
+
+少し予備的な説明をしよう．いま，$U$を$\R^n$の開集合とし，
+\begin{equation}
+	h	:	U	\to	\R^m
+\label{eq2x39}
+\end{equation}
+を$C^\infty$級写像としよう．
+
+$U$の点$	(x_1,	x_2	,	\cdots	,	x_m)$を$h$でうつすと，
+$\R^m$の点$(y_1,	y_2,	\cdots	,	y_m)$にうつる．
+
+うつった点の座標成分$y_i$は$(x_1,	x_2,	\cdots	,	x_m)$の関数として
+\[
+	y_i	=	h_1(x_1,	x_2	,	\cdots	,	x_m	),	\quad	i=1,	2,	\cdots	,	m
+\]
+のように書ける．これが，写像$h	:	U	\to	\R^m$の成分表示であった．
+
+$h	:	U	\to	\R^n$の成分表示を縦ベクトルのように
+\begin{equation}
+	h	=	\begin{pmatrix}
+				h_1	\\	h_2	\\	\cdots	\\	h_m
+			\end{pmatrix}
+\label{eq2x40}
+\end{equation}
+と書くと便利である．
+
+このとき，次のような$m	\times	m$行列
+\begin{equation}
+	\begin{pmatrix}	
+		\displaystyle	\frac{\partial h_1}{\partial x_1}	(p_0)		&
+																														&
+				\cdots																							&
+																														&
+		\displaystyle	\frac{\partial h_1}{\partial x_m}	(p_0)		\\
+																														&
+									\ddots																		&
+																														&
+																														&
+																														\\
+									\vdots																		&
+																														&
+		\displaystyle	\frac{\partial h_i}{\partial x_j}	(p_0)		&
+																														&
+									\vdots																		\\
+																														&
+																														&
+																														&
+									\ddots																		\\
+		\displaystyle	\frac{\partial h_m}{\partial x_1}	(p_0)		&
+																														&
+									\cdots																		&
+																														&
+		\displaystyle	\frac{\partial h_m}{\partial x_m}	(p_0)		
+	\end{pmatrix}
+\label{eq2x41}
+\end{equation}
+を，点$p_0	(	\in	U)$における$h$の\textbf{Jacobi行列}という．
+言うまでもなく，座標変換に伴うJacobi行列の拡張である．
+
+\定義{2.22}（写像の臨界点と臨界値）
+$\det	J_h	(	p_0)	=	0$であるような$U$の点$p_0$を，写像$h	:	U	\to	\R^m$の
+\textbf{臨界点}と呼ぶ．また，何らかの臨界点$p_0$の像$h(p_0)$となっているような
+$\R^m$の点を$h	:	U	\to	\R^m$の\textbf{臨界値}という．
+\■
+ただし，この定義は，$U$と$\R^m$のように同じ次元の空間の間の写像のときだけ
+有効である，ということに注意しておく．次元の差の有る場合には，臨界点の定義も
+違ったものなる．
+
+
+Sardの定理は次のように述べられる．
+
+\定理{2.23}（Sardの定理）$C^\infty$級写像
+$h	:	U	\to	\R^m$の臨界値の集合は$\R^m$のなかの
+測度$0$の集合である．
+
+ここで，「測度$0$」という概念の説明はしないが，$m=2$の場合なら面積が$0$，また，
+$m=3$の場合なら体積が$0$，ということとほぼ同じである．
+要するに，臨界値の集合は$\R^m$のなかで「そんなに多くない」，と言っているのである．
+
+とくに，$\R^m$のどんなん点の近傍にも，$h:	U	\to	\R^m$の臨界値でない点が存在する．
+
+Sardの定理の証明には参考文献[12][13]を見てほしい．
+
+さて，補題2.21を厳密に証明しよう．
+
+\証明
+十分に小さな$a_1,	a_2,	\cdots	,	a_m$を選んで，
+\begin{equation}
+	f(x_1,	x_2,	,	\cdots	,	x_m	)	-	(a_1x_1	+	a_2	x_2	+	\cdots	+	a_m	x_m)
+\label{eq2x42}
+\end{equation}
+を$U$上のMorse関数にすることが問題だった．
+
+まず，与えられた関数$f	:	U	\to	\R$を使って、次のように成分表示される写像
+$h	:	U	\to	\R^m$を考える：
+\begin{equation}
+	h	=	\begin{pmatrix}
+				\displaystyle	\frac{\partial f}{\partial x_1}	\\
+				\displaystyle	\frac{\partial f}{\partial x_2}	\\
+					\vdots	\\
+				\displaystyle	\frac{\partial f}{\partial x_m}
+			\end{pmatrix}
+\label{eq2x43}
+\end{equation}
+第$i$成分が関数$f$の第$i$偏導関数になっているような写像である．
+この写像$h	:	U	\to	\R^m$の，点$p_0$におけるJacobi行列は
+\begin{equation}
+\begin{pmatrix}
+	\displaystyle	\frac{\partial ^2 f}{\partial x_1^2}	(	p_0)	&
+																															&
+								\cdots																				&
+																															&
+																															&
+	\displaystyle	\frac{\partial ^2 f}{\partial x_1 \partial x_m}	(p_0)	\\
+																															&
+								\ddots																				&
+																															&
+																															&
+																															\\
+	\displaystyle	\vdots																				&
+																															&
+								\frac{\partial ^2 f}{\partial x_i \partial x_j}	(p_0)	&
+																															&
+								\vdots																				\\
+																															&
+																															&
+								\ddots																				&
+																															\\
+	\displaystyle	\frac{\partial ^2 f}{\partial x_m \partial x_1}	(p_0)	&
+																															&
+								\cdots																				&
+																															&
+								\frac{\partial ^2 f}{\partial x_m^2}	(	p_0)	\\																																																						
+\end{pmatrix}
+\label{eq2x44}
+\end{equation}
+である．これは Hesse行列 $H_f(p_0)$に一致する．したがって，$p_0$が写像
+$h	:	U	\to	\R^m$の臨界点であることと，$\det	H_f	(p_0)	=	0$で
+あることとは同値である．
+
+$\R^m$の点
+\begin{equation}
+	\begin{pmatrix}
+		a_1	\\	a_2	\\	\vdots	\\	a_m
+	\end{pmatrix}
+\label{eq2x45}
+\end{equation}
+を，$h	:	U	\to	\R^m$の臨界値でないように選ぶ．Sard の定理により，
+このような点はいくらでもあり，また$a_1,	a_2	,	\cdots	,	a_m$の絶対値がいくらでも小さいものが選べる．
+この$a_1,	a_2,	\cdots	,	a_m$が求めるものである．
+
+実際，$\tilde{f}	(x_1	,	\cdots	,	x_m)	=	f(x_1,	\cdots	,	x_m	)	-	(a_1	x_1	+	\cdots	+	a_m	x_m)$
+が$U$上のMorose関数であることを証明しよう．
+
+点$p_0$が関数$\tilde{f}$の臨界点であれば，
+\begin{equation}
+	\frac{\partial \overline{f}}{\partial x_i}	(p_0)	=	\frac{\partial f}{\partial x_i}(p_0)	-	a_i	=	0,	
+	i=1,	2	,	\cdots	,	m
+\label{eq2x46}
+\end{equation}
+であるから，写像$h	:	U	\to	\R^m$の定義によって，
+\begin{equation}
+	h(p_0	)	=	\begin{pmatrix}
+							a_1	\\	a_2	\\	\cdots	\\	a_m
+						\end{pmatrix}
+\label{eq2x47}
+\end{equation}
+となり，選び方から
+\[
+	\begin{pmatrix}
+		a_1	\\	a_2	\\	\cdots	\\	a_m
+	\end{pmatrix}
+\]
+は$h:	U	\to	\R^m$の臨界値ではない．したがって，$p_0$は$h	:	U	\to	\R^m$の
+臨界点ではない．前に見たように，これは，$\det	H_f	(p_0)	\ne	0$と同値である．
+$f$と$\overline{f}$の差は1次式だから，Hesse行列は共通である：
+\begin{equation}
+	H_f(p_0)	=	H_f(p_0).
+\label{eq2x48}
+\end{equation}
+したがって，$\det	H_f(p_0)	\ne	0$と$\det	H_f(p_0)	\ne	0$とは同値であり，
+$p_0$は$\overline{f}$の非退化な臨界点である．
+
+これで，補題2.21が証明された．
+\■
+
+証明すべき Morse関数 の存在定理2.20のなかにできた．「2つの関数が近い」ということ，
+正確に言うと、2つの$C^\infty$級関数$f,g	:	M	\to	\R$が「$C^2$の意味で近い」
+とうことはどういうことかを，ここではっきりさせておこう．
+
+ある開集合$U$のなか全体に1つの局所座標系$(x_1,	x_2	,	\cdots	,	x_m)$が定義されているとき，
+この開集合$U$を簡単に\textbf{座標近傍}と呼ぶ．座標近傍$U$にはその座標系
+$(x_1,	x_2,	\cdots	,	x_m)$を付随させておくものとする．
+
+$f$と$g$が$C^2$の意味で近いということを，まず，1つの座標近傍$U$に含まれている
+コンパクト集合$K$（例えば適当な半径の$m$次円板$D^m$）の上で考える．
+$\varepsilon	>	0$を任意の正数とするとき，次のように定義する．
+
+「$K$上で$f$が$g$の$(C^2,	\varepsilon)$近似である」とは，次の3つの不等式が
+$K$のすべての点$p$において成り立つことである．
+\begin{equation}
+	\begin{cases}
+		|	f(p)	-	g(p)	|	<	\varepsilon	,	\\
+		\left|	\frac{\partial f}{\partial x_i}	(p)	-	\frac{\partial g}{\partial x_i}(p)	\right|	<	\varepsilon,	i=1,2,	\cdots	,	m,	\\
+		\left|	\frac{\partial^2 f}{\partial x_i	\partial	x_j	}	(p)	-	\frac{\partial^2 g}{\partial x_i	\partial	x_j}	(p)	\right|	,i,j	=	1,2,	\cdots	,	m.
+	\end{cases}
+\label{eq2x49}
+\end{equation}
+多様体$M$全体で考えるには，$M$を有限個の座標近傍で覆っておく．
+一般には有限個の座標近傍で覆うことが不可能だが，$M$がコンパクトのときは，可能である．
+それはコンパクト性の定義による．いままで，コンパクト性の正式な定義は与えてこなかったので，
+ここで一応復習しておこう．
+
+\定義{2.24}
+（コンパクト性）空間$X$が\textbf{コンパクト}（compact）であるとは，
+$X$を無限個の開集合$U_\alpha,	U_\beta,	\cdots	,	U_\lambda,	\cdots	$で被覆するとき，すなわち，
+\begin{equation}
+	X	=	U_\alpha	\cup	U_\beta	\cup	\cdots	\cup	U_\lambda	\cup	\cdots	
+\label{eq2x50}
+\end{equation}
+のように表わせるとき，これらの開集合のなかから適当に有限個の開集合
+$U_\alpha,	U_\beta	,	\cdots	,	U_\gamma$を選び出して，これだけで$X$を被覆することができる，
+すなわち，
+\begin{equation}
+	X	=	U_\alpha	\cup	U_\beta	\cup	\cdots	\cup	U_\gamma
+\label{eq2x51}
+\end{equation}
+と表わせることである．ひとことで言えば，無限開被覆から有限被覆が選び出せることである．
+\■
+
+微分積分で習うことになっている定理（Heine-Borelの定理）によれば，$\R^m$の有界な（つまり，
+原点からの距離がある値以下の範囲に収まってしまう）閉集合はコンパクトである．例えば，
+$m$次元円板$D^m$や$m-1$次元球面$S^{m-1}$はコンパクトである．
+
+さて，どんな多様体$M$も，明らかに無限個の座標近傍で被覆できる．
+ここで$M$がコンパクトであることを仮定すると，有限個の座標近傍$U_1,	U_2,	\cdots	,	U_k$を選び出して，
+それだけで$M$を被覆することができる．
+\begin{equation}
+	M=	U_1	\cup	U_2	\cup	\cdots	\cup	U_k.
+\label{eq2x52}
+\end{equation}
+$f$と$g$が$C^2$の意味で近いということの定義にもどろう．$M$をこのように
+有限個の$U_1,	U_2,	\cdots	,	U_k$で覆っておく．さらに，各々の$U_l$のなかに
+コンパクト集合$K_l$を1つずつとっておき$(l=1,2,	\cdots,	k)$，$M$はそれらの和集合にもなっているようにする：
+\begin{equation}
+	M=	K_1	\cup	K_2	\cup	\cdots	\cup	K_k.
+\label{eq2x53}
+\end{equation}
+
+\注意{}
+このような事が可能であることは次のように示せる．まず，$M$のなかのありとあらゆる
+座標近傍$U$と，そのなかに含まれるありとあらゆる$m$次元円板$D$の組$(U,D)$を考える．
+$M$はこのような円板たち$D$の内部$\text{int} (D)$（これは開集合）
+で被覆されてることは明らかである．$M$のコンパクト性を仮定すれば，
+有限個の$\text{int}(D_1),\text{int} (D_2), \cdots , \text{int} (D_k)$で$M$が被覆できる．
+そうすれば，もちろん$D_1,	D_2,	\cdots	,	D_k$と組になっている座標近傍$U_1,	U_2,	\cdots	,	U_k$で
+$M$は被覆されていて，同時に，$Kl=D_l$とおけば，$U_1,U_2,	\cdots	,	U_k$に含まれるコンパクト集合
+$K_1,	K_2,	\cdots	,	K_k$によっても$M$は被覆されている．
+
+以上の準備のもとに，次のように定義する．
+
+\定義{2.25}
+$f:	M	\to	\R$が$g	:	M	\to	\R$の\textbf{$(C^2	,	\varepsilon	)$近似}であるとは，
+$l=1,2,	\cdots	,	k$につき，$K_l$の上で，$f$が$g$の$(C^2	,	\varepsilon)$近似であることである．
+\■
+
+$(C^2	,	\varepsilon)$近似を論ずるときは，暗黙のうちに，有限個の座標近傍による$M$の
+被覆$M	=	U_1	\cup	\cdots	\cup	U_k$と，$U_l$内のコンパクト集合$K_l$による$M$の被覆
+$M=K_1	\cup	\cdots	\cup	K_k$が，固定されているものとする．
+この被覆は，次の補題の証明のなかでも仮定されている．
+
+Morse関数の存在定理 2.20の証明のため，もう一つの補題が必要である．
+
+\補題{2.26}
+$C$を$m$次元多様体$M$の中のコンパクト集合とする．$C$のなかに関数$g:M	\to	\R$の退化した
+臨界点がなければ，$\varepsilon	>	0$を十分小さい正数として，
+$g$の$(C^2,	\varepsilon)$近似であるような関数$f$についても同じことが言える．
+すなわち，$C$のなかに，$f$の退化した点がない．
+
+\証明
+座標近傍$U_l$で考える．$U_l$の座標系$(x_1,	x_2,	\cdots	,	x_m)$を強調するため，
+この座標系で計算した$g$の Hesse 行列を
+\[
+	\left(
+		\frac{\partial ^2 g}{\partial x_i \partial x_j}
+	\right)
+\]
+と書くことにする．容易にわかるように，$g$の退化した臨界点が$C \cap K_l$のなかに存在しないための
+必要十分条件は
+\begin{equation}
+	\left|
+		\frac{\partial g}{\partial x_1}
+	\right|
+		+
+		\cdots
+		+
+	\left|
+		\frac{\partial g}{\partial x_m}
+	\right|
+	+
+	\left|
+		\det	\frac{\partial^2 g}{\partial x_i	\partial	x_j	}
+	\right|
+	>	0
+\label{eq2x54}
+\end{equation}
+が$C	\cap K_l$上で成り立つことである．
+
+十分小さく$\varepsilon	>0$を選んでおけば，$g$の$(C^2	,	\varepsilon)$近似であるような関数$f$についても，
+同様の不等式
+\begin{equation}
+	\left|
+		\frac{\partial f}{\partial x_1}
+	\right|
+		+
+		\cdots
+		+
+	\left|
+		\frac{\partial f}{\partial x_m}
+	\right|
+	+
+	\left|
+		\det	\frac{\partial^2 f}{\partial x_i	\partial	x_j	}
+	\right|
+	>	0	
+\label{eq2x55}
+\end{equation}
+が$C	\cup K_l$上で成り立つはずであるから，$f$も$C	\cap	K_l$のなかに退化した
+臨界点をもたない．
+
+おなじ議論を$l=1,	2,	\cdots	,	k$について行えば，
+$f$は$\displaystyle	C	\left(	=	\bigcup_{l=1}^k	C	\cap K_l \right)$のなかに
+退化した臨界点がないことがわかる．
+\■
+
+Morse関数の存在定理2.20を証明しよう．
+
+\証明
+関数の$(C^2,	\varepsilon)$近似を論ずるため，$M$の座標近傍$U_l	\:	(	l=1,2,	\cdots	,	k)$による被覆と，
+$U_l$のなかのコンパクト集合$K_l \: (l=1	,2,	\cdots	,	k)$による$M$の被覆が固定されていることを再確認しておく．
+
+はじめに与えられた関数$g	:	M	\to	\R$を$f_0$とおく：$f_0	=	g$．以下の証明のアイデアは，
+$f_0$から出発し，$l$に関する数学的帰納法で，$l=1,2,\cdots,	$と順に関数$f_l$を構成していき，
+$f_l$が$K_1	\cup	K_2	\cup	\cdots	\cup	K_l$のなかに退化した臨界点をもたないようにする
+ことである．$l=1,2,	\cdots	$と進んで，$l=k$までできれば，
+（$M=K_1	\cup	K_2	\cup	\cdots	\cup	K_k$であるから）$f_k$が求める Morse 関数になっている．
+
+簡単のため，$K_1	\cup	K_2	\cup	\cdots	\cup	K_l$のことを$C_l$と書こう．
+コンパクト集合の有限和はまたコンパクトだから，$C_l$もコンパクトである．形式的に，
+$C_0	=	\varnothing$とおく．
+
+数学的帰納法の仮定として，$C_{l-1}$のなかに退化した臨界点のない関数
+$f_{l-1}	:	M	\to	\R$が構成されたとする．
+$f_{l-1}$を使って$f_l$を構成することを考えよう．
+
+
+座標近傍$U_l$とそのなかのコンパクト集合$K_l$に着目する．$U_l$に付随している座標系が
+$(x_1,	x_2,	\cdots	,	x_m)$であるとする．
+補題2.21により，絶対値の十分小さい実数
+$a_1,	a_2,	\cdots	,	a_m$があって，
+\begin{equation}
+	f_{l-1}	(x_1	,	x_2,	\cdots	,	x_m)	-	(	a_1	x_1	+	\cdots	+	a_m	x_m)
+\label{eq2x56}
+\end{equation}
+は$U_l$上の Morse 関数になる．しかし，このままでは，
+$a_1	x_1	+	\cdots	+	a_m	xm$という式が座標近傍$U_l$の外では意味を成さないので，
+上の式を少し修正する必要がある．
+
+そのための便利な技法が多様体論で知られているので、もう一つだけ補題としてその結果を
+引用せてもらう．
+証明については[11]などを参照してほしい．
+
+\補題{2.27}
+$U$を座標近傍，$K$を$U$のなかのコンパクト集合とする．
+そのとき，次の性質(ⅰ)(ⅱ)(ⅲ)をもつ$U$上の$C^\infty$関数
+$h:	U	\to	\R$が存在する．
+\begin{list}{}{}
+	\item	(ⅰ) $	0	\leqq	h	\leqq	1$.
+	\item (ⅱ) $h$は$K$のある開近傍（すなわち，$K$を含む開集合）$V$の上で恒等的に$1$である．
+	\item (ⅲ) $h$はその$V$を含むあるコンパクト集合$L ( \subset U)$の外では恒等的に$0$である．
+\end{list}	
+（図\ref{fig2x7}参照．$K	\subset	V	\subset	L	\subset	U$となっている．）
+\■
+
+このような関数を$h$を$(U,K)$に適合した\textbf{台形関数}という．「台形」というとなんだか
+角があるようだが，$h$は$C^\infty$級関数である．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=50.0mm,height=24.8mm]{fig2x5.bmp}
+	\caption{
+   $(U,K)$に適合した台形関数$h$．$h$は$K$の開近傍$V$上で$1$，$V$を含むコンパクト集合$L$の
+外で$0$．ただし，$K	\subset	V	\subset	L	\subset	U$．
+  }
+	\label{fig2x5}
+\end{figure}
+
+この補題2.27を，いま着目している座標近傍$U_l$とそのコンパクト集合$K_l$に適用すると，
+$(U_l,	K_l)$に適合した台形関数$H_l	:	U_l	\to	\R$を得る．
+
+新しい関数$f_l$を次のように構成しよう．（ただし，$U_l$内のコンパクト集合
+$L_l$は，その外側で$h_l$が恒等的に$0$になっているようなコンパクト集合である．
+このコンパクト集合$L_l$は，下の場合分けの2番目で登場している．）
+\begin{equation}
+	f_l	=
+	\begin{cases}
+		f_{l-1}(x_1,	\cdots,	x_m)	=	(a_1	x_1	+	\cdots	+	a_m	x_m)h_l(x_1,	\cdots	,	x_m)	&\quad	\text{($U_l$の中で)}	\\
+		f_{l-1}(x_1,	\cdots	,	x_m)																													&\quad	\text{($L_l$の外で)}
+	\end{cases}
+\label{eq2x57}
+\end{equation}
+上の2つの定義域の共通部分（$U_l$の中，かつ$L_l$の外：これは$M$の開集合）
+では，$h_l(x_1,	\cdots	,	x_m)	=	0$であるから，2つの定義は一致して，
+$f_l$は全体としてつながって，$M$上の$C^\infty$級関数になる．
+
+コンパクト集合$K_l$のある開近傍では$h_l	(x_1,	\cdots	,	x_m)=1$であったから，
+$f_l$は「差の関数（\ref{eq2x56}）に一致し，そこで Morse 関数になっている．
+したがって，$f_l$は$K_l$上に退化した臨界点がない．
+
+次に，$f_i$が$f_{i-1}$の（$C^2,\varepsilon)$近似にとれるかどうかを見よう．
+
+まず，座標近傍$U_l$上で計算して，
+\begin{equation}
+	\begin{cases}
+		|f_{l-1}(p)	-	f_l(p)|	=	|	a_1	x_1	+	\cdots	+	a_m	x_m|	h_l(p),	\\
+		\left|
+			\frac{\partial f_{l-1}}{\partial x_i}(p)	-	\frac{\partial f_l}{\partial x_i}(p)
+		\right|
+		=
+		\left|	a_i	h_i(p)	+	(	a_1x_1	+	\cdots	+	a_m	x_m)	\frac{\partial h_l}{\partial x_i}(p)
+		\right|,
+		\quad	i=1,	2	,	\cdots	,	m,	\\
+		\left|	\frac{\partial^2 f_{l-1}}{\partial x_i \partial x_j}(p)
+				-
+						\frac{\partial^2 f_l}{\partial x_i \partial x_j}(p)
+		\right|
+		=
+		\left|
+			a_i	\frac{\partial h_l}{\partial x_j}(p)	+	a_j	\frac{\partial h_l}{\partial x_i}(p)	+
+			(a_1	x_1	+	\cdots	+	a_m	x_m	\frac{\partial ^2 h_l}{\partial x_i \partial x_j}	(p)
+		\right|,
+		\quad	i,j	=	1,2,	\cdots,	m
+	\end{cases}	
+\label{eq2x58}
+\end{equation}
+ただし，$p=	(x_1,	x_2	,	\cdots	,	x_m)$とおいた．
+
+関数$h_l$は$0	\leqq	h_l	\leqq	1$であり，また，コンパクト集合$L_l$の外では$0$である
+から，$h_l$の1階導関数も2階の導関数も、その絶対値はある一定の値を超えられない
+（最大値の定理）．したがって，$a_1	,	\cdots	,	a_m$の絶対値を十分小さくとれば，
+3つの式（\ref{eq2x58}）の右辺はいくらでも小さくなる．とくに，コンパクト
+集合$K_l$上で$f_l$は$f_{l-1}$の$(C^2,	\varepsilon)$近似にとれる．
+
+$K_l$以外の$K_j$の上ではどうかというと，$K_j$を含む座標近傍$U_j$とそれに付随した
+座標系$(y_1,	\cdots	,	y_m$を使って，上と同様に$f_{l-1}$と$f_l$の間の1階の導関数の差と2買い導関数の差をを計算する．
+この大きさを$K_j$の上で評価しよう．
+
+もともと，コンパクト集合$L_l$の外では$f_{l-1}	=	f_l$だったので，評価しなければならないのは，
+共通部分$K_j	\cap L_l$の上だけである．この共通部分は座標近傍の共通部分$U_j	\cap	U_l$に
+含まれている．
+
+$U_j \cap U_l$での計算結果は，上の式（\ref{eq2x58}）の右辺を
+$(x_1,	\cdots	,	x_m)$と$(y_1,	\cdots	,	y_m)$の間のJacobi 行列を使って
+適当に変換したものになるはずである．ところが，最大値の定理によって，
+コンパクト集合$K_j \cap L_l$の上では Jacobi 行列の各成分の絶対値は一定の値以上には
+なれないから，結局，$a_1,	a_2,	\cdots	,	a_m$さえ十分小さくとっておけば，
+右辺の計算結果は$K_j \cap L_l$の上で，いくらでも小さくとれることになる．
+
+$L_l$の外では$L_{l-1}$と$f_l$に差の無い事はすでに見ておいたから，結局，
+$a_1,	a_2	,	\cdots	,	a_m$の絶対値さえ十分小さくとっておけば，$K_j$の上で，
+$f_l$は$f_{l-1}$の$(C^2,\varepsilon)$近似にとれることがわかった．
+
+
+このことが，各$j=1,2,\cdots,	k$について言えるので，定義2.25によって，
+$f_l$は$f_{l-1}$の$(C^2,	\varepsilon)$近似にとれる．ここで，$\varepsilon	>0$は
+あらかじめいくらでも小さく指定しておける．
+
+帰納法の仮定により，$f_{l-1}$は$C_{l-1}	=	K_1	\cup	\cdots	\cup	K_{l-1}$の中に退化した
+臨界点をもたなかった．$f_l$を$f_{l-1}$の$(C^2,	\varepsilon)$近似にとると、
+補題2.26により，$\varepsilon	>	0$が十分小さければ，$f_l$も同じ$C_{l-1}$の中に退化した
+臨界点をもたない．しかも，$f_l$は$K_l$の中に退化した臨界点が無いように構成しておいたから，
+$f_l$は$C_{l-1}	\cup	K_l	=	C_l$の中に退化した臨界点を持たないことになる。
+
+これで，帰納法が進行する．$l=1,2,	\cdots	,	k$と進むと，最後の$f_k$は$C_k	=	M$の中に退化した
+臨界点のない関数，すなわち$M$上のMorse関数になる．しかも帰納法の各段階の$\varepsilon$を
+十分小さくとっておけば，あらかじめ任意に指定された$\varepsilon'$について、
+$f_k$ははじめの関数$g$の$(C^2	,	\varepsilon')$近似になっている．
+
+これで，Morse 関数の存在定理 2.20 が証明できた．
+\■

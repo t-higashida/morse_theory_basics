@@ -1,0 +1,485 @@
+\chapter{多様体のホモロジー}
+
+この章では，前の章までの結果を使って，多様体のホモロジー群について講義する．
+ホモロジー群の知識は一応仮定するが，第1節で簡単に復習しよう．
+詳しくは佐藤肇「位相幾何」[9]，あるいは田村一郎「トポロジー」[15]などを参照してほしい．
+第2節で Morse関数の臨界点の個数と多様体のBetti数に関するMorse不等式を証明する．
+これは，Morse理論の最も基本的な関係式といえる．第3節では，多様体のホモロジー論で基本的なPoincar\'{e}
+双対定理を証明する．最後の第4節では，多様体の交点形式について論じる．
+
+
+\section{ホモロジー群}
+
+セル複体（胞副体ともいう）の復習から始めよう．$i$次元円板$D^i$の内部$\int(D^i)= D^i - \partial D^i$を
+\textbf{$i$セル}（$i$ cell）と呼ぶ．記号で$e^i$と書く．
+$i$次元円板$D^i$自身を\textbf{ふちつき$i$セル}（closed $i$ cell）といい，記号で$\overline{e}^1$と表す．
+$0$次元のときは$e^0$も$\overline{e}^0$も1点である．したがって、$e^0 = \overline{e}^0$である．
+
+
+\定義{4.1}（セル複体）
+有限個のふちつきセルを次元の低いほうから次々に貼り付けて得られる空間を（有限）\textbf{セル複体}（cell complex）という．
+正確には次のように帰納的に定義する．
+
+\begin{list}{}{}
+	\item	（ⅰ）有限個の点の非交和$X^0 = \overline{e}_1^0 \sqcup \overline{e}_2^0 \sqcup \cdots \sqcup \overline{e}_{k_0}^0$は
+$0$次元セル複体である．
+	\item	（ⅱ）$i \geqq 1$につき$i-1$次元以下のセル複体の概念が定義されていたとしよう．
+$Y$を$i-1$次元以下のセル複体とする．有限個のふちつき$i$セルの非交和
+$\overline{e}_1^i	\sqcup	\cdots	\sqcup	\overline{e}_{k_i}^i$と，その境界から$Y$への連続写像
+\[
+	h_i	:	\partial	\overline{e}_1^i	\sqcup	\partial	\overline{e}_2^i	\sqcup	\cdots	\sqcup	\partial	\overline{e}_{k_i}^i	\to	Y
+\]
+を用意し，$h_i$を使って$Y$に$\overline{e}_1^i	\sqcup	\overline{e}_2^i	\sqcup	\cdots	\sqcup	\overline{e}_{k_i}^i$を貼り付けたもの
+\[
+	X^i	=	Y	\cup_{h_i}	(\overline{e}_1^i	\sqcup	\overline{e}_2^i	\sqcup	\cdots	\sqcup	\overline{e}_{k_i}^i)
+\]
+を$i$次元セル複体という．$h_i$を\textbf{接着写像}（attaching map）という．
+\end{list}
+
+こうして，帰納的にすべての次元$i$について$i$次元セル複体が定義できる．
+\■
+
+なお，$h_i$を使って$Y$に$\overline{e}_1^i	\sqcup	\cdots	\sqcup	\overline{e}_{k_i}^i$を張り付けるとは，
+$\partial	\overline{e}_1^i	\sqcup	\cdots	\sqcup	\partial	\overline{e}_{k_i}^i$の各点
+$x$について，$x$と$Y$の点$h_i(x)$を同一視することである．
+
+以下，単にセル複体$X$といえば，何らかの次元のセル複体$X^m$の事であるとする．
+$X$に含まれる$i$次元以下のセル全体の和集合$X^i$はそれ自身$i$次元セル複体であるが，
+これを$X$の$i$\textbf{切片}（$i$-skeeleton）という．$0$切片$X^0$の点を
+$X$の\textbf{頂点}ということがある．
+
+容易にわかるように，セル複体$X$は有限個の（ふちのない）セルの集まりである．
+
+\例{4.2}
+$m$次元のふちつきセルの境界$\partial	\overline{e}^m$から1点$\overline{e}^0$への
+連続写像$h:	\partial	\overline{e}^m	\to	\overline{e}^0$がただ1つある．
+すなわち，$\partial	\overline{e}^m$を1点$\overline{e}^0$につぶす写像である．
+$m$次元セル複体
+\[
+	\overline{e}^0	\cup_h	\overline{e}^m
+\]
+は$m$次元球面$S^m$に同相である．$S^m$から点$e^0$を除くと$m$セル$e^m$が得られるので，
+$S^m	=	e^0	\cup	e^m$とも考えられる．
+\■
+
+セル複体のホモロジー群を復習しよう．$X$をセル複体とする．
+$X$に含まれるセルにはすべて「向き」を与えておく．セルの「向き」はここでは次のように
+定義する．すなわち，あるセル$e$が$q$次元であるとすると，$e$は$q$次元Euclid空間の
+開集合と同一視できるから，$e$の上に$q$個のベクトル場を並べたもの
+\[
+	V	=	\langle	\boldsymbol{v}_1,	\boldsymbol{v}_2,	\cdots	,	\boldsymbol{v}_q
+			\rangle
+\]
+があり，しかも$e$のｄの点でも1次独立になっているようにできる．このよう並びが
+$e$に1つ\textbf{向き}（orientation）を与えると考える．$e$上に同様の
+$q$個のベクトル場の並び
+\[
+	W	=	\langle	\boldsymbol{w}_1,	\boldsymbol{w}_2,	\cdots	,	\boldsymbol{w}_q
+			\rangle
+\]
+があるとき，$V$と$W$が$e$に同じ向きを与えるための条件は，
+$V$から$W$への変換強烈$A$の行列式が$e$のどの点でもプラスになっていることである，
+と約束する．($e$の1点でプラスになっていれば，$e$のどの点でものプラスである．）
+そうでないときは，$V$と$W$が$e$に与える向きは互いに反対であると考える．
+
+とくに次のことがわかる．$\sigma$を$\{1,	2	,	\cdots	,	q	\}$の置換とするとき，
+\[
+	\langle
+		\boldsymbol{v}_{\sigma	(1)},
+		\boldsymbol{v}_{\sigma	(2)},
+		\cdots	,
+		\boldsymbol{v}_{\sigma	(q)}
+	\rangle
+	\quad	\text{と}	\quad
+	\langle
+		\boldsymbol{v}_{1},
+		\boldsymbol{v}_{2},
+		\cdots	,
+		\boldsymbol{v}_{q}
+	\rangle
+\]
+が$e$に同じ向きを与えるための必要十分条件は$\sigma$が偶置換であることである．
+
+あとで必要になるので，一般の多様体の「向き」を定義しておく．
+
+\定義{4.3}（多様体の向き）
+$M$を$m$次元多様体とする．$M$を有限個または無限個の座標近傍で覆う：
+$\displaystyle	M	=	\bigcup_{\lambda	\in	\Lambda}	U_\lambda$．1つ1つの
+座標近傍$U_\lambda$には，$m$個の1次独立なベクトル場をなれ亜ベル方法で向きが入る．
+いま，すべての$U_\lambda$に一斉に向きを与え，しかも，どの$U_\lambda$と$U_\mu$に
+ついても，共通部分$U_\lambda	\cap	U_\mu$が空集合でない限り，その上で
+$U_\lambda$の向きと$U_\mu$の向きが一致しているようにできるとする．
+（すなわち，両者に指定された$m$個のベクトル場の間の変換行列の行列式が正であるとする．）
+このとき，$M$は\textbf{向きづけ可能}（orientable）であるといい，そのように$U_\lambda$に
+一斉に向きを与えることを，$M$に\textbf{向き}（orientatoon）$\langle	M	\rangle$を与える，
+または，$M$を\textbf{向き付ける}という．
+
+なお，$M$が向き付け可能で連結なとき，$M$には，ある向きとその反対の向きと，
+ちょうど2つの向きの入れ方がある．
+\■
+
+セル複体に戻る．セル$e$に向きを与えたものを
+$\langle	e	\rangle$と書く．次元を表す整数$q	(\geqq	0)$を一つとめて考えよう．
+$X$には$k_q$個の$q$セルが含まれているとし，それらの1つ1つに任意の向きを与えておく：
+\[
+	\langle	e_1^q
+	\rangle	,
+	\langle	e_2^q
+	\rangle	,
+	\cdots,
+	\langle	e_{k_q}^q
+	\rangle	,
+\]
+これらの向き付けられたセルに形式的に整数係数をつけ足したもの
+\[	c=
+			a_1	\langle	e_1^q
+					\rangle	+
+			a_2	\langle	e_2^q
+					\rangle	+
+					\cdots	+
+			a_{k_q}	\langle	e_{k_q}^q
+					\rangle
+\]
+を$X$の\textbf{$q$チェイン}（chain）という．
+$X$の$q$チェインの全体からなる集合は加法群
+$C_q(X)$をなす．$C_q(X)$を$X$の\textbf{$q$次元鎖群}（chain group）という。
+ただし，$C_q(X)$内の足し算は
+\[
+		c=
+			a_1	\langle	e_1^q
+					\rangle	+
+			a_2	\langle	e_2^q
+					\rangle	+
+					\cdots+
+			a_{k_q}	\langle	e_{k_q}^q
+					\rangle
+\]
+かつ
+\[
+d=
+			b_1	\langle	e_1^q
+					\rangle	+
+			b_2	\langle	e_2^q
+					\rangle	+
+					\cdots	+
+			b_{k_q}	\langle	e_{k_q}^q
+					\rangle
+\]
+のとき，
+\[
+	c	+	d	=	
+c=
+			(a_1	+	b_1)	\langle	e_1^q
+					\rangle	+
+			(a_2	+	b_2)	\langle	e_2^q
+					\rangle	+
+					\cdots	+
+			(a_{k_q}	+	b_{k_q}	)\langle	e_{k_q}^q
+					\rangle
+\]
+と定義する．引き算についても同様である．
+
+$C_q	(X)	$は
+$	\langle	e_1^q	\rangle,	\langle	e_2^q	\rangle	,	\cdots	,	\langle	e_{k_q}^q	\rangle$を
+生成元とする自由加群であるから、
+\[
+	C_q	(X	)	\cong	\Z	\oplus	\Z	\oplus	\cdots	\oplus	\Z	\quad	(\text{$k_q$個の$\Z$})
+\]
+が成り立つ．
+
+なお，規約として，$q$セル$e^q$にある向きを与えたもの$\langle	e^q	\rangle$と
+その反対の向きを与えたもの$\langle	e^q	\rangle'$とは
+$C_q	(X)$のなかで互いに他のマイナスであると約束する：
+$\langle	e^q	\rangle	=	-	\langle	e^q	\rangle$．
+
+つぎに，$C_q	(X)$から$C_{q-1}	(X)$への\textbf{境界準同型}
+（boundary homomorphism）
+\[
+	\partial_q	:	C_q	(X)	\to	C_{q-1}	(X)
+\]
+を定義しよう．
+
+そのため，$q$次元円板$D^q$の向き$\langle	D^q	\rangle$を決めたとき，
+それから自然に決まる境界$S^{q-1}$の向き$\langle	S^{q-1}	\rangle$というものを
+定義しておく必要がある．まず$q	\geqq	2$の場合を考える．
+向き$\langle	D^q	\rangle$を与える$q$個のベクトル場の並びを
+$\langle	\boldsymbol{v}_1,
+					\boldsymbol{v}_2,
+					\cdots
+					\boldsymbol{v}_q
+\rangle$
+とし，1番目のベクトル場$\boldsymbol{v}_1$は，
+$S^{q-1}$のある点$p$の近傍で$D^q$の外向きの半径方向と一致しているとしよう．
+このとき，残りの$\langle	\boldsymbol{v}_2,	\cdots	,	\boldsymbol{v}_q	\rangle$が
+$S^{q-1}$の中の$p$の座標近傍に向きを与えると考える．このようにして
+決まる向き$	\langle	S^{q-1}	\rangle$が
+$\langle	D^q	\rangle$から自然に誘導される$S^{q-1}$の向きである．
+
+$q=1$のときは，$D^1$は線分であり，その向きは線分上の矢印と思ってよい．
+線分の境界は2点であるが，一般に，1点$p$には天与の向き$\langle	p	\rangle$が唯一
+決まっていると考える．そして，向きのついた線分$\langle	D^1	\rangle$が
+両端点$e_1^0,	e_2^0$に誘導する向きは，矢印の先の端点$e_1^0$では天与の向き
+$\langle	e_1^0	\rangle$に一致し，矢印の根元の端点$	e_2^0$では天与の
+向きと反対の向き$	-	\langle	e_2^0	\rangle$に一致すると約束する．
+
+境界準同型$\partial_q	:	C_q	(X)	\to	C_{q-1}	(X)$の定義に戻る．
+$\langle	e_k^q	\rangle	$を$X$の中の向き付けられた$q$セルとする
+（$k=1,2,	\cdots	,	k_q)$．それにふちをつけた
+$\overline{e}_k^q$は接着写像$h	:	\partial	\overline{e}_k^q	\to	Y$で
+$q-1$次元異化のセル複体$Y$に張り付いている．
+ここに$\partial	\overline{e}_k^q$は$q-1$次元球面で，それには$e^q$の向き
+$\langle	e^q	\rangle$から自然に誘導された向き
+$\langle	\overline{e}_k^q	\rangle$が入っている．
+
+さて，もし$X$に$q-1$セルがなければ$C_{q-1}(X)	=	\{0	\}$であるから，明らかに
+$\partial_q	=0$である．
+
+以下，$X$は$q-1$セルを含むものとし，$Y$は$q-1$切片$X^{q-1}$であるとしよう．
+$\langle	e_l^{q-1}	\rangle$を向きのついた1つの$q-1$セルとすると
+（$l	=	1,2,	\cdots	,	k_{q-1}$），接着写像
+$h	:	\partial	\overline{e_k}^q	\to	X^{q-1}$による$\partial	\overline{e}_k^q$の像は
+$e_l^{q-1}$を何回か覆う．この数を仮に
+「被覆度」と呼ぶことにする．ただし，被覆度は$\langle	\partial	\overline{e}_k^q	\rangle$と
+$\langle	e_l^q	\rangle$の向きを考慮して決める．このようにして決まる被覆度を
+$a_{kl}$と書く．境界準同型$\partial_q	:	C_q	(X)	\to	C_{q-1}	(X)$は次のように定義される：
+\[
+	\partial_q	(	\langle	e_k^q	\rangle	)
+	=		a_{k1}	\langle	e_1^{q-1}	\rangle
+		+	a_{k2}	\langle	e_2^{q-1}	\rangle
+		+	\cdots
+		+	a_{kk_{q-1}}	\langle	e_{k_{q-1}}^{q-1}	\rangle
+\]
+鎖群$C_q	(X)	$は$\langle	e_1^q	\rangle	,	\langle	e_2^q	\rangle,	\cdots	,	\langle	e_{k_q}^q	\rangle$で
+生成されるから，これで境界準同型$\partial_q$が定義できたことになる．
+
+被覆度$a_{kl}$についてもう少し説明しよう．$\partial	\overline{e}_k^q$は
+$q-1$次元球面$S^{q-1}$に微分同相だから，$\overline{e}_k^q$の接着写像$h$を
+球面$S^{q-1}$からの写像$h	;	S^{q-1}	\to	X^{q-1}$と考える．
+
+$e_l^{q-1}$の中に，1点$p$と$p$の近傍$U$（$	\subset	e_1^{q-1}$）をとり，
+$h$を連続的に変形して，$h^{-1}	(U)$上で$h$は$C^\infty$球写像になるようにできる．
+しかも，第2章の Sard の定理 2.23によれば，$p$の取り方を$U$の中でほんの少し変えて，
+$p$は$h	|	h^{-1}	(U)	:	h^{-1}	(U)	\to	U$の臨界値でないとしてよい．
+そうすれば，逆像$h^{-1}	(p)$は$S^{q-1}$の中の有限個の点集合$\{q_1,	q_2,	\cdots	,	q_r	\}$
+になる．
+
+各点$q_i$の近傍で，$S^{q-1}$の接するベクトル場の並び
+$\langle	
+	\boldsymbol{v}_1,	
+	\boldsymbol{v}_2,
+	\cdots,
+	\boldsymbol{v}_{q-1}
+	\rangle
+$を考え，これが，すでに決まっている$S^{q-1}$の向き
+$\langle	S^{q-1}	\rangle$を与えるものとする．
+また，$e_l^{q-1}$の向き$\langle	e_l^{q-1}	\rangle$を与える
+ベクトル場の並び$\langle	\boldsymbol{w}_1	,	\boldsymbol{w}_2,	\cdots	\boldsymbol{w}_{q-1}	\rangle$も
+決めておく．これらのベクトル場を用いて，点$q_i$での
+$h	|	h^{-1}	(U)$の微分$d	h_{q_i}	;	T_{q_i}	(S^{q-1}	)	\to	T_q(U)$を行列表現する．
+得られた行列$J_h	(q_i)$の行列式$\det	J_j	(q_i)$が
+正か負かに従って，$\varepsilon	(q_i)	=	1$または$\varepsilon	(q_i)	=	-1$とおく．
+
+このとき，被覆度$a_{kl}$の正確な定義は
+\[
+	a_{kl}	=	\varepsilon	(q_1)	+	\varepsilon(q_2)	+	\cdots	+	\varepsilon	(q_r)
+\]
+である．$a_{kl}$の値は$h$の連続変形の仕方によらず定めることが，次元差$1$の
+Sardの定理（参考文献[13]参照）を使って証明できる．
+
+\補題{4.4}
+\[
+	\partial_{q-1}	\circ	\partial_q	=	0	,	\quad	\forall	q.
+\]
+\■
+
+モホロジー論で良く知られた補題なので証明は省略する．
+
+セル複体$X$の鎖群と境界準同型からなる系列
+\[
+	\to
+	C_{q+1}(X)
+	\stackrel{\partial_{q+1}}{\to}
+	C_{q}(X)
+	\stackrel{\partial_{q}}{\to}
+	C_{q-1}(X)
+	\stackrel{\partial_{q-1}}{\to}
+	\cdots
+	\stackrel{\partial_{2}}{\to}
+	C_{1}(X)
+	\stackrel{\partial_{1}}{\to}
+	C_{0}(X)
+	\to
+	\{	0	\}
+\]
+を$X$の\textbf{チェイン複体}（chain	complex）という．
+1つ止めた$q$について
+\[
+	Z_q(X)	=	\ker	\partial_q	:=	\{	c	\in	C_q(X)	\:	|	\:	\partial_q(c)	=	0	\}
+\]
+とおき，$Z_q(X)$を\textbf{$q$次元サイクル群}（cycles），
+$B_q(X)$を\textbf{$q$次元境界サイクル群}（boundaries）という．
+これらの群は$C_q	(X)$の部分群で，補題4.4により
+\[
+	B_q	(X)	\subset	Z_q(X)	\subset	C_q(X)
+\]
+が成り立つ．$Z_q(X)$の元を$X$の$q$次元サイクルといい，
+$B_q(X)$の元を$X$の$q$次元境界サイクルという．
+
+\定義{4.5}（ホモロジー群）
+剰余群$Z_q	(X)	/	B_q	(X)$のことを$X$の
+\textbf{$q$次元ホモロジー群}（homology group）と呼び，
+$H_q(X)$と表す．
+\[
+	H_q	(X)	=	Z_q	(X)	/	B_q(X).
+\]
+$H_q(X)$の元を\textbf{$q$次元ホモロジー類}（homology class）という．
+$q$次元サイクル$z$の属するホモロジー類$[z]$と書く．
+\■
+
+\例{4.6}
+$m	\geqq	1$のとき，$m$次元球面$S^m	=	e^0	\cup	e^m$のチェイン複体は
+\[
+	\cdots	\to	\{	0	\}
+					\to	C_m(S^m)	\to
+	\cdots	\to	\{0	\}	\to
+							C_0(S^m)	\to
+							\{	0	\}
+\]
+という形をしている．$C_m(S^m)	\cong	C_0(S^m)	\cong	\Z$であり，その他の
+$C_q(S^m)$は$\{0\}$である．$\partial_m	=	0$がわかる．実際，$m	\geqq	2$なら
+$C_{m-1}	(S^m)	\cong	\{	0	\}$から明らかであるし，$m=1$のときも
+$\partial_1	(	\langle	e^1	\rangle	)	=	\langle	e^0	\rangle	-	\langle	e^0	\rangle	=	0$であることから
+明らかである．したがって，
+\[
+	Z_m	(	S^m	)	\cong	\Z	,	\quad	B_m	(S^m	)	\cong	\{	0	\}
+\]
+となり，次の結果を得る．
+\[
+	H_q(S^m	)	\cong	\begin{cases}
+										\:	\Z				&\quad		\text{（$q=m$または$q=0$）}	\\
+										\:	\{0	\}		&\quad		\text{（その他の$q$）}
+									\end{cases}
+\]
+これを表に書いてみよう．
+
+\begin{table}[h]
+	\caption{$S^m$のホモロジー群}
+	\label{tab4x1}
+\begin{center}
+\begin{tabular}{c|ccccc}
+\hline
+	$q$ 				& $0$ 	& $1$	 			& $\cdots$	&	$m-1$			&	$m$		\\	\hline
+ 	$H_q(S^m)$	& $\Z$	&	$\{	0	\}$	&	$\cdots$	&	$\{	0	\}$	&	$\Z$	\\	\hline
+\end{tabular}
+\end{center}
+\end{table}  
+セル複体の間の連続写像
+\[
+	f	:	X	\to	Y
+\]
+があると，ホモロジー群の間の準同型写像
+\[
+	f_*	:	H_q	(X)	\to	H_q	(Y)
+\]
+が，各次元$q$で一意的に誘導される．しかも，恒等写像$\text{id}_X : X \to X$には
+ホモロジー群の恒等写像が対応し，連続写像の構成$g	\circ	f$には準同型の合成
+$g_*	\cong	f_*$が対応する．
+
+ホモロジー群$H_q	(X)$の最も大切な性質には次に説明するホモトピー不変性である．
+
+\定義{4.7}
+（ホモトピー）$X$と$Y$を位相空間とし，$f,g	:	X	\to	Y$を2つの連続写像とする．
+$f$が$g$に\textbf{ホモトピック}（homotopic）であるとは，直積$X	\times	[0,1]$から
+$Y$への連続写像$H	:	X	\times	[0,1]	\to	Y$が存在して，$\forall	x	\in	X$について
+\[
+	H	(x,	0)	=	f(x),	\quad	H(x,1)	=	g(x)
+\]
+が成り立つことである．連続写像$H$のことを$f$から$g$へのホモトピーと呼ぶことがある．
+
+$f$が$g$にホモトピックである．連続写像$H$のことを$f$から$g$へのホモトピーと呼ぶことがある．
+
+$f$が$g$にホモトピックであることを$f	\cong	g$という記号で表す．容易にわかるように，
+$f	\cong	g$ならば$g	\cong	f$が成り立つ．
+\■
+
+\定理{4.8}（ホモロジー群のホモトピー不変性）
+2つの連続写像$f,g	:	X	\to	Y$がホモトピック（$f	\	g$）なら，
+これらの連続写像はホモロジー群の間に全く同じ準同型写像を誘導する：
+\[
+	f_*	=	g_*	:	H_q	(X)	\to	H_q(Y).
+\]
+\■
+
+\定義{4.9}（ホモトピー同値）
+$X$と$Y$をセル複体とする．連続写像$f	:	X	\to	Y$と$g:	Y	\to	X$があり，
+\[
+	g	\circ	f	\backsimeq \text{id}_X,	\quad	f	\circ	g	\backsimeq \text{id}_Y
+\]
+が成り立つとき，$X$と$Y$は\textbf{ホモトピー同値}（homotopy equivalent）であるという．
+記号で$X	\backsimeq Y$，$f	:	X	\backsimeq Y$などと書く．
+
+$f$と$g$を\textbf{ホモトピー同値写像}（homotopy equivalence）という．
+また，$f$と$g$は互いに他の\textbf{ホモトピー逆写像}（homotopy inverse）であるということが
+ある．
+\■
+
+定理4.8の系として，次を得る．
+
+\系{4.10}
+セル複体$X,Y$にういて，$f	:	X	\simeq Y$ならば
+\[
+	f_*	:	H_q(Y)	\cong H_q(Y),	\quad	\forall	q	=	0,1,2,	\cdots,
+\]
+が成り立つ．
+\■
+
+（有限）セル複体$X$のホモロジー群$H_q(X)$は有限生成の加群であるから，
+\[
+	H_q	(X)	\cong	\Z	\oplus	\Z	\oplus	\cdots	\oplus	\Z	\oplus	T
+\]
+という形をしている．$T$は有限個の元しか含まない加群であり，
+$H_q(X)$の\textbf{ねじれ部分}（torsino part）と呼ぶ．
+また，$\Z	\oplus \Z \oplus \cdots	\oplus \Z$の部分を
+\textbf{自由部分}（free part）と呼ぶ．また，$\Z \oplus \Z \oplus \cdots	\oplus \Z$
+の部分を\textbf{自由部分}（free part）と呼ぶ．自由部分に現れる$\Z$の個数，すなわち，
+$H_q(X)$の階数（rank）のことを，$X$の\textbf{$q$次元Betti数}（Betti number）といい，
+記号で$b_q	(X)$と書く：
+\[
+	b_q	(X)	:	=	\text{rank } H_q(X)	,	\quad	q	=	0,1,2,	\cdots
+\]
+Betti数は次に節で重要な役割を演じる．
+
+\定理{4.11}
+（Euler - Poincar\'{e} の公式）
+$X$を$m$次元セル複体とし，$X$に含まれる$q$セルの個数を$k_q$とする．このとき，
+\[
+	\sum_{q=0}^m	(-1)^q	k_q	=	\sum_{q=0}^{m}	(-1)^q	b_q	(X)
+\]
+が成り立つ．
+\■
+
+証明は佐藤肇『位相幾何』[9]を見てほしい．この等式の値を$\chi (X)$と書いて，
+$X$の\textbf{Euler数}（Euler number）または\textbf{Euler - Poincar\'{e}標数
+（Euler - Poincar\'{e} characteristic）}という．Euler 数$\chi (X)$は$X$の
+ホモトピー不変量である．例えば，$m$次元円板$D^m$は1点とホモトピー同値であるから，
+$\chi (D^m) = \chi (\text{point} ) = 1$が成り立つ．
+
+\例{4.12}（球面のEuler数）$m$次元球面$S^m$は$e^0	\cup e^m$とセル分割されるから
+\[
+	\chi	(S^m) = 1 + (-1)^m.
+\]
+すなわち，$m$が偶数なら$\chi	(S^m)	=	2$，$m$が奇数なら$\chi (S^m)=0$である．
+\■
+
+\命題{4.13}
+セル複体$X,Y_1,	Y_2,	Z$について，$X	=	Y_1	\cup	Y_2$かつ$Y_1	\cap	Y_2	=	Z$であれば
+\[
+	\chi	(X)	=	\chi	(Y_1)	+	\chi (Y_2)	-	\chi	(Z).
+\]
+ただし，$Y_1$や$Y_2$は$X$のセル集合の部分集合からなる部分セル複体であり，
+$Z$は$Y_1$と$Y_2$の部分セル複体であるとする．
+\■
+
+証明の各次元のセルの個数を，$Y_1,	Y_2,	Z$のどれに属するかを考慮して数えて
+みればよい．
+

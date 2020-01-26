@@ -1,0 +1,112 @@
+\section{Morse関数}
+
+\subsection{$m$次元多様体情のMorse関数}
+
+境界のないコンパクトな多様体のことを\textbf{閉じた多様体}（closed manifold）
+または\textbf{閉多様体}という．$M$を$m$次元の閉じた多様体，
+$f:	M	\to	\R$をsの上の滑らかな関数とする．
+
+\定義{2.10}（$f$の臨界点）
+$M$の点$p_0$が$f:	M	\to	\R$の\textbf{臨界点}であるとは，
+$p_0$のまわりの局所座標系$(x_1,	x_2	,	\cdots	,	x_m)$について，
+\begin{equation}
+	\frac{\partial	f}{\partial	x_1}(p_0)	=	0,	\quad
+	\frac{\partial	f}{\partial	x_2}(p_0)	=	0,	\quad	\cdots	\quad
+	\frac{\partial	f}{\partial	x_m}(p_0)	=	0
+	\label{eq2x18}
+\end{equation}
+が成り立つことである．
+\■
+
+なお，この定義は局所座標系の選び方によらない．$(x_1	,	x_2,	\cdots	,	x_m)$について
+条件（\ref{eq2x18})が成り立てば，$p_0$のまわりの別の局所座標系$(y_1,	y_2	,	\cdots	,	y_m)$に
+ついても同じ条件が成り立つ（演習問題2.1）．
+
+実数$c$が，$f:	M	\to	\R$の何らかの臨界点$p_0$での値$c	=	f(p_0)$になっているとき，
+$c$を$f$の\textbf{臨界値}という．この言葉はすでに，前節の境界のある多様体の説明のところで使った．
+
+\定義{2.11}（Hesse行列）
+$p_0$が$f:	M	\to	\R$の臨界点であるとき，次の$m	\times	m$行列
+\begin{equation}
+	H_{f(p_0)}	=	\begin{pmatrix}
+			\displaystyle	\frac{\partial^2	f}{\partial	x_1^2}(p_0)	&					&	\cdots	&																							&					&	\frac{\partial^2	f}{\partial	x_1	\partial	x_m}(p_0)	\\
+											\vdots																	&	\ddots	&	\frac{\partial^2	f}{\partial	x_i	\partial	x_j}(p_0)	&	\ddots	&	\vdots	\\
+			\displaystyle	\frac{\partial^2	f}{\partial	x_m	\partial	x_1}(p_0)	&					&	\cdots	&																							&					&	\frac{\partial^2	f}{\partial	x_m^2}(p_0)	\\
+								\end{pmatrix}
+\end{equation}
+を臨界点$p_0$における関数$f$の\textbf{Hesse 行列}という．
+$i$行$j$列のところに$\displaystyle	\frac{\partial^2	f}{\partial	x_i	\partial	x_j}(p_0)$を並べた行列が
+Hesse 行列である．
+\[
+	\frac{\partial^2 f}{\partial	x_i	\partial	x_j}	(p_0)	=	\frac{\partial^2	f}{\partial	x_j	\partial	x_i}(p_0)
+\]
+であるから，Hesse 行列は対称行列である．
+
+臨界点$p_0$のまわりの別の局所座標系$(y_1,	y_2	,	\cdots	,	y_m)$をとって
+$f$の2階微分を計算したものと，もとの$(x_1	,	x_2	,	\cdots	,	x_m)$で計算したものとを較べると
+\begin{equation}
+	\frac{\partial^2	f}{\partial	y_h	\partial	y_k}	(p_0)	
+	=	
+	\sum_{i,j=1}^m	\frac{\partial	x_i}{\partial	y_h}(p_0)	\frac{\partial	x_j}{\partial	y_k}(p_0)	\frac{\partial^2	f}{\partial	x_i	\partial	x_j}(p_0)
+	\label{eq2x20}
+\end{equation}
+という関係がある．従って次の補題を得る．
+
+\補題{2.12}
+臨界点$p_0$のまわりに2つの局所座標系
+\[
+	(y_1	,	y_2	,	\quad	,	y_m)	\quad	\text{と}	\quad	(x_1,	x_2,	\cdots	,	x_m)
+\]
+をとり，それらによって計算した$f	:	M	\to	\R$のHesse行列をそれぞれ
+$\mathcal{H}_f(p_0),H_f(p_0)$とすれば，
+\begin{equation}
+	\mathcal{H}_f(p_0)	=	 ^tJ(p_0)	H_f(p_o)	J(p_0)
+	\label{eq2x21}
+\end{equation}
+が成り立つ．ここに，$J(p_0)$は，$(y_1,	y_2,	\cdots	,	y_m)$から$(x_1,	x_2,	\cdots	,	x_m)$への
+座標変換にともなう\textbf{Jacobi行列}を点$p_0$で計算したもので，具体的には，
+\begin{equation}
+	\begin{pmatrix}
+		\frac{\partial	x_1	}{\partial	y_1}(p_0)	&					&	\cdots																	&					&	\frac{\partial	x_1}{\partial	y_m}(p_0)	\\
+																							&	\ddots	&																					&					&																					\\
+					\vdots															&					&	\frac{\partial	x_i}{\partial	y_j}(p_0)	&					&	\vdots																	\\
+																							&					&																					&	\ddots	&																					\\
+		\frac{\partial	x_m	}{\partial	y_1}(p_0)	&					&	\cdots																	&					&	\frac{\partial	x_m}{\partial	y_m}(p_0)	
+	\end{pmatrix}
+	\label{eq2x22}
+\end{equation}
+で与えられる．
+
+非退化な臨界点と退化した臨界点を定義しよう．
+
+\定義{2.13}
+（非退化な臨界点と退化した臨界点）
+臨界点$p_0$における$f$のHesse 行列$H_f(p_0)$の行列式$\det	H_f(p_0)$が
+$0$でないとき，$p_0$を\textbf{非退化な臨界点}と呼び，反対に$\det	H_f(p_0)	=	0$であるとき，
+$p_0$を\textbf{退化した臨界点}と呼ぶ．
+\■
+
+補題2.12の系として，次が得られる．
+
+\系{2.14}
+関数$f	:	M	\to	\R$の臨界点$p_0$が非退化であるか，退化しているかは，
+$p_0$のまわりの局所座標系の取り方によらずに決まる．
+
+\証明
+
+関係式（\ref{eq2x21}）から
+\[
+	\det	\mathcal{H}_f(p_0)	=	\det	^t	J(p_0)	\det	H_f(p_0)	\det	J(p_0)
+\]
+である．座標変換にともなうJacobi行列$J(p_0)$の行列式は$0$でないことがわかっているから，
+座標変換にともなうJacobi行列$J(p_0)$の行列式は$0$でないことが判っているから，
+$\det	\mathcal{H}_f	(p_0)	\ne	0$と$\det	H_f(p_0)	\ne	0$は同値である．
+\■
+
+以上見たように，$m$次元の場合のいろいろな定義は曲面の場合と形式的にはまったく同じである．
+最後に Morse関数を定義しよう．この定義も曲面の場合と同じである．
+
+\定義{2.15}
+（Morse関数）関数$f:	M	\to	\R$が\textbf{Morse関数}であるとは，$f$の臨界点がすべて非退化
+な臨界点であることである．
+\■

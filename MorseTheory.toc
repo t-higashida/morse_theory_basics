@@ -1,0 +1,60 @@
+\contentsline {chapter}{\numberline {第1章}曲面上のMorse理論}{1}
+\contentsline {section}{\numberline {1.1}関数の臨界点}{1}
+\contentsline {section}{\numberline {1.2}Hesse 行列}{4}
+\contentsline {section}{\numberline {1.3}Morseの補題}{9}
+\contentsline {section}{\numberline {1.4}曲面上のMorse関数}{14}
+\contentsline {section}{\numberline {1.5}ハンドル分解}{21}
+\contentsline {subsection}{\numberline {1.5.1}$p_0$の指数が$0$の場合}{23}
+\contentsline {subsection}{\numberline {1.5.2}$p_0$の指数が$1$の場合}{25}
+\contentsline {subsection}{\numberline {1.5.3}$p_0$の指数が$2$の場合}{28}
+\contentsline {subsection}{\numberline {1.5.4}ハンドル分解}{29}
+\contentsline {subsubsection}{演習問題}{29}
+\contentsline {chapter}{\numberline {第2章}一般次元への拡張}{33}
+\contentsline {section}{\numberline {2.1}$m$次元多様体}{33}
+\contentsline {subsection}{\numberline {2.1.1}多様体上の関数と多様体間の写像}{33}
+\contentsline {subsection}{\numberline {2.1.2}境界のある多様体}{35}
+\contentsline {subsection}{\numberline {2.1.3}境界のある多様体上の関数と写像}{39}
+\contentsline {section}{\numberline {2.2}Morse関数}{41}
+\contentsline {subsection}{\numberline {2.2.1}$m$次元多様体情のMorse関数}{41}
+\contentsline {subsection}{\numberline {2.2.2}$m$次元のMorse補題}{43}
+\contentsline {subsection}{\numberline {2.2.3}Morse関数の存在}{46}
+\contentsline {section}{\numberline {2.3}上向きベクトル場}{54}
+\contentsline {subsection}{\numberline {2.3.1}接ベクトル}{54}
+\contentsline {subsection}{\numberline {2.3.2}ベクトル場}{58}
+\contentsline {subsection}{\numberline {2.3.3}上向きベクトル場}{61}
+\contentsline {section}{\numberline {2.4}臨界点の上げ下げ}{66}
+\contentsline {subsubsection}{演習問題}{67}
+\contentsline {chapter}{\numberline {第3章}ハンドル体}{69}
+\contentsline {section}{\numberline {3.1}多様体のハンドル分解}{69}
+\contentsline {section}{\numberline {3.2}いろいろな例}{77}
+\contentsline {section}{\numberline {3.3}ハンドルを滑らせる}{93}
+\contentsline {section}{\numberline {3.4}ハンドルを消去する}{105}
+\contentsline {subsubsection}{ハンドル体の言葉による言い換え}{109}
+\contentsline {subsubsection}{演習問題}{112}
+\contentsline {chapter}{\numberline {第4章}多様体のホモロジー}{117}
+\contentsline {section}{\numberline {4.1}ホモロジー群}{117}
+\contentsline {section}{\numberline {4.2}Morseの不等式}{124}
+\contentsline {subsection}{\numberline {4.2.1}ハンドル体とセル複体}{124}
+\contentsline {subsection}{\numberline {4.2.2}Morse不等式の証明}{129}
+\contentsline {subsection}{\numberline {4.2.3}複素射影空間$\@mathbb {C}P_m$のホモロジー群}{130}
+\contentsline {section}{\numberline {4.3}Poincar\'{e}双対性}{131}
+\contentsline {subsection}{\numberline {4.3.1}コホモロジー群}{131}
+\contentsline {subsection}{\numberline {4.3.2}Poincar\'{e}双対性の証明}{133}
+\contentsline {section}{\numberline {4.4}交点形式}{139}
+\contentsline {subsection}{\numberline {4.4.1}部分多様体の交点数}{139}
+\contentsline {subsection}{\numberline {4.4.2}交点形式}{140}
+\contentsline {subsection}{\numberline {4.4.3}部分多様体の交点数と交点形式}{143}
+\contentsline {subsubsection}{演習問題}{143}
+\contentsline {chapter}{\numberline {第5章}低次元多様体}{145}
+\contentsline {section}{\numberline {5.1}基本群}{145}
+\contentsline {section}{\numberline {5.2}閉曲面と3次元多様体}{150}
+\contentsline {subsection}{\numberline {5.2.1}閉曲面}{150}
+\contentsline {subsection}{\numberline {5.2.2}$3$次元多様体}{157}
+\contentsline {section}{\numberline {5.3}4次元多様体}{161}
+\contentsline {subsection}{\numberline {5.3.1}4次元閉多様体の Heegaard 図式}{161}
+\contentsline {subsection}{\numberline {5.3.2}$N=D^4$の場合}{164}
+\contentsline {subsection}{\numberline {5.3.3}Kirby 計算}{167}
+\contentsline {subsubsection}{演習問題}{169}
+\contentsline {chapter}{\numberline {付録A}現代数学への展望}{171}
+\contentsline {subsection}{\numberline {A.0.4}参考文献}{173}
+\contentsline {subsubsection}{参考書}{173}

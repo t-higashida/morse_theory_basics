@@ -1,0 +1,200 @@
+\subsection{境界のある多様体}
+
+「境界のある曲面」の概念を一般次元に拡張したものが，「境界のある多様体」
+である．まず，例をあげよう．
+
+\例{2.1}
+（$m$次元円板$D^m$）$\R^m = \{	(x_1,	x_2,	\cdots	,	x_m)	\:	|	\:	\text{$x_i$は実数}	\}$
+を$m$次元のEuclid 空間とする．$\R^m$の中で，原点$0$から一定の距離
+（例えば$1$）以内にある点の集合$D^m$を$m$次元円版という．式で書けば
+\begin{equation}
+	D-m	=	\{	(x_1,	x_2,	\cdots	,	x_m)	\:	|	\:	x_1^2	+	x_2^2	+	\cdots	+	x_m^2	\leqq	1	\:	\}
+	\label{eq2x4}
+\end{equation}
+が\textbf{$m$次元円板}（m-dimensional disk）である．$D^m$は境界のある$m$次元多様体で，
+その境界は\textbf{$m-1$次元球面}（$(m-1)-$dimensional sphere）
+\begin{equation}
+	S^{m-1}	=	\{	(x_1	,	x_2,	\cdots	,	x_m)	\:	|	\:	x_1^2	+	x_2^2	+	\cdots	+	x_m^2	=1	\}
+	\label{eq2x5}
+\end{equation}
+である．このことを，境界の記号$\partial$を使って，
+\begin{equation}
+	\partial	D^m	=	S^{m-1}
+	\label{eq2x6}
+\end{equation}
+と書く（図\ref{fig2x1}参照）．
+
+とくに，$m=3$の場合，3次元円板$D^3$とは，通常の言葉では，中身のつまったボール（球体）のことで，
+その境界$\partial D^3$とは表面の2次元球面$S^2$のことである．
+\■
+
+$m$次元円板$D^m$はコンパクトだが，次の例2.2はコンパクトでない．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 600,clip,width=26.6mm,height=25.5mm]{fig2x1.bmp}
+	\caption{$m$次元円板$D^m$と$m-1$次元球面$S^{m-1}$}
+	\label{fig2x1}
+\end{figure}
+
+\例{2.2}（$m$次元上半空間）
+\begin{equation}
+	\R_+^m	=	\{	(x_1,	x_2,	\cdots	,	x_m)	\:	|	\:	x_m	\geqq	0	\}
+	\label{eq2x7}
+\end{equation}
+とおいて，これを\textbf{$m$次元上半空間}（$m$-dimensional upper-half space）と呼ぶ．
+$\R_+^m$の境界は$x_m	=0$のところで，$\R^{m-1}	=	\{	(x_1,	x_2,	\cdots	,	x_{m-1})	\}$と
+同一視される（図\ref{fig2x2}参照）：
+\begin{equation}
+	\partial	\R_+^m	=	\R^{m-1}
+	\label{eq2x8}
+\end{equation}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 600,clip,width=26.6mm,height=25.5mm]{fig2x2.bmp}
+	\caption{$m$次元上半空間}
+	\label{fig2x2}
+\end{figure}
+上の2つの例は次のように一般化される．
+
+$M$を（境界のない）通常の意味の$m$次元多様体とし，$f:	M	\to	\R$をその上の滑らかな関数とする．
+そして，$0$は$f$の臨界値ではないと仮定する．このとき，$M$の部分集合$M_{f	\geqq	0}$を
+\begin{equation}
+	M_{f	\geqq	0}	=	\{	p	\in	M	\:	|	\:	f(p)	\geqq	0	\}
+	\label{eq2x9}
+\end{equation}
+と定義すれば，$M_{f	\geqq	0}$は境界のある$m$次元多様体になる．
+その境界$\partial	M_{f\geqq	0}$は
+\begin{equation}
+	M_{f=0}	=	\{	p	\in	M	\:	|	\:	f(p)	=	0	\}
+	\label{eq2x10}
+\end{equation}
+で与えられる．
+
+実際，円版$D^m$の場合も半空間$\R_+^m$の場合も，$M$として$\R^m$をとればよく，
+$f	:	\R^m	\to	\R$としては，
+\begin{equation}
+	f=	\begin{cases}
+					1	-	(x_1^2	+	x_2^2	+	\cdots	+	x_m^2)	\quad	\text{$D^m$の場合}	\\
+					x_m																			\quad	\text{$\R^m$の場合}
+			\end{cases}
+\end{equation}
+をとればよい．
+
+\[
+	\begin{cases}
+		\frac{\partial f}{\partial x_i}	=	-2	x_i	\quad	\text{(1)}\\
+		\frac{\partial f}{\partial x_i}	=	\begin{cases}
+																				0	\quad	(	i	\ne	m)	\\
+																				1	\quad	(	i	=	m)	
+																			\end{cases}	\quad	\text{(2)}
+	\end{cases}
+\]
+\begin{list}{}{}
+	\item	(1) のとき臨界点は$(0,	\cdots 0)$，このとき$f(0,	\cdots , 0)	=1$．
+	\item	(2) のとき臨界点はない．
+\end{list}
+
+以下、この本では，境界のある多様体の一般的な定義は与えず，境界のある多様体といれば，
+いつでも$M_{f	\geqq	0}$の形で表わせるようなもののみ扱う事にする．
+
+（実際には，「境界のある多様体」を一般的に定義しても，それらはすべて$M_{f	\geq	0}$の形に表わせることが証明される．）
+
+境界$M_{f=0}$がつねに$m-1$次元多様体になることは次の定理によって保証される．
+
+\定理{2.3}（陰関数の定理)
+$M$を通常の意味の$m$次元多様体とし，$f	:	M	\to	\R$をその上の滑らかな関数とする．
+このとき，$0$が$f$の臨界値でなければ，$M$の部分集合$f^{-1}(0)	p	\in	M	\:	|	\:	f(p)	=	0	\}$は，
+$M$の$m-1$次元部分多様体である．
+\■
+
+ここに出てきた「部分多様体」について説明しておくと，
+
+\定義{2.4}（部分多様体）$M$を通常の意味の$m$次元多様体とする．$M$の部分集合
+$K$が\textbf{$k$次元部分多様体}（$k-$dimensional	submanifold）であるとは，
+$K$の任意の点$p$について，$p$のまわりの（$M$の$C^\infty$球の）局所座標系
+\[
+	(x_1,	x_2,	\cdots	,	x_k	,	\cdots	,	x_m)
+\]
+が存在して，$K$は$p$の近傍内で
+\begin{equation}
+	x_{k+1}	=	x_{k+2}	=	\cdots	=	x_m	=	0
+	\label{eq2x12}
+\end{equation}
+という式で記述されることである（図\ref{fig2x3}）を見よ）．
+\■
+
+部分多様体の定義2.4からただちに，$K$には，$(x_1,	x_2,	\cdots	,	x_k)$によって
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 600,clip,width=26.6mm,height=21.8mm]{fig2x3.bmp}
+	\caption{$k$次元部分多様体}
+	\label{fig2x3}
+\end{figure}
+局所座標系が入り，したがって，$K$はそれ自身$k$次元多様体になることがわかる．
+
+陰関数の定理の証明の要点は，$0$が$f$の臨界値でなければ、
+$f^{-1}(0)$の任意の点$p$のまわりに，$f$自身を第$m$座標とするような$M$の局所座標系
+\begin{equation}
+	(x_1,	x_2,	\cdots	,	x_m)	,	\quad	\text{ここに}	\quad	x_m=f
+	\label{eq2x13}
+\end{equation}
+が構成できる，ということを示すことである．それが示せれば，$f^{-1}(0)$は点
+$p$の近傍で，$x_m	(	=	f)	=	0$という式で記述されるから，部分多様体の定義によって，
+$f^{-1}(0)$は$M$の$m-1$次元部分多様体であるというわけである．
+
+詳しくは多様体の教科書[11]（また微分積分の教科書）を参照してほしい．
+
+$M_{f	\geq	0}$の境界$M_{f=0}$の点$p$の近傍で，（\ref{eq2x13}）の局所座標系
+$(x_1,	x_2	,	\cdots	,	x_m)$を構成して，$M_{f	\geqq	0}$と$M_{f=0}$を局所的に記述してみると，
+$M_{f	\geqq	0}$は$x_m	\geq	0$と書け，$M_{f=0}$は$x_m	=	0$と書ける．こうして，
+次の補題を得る．ただし，補題では，$M_{g	\geqq	0}$のことをあらためて$M$という記号で表わしている．
+
+\補題{2.5}（境界上の点のまわりの局所座標系）
+$M$を境界のある$m$次元多様体とし，$p$を境界$\partial M$上の任意の点とする．
+そのとき，$p$のまわりには，次のような（上半空間型の）局所座標系が存在する．
+\begin{equation}
+	(x_1,	x_2,	\cdots	,	x_m	)	,	\quad	x_m	\geqq	0.
+	\label{eq2x14}
+\end{equation}
+ここで，$M$は$x_m	\geqq	0$に対応し，$\partial	M$は$x_m	=	0$に対応する（図\ref{fig2x4}参照）．
+\■
+
+以後，境界$\partial	M$上の点$p$のまわりの局所座標系といえば，必ずこのような
+上半空間型の局所座標系のことであるとする．
+
+実は，第3節で示すように，上の補題よりさらに強い主張が証明できる．
+すなわち，境界のある多様体$M$の境界$\partial	M$の近傍として，$\partial	M	\times	[0,1)$という
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 600,clip,width=27.0mm,height=15.7mm]{fig2x4.bmp}
+	\caption{上半空間型の局所座標系}
+	\label{fig2x4}
+\end{figure}
+直積構造を持つものが存在することがいえる．ここに，$[0,1)$は右半開区間で，
+境界$\partial	M$は$\partial	M	\times	\{0\}$に対応している．
+このような近傍を$\partial	M$の\textbf{カラー近傍}とう．
+「カラー」とはワイシャツなどのカラー（えり）の意味である．
+（第3節の系2.33参照）．
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

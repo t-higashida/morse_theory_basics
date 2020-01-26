@@ -1,0 +1,1127 @@
+\section{いろいろな例}
+
+幾つかの多様体の上のMorse関数を考えてみよう．
+
+\例{3.5}（$m$次元球面）
+\begin{equation}
+	S^m	=	\{	(x_1,	\cdots	,	x_m	,	x_{m+1})	
+	\:	|	\:
+	x_1^2	+	\cdots	+	x_m^2	+	x_{m+1}^2	=1	\}
+\label{eq3x21}
+\end{equation}
+を$m$次元球面とし，関数$f	:	S^m	\to	\R$を
+\begin{equation}
+	f	(	x_1,	\cdots	,	x_m	,	x_{m+1}	=	x_{m+1}
+\label{eq3x22}
+\end{equation}
+と定義する．$f$は$m+1$番目の「高さ関数」である．容易にわかるように，
+$f$はMorse関数である．$f$の臨界点は$(0,	\cdots	,	0,	-1)$と
+$(0,	\cdots	,	0,1)$の2つしかなく，指数はそれぞれ$0$と$m$である（演習問題2.2）．
+したがって，定理3.4により$S^m$は$0$-ハンドル1つと$m$ハンドル1つからなる
+ハンドル分解をもつ：
+\begin{equation}
+	S^m	=	D^m	\cup	D^m.
+\label{eq3x23}
+\end{equation}
+この分解は球面を南半球と北半球に分解することに相当している．
+
+逆に，次の定理が成り立つ。
+
+\定理{3.6}
+$m$次元コンパクト多様体$M$上に臨界点が2つだけの Morse 関数
+$f:	M	\to	\R$があれば，$M$は$m$次元球面$S^m$に同相である．
+さらに$m	\leqq	6$ならば，$M$は$S^m$に微分同相である．
+
+定理1.16は上の定理の2次元の場合である．そのときは，臨界点が2個
+の Morse関数が存在するという条件の元に，閉曲面$M$が2次元球面$S^2$
+に微分同相であることが結論された．次元が$6$以下の場合には同様の結論が
+成り立つが，7次元以上の一般の$m$次元では，上の定理のように$M$が
+$S^m$に同相であることまでしか言えず，微分同相であることは結論ができない．
+すなわち，7次元以上の殆どの次元$m$において$m$次元球面$S^m$に同相で
+あるが微分同相でないような滑らかな$m$次元多様体$M$が存在するのである．
+このような多様体を\textbf{エキゾチック球面}（exotix sphere）という．
+エキゾチック球面は 1956年に J.Milnor により，7次元で初めて発見された（[5]）．
+
+定理3.6の証明は第1章の定理1.16の証明と同様である．その証明を
+追って行くとわかるように，一般次元で，$M$と$S-m$が微分同相であることを証明
+しようとして、うまく行かなくなるのは，$m-1$次元球面の間の微分同相写像
+\begin{equation}
+	h	:	S^{m-1}	\to	S^{m-1}
+\label{eq3x24}
+\end{equation}
+を，$m$次元円板の間の微分同相写像
+\begin{equation}
+	\tilde{h}	:	D^m	\to	D^m
+\label{eq3x25}
+\end{equation}
+に拡張するところである．$m	\leqq	6$なら，このような拡張が可能であるが，
+$	m	\geqq	7$では拡張できる保証がない．（例えば，$m=3$については[6]による．）
+
+ただし，$\tilde{h}$の微分可能性を要求しなければ，次元に関わらず，
+どんな同相写像$h	:	S^{m-1}	\to	S^{m-1}$でも必ずある同相写像$\tilde{h}	:	D^m	\to	D^m$に
+拡張できる（演習問題3.1）．これが，微分同相のかわりに単に同相であることを主張する
+定理3.6が（次元に関わらず）成り立つ理由である．
+
+\例{3.7}（球面の直積$S^m	\times	S^n$）
+$f_m	:	S^m	\to	\R$と$f_n	:	S^n	\to	\R$を例3.6の高さ関数とする．
+$A$と$B$を$1	<	A	<	B$を満たす実数とすれば，
+\begin{equation}
+	f	=	(A	+	f_m)(B	+	f_n)	:	S^m	\times	S^n	\to	\R
+\label{eq3x26}
+\end{equation}
+は直積$S^m	\times	S^n	$上のMorse関数である．$f$の臨界点は4つあり，その指数は，
+$0,	n	,	m	,	m+n$である（演習問題2.3参照）．臨界値はこの順に，
+$(A-1)(B-1),	(A-1)(B+1)	,	(A+1)(B-1),	(A+1)(B+1)$である．
+（これは大きさの順序でもある．）
+
+したがって，$S^m	\times	S^n$は，$D^{m+n}$に，次元が$(m+n)$の$n$ハンドル，
+$m$-ハンドル，$m+n$-ハンドルをつぎつぎに接着していけば得られる：
+\begin{equation}
+	S^m	\times	S^n	=	D^{m+n}	\cup	D^n	\times	D^m	\cup	D^m	\times	D^n	\cup	D^{m+n},
+\label{eq3x27}
+\end{equation}
+
+\例{3.8}
+（射影空間$P^m$）$m+1$次元Euclid 空間$\R^{m+1}$の原点$\boldsymbol{0}$を通る直線
+の全体からなる集合を考え，その集合に$m$次元多様体の構造をいれたものが
+\textbf{$m$次元射影空間}（projective space）$P^m$である．
+$(x_1,	\cdots	,	x_m,	x_{m+1})$を$\boldsymbol{0}$でない$\R^{m+1}$の点とすると，
+$(x_1,	\cdots	,	x_m	,	x_{m+1})$は$P^m$の1点を決めると考えられる．
+この$p^m$の点を$[x_1,	\cdots	,	x_m	,	x_{m+1})$は$P^m$の1点を決めると考えられる。
+この$P^m$の点を$[x_1,	\cdots	,	x_m	,	x_{m+1}]$で表す．
+
+$\R^{m+1}$の中で，点$(y_1,	\cdots	,	y_m	,	y_{m+1})$と原点$\boldsymbol{0}$を
+通る直線と，点$(x_1,	\cdots	,	x_m,x_{m+1})$と原点$\boldsymbol{0}$を通る
+直線とが一致するための必要十分条件は，$0$でないある実数$\alpha$があって，
+\begin{equation}
+	(y_1,	\cdots	,	y_m	,	y_{m+1})
+	=
+	(\alpha	x_1,	\cdots,	\alpha	x_m	,	\alpha	x_{m+1}	)
+\label{eq3x28}
+\end{equation}
+が成り立つことである．したがって，この条件（\ref{eq3x28}）は，
+$P^m$の中で対応する2つの点が一致すること，すなわち
+\[
+	[	y_1,	\cdots,	y_m	,	y_{m+1}	]
+	=
+	[	x_1,	\cdots,	x_m	,	x_{m+1}	]
+\]
+であるための必要十分条件である．
+
+この条件を使うと，$P^m$がコンパクトであることが次のように証明できる．
+$P^m$の任意の点$[x_1	,	\cdots	,	x_m,	x_{m+1}	]$が与えられたとき，
+式（\ref{eq3x28}）において，$\alpha$を適当に選べば，$(y_1,	\cdots	,	y_m,	y_{m+1})$が
+\begin{equation}
+	y_1^2	+	\cdots	+	y_m^2	+	y_{m+1}^2	=1
+\label{eq3x29}
+\end{equation}
+を満たすようにできる．こうすると，$(y_1,	\cdots	,	y_m,	y_{m+1})$は
+$\R^{m+1}$の単位球面$S^m$上の点となり，しかも$P^m$のなかでは
+$
+	[	y_1,	\cdots,	y_m	,	y_{m+1}	]
+$
+とはじめの$	[	x_1,	x_m	,	x_{m+1}]$とは同じ点（直線）を表している．
+したがって，$(y_1,	\cdots	,	y_{m+1})$に$[y_1,	\cdots	,	y_m	,	y_{m+1}	]$を
+対応させる写像
+\[
+	S^m	\to	P^m
+\]
+は単位球面上の点$(y_1	,	\cdots	,	y_m	,	y_{m+1})$を，
+はじめに任意に与えられた$P^m$の点$[x_1,	\cdots	,	x_m	,	x_{m+1}]$に写すので，
+この写像$S^m	\to	P^m$が「上へ」の連続写像であることがわかる．
+$S^m$は$\R^{m+1}$の有界閉集合でコンパクトだから，その連続像になっている
+$P^m$もコンパクトである．これで，$P^m$のコンパクト性が証明できた．
+（コンパクト集合の連続像はコンパクトである．[ 10 ] を見よ．）
+
+上の写像$S^m	\to	P^m$は\textbf{射影}と呼ばれる．この射影は$S^m$上の
+2点$(y_1,	\cdots	,	y_m,	y_{m+1})$と
+$(-y_1,	\cdots	,	-y_m	,	-y_{m+1})$を$P^m$の同じ点に写す
+$2:1$の写像になっている．
+
+関数$f:	P^m	\to	\R$を
+\begin{equation}
+	f	(	[x_1,	\cdots	,	x_m	,	x_{m+1}	])
+	=
+	\frac{a_1	x_1^2	+	\cdots	+	a_m	x_m^2	+	a_{m+1}x_{m+1}^2}{	x_1^2	+	\cdots	+	x_m^2	+	x_{m+1}^2}
+\label{eq3x30}
+\end{equation}
+と定義する．ただし，$a_1,	\cdots	,	a_m	,	a_{m+1}$は任意に固定した実数の定数で，
+$a_1	<	\cdots	<	a_m	,	a_{m+1}$を満たすものとする．右辺の$x_i$をいっせいに$\alpha$倍
+しても，関数値は変わらないから，確かにこの関数は$P^m$上の関数として定義されている．
+
+1つの添え字$i$を止めて，$x_i	\ne	0$であるような$P^m$の点$[	x_1,	\cdots	,	x_m	,	x_{m+1}	]$
+全体の集合$U_i$を考えると，それは$P^m$の開集合である．$U_i$の上には，次のように定義される
+$m$次元の局所座標系$(X_1,	\cdots	,	X_m)$がある．
+\begin{equation}
+	X_1			=	\frac{x_1}{x_i},	\cdots	,	
+	X_{i-1}	=	\frac{x_{i-1}}{x_i},
+	X_{i}		=	\frac{x_{i+1}}{x_i},	\cdots,
+	X_m			=	\frac{x_{m+1}}{x_i}
+\label{eq3x31}
+\end{equation}
+$i$番目のところで$X$と$x$の添え字がずれていることに気をつけて欲しい．
+
+$f$の定義式（\ref{eq3x30}）の右辺の分母分子を$x_i^2$で割ると，
+局所座標系$(X_1	,	\cdots	,	X_m)$に関して$f$を表す式が得られる：
+\begin{equation}
+	f(X_1	,	\cdots	,	X_m)	=	\frac{a_1	X_1^2	+	\cdots	+	a_{i-1}	X_{i-1}^2	+	a_i	+	a_{i+1}	X_i^2	+	\cdots	+	a_{m+1}	X_m^2}{
+																		X_1^2	+	\cdots	+	X_{i-1}^2	+	1	+	X_i^2	+	\cdots	+	X_m^2}.
+\label{eq3x32}
+\end{equation}
+臨界値を求めるため，まず$X_m$で微分して，
+\begin{equation}
+	\frac{\partial f}{\partial X_m}	=	\frac{2X_m	\{	(a_{m+1}	-	a_1)	X_1^2	+	\cdots	+	(a_{m+1}	-	a_m)	X_{m-1}^2	+	(a_{m+1}	-	a_i)	\}}{
+										(X_1^2	+	\cdots	+	X_m^2	+	1)^2}
+\label{eq3x33}
+\end{equation}
+$a_{m+1}$は他の$a_j	\:	(j=1,	\cdots	,	m)$より大きいから，上の式の右辺は$X_m	=	0$のとき，
+かつそのときに限って$0$になる．
+
+次に，$f$を$X_m	=	0$に制限した$f|_{X_{m=0}}$を考える．
+
+\begin{equation}
+	f	|_{X_m=0}	(X_1,	\cdots	,	X_{m-1})
+	=
+	\frac{	a_1X_1^2	+	\cdots	+	a_{x-1}	X_{i-1}^2	+	a_i	;	a_{i+1}	X_i^2	+	\cdots	+	a_m	X_{m-1}^2}{
+		X_1^2	+	\cdots	+	X_{i-1}^2	+	1	+	X_i^2	+	\cdots	+	X_{m-1}^2}.
+\label{eq3x34}
+\end{equation}
+$f	|	_{X_m	=	0}$を$X_{m-1}$で微分すると，上と同じ理由出、この微分は$X_{m-1}	=	0$のとき，
+かつそのときに限って$0$となる．以下同様に進むと，座標近傍$U_i$上にある$f$の臨界点は
+\[
+	X_i	=	\cdots	=	X_{m-1}	=	X_m	=	0
+\]
+を満たさなければならないことがわかる．次に（\ref{eq3x32}）を$X_1$で微分して，
+$a_1$が$a_2,	\cdots	,	a_{m+1}$より小さいことを使うと，
+$\displaystyle	\frac{	\partial	f}{\partial	X_1}$は$X_1=0$のとき，かつそのときに限って
+$0$となる．次に$f	|_{X_1	=0}$を$X_2$で微分する．同様の理由で，この微分は
+$X_2=0$のとき，かつそのときに限って$0$になる．以下同様に進むと，$U_i$上の$f$の臨界点は
+\[
+	X_1	=	X_2	=	\cdots	=	X_{i-1}	=	0
+\]
+を満たさなければならない．まとめると，$U_i$上の$f$の臨界点は局所座標系
+$(X_1,	\cdots	,	X_m)$の原点$(0,	\cdots	,	0)$だけである．
+$[	x_1,	\cdots	,	x_m	,	x_{m+1}	]$の表記法で書けば，
+$[	0	,	\cdots,	0	,	1,	0	,	\cdots	,0]$が$U_i$内で唯一の臨界点である．
+ただし，$1$は左から$i$番目にある．
+
+
+この臨界点での$f$の Hesse 行列 $\displaystyle	\left(	\frac{\partial^2	f}{\partial	X_j	\partial	X_k}	\right)$が，
+\begin{equation}
+	\begin{pmatrix}
+		2	(a_1	-	a_i)	&					&										&										&						&										\\
+										&	\ddots	&										&										&						&										\\
+										&					&	2(a_{i-1}	-	a_i)	&										&						&										\\
+										&					&										&	2(a_{i+1}	-	a_i)	&						&										\\
+										&					&										&										&	\ddots		&										\\
+										&					&										&										&						&	2(a_{m+1}	-	a_i)
+	\end{pmatrix}
+\label{eq3x35}
+\end{equation}
+であることを確かめて欲しい．対角線以外の行列要素は$0$である．$a_1	<	\cdots	<	a_i	<	\cdots	<	a_{m+1}$であるから，
+Hesse 行列の行列式は$0$でなく，対角成分は$i-1$行列目までがマイナス，その後がプラスである．
+したがって$U_i$の原点にある臨界点は非退化で，指数は$i-1$である．また，このときの関数の値は
+$a_i$である．
+
+$p^m$は$m+1$個の座標近傍$U_i,	\:	(i=1,	\cdots,	m+1)$で覆われるので，
+次のことが証明できたことになる：ここで構成した Morse 関数$f:	P^m	\to	\R$は
+$m+1$個の臨界点をもち，その指数は臨界値の小さいほうから
+\[
+	0,	1,	\cdots	,	m	
+\]
+である．したがって$P^m$のハンドル分解は
+\begin{equation}
+	P^m	=	D^m	\cup	D^1	\times	D^{m-1}	\cup	D^2	\times	D^{m-2}	\cup	\cdots	\cup	D^{m-1}	\times	D^1	\cup	D^m
+\label{eq3x36}
+\end{equation}
+のようになる．
+\■
+
+とくに，1次元射影空間$P^1	=	D^1	\cup	D^1$は円周$S^1$に微分同相である．
+
+\例{3.9}
+（射影平面$P^2$のハンドル分解）
+2次元の射影空間$P^2$を\textbf{射影平面}（projective plane）という．射影平面の
+ハンドル分解を少し詳しく考えよう．例3.8 によれば，$P^2$は2次元の閉多様体で，
+そのハンドル分解は$0$-ハンドル，$1$-ハンドル，$2$-ハンドルをこの順に
+1つずつ接着したものである．
+
+
+$0$-ハンドル（円板）に$1$-ハンドルをつけるやり方には2種類の方法が考えられる．
+図3.6の左と右がそれである．もし左図のようにつけると，アニュラスができてしまい，
+これをたった1つの$2$-ハンドルでふたをして閉曲面にすることは不可能である．
+したがって，射影平面では$1$-ハンドルは右図のようについていなければならない．
+右図において，$0$-ハンドルと$1$-ハンドルを合わせたものはメビウスの帯に同相であり，
+その境界は1つの円周であるから，これに$2$-ハンドルでふたをすることができる．
+（もちろん，我々の3次元空間では不可能で，「抽象的に」考えてのことである．）
+
+結局，射影平面$P^2$のハンドル分解は，円板に図\ref{fig3x6}の右のように
+$1$-ハンドルをつけ，それに$2$-ハンドルをつけたものである．メビウスの
+帯と円板を境界で張り合わせたものと言ってもよい．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=96.0mm,height=69.2mm]{fig3x6.bmp}
+	\caption{$2$次元の$1$-ハンドルをつける2つのやり方}
+	\label{fig3x6}
+\end{figure}
+なお，$0$-ハンドルに$1$-ハンドルをつけるやり方には，図\ref{fig3x6}の他にも，
+例えば次の図\ref{fig3x7}のようなやり方もあるのではないか，と思う読者もいるかも
+しれないが，図3.7の付け方は図\ref{fig3x6}の左とまったく同じであり，
+できあがった図形はどちらもアニュラスに同相である．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=49.2mm,height=64.8mm]{fig3x7.bmp}
+	\caption{このハンドルの付け方は図\ref{fig3x6}の左と同じ}
+	\label{fig3x7}
+\end{figure}
+図\ref{fig3x6}と図\ref{fig3x7}の違いは3次元空間$\R^3$へのアニュラスの埋め込み方の
+違いだけである．
+
+3次元の射影空間$P^2$のハンドル分解については，第5章でもう一度論じることにする．
+
+\例{3.10}
+（$m$次元複素射影空間$\C P_m$)
+$m+1$個の複素数を並べたもの
+\[
+	(z_1,	\cdots	,	z_m	,	z_{m+1})
+\]
+の全体を$\C^{m+1}$で表して，$m+1$次元複素空間と呼ぶ．この空間の原点$\boldsymbol{0}$を通る
+「複素数の意味の直線」の全体の集合を考え，それに複素$m$次元の複素多様体の構造を入れたものが
+\textbf{$m$次元複素射影空間（complex projective spave）}である．
+記号$\C	P_m$と表す．ここで$m$を下に書いたのは$\C	P_m$の複素次元が$m$であることを
+表すためで，通常の意味では$\C	P_m$は$2m$次元である．この多様体もコンパクトであることが
+知られている．
+
+\例3.8の$P^m$を，$C	P_m$と区別して，\textbf{実射影空間（real projective space）}と呼ぶことがある．
+
+$\C^{m+1}$の原点以外の点$(z_1	,	\cdots	,	z_m	,	z_{m+1}9$は$\C	P_m$の1点を決める．
+この点を$[	z_1,	\cdots	,	z_m	,	z_{m+1}	]	$と表す．
+$[	z_1,	\cdots	,	z_m	,	z_{m+1}	]	=	[	w_1,	\cdots	,	w_m	,	w_{m+1}	]$であるための
+必要十分条件は，ある$0$でない複素数$\alpha$が存在して，
+\begin{equation}
+	(z_1,	\cdots	,	z_m	,	z_{m+1}	)	=	(	\alpha	w_1,	\cdots	,	\alpha	w_m	,	\alpha	w_{m+1}	)
+\label{eq3x37}
+\end{equation}
+が成り立つことである．
+
+$\alpha_1	<	\cdots	<	a_m	<	a_{m+1}$を実数として，関数$f:	\C	P_m	\to	\R$を
+\begin{equation}
+	f(z_1,	\cdots,	z_m	,	z_{m;1})
+	=
+	\frac{a_1	|z_1|^2	+	\cdots	+	a_m	|z_m|^2	+	a_{m+1}	|z_{m+1}|^2}{
+		|z_1|^2	+	\cdots	+	|z_m|^2	+	|z_{m+1}|^2}
+\label{eq3x38}
+\end{equation}
+と定義する．
+
+実射影空間の場合と同様に，ある添え字$i$を止めた上で，$z_i	\ne	0$であるような
+$[z_1,	\cdots	,	z_m	,	z_{m+1}	]	$の全体からなる集合$U_i$を考えると，
+$U_i$は$\C	P_m$の開集合になる．この上には，
+\begin{equation}
+	Z_1			=	\frac{z_1}{z_i},	\cdots,
+	Z_{i-1}	=	\frac{z_{i-1}}{z_i},
+	Z_{i}		=	\frac{z_{i+1}}{z_i},	\cdots,
+	Z_m			=	\frac{z_{m+1}}{z_i}
+\label{eq3x39}
+\end{equation}
+のように定義される$m$次元の複素局所座標系がある．$(Z_1,	\cdots	,	Z_m)$を使って
+$f$を表してみると，
+\begin{equation}
+	f=	\frac{	a_1	|Z_1|^2	+	\cdots	+
+							a_{i-1}	|Z_{i-1}	|Z_{i-1}|^2	+	
+							a_i	+	
+							a_{i+1}|Z_i|^2	+	
+							\cdots	+
+							a_{m+1}	|Z_m|^2
+						}{
+							|Z_1|^2	+	\cdots	+
+							|Z_{i-1}|^2	+	
+							1	+
+							|Z_i|^2	+
+							|Z_m|^2
+						}
+\label{eq3x40}
+\end{equation}
+となる．ここで，$Z_j	=	X_j	+	\sqrt{-1}Y_j	\:	(j=1,	\cdots	,	m)$とおけば，
+\begin{equation}
+	|Z_j|^2	=	X_j^2	+	Y_j^2
+\label{eq3x41}
+\end{equation}
+である．
+
+$f$を$(X_1,	Y_1,	\cdots	,	X_m	,	Y_m)$に関する$2m$変数の関数とみなし，
+$P^m$の場合と同様に議論すれば，$U_i$上では$f$の臨界点は原点$(0,	\cdots	,	0)$だけで，
+それは非退化であり，その指数が$2(i-1)$であることがわかる（臨界値は$a_i$）．
+
+$\C	P_m$は$m+1$個の複素座標近傍$U_i	\:	(	i=1,	\cdots,	m	,	m+1)$で覆えるので，次の
+ことが示されたことになる：Morse関数$f	:	\C	P_m	\to	\R$は
+$m+1$個の臨界点をもち，その指数は，臨界値の小さい順に，
+\[
+	0,	2,	\cdots	,	2m
+\]
+である．したがって，$C	P_m$のハンドル分解は次のようになる．
+\begin{equation}
+	\C	P_m	=	D^{2m}									\cup	
+						D^2	\times	D^{2m	-	2}	\cup	
+						\cdots									\cup	
+						D^{2m	-2}	\times	D^2		\cup	
+						D^{2m}.
+\label{eq3x42}
+\end{equation}
+\■
+
+とくに複素1次元の射影空間$\C	P_1$を\textbf{複素射影直線（complex projective line）}という．
+$\C	P_1$は2次元のコンパクト多様体で，その上には臨界点を2つだけもつ Morse 関数が存在する．
+したがって，定理3.6により$\C	P_1$は2次球面$S^2$に微分同相である．
+
+また，複素2次元の複素射影空間$\C	P_2$を\textbf{複素射影平面（complex projective plane）}という．
+複素射影平面は典型的な4次元多様体であり，第5章でもう少し詳しく考える．
+
+\例{3.11}
+（回転群$SO(m)$）
+まず\textbf{直行行列（orthogonal matrix）}について復習しておこう．
+$m	\times	m$行列$A	=	(	a_{ij})$が次の2つの性質をもつとき，
+直行行列というのだった．
+
+\begin{list}{}{}
+	\item	（ⅰ）$A$の第$i$行$\boldsymbol{a}_i$を行ベクトルと考えると，その長さは$1$である．すなわち、
+各$i	=	1,	\cdots	,	m$について，
+\begin{equation}
+	|	\boldsymbol{a}_i^2	=	a_{i1}^2	+	a_{i2}^2	+	\cdots	+	a_{im}^2	=	1
+\label{eq3x43}
+\end{equation}
+が成り立つ．
+	\item	（ⅱ）$i	\ne	k$とすると$\boldsymbol{a}_i$と$\boldsymbol{a}_k$は直行する．
+すなわち，$i,k=1,	\cdots	,	m$，$i	\ne	k$について，$\boldsymbol{a}_i$と$\boldsymbol{a}_k$の内積
+$\boldsymbol{a}_i	\cdot	\boldsymbol{a}_k$は$0$である：
+\begin{equation}
+	\boldsymbol{a}_i	\cdot	\boldsymbol{a}_k
+	=
+	a_{i1}	a_{k1}	+	a_{i2}a_{k2}	+	\cdots	;	a_{im}a_{km}	=	0.
+\label{eq3x44}
+\end{equation}
+\end{list}
+この2性質は，$A^t	A	=	E$に同値である．ここに，$^t{A}$は$A$の転置行列で，
+$E$は$m$行$m$列の単位行列である。行列式を考えて，$\det	A	=	\pm	1$を得る．
+
+$\det	A	=1$であるような直行行列を\textbf{回転行列}といい，$m$行$m$列の回転行列
+全体を$SO(m)$という記号で表して，\textbf{$m$次回転行列群（rotation group）}という．
+
+行列の積に関して$SO(m)$は群をなす．しかも，$SO(m)$は$C^\infty$級の多様体
+であり，群の積は多様体の構造に関して$C^\infty$級である．
+このような群を\textbf{Lie群}という．
+$SO(m)$は典型的なLie　群の例である．
+
+$SO(1)$は自明群なので，以下，$m	\geqq	2$と仮定して，$SO(m)$の多様体としての
+構造を考えよう．直行行列の定義により，$SO(m)$は長さ$1$の行ベクトルを$m$本並べた
+ものの全体（$\cong	S^{m-1}	\times	\cdots	S^{m-1}$）の閉部分集合なので，
+$SO(m)$はコンパクトである．
+
+次元を考えてみよう．$1$番目の行ベクトル$\boldsymbol{a}_1$としては，
+$\R^m$の中の長さ$1$の任意のベクトルが選べるから，これが$(m-1)$次元分だけある．
+1つの$\boldsymbol{a}_1$を固定すると，2番目の$\boldsymbol{a}_2$は，
+$\boldsymbol{a}_1$に直行する$m-1$次元Euclid空間にに入っており，
+$\boldsymbol{a}_2$としてそのなかの長さ$1$の任意のベクトルが選べるので，
+この分が$(m-2)$次元ある．以下同様に進むと，$SO(m)$の次元は
+\[
+	(m-1)	+	(m-2)	+	\cdots	+	+	2	+	1	=	\frac{m(m-1)}{2}
+\]
+であることがわかる．
+
+$1	<	c_1	<	c_2	<	\cdots	<	c_m$を任意に固定した実数として，
+関数$f	:	SO(m)	\to	\R$を次のように定義しよう．
+\begin{equation}
+	f(A)	=	c_1	x_{11}	+	c_2	x_{22}	+	\cdots	+	c_m	x_{mm}
+\label{eq3x45}
+\end{equation}
+ただし，
+\begin{equation}
+	A	=	\begin{pmatrix}
+					x_{11}	&	x_{12}	&	\cdots	&	x_{1m}	\\
+					x_{21}	&	x_{22}	&	\cdots	&	x_{2m}	\\
+									&	\cdots	&	\cdots	&					\\
+					x_{m1}	&	x_{m2}	&	\cdots	&	x_{mm}	\\
+			\end{pmatrix}
+\label{eq3x46}
+\end{equation}
+である．（行列$A$は，多様体$SO(m)$の「点」と考えられる．）
+
+\補題{3.12}
+式（\ref{eq3x45}）で与えられる関数$f:	SO	(m)	\to	\R$の「臨界点」は
+\begin{equation}
+	\begin{pmatrix}
+		\pm	1	&	0			&	\cdots	&	0		\\
+			0		&	\pm1	&	\cdots	&	0		\\
+					&				&	\ddots				\\
+			0		&	0			&	\cdots	&	\pm
+	\end{pmatrix}
+\label{eq3x47}
+\end{equation}
+である．（対角線上の符号は，$\det	=1$である限り任意にの組み合わせを選んでよい．）
+
+\証明
+特別な回転行列$B_\theta$を導入しよう．$B_\theta$は
+\begin{equation}
+	B_\theta	=
+	\begin{pmatrix}
+		\cos	\theta	&	-	\sin	\theta	&	0		&	\cdots	&	0	\\
+		\sin	\theta	&		\cos	\theta	&	0		&	\cdots	&	0	\\
+		0							&		0							&	1		&	\cdots	&	0	\\
+									&									&			&	\ddots	&		\\
+		0							&		0							&	0		&	\ddots	&	1
+	\end{pmatrix}
+\label{eq3x48}
+\end{equation}
+で定義される行列である．すなわち，$B_\theta$は$\R^m$の1番目と2番目の座標軸で
+貼られる平面の中の角度$\theta$の回転である．
+
+式（\ref{eq3x46}）の中で$\theta$をパラメータとする「曲線」になる．
+しかもこの曲線は，$\theta	=	0$のとき「点」$A$を通過する．
+実際に行列の積を計算し，関数$f$の定義式（\ref{eq3x45}）に代入すると，
+\begin{align}
+	f(AB_\theta	)	=		&c_1	(	x_{11}	\cos	\theta	+	x_{12}	\sin	\theta	)	+c_2	(	-x_{21}	\sin	\theta	+	x_{22}	\cos	\theta)	\notag	\\
+									+	&c_3	x_{33}	+	\cdots	+	c_m	x_{mm}.	\label{eq3x49}
+\end{align}
+これを$\theta$で微分して，$\theta	=	0$とおくと（すなわち，「点」$A$において，関数$f$を
+曲線$AB_\theta$の速度ベクトル$\displaystyle	\frac{d}{d	\theta}	AB_\theta	\bigg|_{\theta	=	0}$の
+方向に微分すると），
+\begin{equation}
+	\frac{d}{d	\theta}	f(AB_\theta)	\bigg|_{\theta	=	0}	=	c_1	x_{12}	-	c_2	x_{21}
+\label{eq3x50}
+\end{equation}
+を得る．同様の曲線$B_\theta	A$についても，微分を計算してみると，
+\begin{equation}
+	\frac{d}{d\theta}	f(B_\theta	A)	\bigg|_{\theta=0}
+	=
+	-c_1	x_{21}	+	c_2	x_{21}
+\label{eq3x51}
+\end{equation}
+を得る．さて，もしも点$A$が関数$f	:	SO(m)	\to	\R$の臨界点だとすると，
+$A$における微分の結果（\ref{eq3x50}）と（\ref{eq3x51}）は両方とも$0$でなくては，
+ならない．ところが，$1	<	c_1	,	c_2$と仮定してあるから，両式の右辺が$0$になるとしたら
+\begin{equation}
+	x_{12}=x_{21}	=	0
+\label{eq3x52}
+\end{equation}
+でなければならい．
+
+以上は，$\R^m$の1番目の軸と2番目の軸で張られる平面の中の回転行列
+$B_\theta$を使って得られた結論であるが，$i$番目の軸と$k$番目の軸
+$(1	\leqq	i	<	k	\leqq	m)$で得られる平面の中の回転行列を使って議論すれば，
+$A$が臨界点である限り，
+\begin{equation}
+	x_{ik}	=	x_{ki}	=	0	,	\quad	1	\leqq	\forall	i	<\forall	k	\leqq	m
+\label{eq3x53}
+\end{equation}
+でなければならないことがわかる．すなわち，$A$は対角行列（対角線上にだけ
+$0$でない成分がある行列）である。しかも$A$は回転行列だから，
+$A$は補題3.12の主張する形でなくてはならない．
+
+逆に，補題3.12の主張する形の対角行列が実際に$f	:	SO(m)	\to	\R$の臨界点であることを示すため，
+すべての$m	\times	m$行列のなす空間を$m^2$次元の Euclid 空間$\R^{m^2}$とみなして，
+$SO(m)$はその中に埋め込まれていると考えよう．
+$A$を補題の主張する形の行列，すなわち対角線上に$\varepsilon_1,	\varepsilon_2,	\cdots	,
+\varepsilon_m		\:	(	\varepsilon_j	=	\pm	1)$が並び，他の行列要素が$0$であるような行列とする．
+そして，$\theta	=	0$のときの（「点」$A$における）曲線$AB_\theta$の速度ベクトルを計算すると，
+単純な計算で
+\begin{equation}
+	\frac{d}{d	\theta}	AB_\theta	\bigg|_{\theta=0}
+	=
+	A	\frac{d}{d	\theta}	B_\theta	\bigg|_{\theta=0}
+	=
+	\begin{pmatrix}
+					0								&	-\varepsilon_1	&	0	&	\cdots	&	0	\\
+					-\varepsilon_2	&									&	0	&	\cdots	&	0	\\
+					0								&	0								&	0	&					&	0	\\
+													&									&		&	\ddots	&		\\
+					0								&	0								&	0	&	\cdots	&	0
+	\end{pmatrix}
+\label{eq3x54}
+\end{equation}
+を得る．右辺の行列を$V_{12}$とおく．少し考えにくいかもしらないが，ここでは
+行列$V_{12}$を$m^2$次元のEuclid空間$\R^{m^2}$内の「ベクトル」と考えている．
+
+いまは，$\R^m$の1番目と2番目の軸で張られている平面内の回転行列
+$B_\theta$を使って定義された曲線$AB_\theta$の速度ベクトルであったが，
+$i$番目と$k$番目の軸で張られる平面内の回転行列を使って，同様に定義される
+曲線の$A$における速度ベクトル$V_{ik}$を求めると，
+$i$行$k$列のところに$-	\varepsilon_i$，$k$行$i$列のところに
+$\varepsilon_k$，他はみな$0$であるような行列になる．
+$i$と$k$を$1	\leqq	i	<	k	\leqq	m$の範囲で動かしたとき，これらのベクトル
+$V_{ik}$は$\R^{m^2}$のなかで1次独立であり，全部で$i	<	k$を満たす$(i,k)$の選び方の個数だけ，
+つまり
+$\displaystyle	\binom{m}{2}	=	\frac{m(m-1)}{2}$個だけある．
+これは$SO(m)$の次元に等しいから，$V_{ik}	\:	(1	\leqq	i	<	k	\leqq	m)$が
+点$A$における$SO(m)$の接ベクトル空間$T_A(SO(m))$の基底になっていることがわかる．
+
+もし$A$が補題3.12の主張する形の行列であれば，$A$において関数$f$をどの
+$V_{ik}$の方向に微分しても，$0$であることが計算（\ref{eq3x50}）と同様にして
+示せるから，これで$A$が$f$の臨界点であることが証明できた．
+\■
+
+$A$が補題3.12の主張する形の行列（対角線上に$\varepsilon_1,	\varepsilon_2,	\cdots	,	\varepsilon_m$，他は$0$）
+であるとして，$A$における$f$のHesse 行列$H_f$を求めよう．そのためには，$A$のまわりで$S(m)$の
+局所座標系を決めておかなければならない．
+
+$\R^m$の$i$番目の座標軸と$k$番目の座標軸で張られる平面内の回転行列を
+$B_\theta^{(ik)}$と表すことにする．$i$と$k	\:	(i	<	k)$のすべての選び方にわたって
+こにょうな行列を考えれば，それらは全部で$\displaystyle	\frac{m	(m-1)}{2}$個だけある．
+これらすべてを行列$A$の右から掛けたもの
+\begin{equation}
+	A	\cdot	B_\theta^{(ik)}	B_\varphi^{(jl)}	B_\psi^{(hr)}
+\label{eq3x55}
+\end{equation}
+によって，$\displaystyle	\frac{m(m-1)}{2}$次元の局所座標系$(\theta,	\varphi	,	\psi,	\cdots	)$が入る．
+これで Hesse行列 $H_f$が計算できる．実際に$A$における微分を計算して，
+\begin{align}
+	\frac{\partial^2 f}{\partial \theta	\partial	\varphi}
+	(	A	\cdot	B_\theta^{(ik)}	B_\psi^{(jl)}	\bigg|_{(\theta,	\varphi)	=	(0,0)}
+	&=
+	f	\left(	A	\cdot	\frac{d}{d	\theta}	B_{\theta}^{(ik)}	\bigg|_{\theta=0}	\cdot	\frac{d}{d	\varphi}	B_\varphi^{(jl)}	\bigg|_{\varphi	=0}
+		\right)	\notag	\\
+	&=	\begin{cases}
+					\:	0																				&\quad	(i,k)	\ne	(j,l)	\\
+					\:	-c_i	\varepsilon_i	-	c_k	\varepsilon_k	&\quad	(i,k=	=	(j,l)
+			\end{cases}
+\label{eq3x56}	
+\end{align}
+ここで微分を$f$の中に入れてよいのは，$f(A)$が$A$の要素の1次式になっていて，
+しかも定数項がないからである．また
+$\displaystyle	\frac{d}{d	\theta	}	B_\theta^{(ik)}	\bigg|_{\theta	=	0}$などの
+計算はやさしい．
+
+このHesse 行列は$\displaystyle	\frac{m(m-1)}{2}$行$\displaystyle	\frac{m(m-1)}{2}$列の
+行列で，（\ref{eq3x56}）からわかるように，「対角型」である．「対角線」上の要素は$0$でない．
+したがって，$A$は非退化な臨界点であることがわかる．
+
+「第$(i,k)$番目」の対角線上の要素は$-	_i	\varepsilon_i	-	c_k	\varepsilon_k$である．
+この Hesse 行列の対角線上に何個のマイナスの数があるかを考えて欲しい（演習問題 3.4）．
+答えは，次のようになる：
+
+$A$の対角線上の$\varepsilon_i,	1	\leqq	i	\leqq	m$のうちで，
+$\varepsilon_i	=1$であうよな番号$i$を小さいほうから並べて，
+\[
+	i_1,	i_2,	\cdots	,	i_n
+\]
+を得たとする．このとき$A$における Hesse 行列の指数（対角線上のマイナスの数の個数）は
+\begin{equation}
+	(i_1	-	1)	+	(i_2	-	1)	+	\cdots	+	(i_n	-	1)
+\label{eq3x57}
+\end{equation}
+である．（すべての$\varepsilon_i$が$-1$ならば，この指数は$0$である．）また，
+その臨界点の臨界値は
+\begin{equation}
+	2	(c_{i_1}	+	c_{i_2}	+	\cdots	+	c_{i_n})	-	\sum_{i=0}^{m}	c_i
+\label{eq3x58}
+\end{equation}
+である．容易にわかるように，
+\begin{equation}
+	2	c_i	<	c_{i+1}	,	\:	i=1,	\cdots	,	m-1
+\label{eq3x59}
+\end{equation}
+であれば，ことなる臨界点の臨界値が一致することはない．なお，
+$\det	A	=	1$を考慮すると，臨界点は全部で（$2^m$個でなく）$2^{m-1}$個である．
+\■
+
+特別な場合として，$SO(3)$を考えると，Morse関数$f:	SO(3)	\to	\R$は4つの臨界点を
+もつ．$c_i$の間に条件（\ref{eq3x59}）を仮定すると，それらの指数は臨界値の
+小さいほううから順に，
+\[
+	0,1,	2,	3
+\]
+である．
+
+\注意{}
+$SO(3)$は3次元射影空間$P^3$と同じだけの臨界点をもつが，実は，
+$SO(3)$と$P^3$は微分同相である．このことは，系3.16により
+2次の特殊ユニタリ群$SU(2)$が$S^3$に微分同相であることと，「随伴表現$SU(2)	\to	SO(3)$」
+が2重被覆であることから証明できる．
+
+念のため，随伴表現を座標で書いておこう．2行2列の特殊ユニタリ行列は
+\[
+	\begin{pmatrix}
+		z_1							&	z_2	\\
+		-\overline{z_2}	&	\overline{z_1}
+	\end{pmatrix}
+	\quad
+	\text{ここに}
+	\quad
+	z_1	=	x_1	+	\sqrt{-1}	y_1	,	\:
+	z_2	=	x_2	+	\sqrt{-1}	y_2	
+\]
+と書ける．ただし，$|z_1|^2	+	|z_2|^2	=	x_1^2	+	y_1^2	+	x_2^2	+	y_2^2	=	1$である．
+（このことからも，$SU(2)	\cong	S^3$がわかる．）
+
+この特殊ユニタリ行列に，随伴表現で対応する3次の回転行列は
+\[
+	\begin{pmatrix}
+		x_1^2	+	y_1^2	-	x_2^2	-	y_2^2	&	2(-x_1y_2	+	y_1	x_2						&	2(x_1x_2	+	y_1	y_2)	\\
+		2	(x_1y_2	+	y_1	x_2)					&	x_1^2	-	y_1^2	+	x_2^2	-y_2^2	&	2(^-x_1y_1	+	x_2y_2)	\\
+		2(-x_1	x_2	+	y_1	y_2)				&	2(x_1	y_1	+	x_2	y_2)					&	x_1^2	-	y_1^2	-x_2^2	+	y_2-2
+	\end{pmatrix}
+\]
+である．
+
+\例{3.13}（ユニタリ群$U(m)$）
+複素$m	\times	m$行列$U	=	(z_{ij})$について，
+$U^*	=	(	\overline{_{ji}})$とおく．すなわち，
+$U$の各要素の複素協約をとり，同時に転置行列にしたものである．
+\begin{equation}
+	UU^*	=	E
+\label{eq3x60}
+\end{equation}
+を満たす複素$m	\times	m$行列を$m$次の\textbf{ユニタリ行列}（unitary matrix）という．
+この定義から，ユニタリ行列$U$の行列式は絶対値$1$の複素数である：
+$|	\det	U	|	=	1$．$m$次のユニタリ行列の全体$U(m)$は行列の積についてLie群をなす．
+$U(m)$を$m$次の\textbf{ユニタリ群（unitary group）}という．
+
+行ベクトルの間の\text{Hermite 内積}を
+\begin{equation}
+	\boldsymbol{a}_i	\cdot	\overline{\boldsymbol{a}_j}
+	=
+	z_{i1}	\overline{z_{j1}}	+
+	z_{i2}	\overline{z_{j2}}	+	
+	\cdots	+
+	z_{im}	\overline{z_{jm}}
+\label{eq3x61}
+\end{equation}
+と定義すれば，ユニタリ行列の条件は，$\boldsymbol{a}_i	\cdot	\overline{a}_i	=	1
+\:	(i	=1	,	\cdots	,	m),	\:	\boldsymbol{a}_i	\cdot	\overline{\boldsymbol{a}_j}	=	0
+\:	(i	\ne	j$と書き表すことができる．
+
+第1行$\boldsymbol{a}_1$としては$\C^m$のなかの長さ$1$のベクトルを任意に選べる．
+$\C^m$は実数の意味では$2m$次元であるから，そのなかの単位球面の次元は
+$2m-1$であり，$\boldsymbol{a}_1$の選択の自由度は$2m-1$次元である．
+$\boldsymbol{a}_1$を決めると，$\boldsymbol{a}_2$は$\boldsymbol{a}_1$に
+Hermite 内積の意味で直行する複素$(m-1)$次空間の長さ$1$のベクトルが
+任意に選べ，この分が$2(m-1)-1$次元だけある．
+以下同様に進むと，$U(m)$の多様体としての次元は
+\begin{equation}
+	\{	(2m-1)
+	\}	+
+	\{	(2(m-1)	-1)
+	\}	+	\cdots	+
+	3	+	1
+	=	m^2
+\label{eq3x62}
+\end{equation}
+に等しいことがわかる．
+
+$SO(m)$のときと同様に，実数$1	<	c_1	<	c_2	<	\cdots	<	c_m$を選び，
+関数$f	:	U(m)	\to	\R$を
+\begin{equation}
+	f(U)	=	\mathfrak{R}(c_1	z_{11}	+	c_2	z_{22}	+	\cdots	+	c_m	z_{mm})
+\label{eq3x63}
+\end{equation}
+と定義する．ここに，$\mathfrak{R}$は実数部分をとる記号で，また，
+\begin{equation}
+	U	=	\begin{pmatrix}
+				z_{11}	&	z_{12}	&		\cdots	&	z_{1m}	\\
+				z_{21}	&	z_{22}	&		\cdots	&	z_{2m}	\\
+								&					&		\ddots	&					\\
+				z_{m1}	&	z_{m2}	&		\cdots	&	z_{mm}
+			\end{pmatrix}
+\label{eq3x64}
+\end{equation}
+である．
+
+以下の議論は$SO(m)$と殆ど同じであるが，$SO(m)$の場合に使った
+回転行列$B_\theta^{(ik)}	\:	(1	\leqq	i	<	k	\leqq	m)$のほかに、
+次のような行列$C_\theta^{(ik)}	\:	(1	\leqq	i	<	k	\leqq	m)$と
+行列$A_\theta^{(i)}	\:	(	1	\leqq	i	\leqq	m)$を使う．
+行列$C_\theta^{(ik)}$を成分$z_{pq}$を用いて定義すれば，
+\begin{equation}
+	z_{pq}
+	=
+	\begin{cases}
+		\:						\cos	\theta	&	\quad	(p,q)	=	(i,i)	\quad	\text{または}	\quad	(k,k),	\\
+		\:	\sqrt{-1}	\sin	\theta	&	\quad	(p,q)	=	(i,k)	\quad	\text{または}	\quad	(k,i),	\\
+		\:	1												&	\quad	(p,q)	=	(j,j)	\quad	\text{ただし}	\quad	j	\ne	i,k	\\
+		\:	0												&	\quad	\text{その他}
+	\end{cases}
+\label{eq3x65}
+\end{equation}
+例えば，
+\[
+	C_\theta^{(12)}
+	=
+	\begin{pmatrix}
+			\cos	\theta				&	\sqrt{-1}	\sin	\theta	&	\cdots	&					&					&	0				\:	\\
+		\sqrt{-1}\sin	\theta	&	\cos	\theta						&	\cdots	&					&					&	0				\:	\\
+			\vdots							&	\vdots									&	\ddots	&					&					&					\:	\\
+													&													&					&			1		&					&					\:	\\
+													&													&					&					&	\ddots	&	\vdots	\:	\\
+				0									&		0											&					&					&	\cdots	&	1				\:	\\	
+	\end{pmatrix}
+\]
+である．
+
+また，行列$A_\theta^{(i)}$の定義は
+\begin{equation}
+	A_\theta	=
+		\begin{pmatrix}
+			1	&	0	&					&	\cdots											&					&	0	\\
+			0	&	1	&					&	\cdots											&					&	0	\\
+				&		&	\ddots	&															&					&		\\
+				&		&					&	\text{exp}\sqrt{-1}	\theta	&					&		\\
+				&		&					&															&	\ddots	&		\\
+			0	&	0	&					&	\cdots											&					&	1
+		\end{pmatrix}
+\label{eq3x66}
+\end{equation}
+である．（対角線上は第$i$番目を除いて$1$，第$i$番目に$\text{exp}\sqrt{-1}	\theta$，
+対角線以外の所はすべて$0$．）
+
+このような行列$A_\theta^{(i)}$は$m$個ある．行列$B_\theta^{(ik)}$と
+行列$C_\theta^{(ik)}$は合わせて
+\[
+	\frac{m(m-1)}{2}	+	\frac{m(m-1)}{2}	=	m(m-1)
+\]
+個であるから，$A,B,C$3種類の行列を合わせて$m+m(m-1)	=	m^2$個ある．
+これは$U(m)$の次元に等しい．これら$A,B,C$の行列の回転の方向によって，
+$U(m)$の接ベクトル空間が張られて，$SO(m)$のときと同様の議論ができるわけである．
+
+結果は，$f:	U(m)	\to	\R$の臨界点は補題3.12の主張する形と同様に，
+対角線上に，$\pm	1$が並ぶ対角型のユニタリ行列である．
+ただし，回転群のときと違い，$\det	=	1$である必要はない．
+
+対角線上に，$\varepsilon_1,	\varepsilon_2	,	\cdots	,	\varepsilon_m	\:(\varepsilon_i	=	\pm)$が
+並び，他は$0$であるようなユニタリ行列$U$における$f:U(m)	\to	\R$の Hesse 行列は，
+対角型でかつ非退化であって，その指数は次のようにして求められる．$\varepsilon_i	=	1$であるような
+番号$i$を小さいほうから並べたものが，
+\begin{align*}
+	i_1,	i_2,	\cdots	,	i_n
+\end{align*}
+であったとすると，指数は
+\[
+	(2i_1	-	1)	+	(2	i_2	-1)	+	\cdots	+	(2i_n	-1)
+\]
+である．すべての$\varepsilon_i$が$-1$に等しい場合は，指数は$0$である．
+\■
+
+\例{3.14}
+（特殊ユニタリ群$SU(m)$）ユニタリ行列の行列式は絶対値が$1$の
+複素数$\text{exp}(\sqrt{-1}	\theta	)$であるが，とくに行列式が
+$1$であるようなユニタリ行列を特殊ユニタリ行列という．
+$m$行$m$列の特殊ユニタリ行列全体のなす  Lie 群を
+$m$次の\textbf{特殊ユニタリ群}（special unitary group）と呼び，
+$SU(m)$という記号で表す．$\det	=1$の条件によって
+$U(m)$より1次元だけ次元が減るので，$\dim	SU(m)	=	\dim	U(m)	-1	=	m^2	-1$である．
+$m=1$のとき，$SU(1)$は1点（自明群）である．以後，$m	\geqq	2$と仮定しよう．
+
+\■
+
+\補題{3.15}
+$f	=	\mathfrak{R}	(c_1	z_{11}	+	c_2	z_{22}	+	\cdots	+	c_m	z_{mm})$を
+例3.13で構成した Morse関数	$f	:	U(m)	\to	\R$とする（ただし，$1	<	c_1	<	c_2	,	\cdots	<	c_m)$．
+もし，$c_1$に較べて$c_i	\:	(i=2,	\cdots	,	m)$が十分大であれば，$f$を部分群$SU(m)$に制限した
+関数$	f|	SU(m)	:	SU(m)	\to	\R$は$SU(mI)$上のMorse関数になる．
+
+その臨界点は，対角線上に$\pm$が並び行列式が$1$の対角行列である．
+
+\証明
+ユニタリ群を考えるときに使った行列$B_\theta^{(ik)},	C_\theta^{(ik)},	A_\theta^{(i)}$のうち，
+$B_\theta^{(ik)}$と$C_\theta^{(ik)}$は特殊ユニタリ行列である．
+$A_\theta^{(i)}$はそうではないが，
+\[
+	D_\theta^{(i)}	=	A_\theta^{(i)}	\cdot	\{	A_\theta^{(1)}	\}^{-1}	,	\quad	i	=	2,	\cdots	,	m
+\]
+とおくと，$D_\theta^{(i)}$は特殊ユニタリ行列になる．
+行列$B_\theta^{(ik)},	C_\theta^{(ik)},	D_\theta^{(i)}$は全部で
+\[
+	\frac{m(m-1)}{2}	+	\frac{m(m-1)}{2}	+	(m-1)	=	m^2	-1
+\]
+だけ（$SU(m)$の次元分だけ）ある．
+
+行列$B_\theta^{(ik)}$と$C_\theta^{(ik)}$を使って補題3.12のときと同様に議論すれば，
+関数$f	|	SU(m)	:	SU(m)	\to	\R$の臨界点$A$は対角行列であることがわかる．
+さらにこの対角行列$A$は特殊ユニタリ行列であるから，その対角成分$z_{ii}$は
+絶対値$1$の複素数$\text{exp}(\sqrt{-1}	\theta_i)$であって，そららの積は$1$である：
+\begin{align}
+	\text{exp}	(	\sqrt{-1}	\theta_1	)	\text{exp}(\sqrt{-1}	\theta_2)	\cdots	\exp	(\sqrt{-1}	\theta_m	)	\notag	\\
+	=	\exp	(\sqrt{-1}	(	\theta_1	+	\theta_2	+	\cdots	+	\theta_m))	=1
+	\label{eq3x67}
+\end{align}
+この行列$A$が$f	|	SU(m)$の臨界点であるための条件がもう１つある．それは
+\begin{align*}
+	\frac{d}{d	\theta}	f(A	\cdot	D_\theta^{(i)}	\bigg|_{\theta	=	0}
+	&=
+	\mathfrak{R}	(	-	c_1	\sqrt{-1}	\exp	(	\sqrt{-1}	\theta_1	+	\sqrt{-1}	\exp	\sqrt{-1}	\theta_i	))	\\
+	&=	0	,	\quad	i	=2,	\cdots	,	m
+\end{align*}
+である．この条件は
+\begin{equation}
+	c_1	\sin	\theta_1	=	c_i	\sin	\theta_i	,	\quad	i	=2,	\cdots	,	m
+\label{eq3x68}
+\end{equation}
+に同値である．$c_1$に較べて$c_i	\:	(	i	=2	,	\cdots	,	m)$が十分大きいという条件のもとに，
+上の2つの条件（\ref{eq3x67}）と（\ref{eq3x68}）をあわせると
+\begin{equation}
+	\sin	\theta_1	=	\sin	\theta_2	=	\cdots	=	\sin	\theta_m	=	0
+\label{eq3x69}
+\end{equation}
+が導ける．
+
+このことを示そう．もし$\sin	\theta_1	\ne	0$であれば，式（\ref{eq3x68}）により
+$\sin	\theta_i	\ne	0$であるが，$c_1$に較べて$c_i$が十分大きいと（例えば，$100	m	c_1	<	c_i$を
+仮定とすると），
+$\sin	\theta_i$の絶対値は$	\sin	\theta_1$の絶対値に較べて十分小さくなる．
+（例えば$\displaystyle	|\sin	\theta_i	|	<	\frac{1}{100m}	|\sin	\theta_1	|	$になる．）
+以下のお議論には$\sin	$の絶対値しか必要がなく、また角度$\theta_i$に$\pi$の整数倍
+を加えても絶対値$|	\sin	\theta_i	|$は変わらないので，$\pi$の整数倍で調節することによって，
+\[
+		-	\frac{\pi}{2}	\leqq	\theta_i	\leqq	\frac{\pi}{2}
+\]
+と仮定してよい．すると，$\displaystyle	|\sin	\theta_i	|	<	\frac{1}{100	m}	|	\sin	\theta_1|	$から，
+粗く見積もっても
+\[
+	|	\theta_i|	<	\frac{1}{10m}	|	\theta_1	|	,	\quad	i	=	2,	\cdots	,	m
+\]
+という評価が得られる。しかしこれでは，$\sin	(	\theta_1	+	\theta_2	+	\cdots	+	\theta_m)	=	0$が
+成立するはずがない．こうして式（\ref{eq3x67}）に矛盾する結論が得られたので，
+背理法により式（\ref{eq3x69}）が示せたことになる．
+
+関数$f	|	SU(m)$の臨界点$A$は対角線上に$\exp	\sqrt{-1}	\theta_i$の並んだ
+対角行列であることは既に述べたが，式（\ref{eq3x69}）によれば、その対角成分は実は
+$\pm	1$に等しい．これらを$\varepsilon_1	,	\varepsilon_2	,	\cdots	,	\varepsilon_m	\:	(	\varepsilon_i	=	\pm	1)$と
+おこう．
+
+行列$A$の右から全ての$B_\theta^{(ik)},	\cdots	,	C_\varphi^{(jl)},	D_\varphi^{(h)},	\cdots	,	$を掛けて，
+\begin{equation}
+	A	\cdot	B_\theta^{(ik)}	\cdots	C_\varphi^{(jl)}	\cdots		D_\varphi^{(h)}	\cdots
+\label{eq3x70}
+\end{equation}
+を考えると，$A$のまわりに$SU(m)$の局所座標系$(\theta	,	\cdots	,	\varphi	,	\cdots	,	\psi	,	\cdots	)$が
+構成される．$A$における$f	|	SU(m)$の Hesse 行列	$H_{f	|	SU(m)}	(A)$をこの局所座標系を
+使って計算すると，ユニタリ群のときと違い，$\{D_\theta^{(i)}	\}_{i=2,	\cdots	,	m}$の接ベクトル
+方向に対応して，対角型でない$(m-1)	\times	(m-1)$行列が含まれている．
+
+2次微分$\displaystyle	\left\{	\frac{\partial ^2}{\partial \theta \partial \varphi}	f(A	\cdot		D_\theta^{(i)}	D_\varphi^{(j)}	
+												\bigg|_{(\theta,	\varphi)=(0,0)}
+											\right\}_{i,j	=	2,	\cdots	,	m}$
+を計算してみると，この対角型でない部分の行列の形は
+\begin{equation}
+	\begin{pmatrix}
+		-c_2	\varepsilon_2	-	c_1	\varepsilon_1	&	-c_1	\varepsilon_1											&	\cdots	&	-c_1	\varepsilon_1	\\
+		-c_1	\varepsilon_1											&	-c_3	\varepsilon_3	-	c_1	\varepsilon_1	&	\cdots	&	-c_1	\varepsilon_1	\\
+																						&																					&	\ddots	&											\\
+		-c_1	\varepsilon_1											&	-	c_1	\varepsilon_1											&	\cdots	&	-c_m	\varepsilon_m	-	c_1	\varepsilon_1	
+	\end{pmatrix}
+\label{eq3x71}
+\end{equation}
+である．$c_i	\:	(	i=2,	\cdots	,	m)$が$c_1$に較べて十分大きいと仮定すれば，（例えば，$c_i	>	m!c_1$を仮定すれば），
+行列（\ref{eq3x71}）の対角成分以外の行列成分が対角成分に較べて十分小さくなるので、
+その性質は対角線上に
+\[
+	-	c_2	\varepsilon_2	,	-c_3	\varepsilon_3	,	\cdots	,	-c_m	\varepsilon_m
+\]
+の並んだ対角行列の性質に近くなる．とくに行列式は$0$でなく，また対角化したときの対角線上のマイナスの数の個数も，
+$	-c_2	\varepsilon_2	,	-c_3	\varepsilon_3,	\cdots	,	-c_m	\varepsilon_m$の中のマイナスの数の個数と同じである．
+
+Hesse 行列$H_{f|	SU(m)}(A)$において，上の行列（\ref{eq3x71}）以外の部分
+$(B_\theta^{(ik)}$と$C_\varepsilon	f^{(jl)}$の接ベクトルが入ってくる部分）は
+$f:	U(m)	\to	\R$の場合と同じ成分をもつ対角行列なので，
+$\det	H_{f	|	SU(m)	}	(A)	\ne	0$が示せる．したがって$A$は非退化な臨界点で，
+$f	|	SU(m)	:	SU(m)	\to	\R$はMorse関数である．これで補題3.15が証明できた．
+
+\■
+
+補題3.15により，$f	:	U(m)	\to	\R$の臨界点のちょうど半分が$f	|	SU(m)	:	SU(m)	\to	\R$の臨界点
+であることがわかる。すなわち対角線上に$\varepsilon_1,	\varepsilon_2	,	\cdots	,	\varepsilon_m
+\:	(\varepsilon_i	=	\pm	1)$が並び，かつ$\det	A	=	\varepsilon_1	\varepsilon_2	\cdots	\varepsilon_m	=1$
+であるような対角行列$A$が，$f	|	SU(m)	:	SU(m)	\to	\R$の臨界点である．
+
+
+補題3.15の証明の最後の方で述べた事実により，Hesse 行列 $H_{f	|	SU(m)}	(A)$を
+対角化したもの$\mathcal{H}_{f	|	SU(m)}	(A)$は，$f	:	U(m)	\to	\R$の
+Hesse 行列 $H_f	(A)$（それはもともと対角型）から対角成分$	-c_1	\varepsilon_1$を除いてサイズを$1$だけ
+小さくしたものと本質的に同じである．したがって，対角線上のマイナスの数の個数は
+$	-	\varepsilon	c_1	\varepsilon_1	>0$なら$\mathcal{H}_{f	|	SU(m)}	(A)$と$H_f(A)$に差はなく，
+$-	c_1	\varepsilon_1	<	0$なら，これを対角成分に含まれない分だけ$\mathcal{H}_{f|SU(m)}	(A)$のほうが
+$H_f(A)$よりも1つ少ない．
+
+このことと$U(m)$のときの結果を合わせると，$SU(m)$の場合の臨界点の指数が計算できる．すなわち$A$の対角成分を
+順に見て行き，$\varepsilon_i	=1$であるような番号$i$を小さい方から並べて
+\[
+	i_1	,	i_2,	\cdots	,	i_k
+\]
+を得たとすると，Morse関数	$f	|	SU(m)$の臨界点$A$の指数は次のように与えられる．
+
+$\varepsilon_1	=	-1$のときは
+\begin{equation}
+	\{	2i_i	-1	\}	+	\{	2i_2	-	1	\}	+	\cdots	+	\{	2i_k	-1	\},
+\label{eq3x72}
+\end{equation}
+$\varepsilon_1	=1$のときは
+\begin{equation}
+	\{	2i_i	-	1	\}	+	\{	2i_2	-1\}	+	\cdots	+	\{2i_k	-	1\}	-1.
+\label{eq3x73}
+\end{equation}
+
+\注意{}
+$\varepsilon_1	=1$なら$i_1	=1$であるから，式（\ref{eq3x73}）は
+\begin{equation}
+	\{	2i_2	-	1\}	+	\cdots	+	\{	2i_k	-1	\}
+\label{eq3x74}
+\end{equation}
+に等しい．
+
+\系{3.16}
+$SU(2)$は3次元球面$S^3$に微分同相である．
+
+\証明
+$SU(2)$はコンパクトな$3$次元多様体である．補題3.15により，
+$f	|	SU(2)$の臨界点は
+\begin{equation}
+	\begin{pmatrix}
+		1	&	0	\\
+		0	&	1
+	\end{pmatrix},
+	\quad
+	\begin{pmatrix}
+		-1	&	0	\\
+		0		&	-1
+	\end{pmatrix}
+\label{eq3x75}
+\end{equation}
+の2つだけであるから，定理3.6により，$SU(2)	\cong	S^3$がわかる．
+\■
+
+\注意{}
+
+$SU(2)$は単位4元数全体のなす Lie 群に同型であり，このことからも
+系3.16が証明できる．
+
+\系{3.17}
+$SU	(m)$は単連結である．（「単連結」の意味については\S	\ref{sec5x1}）を見よ．）
+
+\証明
+
+補題3.15の Morse関数$f	|	SU(m)$の臨界点について，最小の指数はもちろん$0$であるが，
+2番目に小さい指数をもつ臨界点は，
+
+$m$が奇数のときは
+\[
+	\begin{pmatrix}
+		-1	&	0	&	\cdots	&					&	0				\\
+		0		&	1	&	\cdots	&					&	0				\\
+				&		&	-1			&					&					\\
+				&		&					&	\ddots	&	\vdots	\\
+		0		&	0	&					&	\cdots	&	-1
+	\end{pmatrix}
+\]
+
+$m$が偶数のときは
+\[
+\begin{pmatrix}
+		1	&	0	&	\cdots	&					&	0				\\
+		0	&	1	&	\cdots	&					&	0				\\
+			&		&	-1			&					&					\\
+			&		&					&	\ddots	&	\vdots	\\
+		0	&		&					&	\cdots	&	-1	
+\end{pmatrix}
+\]
+である．これらの臨界点の指数はどちらも$3$であるから，$f	|	SU(m)$に伴う
+$SU(m)$のハンドル分解には$1$-ハンドルがない．（実は$2$-ハンドルもない．）
+第5章の系5.9により，$SU(m)$は単連結である．
+\■
+
+2つの群$U(m)$と$SU(m)$の関係について，次の命題を示そう．
+
+\命題{3.18}
+\begin{list}{}{}
+	\item	（ⅰ）$C^\infty$級多様体としては，$U(m)$は直積$SU(m)	\times	S^1$に微分同相である．
+	\item	（ⅱ）$m	\geqq	2$を仮定するとき，Lie 群としての$U(m)$の構造は，群の直積$SU(m)	\times	S^1$に同型ではない．
+\end{list}
+\証明
+$C^\infty$級写像$h	:	U(m)	\to	SU(m)	\times	S^1$を次のように構成する．
+任意の$m$次ユニタリ行列$U$について
+\[
+	h(U)	=	(U	\cdot	\{	A_\theta^{(1)}	\}^{-1}	,	\det	U	).
+\]
+$U$がユニタリ行列であれば，$\det	U$は絶対値$1$の複素数$\exp	(	\sqrt{-1}	\theta)$である．
+$A_\theta^{(1)}$の$\theta$はこの$\exp	$のなかの$\theta$である．
+上の$h$の定義式では絶対値$1$の複素数全体を円周$S^1$と同一視している．また
+$A_\theta^{(1)}$は，例3.13（ユニタリ群$U(m)$）のなかに出てきた$A_\theta^{(i)}$という
+$m$次対角行列の$i$を$i=1$とおいたものである．
+
+逆の$C^\infty$級写像$k:	SU(m)	\times	S^1	\to	U(m)$は，任意の$m$次特殊ユニタリ行列
+$U'$と任意の$\exp	(	\sqrt{-1}	\theta)$について
+\[
+	k(	U'	,	\exp	(	\sqrt{-1}	\theta))	=	U'	\cdot	A_\theta^{(1)}
+\]
+と定義する．容易にわかるように，$h$と$k$は互いに他の逆写像なので，
+$h$は微分同相写像である．これで（ⅰ）が示せた．
+
+（ⅱ）を示すため，次の補題を用意する．
+
+\補題{3.19}
+対角線上に同じ複素数$\xi$の並んだ$m$次対角行列$\Delta	(	\xi)$はすべての
+$m$次特殊ユニタリ行列と可換である．逆に，すべての$m$次特殊ユニタリ行列と
+可換な$m$次行列は対角行列$\varDelta	(	\xi	)$に限る．
+
+\■
+
+この補題の前半は当り前だから，後半の後半の証明を考えよう．
+簡単のため$m=2$の場合についてだけ考える．ある2次の行列
+$X	=	\begin{pmatrix}
+				a	&	b	\\
+				c	&	d
+			\end{pmatrix}
+$が特別な2次特殊ユニタリ行列
+$U_1	=	\begin{pmatrix}
+					0	&	-1	\\
+					1	6	0
+				\end{pmatrix}
+$と$U_2	=	\begin{pmatrix}
+							0				&	\sqrt{-1}	\\
+						\sqrt{-1}	&	0
+						\end{pmatrix}
+$の両方に可換であると仮定して，$XU_1=	U_1	X$と$X	U_2	=	U_2X$を
+実際に成分で書いてみる．$a	=	d	,	b	=	c	=	0$を得る．
+したがって，$X	=	\varDelta	(	a	)$である．
+一般の$m$についても，同様の議論で証明できる．
+
+さて，命題の（ⅱ）を証明しよう．一般に，群$G$とその部分群$H$が与えられたとき，
+$G$の元$g$であって，$H$のすべての元と可換であるような$g$の全体は
+$G$の部分群になる．それを$G$の中の$H$の\textbf{中心化群}（centralizer）という．
+とくに$G$の中の$G$自身の中心化群を$G$の\textbf{中心}（center）という．
+上の補題により，$U(m)$の中の$SU(m)$の中心化群の構造がわかる．
+すなわちそれは$\{	\varDelta	(\exp	(	\sqrt{-1}	\theta))	\}$という形の
+部分群で，円周$S^1$に同相である．
+この群と$SU(m)$の共通部分は$SU(m)$の中心で$\{	\varDelta	(	\exp	(	2	\pi	\sqrt{-1}	k	/	m	)	\}_{k=0,1,	\cdots	,	m-1}$という
+位数$m$の巡回群である．この群を$C_m$という記号で表そう．
+
+一方，群の直積$SU(m)	\times	S^1$の群構造は
+\begin{equation}
+	(U_1	,	\exp	(\sqrt{-1}	\theta_1	))	\cdot	(	U_2	\exp	(\sqrt{-1}	\theta_2))
+	=
+	(U_1	U_2,	\exp	(\sqrt{-1}	(	\theta_1	+	\theta_2))
+\label{eq3x76}
+\end{equation}
+で与えられる．すぐ後で示すように，$SU(m)$に同型な$SU(m)	\times	S^1$の部分群では
+$SU(m)	\times	\{1\}$しかないので，両者を同一視する．すると，
+$SU(m)	\times	S^1$の中の$SU(m)$の中心化群は$C_m	\times	S^1$であることが判る．
+これは$m$個の円周の非交和に同相である．
+
+こうして，$SU(m)$の中心化群の構造がことなるので，$U(m)$と$SU(m)	\times	S^1$は
+ Lie 群として同型でない．
+
+最後に，$H$を$SU(m)$に同型な$SU(m)	\times	S^1$の部分群とすれば，
+\[
+	H	=	SU(m)		\times	\{	1	\}
+\]
+であることを証明しよう．射影$p:	SU(m)	\times	S^1	\to	S^1$による$H$の像が
+$\{1	\}$であることを示せばよい．系3.17により，$H$は単連結である．
+したがって，$i	:	H	\to	SU(m)	\times	S^1$を包含写像とすると，
+合成$	p	\circ	i	:	H	\to	S^1$は準同型$j	:	H	\to	\R$に持ち上がる
+（[10]の系17.11.1），すなわち，$e	:	\R	\to	S^1$を
+$e(	\theta	)	=	\exp	(\sqrt{-1}	\theta)$で定義される写像とすると，
+$p	\circ	i	$は$e	\circ	j$と書ける．$\R$のコンパクトな部分集合は
+$\{1\}$しかないので，$j(H)	=	\{1	\}$，したがって，
+$p(H)	=	\{1\}$が示された．
+\■
+
+以上のように，Morse関数を使っていろいろな多様体をハンドル分解できる．
+その際，臨界点の個数と指数は比較的容易に求められるが，
+ハンドルの接着写像を求めることは一般には難しい．

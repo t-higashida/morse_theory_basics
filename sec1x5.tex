@@ -1,0 +1,166 @@
+\section{ハンドル分解}
+
+前節の定理1.16は，ある特別の場合であるが，曲面上のMorse関数によってその曲面の形状が
+決まる，ということを示している．Morse理論（とくに有限次元空間上の Morse理論）は，
+このような現象をもっと体系的に研究しようとするものである．そのとき有力な手段になるのが
+「ハンドル分解」と呼ばれる操作である．ここでは曲面を例にとって，ハンドル分解を説明しよう．
+
+閉曲面$M$とその上のMorse関数
+\[
+	f	:	M	\to	\R
+\]
+から出発する．
+
+以下，閉曲面$M$は\textbf{連結}（connected），すなわち全体として一つながりであると仮定する．
+
+さて，Morse関数$f	:	M	\to	\R$が与えられたとき，$f$の値がある実数値$t$以下であるような
+点全体のなす$M$の「部分曲面」を$M_t$という記号で表そう．すなわち，
+\begin{equation}
+	M_t	=	\{	p	\in	M	\:	|	\:	f(p)	\leqq	t	\}
+\label{eq1x51}
+\end{equation}
+と定義するのである．また，$f$の値がちょうど$t$であるような点全体の集合を$f=t$の
+「等高線」と呼ぼう．記号$L_t$と表すことにすると，$M_t$は等高線$L_t$以下の部分である．
+等高線$L_t$は部分曲面$M_t$の境界になっている（図\ref{figx12}）参照）．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=64.7mm,height=66.3mm]{fig1x12.bmp}
+	\caption{部分曲面$M_t$と等高線$L_t$}
+	\label{fig1x12}
+\end{figure}
+$f	:	M	\to	\R$には最大値$A$と最小値$a$がある．$f$の値$f(p)$が最小値$a$より
+さらに小さくなるような点$p$はありえないから，$t	<	a$ならば
+\[
+	M_t	=	\varnothing.
+\]
+また，$M$上のどの点$p$についても，そこでの値$f(p)$は最大値$A$以下だから，$A	\leqq	t$であれば，
+$M$上のどの点$p$についても$f(p)	\leqq	t$が成り立つ．すなわち，$A	\leqq	t$ならば
+\[
+	M_t	=	M
+\]
+である．
+
+このように，$t$が$a$より小さい所から次第に増えていくと，部分曲面$M_t$の形は空集合
+$\varnothing$から始まって変わっていき，ついに$t$が$A$より大きくなると$M_t$は
+$M$全体になる．この間の$M_t$の形の変化を追跡しようというのが Morse 理論の基本的発想である．
+
+$f	M	\to	\R$を「高さ関数」のように思うと，次のような説明もできる．
+つまり，$M$を水に沈めていくと思うのである．パラメータ$t$は水面の位置（水位）を
+表している．$M_t$は水位が$t$のときの水面下にある曲面の部分である．
+水がどんどん増えてきて，水面の位置が上がってくると，沈んでいる部分$M_t$の形が変わってゆく．
+この形の変わり方を調べようというのが Morse 理論である．
+
+\定義{1.22}（臨界値）実数$c_0$が$f$の\textbf{臨界値}（critical value）であるとは，
+$c_0$が$f$のある臨界点$p_0$での関数値になっていることである：$c_0	=	f(p_0)$.
+\□
+
+\補題{1.23}
+2つの実数$b$と$c	\:	(b	<	c)$について，区間$[b,c]$の中に$f$の臨界値がなければ，
+$M_b$と$M_c$は微分同相である（図\ref{fig1x13}参照）．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=96.8mm,height=66.1mm]{fig1x13.bmp}
+	\caption{$L_b$と$L_c$の間に臨界点がない．}
+	\label{fig1x13}
+\end{figure}
+\証明
+最小値$a$と最大値$A$は当然$f$の臨界値であるから，区間$[b,c]$は$a$も$A$も含んでいない．
+そこで，
+\[
+	a	<	b	<	c	<	A
+\]
+と仮定して補題1.23を証明しよう．等高線$L_b$と$L_c$の間の部分を$M_{\{b,c\}}$と表そう：
+\begin{equation}
+	M_{[b,c]}	=	\{	p	\in	M	\:	|	\:	b	\leqq	f(p)	\leqq	c	\}.
+\label{eq1x52}
+\end{equation}
+明らかに
+\begin{equation}
+	M_b	\cup	M_{[b,c]}		= M_c
+\label{eq1x53}
+\end{equation}
+が成り立つ．
+
+仮定により，$M_{[b,c]}$は$f$の臨界点を含まない．
+
+補題1.21によれば，$f:	M	\to	\R$の臨界点は$M$上に有限個しかない．したがって，
+正数$\varepsilon	>	0$を十分小さくとれば，$M_{[b,c]}$のすその方を少しだけ
+広げた範囲，すなわち，$M_{[b-\varepsilon	,	c]}$の中にも$f$の臨界点は存在しないとしてよい．
+
+次の章で証明する定理2.31によれば，このとき$M_{[b-\varepsilon,	c]}$は直積
+$L_{b-\varepsilon}	\times	[0,1]$と微分同相である．また$M_{[b-\varepsilon,b]}	\subset	M_{[b-\varepsilon,c]}$
+だから，$M_{[b-\varepsilon,b]}$の中にももちろん臨界点はないから，同じ定理により，
+$M_{[b-\varepsilon,b]}$も直積$L_{b-\varepsilon}	\times	[0,1]$に微分同相である．
+したがって，微分同相写像
+\[
+	h	:	M_{[b-\varepsilon	,	b]}	\to	M_{[b-\varepsilon	,	c]}
+\]
+が存在するが，$h$は下の等高線$L_{b-\varepsilon}$に制限したとき恒等写像（identity）であると仮定できる．
+そこで，$h$と恒等写像
+\[
+	\text{id}	:	M_{b-\varepsilon}	\to	M_{b-\varepsilon}
+\]
+を，境界の等高線$L_{b-\varepsilon}$に沿って張り合わせることができて，微分同相写像
+\[
+	H=	\text{id}	\cup	h:	M_{b-\varepsilon}	\cup	M_{[b-\varepsilon,b]}	\to	M_{b-\varepsilon}	\cup	M_{[b-\varepsilon,c]}
+\]
+が得られる（微分同相写像の張り合わせについては微妙なところがある．次章の定理2.8とそのあとの説明を見よ．）
+$M_{b-\varepsilon}	\cup	M_{[b-\varepsilon,	b]}	=	M_b$と
+$M_{b-\varepsilon}	\cup	M_{[b-\varepsilon	,	c]}	=	M_c$に注意すれば，
+微分同相写像
+\[
+	H	:	M_b	\to	M_c
+\]
+が得られることになる．これで，補題1.23が証明できた．
+
+証明の要点は，$M_b$の中の細かいアニュラスの部分$M_{[b-\varepsilon,b]}$を引き伸ばして行けば
+$M_b$は$M_c$に重なってしまうというのである．
+\■
+
+補題1.23によれば，パラメータ$t$が変化していくとき，$t$が$f$の臨界値でないところで変化しても
+$M_t$の形は変わらない．したがって，$M_t$の形の変化を追跡する上で重要なのは，$t$が$f$のある
+臨界値$c_0$を横切る前と横切った後で$M_t$の変化である．
+
+$c_0$が臨界値であれば，
+\[
+	f(p_0)	=	c_0
+\]
+であるような臨界点$p_0$が少なくとも1つ存在する．簡単のため，臨界値$c_0$に対応する
+臨界点は$p_0$ただ1つであるとしよう．すると，正数$\varepsilon	>	0$を十分小さく選んで，
+$M_{[c_0	-	\varepsilon,	c_	+	\varepsilon]}$に含まれる$f$の臨界点は$p_0$のみで
+あると仮定できる．（$M_{[c_0-	\varepsilon	,	c_0	+	\varepsilon]}$は
+等高線$L_{c_0	-	\varepsilon}$と$L_{c_0	+	\varepsilon}$の間の部分のである．）
+
+パラメータ$t$が臨界値$c_0$を横切る前と後の$M_{c_0	-	\varepsilon}$と$M_{c_0	+	\varepsilon}$の
+関係を考えてみよう．
+
+\subsection{$p_0$の指数が$0$の場合}
+
+臨界点$p_0$のまわりの適当な座標系$(x,y)$によって，$f$は局所的に
+\begin{equation}
+	f	=	x^2	+	y^2	+	c_0
+\label{eq1x54}
+\end{equation}
+と書ける（定理1.11）．
+
+もし，$c_0$が$f$の最小値であれば，$M_{c_0	-	\varepsilon}	=	\varnothing$であり，また，
+\begin{align}
+	M_{c_0	+	\varepsilon}	
+&=	\{	p	\in	M	\:	|	\:	f(p)	\leqq	c_0	+	\varepsilon	\}	\notag\\
+&=	\{	(x,y)	|	\:	x^2	+	y^2	\leqq	\varepsilon	\}	\label{eq1x55}
+\end{align}
+であるから，$M_{c_0	+	\varepsilon}$は上向きのお椀で，2次元円板$D^2$に微分同相である．
+したがって，この場合の$M_t$の形の変化は，$t$が最小値$c_0$より小さければ$M_t$は空集合で，
+$t$が最小値$c_0$を通過したとたんに，円板が生み出されて，$M_t$は円板の形になる，
+という過程で記述される．
+
+またもし$c_0$が最小値でなければ，$M_{c_0	-	\varepsilon}$は空集合ではないが，
+この場合も，$t$が臨界値$c_0$を通過したとたんに，ポンと円板$D^2$が生まれて，
+$M_{c_0	+	\varepsilon}$は$M_{c_0	-	\varepsilon}$と2次元円板$D^2$との和集合
+（ただし，互いに交わらないばらばらの和集合）に微分同相になる（図\ref{fig1x14}参照）：
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=103.1mm,height=66.9mm]{fig1x14.bmp}
+	\caption{$p_0$の指数が$0$の場合}
+	\label{fig1x14}
+\end{figure}

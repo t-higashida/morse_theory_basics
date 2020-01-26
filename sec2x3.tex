@@ -1,0 +1,188 @@
+\section{上向きベクトル場}
+
+Morse関数 $f:	M	\to	\R$ があると，それに適合した「上向きベクトル場」が考えられる．
+このベクトル場は Morse 関数の臨界点同士の関係や多様体のハンドル分解を考察するときに
+重要な役割を演じる．まず，簡単に接ベクトルの復習をしておこう．
+
+\subsection{接ベクトル}
+
+多様体$M$が十分次元の高いEuclid空間$\R^N$に埋め込まれているとする．
+このとき，$p$を$M$の1点として，$p$における$M$の\textbf{接ベクトル}（tangent vector）
+とは，文字通り$p$において$M$に接するベクトルのことである（図\ref{fig2x8}）を見よ）．
+点$p$における$M$の接ベクトルの全体は一つのベクトル空間をなす．これを$p$における
+$M$の\textbf{接ベクトル空間}（tangent vector space）と呼ぶ。記号で
+\[
+	T_p(M)
+\]
+と表す．接ベクトル空間は2次元の場合の接平面の一般化である．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=50.4mm,height=32.9mm]{fig2x8.bmp}
+	\caption{接ベクトルと接ベクトル空間$T_p(M)$}
+	\label{fig2x8}
+\end{figure}
+
+多様体$M$が$m$次元なら，接ベクトル空間$T_p(M)$も$m$次元である．
+
+接ベクトルの典型的な例として，曲線の速度ベクトルを考えよう．
+$c:(a,b)	\to	\R^n$を$\R^n$の中の滑らかな曲線とする．$\R^n$の座標を$(X_1,	X_2,	\cdots	,	X_n)$とし，
+曲線$c$のパラメータを$t$とすると，$c$は
+\begin{equation}
+	c(t)	=	(X_1	(t),	X_2	(t)	,	\cdots	,	X_n(t))	,	\quad	a	<	t	<	b
+\label{eq2x59}
+\end{equation}
+と表わされる．
+
+簡単のため，パラメータの定義域$(a,b)$が$0$を含むものとし，$t=0$のとき，
+曲線がちょうど点$p$を通過するもおとする：$c(0)	=	p$．この瞬間の曲線の速度ベクトル
+$\boldsymbol{v}$は
+\begin{equation}
+	\boldsymbol{v}
+=	\frac{d c}{d t}	(0)	=
+	\left(	\frac{d X_1}{dt}(0)	,	\frac{d X_2}{d t}	(0)	,	\cdots	,	\frac{d X_N}{d t}	(0)
+	\right)
+\label{eq2x60}
+\end{equation}
+で与えられる．そして，曲線$c$が$M$上の曲線である場合には，この速度ベクトル
+$\displaystyle	\frac{d c}{d t}	(0)$は点$p$における$M$の接ベクトルになる（図\ref{fig2x9}）を見よ)．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=91.2mm,height=57.4mm]{fig2x9.bmp}
+	\caption{速度ベクトル}
+	\label{fig2x9}
+\end{figure}
+接ベクトルがあると，その方向に関数を微分することができる．
+それを説明しよう．
+ただし，計算は当面$\R^N$の座標系$(X_1,	X_2	,	\cdots	,	X_N)$を使う．
+$\boldsymbol{v}	=	(v_1,	v_2,	\cdots	,	v_N)$を接ベクトル（$	\in	T_p(M)$）とし，
+$f$を点$p$の$\R^N$での近傍で定義された関数とする．$t=0$のとき$p$を通過する
+$M$上の曲線$c(t)	=	(X_1(t),	X_2(t),	\cdots	,	X_N(t))$を考える．
+この曲線の「初速度」，すなわち，$t=0$の時の速度ベクトルがちょうど$\boldsymbol{v}$であったとしよう：
+\begin{equation}
+	\frac{d c}{d t}	(0)	=	\boldsymbol{v}
+	\quad	\text{すなわち}	\quad
+	\frac{d X_j}{d t}	(0)	=	v_j,	\quad	j=1,	2,	\cdots	,	N.
+\label{eq2x61}
+\end{equation}
+
+関数$f$を曲線$c$に制限して考えると，$t$を変数とする1変数関数$f(c(t))$になるが，これを
+$t=0$で微分する．合成関数の微分の公式で
+\begin{align*}
+	\frac{d f(c(t))}{d t}	\bigg|_{t=0}
+&=	\frac{d}{dt}	f(X_1(t),	X_2(t),	\cdots	,	X_N(t))	\bigg|_{t=0}	\\
+&=	\sum_{j=1}^{N}	\frac{\partial f}{\partial X_j}(p)	\frac{d X_j}{d t}	(0)	\\
+&=	\sum_{j=1}^{N}	v_j	\frac{\partial f}{\partial X_j}	(p).
+\end{align*}
+
+この最後の結果を見るとわかるように，得られた答えは$f$と$\boldsymbol{v}$で決まり，
+$\displaystyle	\boldsymbol{v}$を「初速度」とする曲線$c$の取り方には依らない．
+したがって，この答えの数値を
+\begin{equation}
+	\boldsymbol{v}	\cdot	f
+\label{eq2x63}
+\end{equation}
+と書くことができる．これが，$\boldsymbol{v}$による関数$f$の微分である．
+
+（\ref{eq2x62}）からわかるように$\boldsymbol{v}	\cdot	f	>	0$ということと，
+$f(c(t))$という$t$の関数が$t=0$の近傍で増加関数ということは同値だから，
+$\boldsymbol{v}	\cdot	f	>	0$ということと$\boldsymbol{v}$が$f$の増加する方向
+を向いていることとは同値である．
+
+さて，こんどは，点$p$のまわりに，多様体$M$の局所座標系
+$(x_1,	x_2,	\cdots	,	x_m)$があるとしよう．点$p$はこの座標系で
+$p=(a_1,	a_2,	\cdots	,	a_m)$と表わせているとする．
+$t=0$のとき点$p$を通過し，ある$x_i$座標の方向に単位の速さで進む曲線
+$c_i(t)$を考えよう．$M$の局所座標系で書けば，
+\begin{equation}
+	c_i(t)	=	(a_1	,	\cdots	,	a_{i-1},	a_i	+	t	,	a_{i+1}	,	\cdots	,	a_m)
+\label{eq2x64}
+\end{equation}
+である．この曲線$c_i(t)$の$t=0$における速度ベクトル$\boldsymbol{e}_i$は，
+いわば局所座標系$(x_1,	x_2,	\cdots,	x_m)$に関する$x_i$方向の「基本ベクトル」である．
+各方向についてはこれらをあわせたもの
+\begin{equation}
+	\boldsymbol{e}_1,	
+	\boldsymbol{e}_2,	
+	\cdots,
+	\boldsymbol{e}_m	
+\label{eq2x65}
+\end{equation}
+が接ベクトル空間$T_p(M)$の基底になっている（図\ref{fig2x10}）を見よ）．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=85.6mm,height=68.2mm]{fig2x10.bmp}
+	\caption{$\boldsymbol{e}_1,	\cdots,	\boldsymbol{e}_m$は$T_p(M)$の基底}
+	\label{fig2x10}
+\end{figure}
+微分操作としての$e_i$は
+\begin{align}
+	\boldsymbol{e_i}	\cdot	f	
+&=	\frac{d }{d t}	f(c_i(t))	\bigg|_{t=0}	\notag \\
+&=	\frac{d}{d t}	f(a_1,	\cdots	,	a_{i-1},	a_i+t	,	a_{i+1},	\cdots	,	a_m )	\bigg|_{t=0}	\notag \\
+&=	\frac{\partial f}{\partial x_i}	(p)
+\label{eq2x66}
+\end{align}
+であるから、$f$の$x_i$方向の偏微分に一致する．このため，$x_i$方向の基本ベクトル$\boldsymbol{e}_i$のことを
+記号で，
+\begin{equation}
+	\left(	\frac{\partial }{\partial x_i}
+	\right)_p
+\label{eq2x67}
+\end{equation}
+と書くことがある．
+
+2つの接ベクトル$\boldsymbol{u},\boldsymbol{v}$が，微分操作として等しいときは，
+接ベクトルとしても等しい．つまり，点$p$の近傍で定義されたに似の関数$f$について
+\begin{equation}
+	\boldsymbol{u}	\cdot	f	=	\boldsymbol{v}	\cdot	f
+\label{eq2x68}
+\end{equation}
+が成り立てば，$\boldsymbol{u}	=	\boldsymbol{v}$である．
+\footnote{
+微分操作を集合論における写像と見ると，微分操作は「単射」である．
+}
+
+このことを使うと，$t=0$のとき点$p$を通貨する曲線$c(t)$を$M$の局所座標系
+$(x_1,	x_2,	\cdots	,	x_m)$で表わしたとき，$c(t)$の$t=0$での速度ベクトル
+$\boldsymbol{v}$を基本ベクトル$e_1,	e_2,	\cdots	,	e_m$で表わす公式が得られる．
+\begin{equation}
+	c(t)	=	(x_1(t),	x_2(t),	\cdots	,	x_m(t))
+\label{eq2x69}
+\end{equation}
+であるとする．$p$のまわりの任意の関数$f$について
+\begin{align}
+	\boldsymbol{v}	\cdot	f	
+&=	\frac{d }{d t}	f(c(t))	\bigg|_{t=0}	\notag	\\
+&=	\frac{d }{d t}	f(x_1(t),	x_2(t),	\cdots	,	x_m(t))	\bigg|_{t=0}	\notag	\\
+&=	\sum_{i=1}^{m}	\frac{\partial f}{\partial x_i}	(p)	\frac{d x_i}{d t}	(0)	\notag	\\
+&=	\sum_{i=1}^{m}	\frac{d x_i}{d t}	(0)	\boldsymbol{e}_1	\cdot	f
+\label{eq2x70}	
+\end{align}
+であるから、公式
+\begin{equation}
+	\boldsymbol{v}	=	\sum_{i=1}^{m}	\frac{d x_i}{d t}	(0)	\boldsymbol{e}_i
+\label{eq2x71}
+\end{equation}
+が得られる．これが速度ベクトルの公式である．なお，基本ベクトルの記号
+として，$\boldsymbol{e}_i$のかわりに
+$\displaystyle	\left(	\frac{\partial }{\partial x_i}\right)_p$を
+使えば，上の公式は
+\begin{equation}
+	\boldsymbol{v}	=	\sum_{i=1}^{m}	\frac{d x_i}{d t}	(0)	\left(	\frac{\partial }{\partial x_i}\right)_p
+\label{eq2x72}
+\end{equation}
+と書ける．
+
+同様に考えて，$p$のまわりに2組の局所座標系$(x_1,	\cdots	,	x_m)$と$(y_1,	\cdots	,	y_m)$が
+あるとき，$(x_1,	\cdots	,	x_m)$に関する基本ベクトルと$(y_1,	\cdots	,	y_m)$に関する
+基本ベクトルとの間の変換公式が，偏微分の変数変換の公式から導かれる：
+\begin{equation}
+	\left(	\frac{\partial }{\partial x_i}
+	\right)_p	=	\sum_{i=1}^{m}	\frac{\partial y_j}{\partial x_i}	(p)	\left(	\frac{\partial }{\partial y_j}\right)_p,
+\quad	i=1,	2,	\cdots	,	m.
+\label{eq2x73}
+\end{equation}
+以上は，$M$が$\R^n$に埋め込まれていると仮定して議論してきたが，そうでない場合でも，
+接ベクトル空間$T_p(M)$を$\displaystyle	\left(	\frac{\partial }{\partial x_i}	\right)_p
+\:	(i=1,	2	,	\cdots	,	m)$を基底とするベクトル空間として定義し，上の変換公式（\ref{eq2x72}）を
+正当化することができる．

@@ -1,0 +1,434 @@
+\subsection{Poincar\'{e}双対性の証明}
+
+まず，境界準同型とコバウンダリー準同型の関係について，若干の補足をする．
+セル複体$X$が$k_q$個の$q$セル$e_l^q	,	e_2^q,	\cdots	,	e_{k_q}^q$を含んでいるとすると，
+$C_q(X)$の自然な基底として，向きをつけた
+$	\langle	e_1^q	\rangle,
+	\langle	e_2^q	\rangle,
+	\cdots,
+	\langle	e_{k_q}^q	\rangle
+$がとれる．$C_{q+1}(X)$にも同様の基底
+$	\langle	e_1^{q+1}	\rangle,
+	\langle	e_2^{q+1}	\rangle,
+	\cdots,
+	\langle	e_{k_{q+1}}^{q+1}	\rangle
+$
+があるから，
+境界準同型$\partial_{q+1}	:	C_{q+1}(X)	\to	C_q(X)$はこれらの基底を使って行列表示される．
+実際，
+
+\begin{equation}
+	\partial_{q+1}	(	\langle	e_i^{q+1}
+										\rangle
+									)
+	=	a_{i1}	\langle	e_1^q
+						\rangle
+	+	a_{i2}	\langle	e_2^q
+						\rangle
+	+	\cdots
+	+	a_{ik_q}	\langle	e_1^{k_q}
+						\rangle
+\label{eq4x3}
+\end{equation}
+であれば,$\partial_{q+1}$は$k_{q+1}$行$k_q$列の整数の行列
+\[
+	A=	\begin{pmatrix}
+				a_{11}	&	a_{12}	&	\cdots	&	a_{1k_q}	\\
+				a_{21}	&	a_{22}	&	\cdots	&	a_{2k_q}	\\
+								&					&	\ddots	&						\\
+				a_{k_{q+1}1}	&	a_{k_{q+1}2}	&	\cdots	&	a_{k_{q+1}k_q}
+			\end{pmatrix}
+\]
+で表される．(本当は$A$の転置行列$^tA$を考えるほうが自然なのだが，ここで
+はこのままにしておく．）
+$q$次元コチェイン群$C^q(X)$には，$	\langle	e_1	\rangle,	\langle	e_2	\rangle	,	\cdots	,	\langle	e_{k_q}^q	\rangle	$
+の\textbf{双対基底}（dual basis）と呼ばれる基底$f_1^q,	f_2^q	,	\cdots	,	f_{k_q}^q$がある．すなわち，$f_j^q$は
+\begin{equation}
+	f_j^q	(	\langle	e_k^q	\rangle	)	
+	=
+	\begin{cases}
+		\:	1	\quad	(	\text{$k=j$のとき})	\\
+		\:	0	\quad	(	\text{$k	\ne	j$のとき})
+	\end{cases}
+\label{eq4x4}
+\end{equation}
+によって定義される準同型$f_j^q	:C_q(X)	\to	Z$である．
+
+$C^q(X)$のなかの双対基底$f_1^q	,	f_2^q	,	\cdots	,	f_{k_q}^q$と，$C^{q+1}(X)$のなかの双対基底
+$f_1^{q+1},	f_2^{q+1},	\cdots	,	f_{k_{q+1}}^{q+1}$を使って，コバウンダリー準同型$\delta^q	:
+C^q(x)	\to	C^{q+1}(X)	\to	C^{q+1}(X)$を行列表示してみよう．
+双対基底$f_1^{q+1},	\cdots	,	f_{k_{q+1}}^{q+1}$を$\delta^q	:	C^q(X)	\to	C^{q+1}(X)$で写したものが，
+$C^{q+1}(X)$のなかの双対基底$f_1^{q+1}	,	\cdots	,	f_{k_{q+1}}^{q+1}$で
+\begin{equation}
+	\delta^q	(	f_j^q	)	=	b_{j1}f_1^{q+1}	+	b_{j2}f_2^{q+1}	+	\cdots	+	b_{jk_{q+1}}f_{k_{q+1}}^{q+1}
+\label{eq4x5}
+\end{equation}
+と表されたとする．
+
+$b_{jk}$を$j$行$k$列に並べた$k_q	\times	k_{q+1}$の行列$B$が$\delta^n$を表す行列である．
+
+係数の$b_{jk}$を求めるために，(\ref{eq4x5}）の両辺を$\langle	e_k^{q+1}	\rangle$の上で値をとらせてみよう．
+右辺から計算すると，双対基底の定義式（\ref{eq4x4}）により,右辺は$k$番目の項だけが
+$	\langle	e_k^{q+1}	\rangle$の上で$0$でない値をとり，その値は$b_{jk}$である．
+
+一方，左辺はコバウンダリー準同型の定義と境界準同型の行列表示により
+\begin{align}
+		\delta^q	f_j^q	(	\langle	e_k^{q+1}
+										\rangle
+		&=	f_j^q	(	\partial_{q+1}	\langle	e_k^{q+1}	\rangle)		\notag	\\
+		&=	f_j^q	(	a_{k1}	\langle	e_1^q	\rangle	+
+								a_{k2}	\langle	e_2^q	\rangle	+
+								\cdots												+
+								a_{kk_q}	\langle	e_{k_q}^q	\rangle	\notag	\\
+		&=	a_{kj}
+\label{eq4x6}
+\end{align}
+したがって，$b_{jk}	=	a_{kj}$を得る．この事実を次の補題にまとめておこう．
+
+\補題{4.24}
+$\delta^q	:C^q(X)	\to	C^{q+1}(X)$を表す行列$B$は，$\partial_{q+1}	:	C_{q+1}(X)	\to	C_q(X)$
+を表す行列且の転置行列である．
+\□
+
+Poincar\'{e}双対性の証明に入ろう．
+$M$を向きづけられた$m$次元の閉多様体とする．これを指数の順に整列した形にハンドル分解しておく：
+\begin{equation}
+	M	=	(	h_1^0	\sqcup	\cdots	\sqcup	h_{k_0}^0	)
+			\cup
+			(	h_1^1	\sqcup	\cdots	\sqcup	h_{k_1}^1	)
+			\cup	\cdots
+			(	h_1^m	\sqcup	\cdots	\sqcup	h_{k_m}^m	).
+\label{eq4x7}
+\end{equation}
+定理4.18で示したように，このハンドル分解の$q$-ハンドルの心棒を$q$セルとみなすことによって，
+$M$を自然に$m$次元セル複体$X$と思える．$q$-ハンドル$h_j^q$の心棒$e_j^q$には任意の向き
+$\langle	e_j^q	\rangle$を与えておく．すると，ハンドル分解（\ref{eq4x7}）に適合したチェイン複体を得る：
+\begin{equation}
+	\cdots
+	\to	C_{q+1}(X)
+	\stackrel{\partial_{q+1}}{\longrightarrow}	C_q(X)
+	\to	\cdots
+	\to	C_1(X)
+	\stackrel{\partial_1}{\longrightarrow}	C_0(X)
+	\to	\{	0	\}
+\label{eq4x8}
+\end{equation}
+この章の第1節で説明したように，境界準同型$\partial{q+1}$はセル複体の接着写像
+$h_j	:	\partial	\overline{e}_j^{q+1}	\to	X^q$によって
+$\partial	\overline{e}_j^{q+1}$が$q$セル$\overline{e}_k^q$の上に向きもこめて何回かぶるかという被覆度
+$a_{jk}$により表される．（$X^q$は$M$をセル複体と見なしたときの$q$切片である．）
+
+ハンドル体をセル複体と見なすとき，セル複体の接着写像は本質的にはハンドル体の接着写像である
+（定理4.18参照）．このことを使うと，被覆度$a_{jk}$を以下に説明するようにハンドル分解
+（\ref{eq4x7}）に即した言葉で表現できる．
+
+ハンドル分解（\ref{eq4x7}）において，$g$-ハンドルまでをすべて接着し終わった部分
+ハンドル体を$N^q$とする．
+
+いま$q+1$-ハンドル$h_j^{q+1}	=	D^{q+1}	\times	D^{m-q-1}$が接着写像$\varphi_j	:	(	\partial	D^{q+1}	\times	D^{m-q-1}
+\to	\partial	N^q$で$N^q$に接着しているとしよう．接着球面の$\varphi_j$による像$\varphi_j	(\partial	D^{q+1}	\times	
+\boldsymbol{0})$は$\partial	N^q$に埋め込まれた$q$次元球面である．以下，記号を簡単にするため，これを$S_j^q$
+という記号で表すことにする：
+\[
+	S_j^q	=	\varphi_j	(	\partial	D^{q+1}	\times	\boldsymbol{0})
+\]
+一方，$N^q$に含まれる$q$-ハンドル$h_k^q	=	D^q	\times	D^{m-q}$のベルト球面
+$\boldsymbol{0}	\times	\partial	D^{m-q}$は$m-g-1$次元球面であり，
+これも$\partial	N^q$の部分多様体である．やはり記号の簡単のため，
+このベルト球面を$\Sigma_k^{m-q-1}$と表す：
+\[
+	\Sigma_k^{m-q-1}	=	\boldsymbol{0}	\times	\partial	D^{m-q}	
+\]
+接着球面鍔の次元$q$とベルト球面$\Sigma_k^{m-q-1}$の次元$m-g-1$の和は$\partial	N^q$の
+次元$m-1$に等しい．
+
+\定理{4.25}（一般の位置：その2）
+滑らかな多様体Kのなかに2つの閉じた部分多様体
+$S_1,S_2$があり，しかも，それらの次元の和は$K$の次元に等しいとする：
+\[
+	\dim	K=	\dim	S_l	+	\dim	S_2.
+\]
+このとき，次の性質(i),(ii)をもつ$K$のアイソトピー$\{	h_t	\}_{t	\in	J}$が存在する．
+\begin{list}{}{}
+	\item		$h_0	=	\text{id}_k$，かつ
+	\item		$h_1	(S_1)	$は$S_2$に有限個の点で横断的に交わる．
+\end{list}
+\■
+
+証明は省略する([4]，[8]を参照してほしい)．
+
+ハンドル体$N^q$に戻ると，この\定理{4.25}により，境界$\partial	N^q$の
+アイソトピー$\{	h_t	\}_{t	\in	J}$を見つけて，
+$h_0	=	\text{id}_{\partial	N^q}$であり，かつ，$h_1	(S_j^q)$はベルト球面
+$\Sigma_k^{m-q-1}$に有限個の点で横断的に交わるようにすることができる．
+定理3.21（ハンドルを滑らせる）を使えば，このアイソトピーによって接着写像$\varphi_j$を$
+h_1	\circ	\varphi_j$に変えることができるので，はじめから接着球面$S_j^q$ははベルト球面
+$\Sigma_k^{m-q-1}$に横断的に交わっているとしてよい．（この議論を接着球面の非交和とベルト
+球面の非交和について行えば，任意の接着球面とベルト球面が$\partial	N^q$のなかで横断的に
+交わると仮定できる．）
+
+まず単純化された状況を考えてみよう．$\partial	N^q$のなかで，接着球面$S_j^q$がベルト球面
+$S_j^q$が$\Sigma_k^{m-q-1}$と唯1点で交わっている状況である．
+$q$-ハンドル$h_k^q$の太さをしだいに細くしていって対応する$q$セル$e_k^q$に変形すればわかるように，
+この場合，接着球面$S_j^q$は$e_k^q$に$1$回または$-1$回かぶることになる．
+すなわち$a_{jk}	=	\pm	1$ということになる（図\ref{fig4x3}参照，
+ただし，この図では$a_{jk}=2$）．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=84.0mm,height=50.6mm]{fig4x3.bmp}
+	\caption{$S_j^q$が$\Sigma_k^{m-q-1}$に交わる回数だけ$S_j^q$は$e_k^q$にかぶる}
+	\label{fig4x3}
+\end{figure}
+
+一般の状況を考えるため，次の第4節で定義される\textbf{交点数}を利用する．
+向きづけられた多様体$\langle	K	\rangle$のなかに，
+有限個の点で横断的に交わる2つの向きづけられた部分多様体
+$	\langle	S_1	\rangle$と$	\langle	S_2	\rangle$があるとすると，
+それらの問の交点数が定義できる
+（$\dim	S_1	+	\dim	S_2	=\dim	K$が仮定されている．）
+
+$S_1$と$S_2$の各交点に$+1$または$-1$の交わりの符号を付随させることができて，
+それらをすべての交点について加え合わせて得られる整数が，$\langle	S_1\rangle$
+と$\langle	S_1	\rangle$の間の交点数
+\[
+	\langle	S_1	\rangle	\cdot	\langle	S_2	\rangle
+\]
+である．
+
+接着球面$S_j^q$が何度もベルト球面$\Sigma_k^{m-q-1}$に交わるという一般の状況に戻ると，
+この場合は，符号もこめて何回$\Sigma_k^{m-q-1}$に交わるかという回数だけ，鍔はe宴にかぶる．
+したがって，$a_{jk}$は交点数$\langle	S_J^q\rangle	\cdot	\langle	\Sigma_k^{m-q-1}\rangle$
+のマイナス$-	\langle	S_j^q	\rangle	\cdot	\langle	\Sigma_k^{m-q-1}	\rangle$に等しい．
+$	\langle	S_j^q\rangle,	\langle	\Sigma_k^{m-q-1}	\rangle,	\langle	\partial	N^q	\rangle$
+の向きを皆「自然に」選んで計算してみると，
+\begin{equation}
+	a_{jk}	=	(-1)^q	\langle	S_j^q	\rangle
+	\cdot
+	\langle	\Sigma_k^{m-q-1}	\rangle
+\label{eq4x9}
+\end{equation}
+が示せる．先頭の符号$(-1)^q$はここではあまり本質的でないので，詳しいことは省略するが,
+「自然な」向きの取り方だけ説明しておこう．$q$-ハンドル$h_k^q$の心棒
+$e_k^q$の向き$\langle	e_k^q	\rangle$は任意に選んでおく．
+$h_k^q$の太さを表す円板を$\varepsilon_k^{m-q}$で表すことにすると，
+$\varepsilon_k^{m-q}$の向きは$\langle		e_k^q	\rangle$に決まる．
+すなわち，$e_k^q$と$e_k^{m-q}$とは横断的に1点で交わっているから，
+全体の多様体$M$の向き$\langle	M \rangle$が指定されているという前提のもとに，
+交点数が
+\begin{equation}
+	\langle	e_k^q	\rangle	\cdot	\langle	e_k^{m-q}	\rangle
+\label{eq4x10}
+\end{equation}
+となるように，向き$\langle	e_k^{m-q}	\rangle$を決める．
+
+一般に，多様体1$N$の境界$\partial	N$の向きは$N$の向きから自然に誘導される．
+（第1節で，円板の場合にそれを説明したが，一般の多様体についても同様である．）
+接着球面$S_j^q$やベルト球面$\Sigma_k^{m-q-1}$の向きは，
+$\langle	e_j^{q+1}	\rangle$や$\langle	e_k^{m-q}	\rangle$の境界として
+それぞれ自然に導かれるものとする．また，$\partial	N^q$の向きは$N^q$の向き
+から自然に決まるものとする．これらの規約のもとに，
+式（\ref{eq4x9}）が証明できるのである．
+
+Morse理論によるPoincar\'{e}双対性の証明のキーポイントは，多様体$
+M$の「上下」をひっくり返すことである．それには，はじめのMorse関数
+$f:	M	\to	\R$を$-f$
+\[
+	-f	:	M	\to	\R
+\]
+にとり変えればよい．既に第3章の最後の定理3.35の証明で見たように，
+Morse関数$-f$の臨界点の集合は$f$の臨界点の集合とまったく同じである．
+しかし，$f$に関して指数が$\lambda$の臨界点は$-f$に関しては指数$m-\lambda$の臨界点になる．
+これは，臨界点のまわりで，$f$の標準形を考えてみればすぐにわかる．
+ハンドルの心棒と太さを表す円板の役割が入れ替わり，$q$--ハンドル$h_k^q$は
+$m-q$-ハンドルゲ${h^*}_k^{m-q}$に変身する．
+
+${h^*}_k^{m-q}$の心棒は$\varepsilon_k^{m-q}$であり，太さを表す円板は$e_k^q$である．
+
+$-f$に付随するハンドル分解は
+\begin{equation}
+	M=	({h^*}_1^0	\sqcup	\cdots	\sqcup	{h^*}_{k_m}^0	)	
+			\cup
+			({h^*}_1^1	\sqcup	\cdots	\sqcup	{h^*}_{k_{m-1}}^1)
+			\cup
+				\cdots
+			\cup
+			({h^*}_1^m	\sqcup	\cdots	\sqcup	{h^*}_{k_{0}}^m)
+\label{eq4x11}
+\end{equation}
+のかたちである．ここに現れる0一ハンドル,1一ハンドル,…,m一ハンドルの
+個数$k_m,	k_{m-1},	\cdots	,	k_0$はそれぞれ，ひっくり返す前の$m$-ハンドル，$m-1$-ハンドル
+$\cdots$，$0$-ハンドルの個数である．
+
+ハンドル分解（\ref{eq4x11}）に適合した$M$のセル分割を$X^*$とする．このセル複体から，チェイン複体
+\begin{equation}
+	\cdots
+	C_{m-q}	(X^*)
+	\stackrel{\partial^*{m-q}}{\longrightarrow}
+	C_{m-q-1}	(X^*)
+	\to	\cdots
+	\to
+	C_1(X^*)
+	\stackrel{\partial_1^*}{\rightarrow}
+	C_0(X^*)	\to	\{	0	\}
+\label{eq4x12}
+\end{equation}
+が得られる．
+
+交点数を使うと，$C_{m-q}(X^*)$の基底$\langle	\varepsilon_1^{m-q}	\rangle,
+	\langle	\varepsilon_2^{m-q}	\rangle,	\cdots	,	\langle	\varepsilon_{k_q}^{m-q}	\rangle$
+が$C^q(X)$の双対基底のように見えてくる．実際，$C_{m-q}(X^*)$の基底の1つ
+$\langle	\varepsilon_k^{m-q}	\rangle$をとり，それと
+$C_q(X)$の基底$	\langle	e_j^q	\rangle	$との（$M$のな かでの）交点数を考えると,式（\ref{eq4x10}）
+と次の節の公式（\ref{eq4x18}）により
+\[
+	\langle	\varepsilon_k^{m-q}	\rangle	\cdot
+	\langle	e_j^q	\rangle
+	=
+	\begin{cases}
+		\:	(-1)^{(m-q)q}		&	\quad	\text{$j=k$のとき}	\\
+		\:	0								&	\quad	\text{$j	\ne	k$のとき}
+	\end{cases}
+\]
+となる．
+
+しかも，$\rank	(C_{m-q}(X^*))	=	\rank	(C^q(X))	=	k_q$であるから，
+$C_{m-q}	(X^*)$の基底$\langle	\varepsilon_k^{m-q}	\rangle$
+双対基底$f_k^q$の符号を変えたもの$(-1)^{(m-q)q}	f_k^q$に写すという同型写像
+\[
+	\varPhi_{m-q}	:	C_{m-q}	C_{m-q}	(X^*)	\to	C^q	(X)
+\]
+が考えられる．各次元$q$に，このような同型写像$\varPhi_{m-q}$がある．
+
+\補題{4.26}任意の$q$について，次の図式は符号を除いて可換である．
+すなわち，$\varPhi_{m-q-1}	\circ	\partial_{m-q}^*	=	\pm	\delta^q	\circ	\varPhi_{m-q}$が成り立つ．
+\[
+\begin{CD}
+	C^q(X)	 								@>>> 									C^{q+1}(X)							\\
+	@A{\varPhi_{m-q}}AA 													@AA{\varPhi_{m-q-1}}A		\\
+	C_{m-q}	(X^*)						@>>{\partial^*{m-q}}>	C_{m-q-1}(X^*)
+\end{CD}
+\]
+\証明
+$C_{m-q}	(X^*)$の基底$\langle	\varepsilon_k^{m-q}	\rangle$と，$C_{m-q-1}	(X^*)$基底
+$\langle	\varepsilon_j^{m-q-1}	\rangle	\:	(j=1,	\cdots	,	k_{q+1}$に関して，
+境界準同型∂泓,を行列表示してみよう．
+\begin{equation}
+	\partial_{m-q}^*	(	\langle	\varepsilon_k^{m-q}	\rangle	)
+	=
+	c_{k1}	\langle	\varepsilon_1^{m-q-1}	\rangle
+	+	\cdots	+
+	c_{k_j}	\langle	\varepsilon_j^{m-q-1}	\rangle
+	+	\cdots	+
+	c_{kk_{q+1}}	\langle	\varepsilon_{k_{q+1}}^{m-q-1}	\rangle
+\label{eq4x13}
+\end{equation}
+とおく．
+
+ハンドル分解（\ref{eq4x11}）の$0$-ハンドルから$m-q-1$-ハンドルまでを全部合わせた部分ハンドル体を
+${N^*}^{m-q-1}$としよう．${N^*}^{m-q-1}	\cup	N^q	=	M$であり，
+${N^*}^{m-q-1}$の境界$\partial	{N^*}^{m-q-1}$は$N^q$の境界$\partial	N^q$に等しい．
+$\partial	{N^*}^{m-q-1}$のなかで，以前のベルト球面$\Sigma_k^{m-q-1}	$がいまは$m-q$-ハンドルが
+${h^*}_k^{m-q}$の接着球面になっており，以前の接着球面$S_j^q$はいまは$m-q-1$-ハンドル
+${h^*}_j^{m-q-1}$のベルト球面になっていることを考慮すると，式（\ref{eq4x9}）を得たときと同様の考察に
+より
+\begin{equation}
+	c_{kj}	=	(-1)^{m-q-1}	\langle	\Sigma_k^{m-q-1}	\rangle'	\cdot	\langle	S_j^q	\rangle'
+\label{eq4x14}
+\end{equation}
+を得る．ただし，見かけは同じだが，いくつかの点で注意する必要がある．
+
+まず，ここでの交点数は$\langle	\partial	{N^*}^{m-q-1}	\:	(=	-	\langle	\partial	N^q	\rangle	)$
+の中で考えている．
+
+また，$a_{jk}$を求めたときと完全に同じに議論するには，$\Sigma_k^{m-q-1}$と$S_j^q$の向きを
+\[
+	\langle	\varepsilon_j^{m-q-1}	\rangle'
+	\cdot
+	\langle	e_j^{q+1}	\rangle'	=	1,	\quad	\forall	j
+\]
+という規約に基づいて決めなければならない．式（\ref{eq4x14}）のなかで，
+向きの記号に$'$がついているのはそのためである．前の規約（\ref{eq4x10}）に基づく向き
+$	\langle	\Sigma_k^{m-q-1}	\rangle$と$\langle	S_j^q	\rangle$を使えば，次の節の公式（\ref{eq4x18}）により
+$(-1)^{(m-q-1)(q+1)}$だけの符号の違いがでる．
+
+以上の点を考慮し，公式（\ref{eq4x18}）を使って$\langle	\Sigma_k^{m-q-1}	\rangle$の順序を入れ換え，
+そして$a_{jk}$の式（\ref{eq4x9}）と比較すれば
+\begin{equation}
+	c_{kj}	=	(-1)^{q+1}	a_{jk}
+\label{eq4x15}
+\end{equation}
+が示せる．ここの符号$(-1)^{q+1}$はさしあたり重要でない．いずれにせよ，
+$\partial_{m-q}^*$を表す行列$C$は$\partial_{q+1}$を表す行列$A$の転置行列またはそのマイナスで
+あることがわかった．
+
+補題4.24により，双対基底に関して$\delta^q	:C^q(X)	\to	C^{q+1}(X)$を表す行列は$A$の転置行列だから，
+$\varPhi_{m-q}$と$\varPhi_{m-q-1}$1によって，$C_{m-q}(X^*)$とと$C^q(X)$，
+$C_{m-q-1}(X^*)$と$C^{q+1}(X)$をそれぞれ同一視すると，$\partial_{m-q}^*$と
+$\delta_{m-q}^*$と$\delta^q$が符号を除いて一致することは明らかである．
+
+これで，補題4.26が示せた.
+
+補題4.26を使い，各次元$q$で同型$\varPhi_{m-q}	:	C_{m-q}(X^*)	\to	C^q(X)$を考えれば，
+チェイン複体
+\begin{equation}
+	\cdots	C_{m-q+1}	(X^*)
+	\stackrel{\partial_{m-q+1}^*}{\longrightarrow}
+	C_{m-q}	(X^*)
+	\stackrel{\partial_{m-q}^*}{\longrightarrow}
+	C_{m-q-1}(X^*)
+	\to
+	\cdots
+\label{eq4x16}
+\end{equation}
+とコチェイン複体
+\begin{equation}
+	\cdots
+	C^{q-1}	(X)
+	\stackrel{\pm	\delta^{q-1}}{\longrightarrow}
+	C^q(X)
+	\stackrel{\pm	\delta^{q}}{\longrightarrow}
+	C^{q+1}(X)
+	\to
+	\cdots
+\label{eq4x17}
+\end{equation}
+が同型になる．
+
+したがって，チェイン複体（\ref{eq4x16}）の$m-q$次元ホモロジー群
+$H_{m-q}(X^*)	\:	(	\cong	H_{m-q}(M))$とコチェイン複体
+（\ref{eq4x17}）の$q$次元コホモロジー群$H^q(X)	\:	(	\cong	H^q	(M))$は
+同型である．(コバウンダリー準同型が$\delta^q$でも$-\delta^q	$でもコホモロ
+ジー群の構造には影響しない．）
+
+これで，Poincar\'{e}双対性$H_{m-q}(M)	\cong	H^q(M)$が証明できた．
+
+\系{4.27}
+$M$を向きづけ可能な$m$次元連結閉多様体とすると，最高次元のホモロジー群とコホモロジー群は
+$\Z$に同型である：
+\[
+	H_m	(M)	\cong	\Z,	\quad	H^m	(M)	\cong	\Z.
+\]
+\証明
+Poincar\'{e}双対性により，$H_m(M)	\cong	H^0(M)$と$H^m(M)	\cong	H_0(M)$が成り立つ．
+一方，連結なセル複体$X$については，$H^0(X)	\cong	\Z$と$H_0(X)	\cong	\Z$は定義から容易に示せる．
+\■
+
+$M$を向きづけることは$H_m(M)	\cong	\Z$の生成元を1つ選び出すことに相当している．
+こうして選び出された生成元を$[M]$と書き，$M$の\textbf{基本類}（fundamentalclass）と呼ぶ．
+
+\注意{}
+
+向きづけ不可能な$m$次元連結多様体$M$については$H_m(M)=\{0\}$であることが知られている．
+
+\系{4.28}（Betti数の双対性）
+$M$を向きづけ可能な$m$次元連結閉多様体とすると，$q$次元 Betti数と$m-q$次元Betti数は等しい：
+\[
+	b_q	(M)	=	b_{m-q}	(M)	,	\forall	q.
+\]
+\証明
+普遍係数 定理4.22によれぼ，$\rank H^q(X)= \rank H_q(X)$が成り立つ．
+Poincar\'{e}双対性と組み合わせて
+\[
+	b_q(M)=\rank H_q(M)	=	\rank	H^q(M)	=	\rank	H_{m_q}(M)=b_{m_q}(M)
+\]
+\■

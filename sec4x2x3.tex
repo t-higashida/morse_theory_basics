@@ -1,0 +1,44 @@
+\subsection{複素射影空間$\C P_m$のホモロジー群}
+
+
+複素$m$次元の複素射影空間$\C P_m$のホモロジー群を求めてみよう．
+前章の第2節で$\C P_m$のハンドル分解が
+\[
+	\C P_m = h^0 \cup h^2 \cup \cdots \cup h^{2m}
+\]
+であることを示した．ここでは記号を節約するため，$\lambda$-ハンドル$D^\lambda	\times D^{m - \lambda}$を
+$h^\lambda$という記号で表している．定理4.18によれば，これから$\C P_m$をセル複体として表すこと
+（$\C P_m$のセル分割）ができる:
+\[
+	\C	P_m	=	e^0	\cup	e^2	\cup	\cdots	\cup	e^m.
+\]
+よって，$\C	P_m$の鎖群$C_q	(\C	P_m)$は
+\[
+	C_q	(\C	P_m	)	=
+	\begin{cases}	
+		\:	\Z				\quad	&	(\text{$q$は偶数：$0	\leqq	q	\leqq	2m$})	\\
+		\:	\{	0	\}	\quad	&	(\text{$q$は上記以外})	\
+	\end{cases}
+\]
+で与えられる．このことから，境界準同型は$\partial_q	=	0	(\forall	)$となり，
+ホモロジー群$H_q	(\C	P_m)$は次のように計算される．
+\[
+	H_q	(\C	P_m)	=	
+	\begin{cases}
+		\:	\Z				&	\quad	(\text{$q$は偶数：$0	\leqq	q	\leqq	2m$})	\\
+		\:	\{	0	\}	&	\quad	(\text{$q$は上記以外})	
+	\end{cases}
+\]
+これを表に表してみよう.
+
+\begin{table}[h]
+	\caption{$\C	P_m$のホモロジー群}
+	\label{tab4x2}
+\begin{center}
+\begin{tabular}{c|ccccccc}
+\hline
+	$q$ 				& $0$ 	& $1$	 			& $2$		&	$3$				&	$\cdots$	&	$2m-1$		&	$2m$	\\	\hline
+ 	$H_q(S^m)$	& $\Z$	&	$\{	0	\}$	&	$\Z$	&	$\{	0	\}$	&	$\cdots$	&	$\{	0	\}$	&	$\Z$	\\	\hline
+\end{tabular}
+\end{center}
+\end{table}

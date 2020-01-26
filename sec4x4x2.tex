@@ -1,0 +1,171 @@
+\subsection{交点形式}
+
+部分多様体の問の交点数をホモロジー類の問の交点数へ拡張しよう．
+以下，Mを向きづけられた連結な閉多様体とし，Morse関数$f:	M	\to	\R$に適合する
+ハンドル分解（\ref{eq4x7}）と$-f	:	M	\to	\R$に適合するハンドル分解（\ref{eq4x11}）を考える．
+第3節の記号をそのまま使うことにし，それぞれのハンドル分解に付随するセル複体を
+$X,X^*$としよう．
+$X$の$q$セル$e_k^q$は$q$-ハンドル$h_k^q$の心棒であった．
+そして，$X^*$の$m-q$セル$\varepsilon^{m-q}$は$h_k^q$の太さを表す円板である．
+$e_k^q$と$e_k^q$は横断的に1点で交わっている．
+$e_k^q$には任意の向き$\langle	e_k^q	\rangle$には，交点数が
+\begin{equation}
+	\langle		e_k^q\rangle	\cdot	\langle	k^{m-q}	\rangle
+\label{eq4x19}
+\end{equation}
+となるような向き$	\langle	\varepsilon_k^{m-q}	\rangle$を与える．
+（前節の（\ref{eq4x10}）を見よ．）
+
+まず，$X$の$q$チェインと$X^*$の$m-q$チェインの間の交点数を定義しよう．
+
+$c^q	=	\sum_{k=1}^{k_q}	\langle	e_k^q	\rangle	\:	(	c_k	\in	\Z	)$を
+$X$の$q$チェイン，$\gamma^{m-q}	=	\sum_{l=1}^{k_q}	\gamma_l	\langle	\varepsilon_l^{m-q}	\rangle)$	
+を$X^*$の$m-g$チェインとする．
+
+\定義{4.32}	（チェインの交点数）
+$q$チェイン$c^q$と$m-q$チェイン$\gamma^{m-q}$の間の\textbf{交点数}を
+\begin{equation}
+	c^q	\cdot	\gamma^{m-q}	=	\sum_{k,l=1}^{k_q}
+	c_k	\gamma_l	\langle	c_k	\rangle	\langle	e_k^q	\rangle	\cdot	\langle	\varepsilon_l^{m-q}	\rangle
+\label{eq4x20}
+\end{equation}
+とおいて定義する.
+\□
+
+$q$セル$e_k^q$と$m-q$セル$\varepsilon_l^{m-q}$とは$k=l$ときに限って横断的に交わり，
+$k	\ne	l$のときには共通部分がない．したがって，定義式
+（\ref{eq4x20}）は実は
+\begin{equation}
+	c^q	\gamma^{m-q}	=	\sum_{k=1}^{k_q}	c_k	\gamma_k
+\label{eq4x20}
+\end{equation}
+に等しい．（式（\ref{eq4x19}）を使った.）
+
+定義式（\ref{eq4x20}）により，$(c+c'	)	\cdot	=	c	\cdot	c'	\cdot	\gamma$と
+$	c	\cdot	(	\gamma	+	\gamma')	=	c	\cdot	\gamma	+	c	\cdot	\gamma'$がわかり，
+交点数は$C_q	(X)$と$C_{m-q}(X^*)$の間の双1次形式
+\[
+	:C_q(X)	\times	C_{m-q}(X^*)	\to	\Z
+\]
+を与える．定義式（\ref{4x20}）からさらに$c^q	\cdot	\gamma^{m-q}	=	(-1)^{q(m-q)}	\cdot	c^q$がわかる．
+
+\補題{4.33}
+$\forall	c^{q+1}	\in	C_{q+1}(X)$と$\forall	\gamma^{m-q}	\in	C_{m-q}(X^*)$について
+\begin{equation}
+	\partial_{q+1}	c^{q+1}	\cdot	\gamma^{m-q}	=	(-1)^{q+1}	c^{q+1}	\cdot	(	\partial_{m-q}^*	\gamma^{m-q})
+\label{eq4x21}
+\end{equation}
+が成り立つ．ただし，
+\[
+	\partial_{q+1}	:	C_{q+1}	(X)	\to	C_q	(X)
+	\quad	\text{と}	\quad
+	\partial_{m-q}^*	:	C_{m-q}	(X^*)	\to	C_{m-q-1}	(X^*)
+\]
+は境界準同型である．
+
+\証明
+
+$C_{q+1}	(X)	$	と$C_{m-q}	(X^*)$の生成元についてのみ示せば十分である.
+そこで，
+\[
+	c^{q+1}	=	\langle	e_j^{q+1}	\rangle,
+	\quad
+	\gamma^{m-q}	=	\langle	\gamma_k^{m-q}	\rangle
+\]
+の場合を考える．
+\begin{align}
+		\partial_{q+1}	(\langle	e_j^{q+1}	\rangle	)	=	\sum_{n=1}^{k_q}	a_{jk}	\langle	e_k^q	\rangle,	\notag	\\
+		\partial^*_{m-q}	(\langle	\varepsilon_k^{m-q}	\rangle	)	=	\sum_{j=1}^{k_{q+1}}	c_{kj}		\langle	\varepsilon_j^{m-q-1}	\rangle
+		\label{eq4x22}
+\end{align}
+とおくと，証明すべき式（\ref{eq4x21}）の左辺の交点数は$	(\partial_{q+1}	\langle	e_j^{q+1}	\rangle	)	\cdot	\langle	\varepsilon_k^{m-q}	\rangle
+=	a_{jk}$となり，右辺の交点数は$	\langle	e_j^{q+1}	\rangle	\cdot	(	\partial_{m-q}^*	\langle	\varepsilon_k^{m-q}	\rangle	)	=	c_{kj}$となる．
+
+前節の式（\ref{eq4x15}）により，$a_{jk}	=	(-1)^{q+1}$であるから，証明すべき式（\ref{eq4x21}）が成り立つ．
+\■
+
+補題4.33の系として，$X$の$q$次元境界サイクル$b^q$と$X^*$の$m-q$次元サイクル
+$\gamma^{m-q}$の間の交点数が$0$であることがわかる．実際，境界サイクル$b^q$は，
+ある$q+1$チェイン$c^{q+1}$を使って，$b^q	\partial_{q+1}	(c^{q+1})$と書けるから
+\begin{align}
+		b^q	\cdot	\gamma^{m-q}
+	&=	(	\partial_{q+1}	c^{q+1}	\cdot	\gamma^{m-q}	\notag	\\
+	&=	(-1)^{q+1}	c^{q+1}	\cdot		(	\partial_{m-q}^*	\gamma^{m-q}	)	\notag	\\
+	&=	0	\label{eq4x23}
+\end{align}
+を得る．最後に$0$になったのは，$\gamma^{m-q}$ッ$m-q$が$m-q$次元サイクルと仮定されているからである．
+この結論から次のことがわかる．$X$の$q$次元サイクル$z^q$と$X^*$の$m-q$次元サイクル$\zeta^{m^q}$の間の交点数
+\[
+	z^q	\cdot	\zeta^{m-q}
+\]
+において，$z^q$に$q$次元境界サイクル$b^q$を足しても引いても，交点数の値は変わらない．
+同様に，$\zeta^{m-q}$に$m-q$次元境界サイクル$\beta^{m-q}$を足しても引いても交点数の値は変わらない．
+
+言い換えれば，$H_q(X)$のホモロジー類$[	z^q	]$と$H_{m-q}(X^*)$のホモロジー類
+$[	\zeta^{m-q}$の問の交点数
+\[
+	[	z^q	]	\cdot	[	\zeta^{m-q}
+\]
+が定義できる．
+
+$	H_q	(X)	\cong	H_q	(M)	$であり，$H_{m-q}	(X^*)	\cong	H_{m-q}	(M)$であるから，
+交点数を対応させる双1次形式
+\begin{equation}
+	I	:	H_q	(M)	\times	H_{m-q}	\times	H_{m-q}	(M)	\to	\Z,
+	\quad	\text{ただし}	\quad
+	I(	[	z^q],	[	\zeta^{m-q}	]	)	=	[z^q]	\cdot	[\zeta^{m-q}	]
+\label{eq4x24}
+\end{equation}
+が得られたことになる．
+
+\定義{4.34}（交点形式）
+双1次形式$I$を交点形式（intersectionform）と呼ぶ．（交叉形式と呼ぶこともある．）
+\□
+
+公式（\ref{eq4x18}）により，
+\begin{equation}
+	1(x,y)	=	(-1)^{q(m-q)}	(-1)^{q(m-q)}I(y,x),	\quad	\forall	(x,y)	\in	H_q(M)	\times	H_{m-q}(M)
+\label{eq4x25}
+\end{equation}
+が成り立つ．
+
+$I$は整数値だから，$x	\in	H_q(M)$)が\textbf{ねじれ元}(torsion)であれば（すなわち，
+
+$n	x	=	0$となるような$0$でない整数$n$があれば），どんな$y	\in	H_{m-q}	(M)$についても
+$I(x,y)	=0	$となる．この逆が言える．
+
+\補題{4.35}	交点形式は次の2つの意味で\textbf{非退化}（non-degenerate）である．
+\begin{list}{}{}
+	\item	（ⅰ）ある$x	\in	H_q(M)$を止めたとき，任意の$y	\in	H_{m-q}	\in	H_{m-q}(M)$について，$I(x,y)	=0$であれば，$x$はねじれ元である．
+	\item	（ⅱ）(ii)任意の準同型φ:Hm-g(M)→zが与えられたとき,あるの∈瑞(M)が存在して,1@,〃)=φ(〃),∀〃∈Hm.q(M)が成り立つ.
+\end{list}
+$x$と$y$の役割を入れ換えても同じことが言える．
+
+\証明
+Poincar\'{e}双対性の定理4.23と普遍係数定理4.22を組み合わせればよい．
+\[
+	H_q(M)	\cong	H^{m-q}	(M)	\stackrel{\kappa}{\rightarrow}	\Hom	(H_{m-q}	(M),	\Z)
+\]
+という合成は$\forall	x	\in	H_q(M)$に準同型$I(x,	\cdot)$（またはそのマイナス）を対応させることが，
+Poincar\'{e}双対性の証明と$\kappa$の定義をさかのぼればわかる．
+\■
+
+$M$が偶数次元（$\dim	M	=2n$）であるとき，$m-n=n$だから,ちょうど真ん中の次元の
+$H_n	(M)	$の上にに交点形式
+\[
+	I:	H_n	(M^{2n}	)	\times	H_n	(	M^{2n}	)	\to	\Z
+\]
+が定義できる．公式（\ref{eq4x25}）の特別の場合として
+\begin{equation}
+	I(x,y)	=	(-1)^n	I(x,y)	\forall	x,y	\in	H_n	(M^{2n}).
+\label{eq4x26}
+\end{equation}
+さらに，$n$が偶数（よって$m$が$4$の倍数$4k$）であれば，この式から$I$1は対称
+（$I(x,y)	=	I(y,x)$）であることがわかる．こうして次の定理を得た．
+
+\定理{4.36}$M$が$4$の倍数次元（$	\dim	M=	4k$）であれば，交点形式
+\[
+	I	:	H_{2k}	(M)	\times	H_{2k}	(M)	\to	\Z
+\]
+は非退化な対称双1次形式である．
+\□

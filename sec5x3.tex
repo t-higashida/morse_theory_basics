@@ -1,0 +1,180 @@
+\section{4次元多様体}
+
+\subsection{4次元閉多様体の Heegaard 図式}
+
+$M$を連結で向き付け可能な$4$次元閉多様体とする．Morse 関数 $f: M \to \R$を
+上手く選んで，付随するハンドル分解の中の$0$-ハンドルと$4$-ハンドルがそれぞれ$1$個ずつで
+あるようにできる（定理3.35）．このとき，ハンドル分解は
+\begin{equation}
+	M = h^0 \cup ( h_1^1 \sqcup h_2^1 \sqcup \cdots \sqcup h_{k_1}^1)
+          \cup ( h_1^2 \sqcup h_2^2 \sqcup \cdots \sqcup h_{k_2}^2)
+          \cup ( h_1^3 \sqcup h_2^3 \sqcup \cdots \sqcup h_{k_3}^3) \cup h^4.
+\label{eq5x8}
+\end{equation}
+ハンドル分解（\ref{eq5x8}）において，$0$-ハンドルと$1$-ハンドルをすべて合わせたものを$N$としよう．
+3次元多様体論のハンドル体の類似として，この$N$のことを4次元の\textbf{ハンドル体}と呼ぶ．
+もちろん，第3章であつかったハンドル体よりも特殊な意味である．
+
+$1$-ハンドルの個数$k_1$が$1$の場合は，$N$は$1$個の$4$次元円板$D^4$に$1$個の
+$1$-ハンドル$D^1 \times D^3$を（結果が向き付け可能になるように）付けたものである．
+このとき，$N \simeq S^1 \times D^3$がわかる。ソリッド・トーラスの4次元版である．
+境界$\partial N $は$S^1 \times D^3$がわかる．ソリッド・トーラスの4次元版である．
+境界$\partial N$は$S^1 \times S^2$に微分同相である．
+
+一般に，$1$-ハンドルの個数が$k_1 \geqq 1$のときには，次のことが言える．
+
+\補題{5.17} 境界$\partial N$は$k_1$個の$S^1 \times S^2$の連結和に微分同相である：
+\[
+	\partial N \simeq ( S^1 \times S^2) \# (S^1 \times S^2) \# \cdots \# (S^1 \times S^2) \quad \text{（$k_1$個の$S^1 \times S^2$）}
+\]
+\■
+
+連結和は，閉曲面については前の節で説明したが，ここで一般次元の多様体について定義しておこう．
+
+\定義{5.18}
+（連結和）$M_1$と$M_2$をともに$m$次元の向き付けられた多様体とする．
+$f_1 : D^m \to M_1$を向きを保つ滑らかな埋め込み、$f_2 : D^m \to M_2$を向きを逆にする
+滑らかな埋め込みとする．埋め込まれた円板から内部を除き，$M_1 - f_1 (\text{int } D^m)$と
+$M_2 - f_2 (\text{int } D^m)$の境界を，微分同相写像
+\[
+	\psi	=	f_2	\circ f_1^{-1} | f_1 (\partial D^m) : f_1 ( \partial D^m ) \to f_2 (\partial D^m)
+\]
+で張り合わせる．こうして得られた多様体
+\[
+	(M_1 - f_1 ( \text{int } D^m)) \cup_{\varphi} ( M_2 - f_2 (\text{int } D^m))
+\]
+のことを，$M_1$と$M_2$の\textbf{連結和}といい，記号で
+\[
+	M_1	\#	M_2
+\]
+と表す．
+
+連結和$M_1	\#	M_2$には、$M_1$の向きと$M_2$の向きを同時に拡張する向きが入る．
+\■
+
+連結和$M_1	\#	M_2$の，向きを考慮した微分同相類は，$M_1$と$M_2$のそれで決まり，
+構成に使った埋め込み写像$f_1$と$f_2$の取り方に依存しない（[8]の定理3.18を見よ）．
+
+ハンドル分解（\ref{eq5x8}）に戻る．$0$-ハンドルから $2$-ハンドルまでをすべて付けた部分ハンドル体
+$N^{(2)}$は，$4$次元のハンドル体$N$にすべての$2$-ハンドルを付けて得られる：
+\[
+	N^{(2)} = N \cup ( h_1^2 \sqcup h_2^2 \sqcup \cdots \sqcup h_{k_2}^2).
+\]
+ここで，$i$番目の$2$-ハンドル$h_i^2	=	D^2		\times	D^2$の接着写像は
+\[
+	\varphi_i	:	\partial D^2 \times D^2 \to \partial N
+\]
+という滑らかな埋め込みである．
+
+3次元の Heegaard 図式の場合は，接着球面（円周）$\partial D^2 \times \boldsymbol{0}$の像
+$ \varphi ( \partial D^2 \times \boldsymbol{0})$だけで、
+$2$-ハンドルの接着写像$\varphi : \partial D^2 \times D^1 \to \partial N$がアイソトピーを除いて
+決まってしまった．それはアニュラス$\partial D^2 \times D^1$からそれ自身への、向きを保ち，
+かつ円周$\partial D^2$の方向を保つ微分同相写像がアイソトピーを除いて1つしかないという事情による．
+
+
+
+
+4次元の場合には，$\text{dim } \partial N = 3$で，そのなかに埋め込まれた$\varphi_i ( \partial D^2 \times D^2)$
+は3次元のソリッド・トーラス（$\cong S^1 \times D^2$）になる．ソリッド・トーラスから
+それ自身への向きを保つ微分同相写像はアイソトピーで分類しても無限個の種類があるので，
+$2$-ハンドルの接着写像$\varphi_i : \partial D^2 \times D^2 \to \partial N$は，
+接着球面（円周）$\partial D^2 \times \boldsymbol{0}$の行き先$\varphi_i ( \partial D^2 \times \boldsymbol{0})$
+だけを指定したのでは決まらない．
+
+ソリッド・トーラス$S^1 \times D^2$からそれ自身への，向きを保つ微分同相写像が無限個あることを見ておこう．
+
+$S^1$に角度$\theta$で座標を入れ，円板$D^2$には極座標$(r,\phi)$を入れる．$r$は中心
+$\boldsymbol{0}$からの距離である．ただし，$0	\leqq r \leqq 1$であるとする．$n$を自然数とし，
+微分同相写像$f_n :S^1 \times D^2 \to S^1 \times D^2$を
+\[
+	f_n	(\theta , (r,\phi)) = ( \theta , (r, \phi + n \theta))
+\]
+とう式で定義しよう．$S^1$に沿って回る間に，$S^1$に直交する円板$D^2$を$n$回だけ回転させる，
+という微分同相写像である．
+
+$n$と$m$が違えば$f_n$と$f_m$はアイソトピーで移り合わない．また、$S^1 \times D^2$からそれ自身への，
+向きを保ち，かつ円周$S^1$の方向を保つ微分同相写像は，
+アイソトピーで動かせばどれかの$f_n$に移る．
+
+接着写像$\varphi_i : \partial D^2 \times D^2 \to \partial N$に$f_n$を合成して，
+$\varphi_i \circ f_n : \partial D^2 \times D^2\to \partial N$としたものを新しい
+接着写像と考えても，接着球面（円周）の行き先は変わらない：
+
+\[
+	\varphi_i ( \partial D^2 \times \boldsymbol{0}) = \varphi_i \circ f_n ( \partial D^2 \times \boldsymbol{0}).
+\]
+$2$-ハンドルの接着写像が，$\varphi_i$であるか$\varphi_i \circ f_n$であるかによって，できあがる多様体の
+微分同相類は一般には変わってしまうので、できる多様体を決めるには，接着球面（円周）の行先き先を指定した
+あと，$f_n$を合成する自由度を消す必要がある．そのための方法が，中心線$\varphi_i(\partial D^2 \times \boldsymbol{0})$に
+沿って「枠」を指定することである．
+
+$D^2$を$xy$平面の単位円板$\{(x,y) \: | \: x^2 + y^2 = 1 \: \}$と思う．そして，
+原点$\boldsymbol{0}$からでて，互いに直交する2本の単位ベクトル
+$\boldsymbol{e}_1$と$\boldsymbol{e}_2$を$D^2$の中に描いておく．
+直積$\partial D^2 \times \boldsymbol{e}_1$と$\partial D^2 \times \boldsymbol{e}_2$は，$\partial D^2 \times D^2$の中で，
+中心線$\partial D^2 \times \boldsymbol{0}$に沿った2本の標準的ベクトル場$\overline{\boldsymbol{e}}_1 , \overline{\boldsymbol{e}}_2$と
+考えられる．
+
+これらのベクトル場は，中心線に直交し，かつ互いに直交している．
+
+
+\定義{5.19}（枠）3次元多様体$K$の中の滑らかな単純閉曲線$C$に沿って2本のベクトル場
+$\boldsymbol{v}_1$と$\boldsymbol{v}_2$があり，それらは$C$に接することはなく，かつどこにおいても
+互いに1次独立であるとする．このとき，$\{ \boldsymbol{v}_1, \boldsymbol{v}_2	\}$のことを
+$C$の\textbf{枠}（frame）という．$C$の2つの枠$\{ \boldsymbol{v}_1	,	\boldsymbol{v}_2	\}$と
+$\{ \boldsymbol{u}_1	,	\boldsymbol{u}_2	\}$が，$C$を動かさないアイソトピー
+で移りあうとき，それらは\textbf{同値}な枠であるという．そして，枠の同値類が
+$1$つ指定された閉曲線$C$を，\textbf{枠つき閉曲線}（framed closed curve）という（図5.13）．
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=70mm,height=40mm]{fig5x13.bmp}
+	\caption{枠付き閉曲線}
+	\label{fig5x13}
+\end{figure}
+さて，接着写像$\varphi_i	:	\partial D^2 \times D^2 \to \partial N$が与えられたとき，
+$\partial D^2 \times D^2$の中の標準的な枠$\{ \overline{\boldsymbol{e}}_1, \overline{\boldsymbol{e}}_2 \}$
+を$\varphi_i$によって移せば，単純閉曲線$\varphi_i ( \partial D^2 \times \boldsymbol{0} )$の枠
+$ \{\boldsymbol{v}_1 , \boldsymbol{v}_2 \} ( = \{ \varphi_i ( \overline{\boldsymbol{e}}_1 ) , \varphi_i ( \overline{\boldsymbol{e}}_2 ) \} )$が
+得られる．接着写像$\varphi_i$のアイソトピー類を指定するには，中心線
+$\varphi_i ( \partial D^2 \times \boldsymbol{0} )$と，枠$ \{ \boldsymbol{v}_1 , \boldsymbol{v}_2 \}$
+の同値類を指定すればよい．
+
+こうして，各$i = 1, 2, \cdots ,k_2$について，境界$\partial N$の中の
+単純閉曲線$ \varphi_i (\partial D^2 \times \boldsymbol{0})$を枠つき閉曲線と考えれば，
+接着写像 $\varphi_i$のアイソトピー類が指定されるので，$2$-ハンドルをすべて付けた部分
+ハンドル体$N^{(2)}$の微分同相類がきまることになる．
+
+さらに次の事実が示せる（[7]）．
+
+\補題{5.20}
+
+ハンドル分解（\ref{eq5x8}）において，$0$-ハンドルから$2$-ハンドルまでをすべて
+付けた部分ハンドル体$N^{(2)}$によって，もとの4次元多様体$M$の微分同相類が決まる．
+\■
+
+証明の概略を述べる．$N^* = M - \text{int} (N^{(2)})$は，
+「逆さまの」Morse 関数$-f$に付随するハンドル分解において，
+$0$-ハンドルと$1$-ハンドルを合わせた4次元ハンドル体になっている．
+$N^*$の微分同相類は$-f$に付随する$1$-ハンドルの本数で決まるから，
+結局$\partial N^{*} = \partial N^{(2)}$で決まる（補題5.17参照）．
+そして，Laudenbach-Poenaru の定理[2]により，4次元のハンドル体$N^*$の
+境界$\partial N^*$からそれ自身への任意の微分同相写像$h:\partial N^* \to \partial N^*$
+は，$N^*$からそれ自身への任意の微分同相写像$h : \partial N^* \to \partial N^*$は，
+$N^*$からそれ自身への微分同相写像$ \tilde{h} : N^* \to N^*$に拡張できる．
+したがって，別の4次元閉多様体$M'$のハンドル分解から${N'}^{(2)}$を構成したとき，
+微分同相写像$h : N^{(2)} \to {N'}^{(2)}$があれば，$h$は微分同相写像
+$\tilde{h} : M \to M'$に拡張できる．これで補題5.20が示せた．
+
+補題5.20の前に説明したように，$N^{(2)}$の微分同相類は4次元のハンドル体$N$と
+その境界$\partial N$の中の枠つき閉曲線$C_1, C_2, \cdots , C_{k_2}$で決まる．
+ただし，$C_i = \varphi ( \partial D^2 \times \boldsymbol{0} )$と略記した．
+補題5.20を考慮すると，次の定義は自然であろう（[7]）．
+
+\定義{5.21}
+$(N;C_1, C_2, \cdots , C_{k_2})$を4次元多様体$M$の
+\textbf{Heegaard図式}と呼ぶ．
+\■
+
+向き付け可能な4次元閉多様体の微分同相類はHeegaard図式で一意的に決まる．

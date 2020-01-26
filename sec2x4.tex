@@ -1,0 +1,209 @@
+\section{臨界点の上げ下げ}
+
+この節で，一番簡単な臨界点の上げ下げについて論じておく．
+もっとダイナミックな上げ下げは次の第3章で議論する．
+
+
+\定理{2.34}
+$f:	M	\to	\R$を$M$上の Morse 関数，$p_1,	p_2,	\cdots	,	p_r$をその臨界点
+の集合とする．このとき，$f$と同じ臨界点の集合 $p_1,	p_2,	\cdots	,	p_r$ をもち，
+かつ，次の性質をもつ Morse 関数$f'$が存在する．
+\[
+	p_i	\ne	p_j	\quad	\text{なら}	\quad	f'(p_i)	\ne	f'(p_j),	\quad	1,j	=	1,	2,	,	\cdots	,	r.
+\]
+また，このような$f'$は$(C^2,	\varepsilon)$の意味で$f$にいくらでも近くにとれる．
+
+\証明
+いま，$f$の2つの臨界点$p_1$と$p_2$で$f$が同じ関数値$c$をとると仮定して、この$f$を少し修正することを
+考えよう．定理2.16により，$p1$のまわりでうまい局所座標系$(x_1,	x_2,	\cdots	,	x_m)$をとって，
+$f$を標準形に書いておく：
+\[
+	f	=	-x_1^2	-	\cdots	-	x_\lambda^2	+	x_{\lambda+1}^2	+	\cdots	+	x_m^2	+	c.
+\]
+$X_f$をこの座標系に関する$f$の勾配ベクトル場として，$X_f	\cdot	f$を計算すると，
+\begin{align*}
+	X_f	\cdot	f	&=	\left(	\frac{\partial f}{\partial x_1}
+								\right)^2	+
+								\cdots	+
+								\left(	\frac{\partial f}{\partial x_\lambda}
+								\right)^2	+
+								\cdots	+
+								\left(	\frac{\partial f}{\partial x_m}
+								\right)^2
+							&=	4(x_1^2	+	\cdots	+	x_\lambda^2	+	\cdots	+	x_m^2)
+\end{align*}
+となる．正数$\varepsilon	>	0$を十分小さくとり，$p_1$を中心として半径
+$\varepsilon$の$m$次元円板$D_\varepsilon$と半径$2\varepsilon$の$m$次元円板$D_{2\varepsilon}$
+を考える．この間の部分$D_{2\varepsilon}	-	\text{int } D_\varepsilon$では，
+上の式から明らかに，$	4	\varepsilon^2	\leqq	X_f	\cdot	f	\leqq	4(	2	\varepsilon)^2$が成り立つ．
+
+そこで，コンパクト集合$K$として$D_\varepsilon$をとり，それを含む開集合$U$として
+$D_{2\varepsilon}$の内部$\text{int }	(D_{2\varepsilon})$をとって，
+$(U,K)$に付随した台形関数$h:	U	\to	\R$を考えよう（補題2.27参照）．
+$U$の外では$0$と定義して$h$を$M$全体の$C^\infty$級関数に拡張する．
+それをまた$h$と書く．$a$を十分小さい$0$でない実数とし，$M$上の新しい関数$\tilde{f}$を
+\[
+	\tilde{f}	=	f	+	ah
+\]
+とおいて定義する．$\tilde{f}$の臨界点がどこにあるかを調べよう．$U$の外では，
+$f	=	\tilde{f}$なので，$f$と$\tilde{f}$の臨界点の位置は同じである．また半径$\varepsilon$
+の円板の内部では，$h=1$なので，$\tilde{f}$の臨界点は$f$とおなじく，$p_1$しかない．
+
+したがって，$\tilde{f}$に$f$と異なる臨界点の生じる可能性があるのは，$D_\varepsilon$と
+$D_{2\varepsilon}$の間の部分である．ここで，1階偏導関数の差を計算すると、
+\[
+	\left|	\frac{\partial f}{\partial x_i}	-	\frac{\partial \tilde{f}}{\partial x_i}
+	\right|
+	=
+	\left|	a	\frac{\partial h}{\partial x_i}
+	\right|,
+	\quad	i	=1	,	2	,	\cdots	,	m
+\]
+となる．したがって，$a$の絶対値さえ十分小さく選んでおけば，
+$\displaystyle	\sum_{i=1}^{m}	\left(	\frac{\partial f}{\partial x_i}\right)^2$
+と
+$\displaystyle	\sum_{i=1}^{n}	\left(	\frac{\partial \tilde{f}}{\partial x\i}\right)^2$
+の差はいくらでも小さくできる．はじめに見ておいたように，
+$\displaystyle	\sum_{i=1}^{m}	\left(\frac{\partial f}{\partial x_i}\right)^2	
+=	X_f	\cdot	f$は，$D_{2\varepsilon}$と$D_\varepsilon$の間で，最小値$4	\varepsilon^2	>0$を
+とるから，$a$が十分小さければ，
+$\displaystyle	\sum_{i=1}^{m}	\left(	\frac{\partial \tilde{f}}{\partial x_i}\right)$
+ももそこで$0$でない最小値をもつ．
+したがって，円板$D_\varepsilon$と$D_{2\varepsilon}$の間の部分で$\tilde{f}$に臨界点が生じることはない．
+こうして，$f$と$\tilde{f}$とがまったく同じ臨界点の集合をもつことがわかった．
+これらの臨海点は，
+$\tilde{f}$の臨界点としても非退化であるから，$\tilde{f}$は Morse 関数である．また，
+\[
+	\tilde{f}	(p_1)	=	f(p_1)	+	a,	\quad	\tilde{f}(p_2)	=	f(p_2)
+\]
+であるから，$f(p_1)	=	f(p_2)$であったとしても，$\tilde{f}$のほうでは
+$\tilde{f}(p_1)	\ne	\tilde{f}	(p_2)$になっている．
+
+この議論を続けていけば，すべての臨界点での関数値が異なるようにできることがわかる．
+
+$\tilde{f}$が$(C^2	,	\varepsilon)$の意味で$f$に近いことの証明も，Morse関数の存在定理
+2.20の証明のなかでやった議論と同様である．
+\■
+
+\textbf{《要約》}
+
+\textbf{2.1}
+$m$次元の場合も，Hesse 行列を使って関数の非退化な臨界点と退化した臨界点が定義できる．
+
+\textbf{2.2}
+非退化な臨界点の近傍では関数が標準形で表せる．
+
+\textbf{2.3}
+非退化な臨界点しかもたない関数をMorse関数という．
+
+\textbf{2.4}
+任意のコンパクトな多様体$M$上にはMorse関数が存在する．
+
+\textbf{2.5}
+コンパクトな多様体上では，与えられた Morse関数に適合した上向きベクトル場が存在する．
+
+\textbf{2.6}
+コンパクトな多様体上では，与えられたMorse関数を修正して，異なる臨界点では異なる値を
+とらせるようにできる．
+
+\subsubsection{演習問題}
+
+\textbf{2.1}
+点$p_0$が関数$f	:	M	\to	\R$の臨界点であることは，$p_0$のまわりの局所座標系の
+取り方に無関係であることを示せ．
+
+\証明
+
+点$p_0$のまわりの異なる局所座標系$	(x_1 , \cdots , xm), (y_1 , \cdots , y_m)$をとる．
+偏微分の座標変換の公式
+\[
+	\frac{\partial f}{\partial x_i}	(p_0)
+=	\sum_{j=1}^{m}	\frac{\partial y_j}{\partial x_i}	\frac{\partial f}{\partial y_j}	(p_0)
+\]
+から，$p_0$が$(y_1 , \cdots , y_m)$で計算したとき$f$の臨界点
+$	\displaystyle	\left(	\frac{\partial f}{\partial y_1}(p_0) = \cdots = \frac{\partial f}{\partial y_m} (p_0) = 0
+								\right)$
+であれば，$(x_1 , \cdots , x_m)$で計算したときも$f$の臨界点
+$	\left(	\frac{\partial f}{\partial x_1}(p_0) = \cdots = \frac{\partial f}{\partial x_m} (p_0)	=	0
+	\right)$
+であることがわかる．2つの座標系の役割を入れ換えても同じことが言えるから，
+$p_0$が$f$の臨界点であることは局所座標系の取り方によらない．
+
+\■
+
+\textbf{2.2}
+$S^{m-1}	=	\{(x_1,	\cdots	,	x_m)	\:	|	\:	x_1^2	+	\cdots	+	x_m^2	=1	\:	\}$
+を$m-1$次元球面とし，$f:	S^{m-1}	\to	\R$を$f(x_1,	\cdots	,	x_m)	=	x_m$で定義される
+「高さ関数」とすれば，$f$は$S^{m-1}$の上のMorse関数である．これを証明し，かつ，
+臨界点とその指数を求めよ．（座標$(x_1,	\cdots	,	x_m)$は$S^{m-1}$の局所座標系ではない！
+また，$m	\geqq	2$としてよい．）
+
+\証明
+
+臨界点は$(0, \cdots ,0,\pm 1)$の2つだけである.
+その指数は$( 0, \cdots  ,0,-1)$が$0$，$(0, \cdots ,0,1)$が$m-1$である．
+第1章の例1.15参照．
+
+\textbf{2.3}
+$f:	M	\to	\R$と$g:	N	\to	\R$を閉じた多様体上のMorse関数とする．
+十分に大きな正数$A,B$をとり，
+\[
+	F	=	(A	+	f)	(B	+	g)
+\]
+とおけば，$F	:	M	\times	N	\to	\R$は直積$M	\times	N$上の Morse 関数であることを証明せよ．
+また，その臨界点の位置と指数を求めよ（$f$と$g$の臨界点と指数の言葉で）．
+
+\証明
+
+$(p,q)$を直積$M \times N$の任意の点とし，$(x_1,\cdots X_m)$と
+$(y_i, \cdots , y_n)$をそれぞれ$p$と$q$のまわりの
+$M$と$N$の局所座標系とすると，直積$M \\times N$のなかの，
+$(p,q)$のまわりの局所座標系として$(x_1 , \cdots , x_m, y_1 , \cdots , y_n)$がとれる．
+\[
+	\frac{\partial F}{\partial x_i}	=	
+	\left(	
+		\frac{\partial f}{\partial x_i}	
+	\right)(B+g), \quad
+	\frac{\partial F}{\partial y_i}	=
+	(A+f) \left(	\frac{\partial g}{\partial y_j}
+				\right)
+\]
+であるから，$A$と$B$をそれぞれ$M$と$N$の上で$A > |f| $ と$B> |g|$ が成り立つよ
+うに十分大きくとっておくと，
+\[
+	\frac{\partial F}{\partial x_i} ( p,q) 
+= \frac{\partial F}{\partial y_i}	(	p,q)	=	0	\quad ( i=1 , \cdots , m, j=1, \cdots, n)
+\]
+と
+\[
+	\frac{\partial f}{\partial x_i}	(p)	=	0 \: ( i=1, \cdots , m) \quad
+  \text{かつ} \quad
+  \frac{\partial g}{\partial y_j} (q) = 0 \quad ( j=1, \cdots , n )
+\]
+が同値になる．したがって，$F$の臨界点は$( p_0, q_0)$に限る．
+ここに，$p_0$と$q_0$はそれぞれ$f$と$g$の臨界点である．
+このときの $(p_0,q_0)$ の指数は $p_0$ の指数と $q_0$ の指数の和である．
+（$p_0$と$q_0$の近傍で$f$と$g$を標準形で表して，計算せよ，）
+
+\textbf{2.4}
+\textbf{$m$}次元トーラス $T^m$ とは $m$ 個の円周の直積である．
+$T^m	=	S^1	\times	S^1	\times	\cdots\times	S^1 $．
+$T^m$ の点を各円周上の点の確度を並べて，$(\theta_1,	\theta_2,	\cdots	,	\varepsilon_m)$と表すことにして，
+関数$f:	T^m	\to	\R$を
+\[
+	f(	\theta_1,	\theta_2,	\cdots	,	\theta_m)	
+	=
+	(R	+	\cos	\theta_1)(R+	\cos	\theta_2)	\cdots	(	R+	\cos	\theta_m)
+\]
+と定義する．ただし，$R	>	1$である．このとき，関数$f$は Morse 関数であることを証明し，
+臨界点とその指数を求めよ．
+
+\証明
+$\displaystyle	\frac{\partial f}{\partial  \theta_i}	= 0 $と$ \theta_i = 0, \pi$はは同値である
+($2pi$の整数倍の違いは無視する)．したがって，
+臨界点は$( \varepsilon_1 , \varepsilon_2 , \cdots , \varepsilon_m)$
+（ただし，$\varepsilon_i = 0 ,\pi$）．これらの臨界点が非退化で
+あることの証明は省略．$(	\varepsilon_1, \cdots , \varepsilon_m)$の指数は
+$\varepsilon_i = 0$であるような$\varepsilon_i = 0$の個数に等しい．
+
+\■

@@ -1,0 +1,427 @@
+\chapter{ハンドル体}
+
+第1章で閉曲面を$0,1,2$の指数をもつハンドルの和として表した．この章では，
+第2章で準備した一般の多様体上のMorse関数の理論を使って，コンパクト多様体
+のハンドル分解を考察する．第1節がハンドル分解の一般論である．
+第2節で具体例を与える．第3節と第4節ではハンドルを「滑らせ」たり「消去」したりして，
+ハンドル分解を整形することを与える．
+
+\section{多様体のハンドル分解}
+$M$を閉じた多様体とし，$f:	M	\to	\R$をその上のMorse関数とする．
+関数値$t$について
+\begin{equation}
+	M_t	=	\{	\:	p	\in	M	\:	f(p)	\leqq	t	\:	\}
+\label{eq3x1}
+\end{equation}
+とおく．閉曲面のときのように，パラメータ$g$が変化するに従って，$M_t$の形がどのように変わっていくかを調べる．
+
+\定理{3.1}
+実数の区間$[a,b]$の中に$f$の臨界値がなければ，$M_a$と$M_b$は微分同相である：$M_a	\cong	M_b$．
+\■
+
+この定理の証明は，定理2.31を使えば，閉曲面の時の結果（補題1.23）とまったく同様にできる．
+幾何学的な内容としては，$f$に適合した上向きベクトル場$X$（に関数$\displaystyle	\frac{1}{X	\cdot	f}$を
+掛けて流れの速さを調節したもの）に沿って，多様体$M_a$を「流して」いけば，
+一定時間後に$M_a$は$M_b$にピッタリと重なるというのである．詳しい説明は読者にまかせよう．
+
+したがって，問題のパラメータ$t$が臨界点を通過する前後の$M_t$の形の変化である．
+第2章の定理2.34によると，$f$は異なる臨界点では異なる値をとる考えてよい．
+また，$f$の臨界点は有限個しかないから（$n+1$個としよう），それらすべてを$f$の値が小さい順に並べて
+\begin{equation}
+	p_0,	p_1,	\cdots	,	p_n
+\label{eq3x2}
+\end{equation}
+とする．この章では臨界点の番号を$1$からでなく，$0$から始めることにするが，それは後の都合による．
+
+$c_i	=f(p_i)$とおくと
+\begin{equation}
+	c_0	<	c_1	<	\cdots	<	c_n
+\label{eq3x3}
+\end{equation}
+である．
+
+ここで，$c_0$は$f$の最小値，$c_n$は$f$の最大値になっている．
+
+すぐにわかることとして，$f(p)	<	c_0$であるような$M$の点$p$は存在しないから，
+$t	<	c_0$なら$M_t	=	\varnothing$である．また，$M$の全ての点$p$について
+$f(p)	\leqq	c_n$が成り立つから，$c	\leqq	t$なら$M_t	=	M$である．
+
+最小値の最大値の前後での$M_t$の変化はどうなるだろうか．これを追ってみよう．
+
+まず最小値のところであるが，いまの場合最小値を当る点は$p_0$しかない．
+ここで$f$を標準形で表す．
+\begin{equation}
+	f	=	x_1^2	+	x_2^2	+	\cdots	;	x_m^2	+	c_0.
+\label{eq3x4}
+\end{equation}
+$c_0$は最小値なので，$f$の関数値が$c_0$より小さくなることはあり得ない．
+したがって，標準形（\ref{eq3x4}）の2次式のところにマイナスの符号は現れない．
+つまり$p_0$の指数は必ず$0$である．
+
+$\varepsilon	>	0$を十分小さい正数としよう．上でみたように，$M_{c_0	-	\varepsilon}	=	\varnothing$であるが，
+$M_{c_0	+	\varepsilon}$の方は，標準形（\ref{eq3x4}）を使って
+\begin{equation}
+	M_{c_0	+	\varepsilon}	=	\{\:	(x_1,	\cdots	,	x_m)	\:	|	\:	x_1^2	+	\cdots	+	x_m^2	\leqq	\varepsilon
+														\:\}
+\label{eq3ｘ5}
+\end{equation}
+と書ける．すなわち$M_{c_0	+	\varepsilon}$は$m$次元円板$D^m$に微分同相である．
+$f$の標準形（\ref{eq3x4}）を見れば判るように，関数$f$の値は$(x_1,	\cdots	,	x_m)	=	(0,	\cdots,	0)$の
+ところ（円板の中心）で最小値$c_0$をとり，円板の境界に近づくにつれて増えていって，
+円板の境界で$c_0	+	\varepsilon$という値をとる．したがって，本来ならこの$m$次元円板は
+「上向き」のお椀のように図示したい．第1章でやったように，$m=2$の場合なら本当に上を向いて
+お椀を描く事ができるが，あいにく現実の空間は3次元しかないので，一般の$m$次元の場合に上向きの
+お椀を描く事は困難である．図\ref{fig3x1}は$m=3$の場合の
+$M_{c_0	+	\varepsilon}$（$=$3次元円板	=	中身のつまった普通のボール$D^3$）の絵であるが，
+読者はなんとか工夫して，これ3次元円板がもう1つの次元の方に「上向き」に湾曲したところを想像して欲しい．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=36.2mm,height=30.2mm]{fig3x1.bmp}
+	\caption{$m$次元の$0-$ハンドル．ここでは$m=3$．}
+	\label{fig3x1}
+\end{figure}
+
+いまは最小値のところだったが，最小値に限らず，$t$が指数$0$の臨界値$c_i$を通過するたびに，
+このような「上向き」の$m$次元円板が生じて，$M_{c_i	+	\varepsilon}$は
+$M_{c_i	-	\varepsilon}	\cup	D^m$（非交和）に微分同相になる．このように，指数$0$の臨界点に
+対応して現れる（上向きの）$m$次元円板を，\textbf{$0$-ハンドル}という．
+正確には，$m$次元の$0$-ハンドルである．
+
+次に最大値$c_n$のところを考える．われわれの仮定のもとでは，最大値を与える$p_n$は
+ただ1つだけである．$p_n$のまわりで$f$を標準形で表すと
+\begin{equation}
+	f=	-x_1^2	-	x_2^2	-	\cdots	-	x_m^2	+	c_n
+\label{eq3ｘ6}
+\end{equation}
+となる．$c_n$は最大値なので，$f$の値はそれ以上に大きくなれないから，
+標準形（\ref{eq3x6}）の2次式のなかにプラスの符号は現れることができないのである．
+したがって，$p_n$の指数はかならず$m$である．
+
+$t$が$c_n	\leqq	t$であれば，$M_t	=	M$であるが，$t$の値が$c_n$に達する本の少し前の
+$M_{c_n-\varepsilon}$は，標準形（\ref{eq3x6}）の右辺を	$	\leqq	c_n	-	\varepsilon$とおいて，
+\begin{equation}
+	x_1^2	+	x_2^2	+	\cdots	+	x_m^2	\geqq	\varepsilon
+\label{eq3x7}
+\end{equation}
+と表せる．これは半径$\sqrt{\varepsilon}$の $m$ 次元円板 $D^m$ の外側の部分である．
+$M_{c_n	-	\varepsilon}$ の境界 $\partial	M_{c_n	-	\varepsilon}$ はこの半径 $\sqrt{\varepsilon}$
+の $m$ 次元円板の境界 $S^{m-1}$ になっている．
+
+$t$が$c_n	-	\varepsilon$から増えていき，$c_n$を通過した瞬間に$M_{c_n	-	\varepsilon}$の
+境界はこの$m$次元円板でフタをされて，境界のないコンパクト$m$次元多様体$M$が完成する．
+$f$の値は円板の中心で最大値となり，円板の境界に近づくにつれ減少していくのだから，
+ここに張り付く$m$次元円板は「下向き」の$m$次元円板である．
+この$m$次元円板のことを，\textbf{$m$-ハンドル（$m$-handle)}，正確には，$m$次元の$m$-ハンドル
+という．一般に，$t$が指数$m$の臨界値$c_i$を通過するたびに，その直前の$M_{c_i	-	\varepsilon}$
+の境界の連結成分になている$m-1$次元球面$S^{m-1}$が，$m$-ハンドルでフタをされる．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=59.0mm,height=31.2mm]{fig3x2.bmp}
+	\caption{$\kappa$-ハンドル}
+	\label{fig3x2}
+\end{figure}
+以上で，指数$0$と$m$の臨界点のまわりの様子がわかった．つぎに，一般の指数
+$\lambda	\:	(	0	<	\lambda	<	m)$をもつ臨界点$p_i$について，対応する臨界値$c_i$の
+前後の$M_t$の変化を考えてみよう．
+
+指数$\lambda$の臨界点$p_i$のまわりの適当な局所座標系によって，
+$f$を標準形で表しておく：
+\begin{equation}
+	f	=	-	x_1^2	-	\cdots	-	x_\lambda^2	+	x_{\lambda+1}^2	+	\cdots	+	x_m^2	+	c_i.
+\label{eq3x8}
+\end{equation}
+図\ref{fig3x2}は$p_i$のまわりの様子であるが，ここで，標準形（\ref{eq3x8}）の右辺を
+$\leqq	c_i	-	\varepsilon$とおいて$M_{c_i	-	\varepsilon}$を求めると，
+\begin{equation}
+	x_1^2	+	\cdots	+	x_\lambda^2	-	x_\lambda^2	-	x_{\lambda+1}^2	-	\cdots	-	x_m^2	\geqq	\varepsilon
+\label{eq3x9}
+\end{equation}
+で表される部分，すなわち，図\ref{fig3x2}の濃い影をつけた部分である．
+同じなかで，うすく影をつけた部分は，式で書けば，
+\begin{equation}
+	\begin{cases}
+		x_1^2	+	\cdots	+	x_\lambda^2	+	x_{\lambda	+	1}^2	-	\cdots	-	x_m^2	\leqq	\varepsilon,	\quad	\text{かつ}	\\
+		x_{\lambda+1}^2	+	\cdots	+	x_m^2	\leqq	\delta
+	\end{cases}
+\label{eq3x10}
+\end{equation}
+であるが（ただし，$\delta$は$\varepsilon$に較べてずっと小さい正数），この部分が$\lambda$次元円板と
+$(m-\lambda)$次元円板の直積
+\[
+	D^\lambda	\times	D^{m-\lambda}
+\]
+に同相であることを読者自ら確かめてほしい．この直積のことを次元が$m$で指数が
+$\lambda$のハンドル，あるいは簡単に$m$次元の\textbf{$\lambda$-ハンドル（$\lambda$-handle）}と呼ぶ．
+直積のなかの$\lambda$次元円板
+\begin{equation}
+	D^\lambda	\times	\boldsymbol{0}
+	=
+	\{	\:	(x_1,	\cdots	,	x_\lambda,	0,	\cdots	,	0	)	\:	|	\:	x_1^2	+	\cdots	+	x_m^2	\leqq	\varepsilon
+	\:	\}
+\label{eq3x11}
+\end{equation}
+を$\lambda$-ハンドルの\textbf{心棒}（core）といい，それに直角に交わる$(m- \lambda)$次元円板
+\begin{equation}
+	\boldsymbol{0}	\times	D^{m-	\lambda}
+	=
+	\{\:
+		(0,	\cdots	,	0,	x_{\lambda	+1}	,	\cdots	,	x_m)	\:	|	\:
+		x_{\lambda+1}^2	+	\cdots	;	x_m^2	\leqq	\delta
+	\:\}
+\label{eq3x12}
+\end{equation}
+を英語では\textbf{co-core}という．相対な心棒という意味であるが，適当な訳語なないので，
+仮に\textbf{ハンドルの太さを表す$(m-\lambda)$次元円板}と呼んでおこう.
+心棒$D^\lambda	\times	\boldsymbol{0}$と太さを表す円版$\boldsymbol{0}	\times	D^{m	-	\lambda}$の
+交点は原点$(0,0)$である．これは臨界点$p_i$そのものである．
+
+図\ref{fig3x2}のように，$\lambda$-ハンドル$D^\lambda	\times	D^{m-\lambda}$を
+$M_{c_i	-	\varepsilon}$
+に接着したもの
+\begin{equation}
+	M_{c_i	-	\varepsilon}	\cup	D^\lambda	\times	D^{m	-	\lambda}
+\label{eq3x13}
+\end{equation}
+を考える．パラメータ$t$が指数$\lambda$の臨界値$c_i$を通過するときの，$M_t$の変化は
+次の定理で記述される．
+
+\定理{3.2}	$M_{c_i	+	\varepsilon}$は$M_{c_i	-	\varepsilon}$に
+$\lambda$-ハンドルを接着して得られた多様体に微分同相である：
+\begin{equation}
+	M_{c_i	+	\varepsilon}	\cong	M_{c_i	-	\varepsilon}	\cup	D^\lambda	\times	D^{m	-	\lambda}.
+\label{eq3x14}
+\end{equation}
+\■
+
+$M_{c_i	-	\varepsilon}$に$\lambda$-ハンドルを接着した空間は，
+ハンドルの「四隅」のところで境界に折れ曲がりがある．図\ref{fig3x3}には，ここを滑らかに
+して（「平滑化」を施して）得られた$C^\infty$級多様体$M'$が示されている．
+定理3.2の正確な意味は，
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=61.5mm,height=36.7mm]{fig3x3.bmp}
+	\caption{$M_{c_i	-	\varepsilon}$に$\lambda$-ハンドルを付けたあと平滑化を施した多様体$M'$}
+	\label{fig3x3}
+\end{figure}
+$M_{c_i	+	\varepsilon}$は，$M_{c_i	-	\varepsilon}$に$\lambda$-ハンドルをつけ，
+そのあと平滑化を施して得られる境界のある$M'$に微分同相である，という意味である．
+
+図\ref{fig3x3}では，$M_{c_i	+	\varepsilon}$は
+\begin{equation}
+	x_1^2	+	\cdots	+	x_\lambda^2	-	x_{\lambda+1}^2	-	\cdots	-	x_m^2	\geqq	-	\varepsilon
+\label{eq3x15}
+\end{equation}
+で表される部分になっている．定理3.2の証明も、ほぼ定理3.1と同様である．
+
+そのアイデアを述べると，ここでも$f$に適合した上向きベクトル場$X$を利用する．
+図\ref{fig3x3}に示されているように，ベクトル場$X$は$M'$の境界$\partial	M'$を出たあと上昇を続け，
+やがて$M_{c_i	;	\varepsilon}$の境界$\partial	M_{c_i	+	\varepsilon}$に達する．
+ベクトル場に適当な関数を掛けて到達時間を調整し，調整したベクトル場に沿って流してやれば，
+$M'$は一定時間後に$M_{c_i	+	\varepsilon}$にピッタリ重なる．したがって，
+$M'$と$M_{c_i	+	\varepsilon}$は微分同相である，というわけである．これが定理3.2の証明の
+アイデアである．
+
+以後$M_{c_i	-	\varepsilon}	\cup	D^\lambda	\times	D^{m-	\lambda}$の境界の折れ曲がりはあまり気にせず、
+これを平滑化を施した多様体$M'$であるかのように考えて議論を進めることにする．
+
+$f$の標準形（\ref{eq3x8}）を参照しながら，$\lambda$-ハンドルの心棒$D^\lambda$の上で
+$f$の関数値の変化を追ってみると，中心では臨界値$c_i$をとり，円板の境界に近づくにつれ，減っていく．
+境界では，$c_i	-	\varepsilon$という値をとる．したがって，心棒$D^\lambda$は
+「下向き」の$\lambda$次元円板である．また，太さを表す円板$D^{m-1\lambda}$上では，
+中心で臨界値$c_i$をとり，円板の境界に近づくにつれ増えていって境界では，
+$c_i	+	\delta$という値をとる．したがって，この円板は「上向き」である：
+心棒は下向き，太さの方向は上向きである．
+
+$0$-ハンドルの場合は，心棒は$0$次元で，$m$次元全部が太さの方向である．
+したがって，$0$-ハンドルでは下に下がる方向ではなく，すべての方向が「上向き」である．
+また，$m$-ハンドルの場合は，$m$次元全部が心棒であり，太さを表す円板は$0$次元という
+わけである．したがって，$m$-ハンドルはすべて「下向き」である．
+
+$\lambda$-ハンドル$D^\lambda	\times	D^{m-	\lambda}$は，
+$M_{c_i	-	\varepsilon}$の境界$\partial	M_{c_i	-	\varepsilon}$のところで
+$M_{c_i	-	\varepsilon}$に接着しているが，その接着しているハンドルの部分は
+$\partial	D	\times	D^{m	-	\lambda}$という部分である
+（図\ref{fig3x2}参照）．ハンドルの接着を正確に表現するには，$\partial	D^\lambda	\times D^{m	-	\lambda}$の
+個々の点を境界$\partial	M_{c_i	-	\varepsilon	}$のどの点に接着するかを記述する写像
+\begin{equation}
+	\varphi	:	\partial	D^\lambda	\times	D^{m	-	\lambda}	\to	\partial	M_{c_i	-	\varepsilon}
+\label{eq3x16}
+\end{equation}
+を指定しなければならない．接着に際して，個々の点$p	\in	\partial	D^\lambda	\times	D^{m	-	\lambda}$を
+点$\varphi	(	p	)	\in	\partial	M_{c_i	-	\varepsilon}$に同一視するわけである．
+
+$\varphi$は滑らかな「埋め込み」の写像であり，$\lambda$-ハンドルの\textbf{接着写像}
+（attaching map）と呼ばれる．心棒の$\lambda$次元円板の境界$\partial	D^\lambda$は
+$\lambda	-	1$次元球面$S^{\lambda	-	1}$である．この球面を
+\textbf{接着球面}（attaching sphere）と呼ぶ．接着写像は，接着球面$S^{\lambda	-	1}$に
+$(m	-	\lambda)$次元の厚みをつけたもの$S^{\lambda	-	1}	\times	D^{m	-	\lambda}$から，
+境界$\partial	M_{c_i	-	\varepsilon}$への埋め込み写像
+\begin{equation}
+	\varphi	:	S^{\lambda	-	1}	\times	D^{m	-	\lambda}	\to	\partial	M_{c_i	-	\varepsilon}
+\label{eq3x17}
+\end{equation}
+である．
+
+図\ref{fig3x4}と図\ref{fig3x5}には3次元の$1$-ハンドルと$2$-ハンドルが示されている．
+$1$-ハンドルの図を見ると，いかにもハンドル（把手＝とって）と呼ぶのに相応しい．
+$2$-ハンドルは厚みのついた下向きのお椀として表されている．
+
+\定義{3.3}
+（ハンドル体）
+$D^m$にいろいろな指数のハンドルを次々に接着して得られる（一般には境界のある）多様体
+\begin{equation}
+	D^m	\cup	D^{\lambda_1}	\times	D^{m	-	\lambda_1}	\cup	\cdots	\cup
+	D^{\lambda_n}	\times	D^{m-\lambda_n}
+\label{eq3x18}
+\end{equation}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=86.4mm,height=103mm]{fig3x4.bmp}
+	\caption{$1$-ハンドル}
+	\label{fig3x4}
+\end{figure}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=88.6mm,height=100.2mm]{fig3x5.bmp}
+	\caption{$2$ハンドル}
+	\label{fig3x5}
+\end{figure}
+を$m$次元の\textbf{ハンドル体}（handlebody）という．
+
+正確には，次のように三段階で定義するのがよい．
+\begin{list}{}{}
+	\item	(ⅰ)	$D^m$は$m$次元のハンドル体である．
+	\item	(ⅱ)	$D^m$に$C^\infty$級の接着写像$\varphi_1	:	\partial	D^{\lambda_1}	\times	D^{m-\lambda_1}	\to	\partial	D^m$で
+$\lambda_1$-ハンドルを貼り付けたもの
+\[
+	D^m	\cup_{\varphi_1}	D^{\lambda_1}	\times	D^{m-\lambda_1}
+\]
+は$m$次元のハンドル体である．これを記号で
+\[
+	\mathcal{H}(D^m	;	\varphi_1)
+\]
+と表すことにする．
+	\item	(ⅲ) $N	=	\mathcal{H}(D^m	;	\varphi_1,	\cdots	,	\varphi_{i-1})$が
+$m$次元のハンドル体なら，$C^\infty$級の接着写像$\varphi_i	:	\partial	D^{lambda_i}	\times	D^{m-\lambda_i}	\to	\partial	N$に
+よって$N$に$\lambda_i$-ハンドル$D^{\lambda_i}	\times	D^{m	-	\lambda_i}$を
+貼り付けたもの
+\[
+	N	\cup_{\varphi_i}	D^{\lambda_i}	\times	D^{m-	\lambda_i}
+\]
+は$m$次元のハンドル体である．これを記号で
+\[
+	\mathcal{H}	(D^m	;	\varphi_1,	\cdots	,	\varphi_{i-1},	\varphi_i)
+\]
+と表す．
+\end{list}
+\■
+
+なお，各ハンドルを貼り付けるごとに平滑化を施すことにし，ハンドル体は常に
+$C^\infty$多様体と考えることにする．
+
+$0$-ハンドルの接着は非交和をとるに過ぎないので，指数$\lambda_i	=	0$の場合は
+接着写像$\varphi_i$を考える必要はない．したがって，$\lambda_i	=	0$の場合，
+上の定義の記号$\mathcal{H}	(D^m	;	\varphi_1,	\cdots	,	\varphi_{i-1},	\varphi_i)$
+の中の接着写像$\varphi_i$には意味がないのであるが，一応形式的に，
+$\varphi_i$と書いておく．また，上の定義において，（ⅰ）と（ⅱ）があれば
+論理的に十分であるが，ハンドル体のイメージを具体的にするため（ⅱ）を
+付け加えておいた．
+
+\定理{3.4}（多様体のハンドル分解）
+閉じた$m$次元多様体上に，Morse 関数$f:	M	\to	\R$が与えられると，$f$を使って，
+$M$に$m$次元のハンドル体の構造を入れることができる．このハンドル体のハンドルには，
+$f$の臨界点に対応しており，ハンドルの指数は対応する臨界点の指数に等しい．
+\■
+
+要するに，$M$をあるハンドル体として表すことができるのである．多様体ハンドル体として表すことを，
+多様体の\text{ハンドル分解}という．
+
+\証明
+与えられた Morse 関数 $f:	M	\to	\R$の臨界点はすべて異なる臨界値をもつとし，
+それらを臨界値の小さい順に並べて，
+\[
+	p_0,	p_1,	\cdots	,	p_n
+\]
+を得たとする．臨界点$p_i$の指数は$\lambda_i$であるとする．
+$f$に適合した$M$上の上向きベクトル場$X$を決めておく．
+
+定理3.4を臨界点$p_i$の番号$i$に関する帰納法で証明しよう．
+$p_i$での$f$の値を$c_i$とし，任意の$i$（ただし$0	\leqq	i	\leqq	n$）について，
+$M_{c_i	+	\varepsilon}$がハンドル体であることを示すのである．
+
+まず$i=0$のとき，臨界点$p_0$は$f$の最小値$c_0$を与えるから，その指数は
+$0$であり，$M_{c_0	+	\varepsilon}$は$m$次元円板$D^m$に微分同相である．
+ハンドル体の三段階定義の（ⅰ）により，$D^m$は確かに$m$次元のハンドル体であるから，
+$i=0$については帰納法の主張は正しい．この場合には$M_{c_0	+	\varepsilon}$は
+$0$-ハンドルそのものである．
+
+次に$M_{c_{i-1}	+	\varepsilon}$がハンドル体$\mathcal{H}	(	D^m	;	\varphi_1,	\cdots	,	\varphi_{i-1})$
+であると仮定して，$M_{c_i	+	\varepsilon}$がハンドル体$\mathcal{H}	(	D^m	;	\varphi_1,	\cdots	,	\varphi_{i-1},	\varphi_i)$で
+あることを証明しよう．
+
+$M_{c_i	+	\varepsilon}$は$M_{c_i	-	\varepsilon}$に$\lambda_i$-ハンドルを接着した
+ものと微分同相である（定理3.2）．
+そのハンドルの接着写像
+\begin{equation}
+	\varphi	:	\partial	D^{\lambda_i}	\times	D^{m	-	\lambda_i}	\to	\partial	M_{c_i	-	\varepsilon}
+\label{eq3x19}
+\end{equation}
+は，図3.2のように、曖昧さがなく自然に決まっている．
+区間$[c_{i-1}	+	\varepsilon	,	c_i	-	\varepsilon	]	$には臨界値がないから，
+$M_{c_{i-1}	+	\varepsilon}$は$M_{c_i	-	\varepsilon}$に微分同相である
+（定理3.1）．
+
+この微分同相は，上向きベクトル場$X$に沿って$M_{c_i	-	1	+	\varepsilon}$を
+$M_{c_i	-	\varepsilon}$まで流すことによって与えられる．こうして与えられる微分同相写像を
+\begin{equation}
+	\varPhi	:	M_{c_{i-1}	+	\varepsilon	}	\to	M_{c_i	-	\varepsilon}
+\label{eq3x20}
+\end{equation}
+としよう．
+
+さて，$M_{c_{i-1}	+	\varepsilon}$はハンドル体$\mathcal{H}	(	D^m	;	\varphi_1	,	\cdots	,	\varphi_{i-1}$であるこ
+とが帰納法で仮定されているから，$M_{c_i	-	\varepsilon}$も同じハンドル体に微分同相である．
+したがって，$M_{c_i	-	\varepsilon}$を接着して得られる$M_{c_i	+	\varepsilon}$もハンドル体
+に微分同相である（三段階定義の（ⅲ））．
+
+これで，一応定理3.4の証明ができた．しかし，新しく付け加える
+$lambda_i$-ハンドルの接着写像について，もう少し詳しく考えてみよう．
+帰納法の仮定により$M_{c_{i-1}	+	\varepsilon}$はハンドル体
+\[
+	\mathcal{H}	(D^m	;	\varphi_i	, \cdots	,	\varphi_{i-1}	)
+\]
+であるから，上の微分同相写像$\varPhi$はハンドル体$\mathcal{H}	(	D^m	;	\varphi_1,	\cdots	,	\varphi_{i-1})$から
+$M_{c_i	-	\varepsilon}$への微分同相写像であると考えられる．さて，厳密にいえば
+$\lambda_i$-ハンドルはハンドル体$\mathcal{H}	(	D^m	;	\varphi_1,	\cdots	,	\varphi_{i-1})$に
+直接ついているのではなく，$M_{c_i	-	\varepsilon}$についており，
+その接着写像は自然に決まっている．すなわち，(\ref{eq3x19}）の
+$\varphi$である．したがって，（\ref{eq3x20}）の微分同相写像$\varPhi$によって
+$M_{c_i	-	\varepsilon}$をハンドル体$\mathcal{H}	(D^m	;	\varphi_1,	\cdots	,	\varphi_{i-1})$に
+同一視した場合には，$\lambda$-ハンドルはハンドル体
+$
+	\mathcal{H}	(D^m	;	\varphi_1,	\cdots	,	\varphi_{i-1}	)
+$に，$\varphi$と$\varPhi$の逆写像$\varPhi^{-1}$を合成した写像
+\[
+	\varPhi^{-1}	\circ	\varphi	:	\partial	D^{\lambda_1}	\times	D^{m	-	\lambda_i}
+	\to	\partial	\{	\mathcal{H}	(D^m	;	\varphi_1	,	\cdots,	\varphi_{i-1})	\}
+\]
+を接着写像として付いていると考えられる．この接着写像$\varPhi^{-1}	\circ	\varphi$のことを
+$\varphi_i$と書けば，$M_{c_i	+	\varepsilon}$はハンドル体
+\[
+	\mathcal{H}	(	D^m	;	\varphi_1,	\cdots	\varphi_{i-1})	\cup_{\varphi_i}
+	\cup
+	D^{\lambda_i}	\times	D^{m	-	\lambda_i}	=	\mathcal{H}	(D^m	;	\varphi_1,	\cdots	,	\varphi_{i-1},	\varphi_i)
+\]
+である．これで定理3.4が証明された．
+
+\注意
+上の証明から次のことが明らかになった．それは，Morse関数$f:	M	\to	\R$によって
+多様体$M$をハンドル分解するとき，
+\begin{list}{}{}
+	\item	(ⅰ)	ハンドルの現れる順序とその指数は，$f$の臨界点によってきまり，
+	\item	(ⅱ)	そのハンドルの接着写像$\varphi_i$（$=	\varPhi^{-1}	\circ	\varphi)$は，
+$f$に適合する上向きベクトル場$X$によって決まる（なぜなら$\varPhi$が$X$によって決まるから）
+\end{list}
+ということである．したがって，$f$が同じでもそれに適合する上向きベクトル場
+$X$の選び方を変えれば（接着写像が変わるので）ハンドル分解の構造が変わる．
+この認識は\S	\ref{sec3x3} で重要である．

@@ -1,0 +1,701 @@
+\section{ハンドルを消去する}
+\label{sec3x4}
+
+この節では，引き続く2つの臨界点が､ある条件のもとに対になって
+消去してしまうという現象を紹介する．例によって，閉じた$m$次元多様体$M$と
+その上のMorse関数$f	:	M	\to	\R$が与えられており，$f$に適合する上向きベクトル場$X$が
+固定されているとする．そして$f$は$n+1$個の臨界点
+\begin{equation}
+	p_0	,	p_1,	\cdots	,	p_n
+\label{eq3x108}
+\end{equation}
+をもち，臨界値はすべて異なり，しかも（\ref{eq3x108}）は臨界値の小さい順に並んでいるとする．
+すなわち，$c_j	=	f(p_j)$と置くとき，
+\[
+		c_0	<	c_1	<	\cdots	<	c_n
+\]
+である．ある番号$i$に注目し，引き続く2つの臨界点を含む$M_{c_i-2	+	\varepsilon	,	c_i	+	\varepsilon}$
+を考える．補題3.26の証明のときのように，この範囲のことを$\overline{M}$という記号で表すことにする．
+
+\定理{3.28}
+（ハンドルを消去する）$\overline{M}$の中の臨界点$p_{i-1},	p_i$について，
+次の2条件を仮定する．
+\begin{list}{}{}
+	\item	（ⅰ）$p_i$の指数は$p_{i-1}$の指数より1つだけ大きい．すなわち，$\text{index }(p_{i-1})	=	\lambda$とおくと，
+$\text{index } (p_i)	=	\lambda	+1$である．
+	\item	（ⅱ）$p_i$に付随する下向き円板の境界$\partial	D_l	(p_i)$と$p_{i-1}$に付随する上向き円板の
+境界$\partial	D_u	(p_{i-1})$は，2つの臨界点を分ける等位面$f^{-1}	(c_{i-1}	+	\varepsilon)$の
+なかで横断的に唯１点で交わる．（「横断的に交わる」ということの意味はすぐあとで説明するが，
+大体「直角に交わる」ことだと思えばよい．）
+\end{list}
+仮定（ⅰ），（ⅱ）のもとに$f$を別のMorse関数$g$に変えて，$g$が次の2性質をもつようにすることができる．
+\begin{list}{}{}
+	\item	（A）$g$は$\overline{M}$の内部に臨界点がない．
+	\item	（B）$g$は$\overline{M}$の境界付近およびその外部で$f$に一致する．
+\end{list}
+\■
+
+（A）により，$f$から$g$に移ると，$\overline{M}$のなかの臨界点$p_{i-1}$と$p_i$が対になって消滅していることが
+わかる．
+
+$g$に適合する上向きベクトル場$Y$を選ぼう．（B）により，$Y$は，$f$に適合する上向きベクトル場
+$X$と$\overline{M}$の外部では一致しているとしてよい．$g$と$Y$で決まる$M$のハンドル分解
+においては，$p_{i-1}$に対応していたハンドルと$p_i$に対応していたハンドルとが対になって消滅したわけである．
+
+証明に入る前に，「横断的に交わる」ということを定義しておこう．
+
+\定義{3.29}
+（横断的に交わる）$k$次元多様体$K$内に$a$次元多様体$A$と$b$次元多様体$B$があって，$k=a+b$であるとする．
+$K$の点$q_0$いおいて$A$と$B$が\textbf{横断的に交わる}（transversely intersect）とは，
+$q_0$の開近傍$U$と$U$内の局所座標系$(x_1,	\cdots	,	x_k)$が存在して，この局所座標系を用いると
+$A	\cap	U$は$x_{a+1}	=	x_{a+2}	=	\cdots	=	x_k	=	0$と書け，$B	\cap	U$は
+$x_1	=	x_2	=	\cdots	=	x_a	=	0$と書けることである．
+（このことから，$q_0$は，局所座標系$(x_1,	\cdots	,	x_k)$の原点$(0,	\cdots	,	0)$であることがわかる．）
+
+定理3.28に現れた等位面$f^{-1}	(c_{i-1}	+	\varepsilon)$は$m-1$次元の多様体であり，
+この中に埋め込まれているの$\partial	D_l	(	p_i)	$と$\partial	D_u	(p_{i-1})$の次元はそれぞれ，
+$\lambda$と$m-\lambda	-1$である．したがって
+\[
+	\dim	f^{-1}	(c_{i-1}	+		\varepsilon)	=	\dim	\partial	D_l	(	p_i	)	+	\dim	\partial	D_u	(p_{i-1})
+\]
+が成り立つ．下向き円板$D_l	(	p_i)$の境界と上向き円板$D_u	(p_{i-1})$の境界が等位面
+$f^{-1}	(c_{i-1}	+ \varepsilon)$の中で1点において横断的に交わることは，次元から見て確か二
+起こりうる事態である．
+
+定理3.28の証明の概略を述べよう．
+
+\証明
+$f$の等位面$f^{-1}	(c_{i-1}	+	\varepsilon)$の中で，$\partial	D_l	(	p_i)$と
+$\partial D_u	(p_{i-1})$は唯1点で横断的に交わる．その交点を$q_0$とすると，
+$q_0$を通る$X$の積分曲線$C=C(t)$は次の性質をもつ．すなわち，$C$上の点はパラメタが
+$t	\to	+	\infty$のとき$C(t)	\to	p_i$（臨界点$p_i$に収束し），$t	\to	-\infty$のとき
+$C(t)	\to	p_{i-1}$（臨界点$p_{i-1}$に収束する）．また，この性質をもつ$X$の積分曲線は
+$C$しかない．以下，$C$には両端の$p_{i-1}$と$p_i$を含ませることとし，コンパクトな線分として
+考えることにする．
+
+臨界点$p_{i-1}$の指数は$\lambda$であるから，第2章の上向きベクトル場の定義2.29により，
+$p_{i-1}$の近傍$V_1$で適当な局所座標系$(x_1,	\cdots	,	x_m)$をとると，
+$X$は
+\begin{equation}
+	X	=	-	2x_1				\frac{\partial}{\partial	x_1				}	-	\cdots	
+			-	2	x_\lambda	\frac{\partial}{\partial	x_\lambda}
+			+	2	x_{\lambda	+1}	\frac{\partial	}{\partial	x_{\lambda+1}}
+			+	\cdots	
+			+	2	x_m	\frac{\partial	}{\partial	x_m}
+\label{eq3x109}
+\end{equation}
+と書ける．あとの都合から，$x_1$と$x_{\lambda+1}$の役目を入れ替えることにし，
+$p_{i-1}$のまわりの$X$の形は
+\begin{equation}
+	X	=		2x_1	\frac{\partial	}{\partial	x_1}
+			-	2x_2	\frac{\partial	}{\partial	x_2}
+			-	\cdots
+			-	2	x_\lambda	\frac{\partial}{	\partial	x_\lambda	}
+			+	2	x_{\lambda+2}	\frac{\partial}{	\partial	x_{\lambda+2}}
+			+	\cdots
+			+	2	x_m	\frac{\partial}{\partial	x_m}
+\label{eq3x110}
+\end{equation}
+であると仮定しておく．
+
+臨界点$p_i$の指数は$\lambda	+	1$であるから，$p_i$の近傍$V_2$で適当な局所座標系
+$(y_1	,	\cdots	,	y_m)$とすると，
+\begin{equation}
+	X	=	-	2	y_1	\frac{\partial}{\partial	y_1}
+			-	\cdots
+			-	2	y_{\lambda+1}	\frac{\partial	y_{\lambda+1}}
+			+	2	y_{\lambda+2}	\frac{\partial	y_{\lambda+2}}
+			+	\cdots
+			+	2	y_m	\frac{\partial}{\partial	y_m}
+\label{eq3x111}
+\end{equation}
+
+（\ref{eq3x110}）と（\ref{eq3x111}）の表示は積分曲線$C$の両端の近傍に
+$V_1$と$V_2$での表示であるが，実は$C$全体の開近傍$U$とそのなかの局所座標系
+$(x_1	,	\cdots	,	x_m)$を見つけて，次の（ⅰ），（ⅱ），（ⅲ）が成り立つようにできるのである．
+\begin{list}{}{}
+	\item	（ⅰ）この局所座標系での$p_{i-1}$の座標は$(0,0,	\cdots	,	0)$である．
+	\item	（ⅱ）$p_i$の座標は$(1,0,	\cdots	,	0)$である．
+	\item	（ⅲ）$U$上で$X$は
+\begin{equation}
+	X	=		2v(x_1)	\frac{\partial	}{\partial	x_1}
+			-	2x_2	\frac{\partial	}{\partial	x_2}
+			-	\cdots
+			-	2	x_{\lambda	+	1	}	\frac{\partial	}{\partial	x_{\lambda	+	1}}
+			+	2	x_{\lambda	+	2	}	\frac{\partial	}{\partial	x_{\lambda	+	2}}
+			+	\cdots
+			+	2	x_m	\frac{\partial	}{\partial	x_m}
+\label{eq3x112}
+\end{equation}
+と書ける．ここに，$v(x_1)$は$x_1$を変数とする$C^\infty$級の1変数関数で，
+$-	\delta	<	x_1	<	1	+	\delta$の範囲で定義されている．ただし，
+$\delta$は小さな正数．そして$x_1$が$0$の近傍にあれば，
+$v	(x_1)	=	x_1$であり，$x_1$が$1$の近傍にあれば，
+$v	(x_1)	=	1	-	x_1$である．$0	<	x_1	<	1$の範囲では
+$v	(x_1)	>	0$である（図\ref{fig3x13}参照）．
+\end{list}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=71.8mm,height=36.2mm]{fig3x13.bmp}
+	\caption{関数$v$}
+	\label{fig3x13}
+\end{figure}
+$v	(x_1)$に関する条件から，$X$の表示（\ref{eq3x112}）は
+$p_{i-1}$の近傍では（\ref{fig3x110}）に一致し，
+$p_i$の近傍では（座標変換$(y_1,	y_2,	\cdots	,	y_m)	=	(x_1	-	1	,	x_2,	\cdots	,	x_m)$をした
+上で）（\ref{eq3x111}）に一致する．図\ref{fig3x14}は$U$上での$X$の様子を表している．
+
+
+定理3.28の証明で一番手数のかかるのが，$C$の近傍であるが，$C$の近傍$U$の中の，
+上のような性質をもつ局所座標系$(x_1,	x_2	,	\cdots	,	x_m)$の構成である．
+$C$の両端の近傍$V_1$と$V_2$を$X$の積分曲線に沿って変形して張り合わせる議論を丁寧に
+行う必要がある．Milnor の本 [4] では12ページにわたって詳しい証明がつけられている
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=74.8mm,height=42.8mm]{fig3x14.bmp}
+	\caption{ベクトル場$X$}
+	\label{fig3x14}
+\end{figure}
+が，今は証明を省略して，事実だけを認めて先に進むことにしよう．
+
+$C$の近傍$U$の中で（\ref{fig3x112}）のように記述されるベクトル場$X$を$C$の
+極く近くで変形して，$U$のどこでも$X	\ne	\boldsymbol{0}$が成り立つようにする．
+そのために，パラメータ$s$に$C^\infty$級に依存する関数の族$\{	v_s	(x_1)	\}_s$を構成する．
+次の性質をもつように構成するのである．
+\begin{list}{}{}
+	\item	（ⅰ）各$v_s(x_1)$は$-\delta	<	x_1	<	1	+	\delta$の範囲で定義された$C^\infty$級関数である．
+	\item	（ⅱ）$\eta$を十分小さい正数として，パラメータ$s$が$-\eta	<	s	<	2	\eta$を動く限り$v_s(x_1)$は意味をもつとする．
+	\item	（ⅲ）$s	\geqq	\eta$のときは，$s$によらず$v_s	(x_1)	=	v(x_1)$である．ただし，$v	(x_1)$は$X$の表示（\ref{eq3x112}）
+に現れる関数$v	(x_1	)$である．
+	\item	（ⅳ）$s	\leqq	0$のときは，$s$によらず$v_s(x_1)	=	v_0(x_1)$であって，しかも定義域内の任意の$x_1$について
+$v_0(	x_1)	<	0$である．
+	\item	（ⅴ）$x_1	<	-	\delta	/	2$または$x_1	>	1	+	\delta	/2$であれば，$s$が何であっても$v_s(x_1)	=	v(x_1)$である．
+\end{list}
+
+条件をこのように並べるとわかりにくいが，図3.15を見れば明らかなように，パラメータ$s$が$\eta$に等しいときは
+関数$v(x_1)$そのもので，$s$が次第に減って$0$になるに従って関数$v(x_1)$の値を押し下げていって，
+$s=0$のときには常にマイナスの値を取るように変形するのである．
+
+近傍$U$の中でベクトル場$X$を次のベクトル場$X\overline{X}$に変える．ただし，次の式の第1項に現れる$\rho$は
+$\rho	=	x_2^2	+	\cdots	+	x_m^2$で定義される$U$上の$C^\infty$級関数で，
+$v_\rho	(x_1)$は族$\{	v_s	(x_1)	\}_s$のパラメータ$s$に関数$\rho$を代入したものである．
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=78.4mm,height=46.4mm]{fig3x15.bmp}
+	\caption{関数$v(x_1)$の変形}
+	\label{fig3x15}
+\end{figure}
+\begin{equation}
+	\tilde{X}
+	=
+	2	v_p(x_1)	\frac{\partial	}{\partial	x_1}
+-	2	x_2				\frac{\partial	}{\partial	x_2}
+-	\cdots
+-	2	x_{\lambda	+1}	\frac{\partial	}{\partial	x_{\lambda	+1}}
++	\cdots
++	2	x_m	\frac{\partial	}{\partial	x_m}
+\label{eq3x113}
+\end{equation}
+族$\{	v_s	(x_1)	\}$の性質（ⅲ），（ⅴ）により，$\tilde{X}$は$U$のなかで$C$から
+少し離れると，もとの$X$に一致する．$x_1$軸上にない点では，（\ref{eq3x113}）の
+第2項以降が$\\boldsymbol{0}$でない．また，$x_1$軸上では
+（$\rho	=	0$なので）$\overline{X}$の第1項が$2v_0	(	x_1)	<	0$となり，
+やはり$\tilde{X}	\	ne	\boldsymbol{0}$が成り立つ．したがって，
+$U$の何処でも$\tilde{X}	\ne	\boldsymbol{0}$である．
+（図\ref{fig3x16}）参照）．$\tilde{X}$は$U$の中で$C$から少し離れると$X$に一致するから，
+$U$の外側にある$X$に滑らかに繋げることができて，$M$全体で定義されたベクトル場$Y$
+が得られる．$Y$と$X$とは$C$のごく近傍でしか違わない．
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=75.4mm,height=43.4mm]{fig3x16.bmp}
+	\caption{ベクトル場$\tilde{X}$}
+	\label{fig3x16}
+\end{figure}
+
+Morse関数$f:	M	\to	\R$の引き続く2つの臨界点$p_{i-1}$と$p_i$を含む$\overline{M}$を
+考える．いま構成した$Y$は$	\overline{M}$の上で$	\boldsymbol{0}	$にならない．
+$Y$の構成をもう少し注意深く見ると，$Y$の積分曲線はすべて$\overline{M}$の下のほうの
+境界$\partial_0	\overline{M}	=	f^{-1}	(c_{i-2}	+	\varepsilon	)$から
+入り，上の方の境界$\partial_1	\overline{M}	=	f^{-1}	(	c_i	+	\varepsilon)$に抜けていくことがわかる．
+これを利用して，$\overline{M}$上の関数
+\begin{equation}
+	\tilde{f}	:	\overline{M}	\to	\R
+\label{eq3x114}
+\end{equation}
+を，$Y$の積分曲線に沿って$c_{i-2}	+	\varepsilon$から$c_i	+	\varepsilon$まで
+$C^\infty$級に増えていくように定義できる．
+また$\overline{f}$は$\overline{M}$の境界の近傍ではもとの$f$に一致するように構成できる．
+そうすると，$\tilde{f}$を$\overline{M}$の外側で$f$に繋げることによって，
+$M$全体で定義された$C^\infty$級関数$g	;	M	\to	\R$を得るが，これが求めるものである．
+$g$がMorse関数であることや$Y$が$g$に適合した上向きベクトル場であることは殆ど明らかである．
+$g$の性質（A)，(B）も容易に確かめられる．
+
+これで定理3.28が証明できた．
+\■
+
+この証明のなかで示されたように，$\overline{M}$は$f$の引き続く臨界点$p_{i-1}$と
+$p_i$を含んでいるものの，定理3.28の仮定（ⅰ），（ⅱ）のもとに，直積
+$\partial_0	\overline{M}	\times	[0,1]$に微分同相である．
+
+\subsubsection{ハンドル体の言葉による言い換え}
+
+これまで考えてきたハンドル体はすべて，境界のないコンパクト多様体$M$上のMorse関数
+$f:	M	\to	\R$に伴うハンドル体であった．ところが，どんあハンドル体$N$も
+（一般にどんなコンパクト多様体$N$も），境界のないあるコンパクト多様体$M$上の
+Morse関数$f	:	M	\to	\R$に伴う部分ハンドル体であることが示せる．
+（いわゆる「$N$のダブル」を考えればよい．$N$と単位九巻$I$の直積$N	\times	I$の
+境界$\partial	(N	\times	I)$を平滑化した多様体「$N$のダブル」である．
+これは$N$の2つのコピーを$\partial	N$に沿って貼り合わせて得られる閉多様体である．）
+このような事情から，第3節や第4節の結果を，ハンドルの接着に関する定理として，
+Morse関数への言及なしに言い換えウことができる．ここでそれをやっておこう．
+
+\定理{3.30}
+（ハンドルを滑らせる：言い換え）境界のある$m$次元多様体$N$に
+$\lambda	$-ハンドル$D^\lambda	\times	D^{m-\lambda}$が接着写像$\psi	:	\partial	D^\lambda	\times	D^{m-\lambda}	\to
+\partial	N$で付いているとし，さらに$\partial	N$のアイソトピー$\{	h_s	\}_{s	\in	J}$が与えられているとする．
+ただし，$h_0	=	\text{id}$，$h_1	=	h$である．このとき，$\lambda	$-ハンドルの「足」
+$	\partial	D^\lambda	\times	D^{m-\lambda}$をアイソトピーにより
+動かして，新たな接着写像$h	\circ	\psi$をもったハンドル体$N	\cup_{h	\circ	\psi}	D^\lambda	\times	D^{m-\lambda}$
+を構成すると，これは$\lambda$-ハンドルを滑らせる前のハンドル体$N	\cup_\psi	D^{\lambda}	\times	D^{m-\lambda}$
+に微分同相である．
+\■
+
+\定義{3.21}（ベルト球面）
+境界のある$m$次元多様体$N$に$\lambda$-ハンドル$D^\lambda	\times	D^{m-\lambda}$が接着している状況を
+考える．
+\[
+	N'	=	N	\cup_{\varphi}	D^\lambda	\times	D^{m	-	\lambda}
+\]
+とおく．このとき，$\lambda	$-ハンドルの太さを円板$\boldsymbol{0}	\times	D^{m-\lambda}$の
+境界$\boldsymbol{0}	\times	\partial	D^{m	-	\lambda}$を，この
+$\lambda$-ハンドルの\textbf{ベルト球面}belt sphere）という．ベルト球面は
+$\partial	N'$に埋め込まれた$m-	\lambda	-	1$次元球面である（図\ref{fig3x17}参照）．
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=66.6mm,height=53.8mm]{fig3x17.bmp}
+	\caption{ベルト球面}
+	\label{fig3x17}
+\end{figure}
+ベルト球面という名前は，ベルトが胴体に巻き付いているように，ベルト球面が$\lambda$-ハンドルに巻き付いているところから
+付けられた名前である．ベルト球面を使って，前節の補題3.25（ハンドルの引き離し）を言い換えてみよう．
+
+\補題{3.32}（ハンドルの引き離し：言い換え）
+境界のある$m$次元多様体$m$次元多様体$N$に$\lambda$-ハンドルを付けて$N'$という多様体が得られたとし，
+さらに$N'$に$\mu$-ハンドルを付けて$N''$という多様体が得られたとする．もし$\lambda	\geqq	\mu$であれば，
+$\partial	N'$のアイソトピーで尾動かすことにより，$\mu$-ハンドルの接着球面を$\lambda$-ハンドルのベクトル
+球面からはずすことができる．
+\■
+
+$\mu$-ハンドルの接着球面が$\lambda$-ハンドルのベルト球面からはずれれば，
+補題3.26や定理3.27と同様の議論で，$\lambda$-ハンドルと$\mu$-ハンドルは肇の
+$N$に同時に（互いに交わらずに）付いていると考えられる．そうすれば，
+指数の小さい$\mu$-ハンドルの方が先についていると考えて差し支えない．
+
+こうして，次の保第がいえた．
+
+\補題{3.33}
+（ハンドルの整列）任意のハンドル体において，まず$0$-ハンドルの非交和があり，そこに$1$-ハンドルの非交和が付き，
+そのあと$2$-ハンドルの非非交和が付き，$\cdots$，というように，ハンドルの付き方が指数の小さいほうから
+順に接着しているように直すことができる．
+\■
+
+\補題{3.34}（ハンドルを消去する：言い換え）
+境界のある$m$次元多様体$N$に$\lambda$-ハンドルがついて多様体$N'$となり，さらにその上に
+$\lambda	+	1$-ハンドルが付いて多様体$N''$が得られているとする：
+\begin{align*}
+	N'		=	N	\cup_\varphi	D^{\lambda}	\times	D^{m-\lambda},	\\
+	N''		=	N'	\cup_|psi	D^{\lambda	+	1}	\times	D^{m	-	\lambda	-	1}.
+\end{align*}
+もし$N'$の境界$\partial	N'$の中で$\lambda$-ハンドルのベルト球面
+$\boldsymbol{0}	\times	\partial	D^{m-\lambda}$と
+$\lambda	+	1$-ハンドルの接着球面$\partial	D^{\lambda+1}	\times	\boldsymbol{0}$が
+横断的に唯１点で交わっているとすると，$N''$は$N$に微分同相である．
+
+定理3.34の例を見よう．図3.18は3次元多様体$N$に$0$-ハンドルと$1$-ハンドルが付いているところ
+である．この場合$0$-ハンドルのベルト球面は，3次元円板（中身のつまったボール）の
+表面2次元球面$S^2$であり，$1$-ハンドルの接着球面は2点であって，そのうちの1点が$0$-ハンドルの表面に
+載っている．図3.18で見るように，$0$-ハンドルと$1$-ハンドルを合わせたものは$N$に「吸収」されてしまう．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=101.2mm,height=41.2mm]{fig3x18.bmp}
+	\caption{$N$に$0$-ハンドルと$1$-ハンドルがついたところ}
+	\label{fig3x18}
+\end{figure}
+
+次の図3.19は3次元多様体$N$に$1$-ハンドルと$2$0-ハンドルが付いたところである．
+$2$-ハンドルの接着球面（円周）が$1$-ハンドルのベルト球面（これも円周）に横断的に1点で交わっている．
+この場合も，$1$-ハンドルと$2$-ハンドルを合わせたものは$N$に吸収されてしまう．
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=103.8mm,height=40.6mm]{fig3x19.bmp}
+	\caption{$N$に$1$-ハンドルと$2$-ハンドルが付いたところ}
+	\label{fig3x19}
+\end{figure}
+
+最後に，ハンドルを滑らせる定理と消去する定理の簡単な応用を示しておく．
+
+\定理{3.35}
+$M$を閉じた$m$次元多様体とする．もし$M$が連結なら，$M$上の
+$Morse$関数$f:	M	\to	\R$をうまくとって，指数$0$の臨界点は1個しかなく，
+指数$m$の臨界点も1個しかないようにすることができる．
+
+\証明
+定理3.22（臨界点の整列）と定理3.27（同じ指数のハンドルは同時に付けられる）により，
+適当なMorse関数$f:	M	\to	\R$をとると，指数$0$の臨界点の臨界値$c_0$はすべて同じ，
+また指数$1$の臨界点の臨界値$c_1	:	(	>	c_0)$もすべて同じ，また指数$2$の臨界点の
+臨界値$c_2	\:	(	>	c_1)$もすべて同じ，$\cdots$，というようにすることができる．
+
+このようなMorse関数によって$m$をハンドル分解すると，
+\begin{equation}
+	M_{C_0	+	\varepsilon}	=	D_1^m	\sqcup	D_2^m	\sqcup	\cdots	\sqcup	D_r^m	\quad		\text{（$0$-ハンドル非交和）}
+\label{eq3x115}
+\end{equation}
+であり，また$M_{c_1	+	\varepsilon}$はこの$D_1^m	\sqcup	D_2^m	\sqcup	\cdots	\sqcup	D_r^m$にいくつかの
+$1$-ハンドルを付けたものになっている．
+
+もし$M_{c_1	+	\varepsilon}$が連結でないとすると，それは2個以上の連結成分$K_1	,	K_2,	\cdots	,	K_s$の
+非交和であるが，$M_{c_1	+	\varepsilon}$から$M$を得るには
+$2$-ハンドル以上のハンドルを接着していくだけのなので，$M$自身の連結成分の個数も2個以上になってします．
+（$2-$ハンドル以上のハンドルの接着球面は連結だから，$2$-ハンドル以上はどれか$1$つの連結成分に
+付くしかない．したがって，それが付いても連結成分の個数は減らない．）これは$M$の連結性の仮定に
+反するから，$M_{c_1	+	\varepsilon}$は連結でなければならない．
+
+（\ref{eq3x115}）に2個以上の$D^m$が現れるとしよう．上の考察から，
+それらは$1$-ハンドルで橋渡しされて，全体として連結になる．（\ref{3x115}）のなかの1つの
+$D_r^m$は別の$D_i^m$に$1$-ハンドル$D^1	\times	D^{m-1}$で橋渡しされている．
+この$1$-ハンドルの接着球面$\partial	D^1	\times	\boldsymbol{0}$（$=$2点）は
+$0$‐ハンドル$D_r^m$に対応する臨界点と$1$-ハンドル$D^1	\times	D^{m-1}$に対応する臨界点は対になって
+消滅してしまう．この議論を繰り返して行けば，指数$0$の臨界点は1個しかないようなMorse関数
+$g	:	M	\to	\R$に到達する．
+
+ここで，$g$の符号を変えた関数$-	g:	M	\to	\R$を考えるということをする．
+このアイデアは次の章の第3節でも重要になるが，$-g$はいわば$g$の上下を反対にした
+Morse関数である．$g$と$-g$の臨界点の集合はまったく同じであるが，$g$の臨界点$p_i$の
+指数が$\lambda$だとすると，$-g	$の臨界点と考えたときの$p_i$の指数は$m-\lambda$である．
+
+ハンドル分解の言葉で言うと，ハンドルの「心棒」と「太さを表す円板」の役割
+が入れ換わり，$g$の$\lambda$-ハンドルは$-g$の$m-	\lambda$-ハンドルになる．
+
+$-g$の$0$-ハンドルを最初二やった方法で1個にすると，$g$の$m$-ハンドルが
+1個になったと考えられる．このとき、$-g$の$m$-ハンドルの個数，すなわち，
+$g$の$0$-ハンドルの個数は$1$個のままだから，結局，新しく変えた$g$については，
+$0$-ハンドルも$m$-ハンドルも1個しかない．これで定理3.35が証明できた．
+\■
+
+閉じた$m$次元多様体$M$が$m$次元球面$S^m$に（第4章第1節で定義する意味で）ホモトピー同値
+であるとき，$M$を\textbf{ホモトピー$m$球面}という．ホモトピー$3$球面は
+$S^3$に同相であろう，というのが有名なPoincar\'{e}予想である．
+
+この予想はPoincar\'{e}によって1904年に提起されて以来，100根以上経つが，
+現在なお未解決である．（G. Perelman により解決さたという話もある．）
+
+とことがSmale は1961年の論文で，高次元の一般んPoincar\'{e}予想を解いてしまった．
+（S. Smale, Generalized Poincar\'{e}'s conjecture in dimensions greater than four, 
+{\it Ann, of MaTh, 74, 1961, 391-406}）すなわち，
+$m	\geqq 5$であればホモトピー$m$球面は$S^m$の同相であることを証明したのである．
+この業績により，Smale　は1966年度の Fields賞を受賞した．
+
+ハンドル体の概念はSmale により発明されたものだが，彼はMorse関数により
+$M$をハンドル分解し，$M$が5次元以上のホモトピー$m$球面であるという仮定の
+もとに，$0$-ハンドルと$m$-ハンドル1個ずつ残して，あとのハンドルは皆消去
+できることを示したのである．そうすれば，定理3.6の主張するように
+$M$は$S^m$に同相になる．これがSmaleの証明である．
+
+次元が高くなければならないのは，指数が1つだけことなる2つの臨界点を
+隔てる等位面$f^{-1}(c)$のなｋで，Whitneyのトリック呼ばれる技法を
+用いて上向き円板の境界と下向き円板の境界を外すのだが，そのとき，
+等位面の次元がある程度高くないと困るからである．
+
+4次元の一般Poincar\'{e}予想はFreedman によって解かれた．
+1981年のことである．（M.H.Freedman, The topology of four - dimensional manifolds,
+{\it J.Diff. Geom, } 17,1982, 337-453.）Freedman はこの業績によって
+1986年度に Fiedls賞を受賞した．
+
+\textbf{《要約》}
+
+\textbf{3.1}
+　Morse関数とそれに適合した上向きベクトル場を使って，多様体をハンドル分解できる．
+
+\textbf{3.2}
+ハンドルの個数と指数はMorse関数で決まる．接着写像は上向きベクトル場に依存して決まる．
+
+\textbf{3.3}
+境界のある多様体$N$にハンドルを付け$N'$を得るとき，境界$\partial N$の
+アイソトピーで接着写像を変えても，得られる多様体$N'$の微分同相類は変わらない．
+
+\textbf{3.4}
+$\lambda$-ハンドルの上に、$\lambda$以下の指数をもつハンドルを付けるとき，これらの
+ハンドルを引き離して，互いに交わらないようにできる．
+
+\textbf{3.5}
+Morse関数を適当に選べば，臨界点の指数が大きくなるに従って臨界値も増加するようにできる．
+
+\textbf{3.6}
+$\lambda$-ハンドルの上に$\lambda	+	1$-ハンドルが付いていて，しかも$\lambda	+1$ハンドルの
+接着球面が$\lambda$-ハンドルのベルト球面に横断的に唯1点で交わっていれば，この2つのハンドルを
+ついにして消去できる．
+
+
+\subsubsection{演習問題}
+
+\textbf{3.1}
+$m	\geqq	1$とする．$m-1$次元球面$S^{m-1}$からそれ自身への任意の同相写像
+$h	:	S^{m-1}	\to	S^{m-1}$は$m$次元円板$D^m$からそれ自身への同相写像$\overline{h}:	D^m	\to	D^m$に
+拡張できることを示せ．
+
+\証明
+
+\textbf{3.1}
+$D^m$を半径$1$の$m$次元円版とし，その中心を$\boldsymbol{0}$とする．
+$\boldsymbol{0}$と$S^{m-1}$の点$x$を結ぶ線分上，
+$\boldsymbol{0}$0からの距離が$r$であるような$D^m$の点を$(r,x)$と書く．
+$	\overline{h} : D^m \to D^m$を$ \overline{h} (r,x) = ( r,h(x))$とおけばよい．
+
+\textbf{3.2}
+$k$次元円板$D^k$の内部に2点$p_1$と$p_2$がある．$D^k$のアイソトピー$\{h_t	\}_{t	\in	J}$
+を作って，$h_0	=	\text{id},	h_1	(p_1)	=	p_2$，かつ$\partial D^k$の近傍では
+$h_t$が恒等的に$\text{id}$であるようにせよ．（やや難）
+
+\証明
+
+直観的にはやさしいが，具体的に式で書こうとすると，それほど簡単ではない．
+いろいろな方法が考えられるが，ここでは次のような手順でアイソトピー
+$ - \{ h_t \}_{ t \in J }$を構成しよう．まず，
+$C^\infty$級の$1$変数関数$f(x)$であって
+\[
+	f(x) = \begin{cases}
+						1	\quad \left(	|	x	|	 <	\frac{1}{3} \right)	\\
+						0	\quad \left(	|	x	|	 >	\frac{1}{2} \right)
+				\end{cases},
+				0	\leqq f(x) \leqq 1
+\]
+を満たすものを1つ選んでおく．（このような$f(x)$)が存在することについては，文献[11]の \S 13を見よ．）
+
+$	\varepsilon	>	0$を十分小さい正数とすれば，
+\[
+	f_\varepsilon	(x)	=	\varepsilon	f(x)	;	x
+\]
+は$x$について単調増加であって，しかも，$	\displaystyle	|x| > \frac{1}{2}$のとき
+$	f_\varepsilon	(x)	=	x$である．また，$f_\varepsilon	(0)	=	\varepsilon$である．
+さらに，広義単調増加な$C^\infty$級の$1$変数関数$	\rho_\varepsilon	(x)$を
+\[
+	\rho_\varepsilon	(x)	
+=	\begin{cases}
+		0	\quad	\left(	x	<	\frac{\varepsilon}{2}	\right)
+		1	\quad	(	x	>	\varepsilon	)
+	\end{cases}
+\]
+であるように選んでおく．(このような$\rho_\varepsilon	(x)$の存在についても文献 [11] の\S 13を見よ．）
+以上の準備のもとに$C^\infty$級の$k$変数関数$	g_\varepsilon	(x_1 , \cdots , x_{k-1} , x_k)$を
+次のように定義する．
+
+\[
+g_\varepsilon	(x_1	,	\cdots	,	x_{k-1}, x_k) - (1-	\rho_\varepsilon	(	x_1^2	+	\cdots + x_{k-1}^2))
+	+	\rho_\varepsilon	(	x_1^2	+	\cdots + x_{k-1}^2 ) x_k.
+\]
+このように$g_\varepsilon$を定義すると，$	\rho_\varepsilon$の性質により,
+\[
+\begin{cases}
+			x_1^2	+	\cdots	+	x_{k-1}^2 < \frac{\varepsilon}{2}	\:	\text{のとき},	g_\varepsilon	(x_1	,	\cdots	,	x_{k-1}	,	x_k)	=	f_\varepsilon	(x_k),	\\
+			x_1^2	+	\cdots	+	x_{k-1}^2 > \frac{\varepsilon}{2}	\:	\text{のとき},	g_\varepsilon	(x_1	,	\cdots	,	x_{k-1}	,	x_k)	=	x_k
+\end{cases}
+\]
+であることがわかる．
+また，$f_\varepsilon	(x_k)	$の性質により
+\[
+	|	x_k|	>	\frac{1}{2} \: \quad \text{ならば}	\: g_\varepsilon	(	x_1	,	\cdots	,	x_{k-1}	,	x_k)	=	x_k	
+\]
+であることもわかる．
+$	g_\varepsilon	(	x_1	,	\cdots	,	x_{k1}	,	x_k)$は$x_k$に関しては単調増加であって，しかも
+$	g_\varepsilon	(	0,	\cdots	,	0,	0	)	=	f_\varepsilon	(	0	)	=	\varepsilon$である．
+微分同相写像$	h:	D^k \to D^k$を
+\[
+	h	(x_1	,	\cdots,	x_{k-1}	,	x_k)	=
+(x_1	,	\cdots,	x_{k-1}	,	g_\varepsilon(	x_1,	\cdots	,	x_{k-1},	x_k))
+\]
+と定義すれば，上に述べた$	g_\varepsilon	(x_1	,	\cdots	,	x_{k-1}	,	x_k$の性質により，
+（$	\varepsilon	>	0$ を十分小さく選んでおけば）$h$は
+$	\partial D^k$の近傍で恒等写像$\text{id}$であり，しかも
+\[
+	h(0,	\cdots	,	0,0)	=	(0,	\cdots	,	0	,	\varepsilon)
+\]
+であることがわかる．すでに選んでおいた広義単調増加関数
+$	\rho_\varepsilon	(	x)	$をもう一度利用して，
+$D^k$のアイソトピー$	\	{	h_	t	\	}_{	t	\in	J}$を
+\[
+	h_t	(x_1,	\cdots	,	x_{k-1}	,	x_k)
+=	(x_1,	\cdots	,	x_{k-1}	,	\rho_\varepsilon	(t)	g_\varepsilon	(x_1	,	\cdots	,	x_{k-1},	x_k)	+	(1-	\rho_\varepsilon	(t))	x_k)
+\]
+と定義する．そうすると確かに
+\[
+\begin{cases}
+	t	\leqq	0	\quad						\text{のとき，}	\quad	h_t	=	\text{id}	\\
+	t	\geqq	\varepsilon	\quad	\text{のとき，}	\quad	h_t	=	h		
+\end{cases}
+\]
+である．$t=1$のときの$h_t$は$h$に等しく,
+それは$D^k$の原点$(0,	\cdots	,0)$を$(0,	\cdots	,0,\varepsilon	)$
+にうつす．
+
+いまは$	\varepsilon	>0$は十分小さい正数であったが，次に，$	\varepsilon	<	a	<	1$であるような任意
+の正数$	a	$が与えられたとき，
+\[
+	h_1	(	0	,	\cdots	,	0	)	=	(	0	,	\cdots	,	0	,	a)
+\]
+であるようなアイソトピーを構成しよう．そのために，$	\delta	>	0$を十分小さい正数
+とし，広義単調増加関数$	\sigma	(x)$を
+\[
+	\sigma	(x)	=	\begin{cases}
+									\:	\frac{\varepsilon}{a}	&	\quad	(	x	<	a	+	\delta)		\\
+									\:	1											&	\quad	(	x	>	a	+	2	\delta)
+								\end{cases}
+\]
+を満たすように選ぶ．そして微分同相写像$H:	D^k	\to	D^k$を
+\[
+	H	(	x_1	,	\cdots	,	x_k)	=	(	\sigma	(	\|	x	\|	)	x_1	,	\cdots	,	\sigma	(	\|	x	\|	)	x_k)
+\]
+と定義しよう．ただし，$	\|	x	\|^2	=	x_1	^2	+	\cdots	+	x_k^2$である．
+$H$は$	\partial D^k$の近傍では恒等写像	$	\text{id}$であり，かつ
+\[
+	H	(	0	,	\cdots	,	0	,	a)	=	(	0	,	\cdots	,	\varepsilon)	
+\]
+である．はじめに構成しておいたアイソトピー$	\{	h_t	\}_{t	\in J}$
+と$H$を合成して，アイソトピー
+$	\{	H^{-1}	\circ	h_t	\circ	H	\}_{t	\in	J}$を考えれば，
+恒等写像であり，$	t	\geqq	1$のとき，$	H^{-1}	\circ	h_1	\circ	H$は$D^k$の原点
+$	(	0	,\cdots	,	0)$を$	(	0	,	\cdots	,	0	,a)$にうつす．
+
+こうして構成されたアイソトピーに$D^k$の回転を合成すれば，
+原点を$D^k$の内部の任意の点$P_1$にうつすアイソトピーが得られる．
+さらに，そのようなアイソトピーと，その逆を2つ続ければかの内部の任意の点
+$	p_1$にうつすアイソトピーが得られる．
+
+\textbf{3.3}
+区間$[c,d]$の中に2つの実数$q_1,	q_2$が，$c	<	q_1	<	q_2	<	d$であるように与えられており，
+また，同じ区間$[c,d]$の中に，実数$a,b$が，$c	<	a	<	d$，$c	<	b	<	d$であるように
+与えられているとする．$\delta$が小さい正数であるとき，
+$C^\infty$級関数
+\[
+	G:	[c,d]	\times	(-\delta	,	1	+	\delta)	\to	[c,d]
+\]
+を構成して，次の3条件が満たされるようにせよ．（やや難）
+\begin{list}{}{}
+	\item	（ⅰ）$s$を止めたとき，$G(x,s)$は$x$の関数としては狭義単調増加出、
+$x$が$c$から$d$まで増加すると$G(x,s)$も$c$から$d$まで増加する．
+	\item	（ⅱ）$G(q_1	,	0)	=	a,	G(q_2	,	1)=b$．
+	\item	（ⅲ）任意の$s	\in	[0,1]$につき，$x$が$c$または$d$の十分小さい近傍に入っていれば，
+$G(x,s)	=	x$が成り立つ．また，$q_1$の近傍の$x$について$\displaystyle	\frac{partial	}{\partial	x}	G(x,0)
+=1$，$q_2$の近傍の$x$については$\displaystyle	\frac{\partial	}{\partial	x}G(x,1)	=	1$が成り立つ．
+\end{list}
+
+\証明
+
+連続関数を$C^\infty$級関数で近似するための，
+次のような手法を使って解決しよう．
+
+まず，$\R$上で定義された$1$変数$\mathcal{C}^\infty$級関数$	\sigma	(t)$で，
+次の4つの性質をもつものを考える（図 A.1）.
+\begin{list}{}{}
+	\item	（ⅰ）$	\sigma	(t)	\geqq	0$．
+	\item	（ⅱ）$	|t| > \varepsilon$のとき，$	\sigma	(t)	=	0$．ただし，$	\varepsilon	>	0$は十分小さい正数．
+	\item	（ⅲ）$	\displaystyle	\int_{-\infty}^\infty	\sigma	(t)	dt	=	1$．
+	\item	（ⅳ）$	\sigma	(	t)	=	\sigma	(-t)$．
+\end{list}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=50mm,height=50mm]{figAx1.bmp}
+	\caption{$	\sigma	(t)$のグラフ}
+	\label{figAx1}
+\end{figure}
+このような	$	\sigma	(t)	$は，例えば文献 [11] S13 の関数
+$c_\varepsilon 	(t)$を$	\displaystyle	\left\{	1	\bigg/ \int_{-\infty}^\infty	c_\varepsilon	(t)	dt	\right\}$
+倍すれば得られる．
+$	f(t)$を$\R$上の連続関数として，
+\[
+	g(x)	=	\inf_{-infty}^\infty f(t) \sigma	(x-t)	dt
+\]
+とおくと，$g(x)$は，$	| t	-x | \varepsilon $という$t$の範囲での$f(t)$の重みつき平均値である．
+
+したがって，$\varepsilon$が小さければ小さいほど，
+$	g(x) $は$f(x)$の良い近似になっている．
+また$f(t)$が単調増加であれば，$g(x)$も単調増加である．
+上の定義式から，$f$が微分可能でなくとも，
+$g(x)$は$x$に関して$\mathcal{C}^\infty$級であることに注意しよう．
+さらに，$	\sigma$の対称性（性質（iv））から次のことがわかる．
+すなわち，$g(x)$をある実数として，$q$を中心とする$t$の範囲
+$lt-ql < 2 \varepsilon$において,$f(t)$が1次関数（$f(t)=At+B$）
+であれば，$g(x)$は$|x-q |  < \varepsilon$の範囲で同じ形の1次関数
+（$g(x)=Ax+B$）である．以上の一般論の応用として，問題 3.3を考えよう．
+以下，記号は問題 3.3と同じである．
+$f_0(t)$を，1次関数をつなげた「折れ線関数」で，次の3性質をもつものとする．
+\begin{list}{}{}
+	\item	（ⅰ）$f_0(t)$は$t$に関して単調増加である．
+	\item	（ⅱ）$ t < c	+	2	\varepsilon$または$	t	>	d - 2 \varepsilon$のとき，
+$f_0 (t) = t$．ただし，$	\varepsilon	$は上で$ \sigma$を定義するときに使った正数である．
+	\item	（ⅲ）$	|	t	-	q_1 | < 2 \varepsilon$の範囲で，$f_0(t) = t + a - q_1$，
+\end{list}
+$	f_0 (t) $のグラフは図\ref{figAx2}のようになる．
+この$	f_0$を$\mathcal{C}^\infty$級で近似する関数
+$	g_0 ( x)$を
+\[
+	g_0 ( x) = \int_{-\infty}^\infty f_0 ( t) \sigma (x - t ) dt
+\]
+と定義する．すると，$ g_0 (x) $は$ \mathcal{C}^\infty$級であって，
+次の3性質をもつことがわかる．
+\begin{list}{}{}
+	\item	（ⅰ）$	g_0 ( x) $は単調増加で，$x$が$c$から$d$まで増加すると，$g_0(x)$も$c$から$d$まで増加する．
+	\item	（ⅱ）$x < c  + \varepsilon$または$ x > d -\varepsilon$の範囲で，$g_0 (x) = x$．
+	\item	（ⅲ）$	| x - q_1 < \varepsilon $の範囲で，$g_0 ( x) = x + a - q_1$．とくに$ g_0 ( q_1) = a$である．
+\end{list}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=50mm,height=50mm]{figAx2.bmp}
+	\caption{$f_0(t)$のグラフ}
+	\label{figAx2}
+\end{figure}
+次に，$q_1$を$q_2$に，$a$を$b$におきかえて，同様の性質をもつ関数$g_1(x)$を構成する．
+$g_1(x)$はとくに$g_1 ( q_2)  =b$を満たす．
+広義単調増加な$	\mathcal{C}^\infty$級関数$	\rho ( s)$で
+\[
+	\rho	(s)	=	\begin{cases}
+								\:	0	&	\quad	s	\leqq	0	\\
+								\:	1	&	\quad	s	\geqq	1
+							\end{cases}
+\]
+であるようなものを選ぶ．求める関数$	G(x,s)$は
+\[
+	G(x,s)	=	(	1	-	\rho	(s))	g_0(x) + \rho(s) g_1	(x)
+\]
+とおいて，定義すればよい．
+\■
+
+\textbf{3.4}
+例3.11で与えらた$SO(m)$のMorse関数$f	=	c_1	x_{11}	+	c_2	x_{22}	+	\cdots	+	c_m	x_{mm}$
+（ただし，$1	<	c_1	<	c_2	<	\cdots	<	c_m$）について，対角線上に$\varepsilon_1	,	\varepsilon_2	,	\cdots	,	\varepsilon_m$
+の並んだ対角行列は$f$の臨界点であった．この臨界点における Hesse 行列の指数を求めよ．
+
+\証明
+
+例3.11で計算したように，問題の臨界点における Hesse 行列は
+$\displaystyle	\frac{m(m-1)}{2}$行$	\displaystyle	\frac{m(m-1)}{2}$列対角行列である．
+その「第$(i,k)$番目」の対角成分は
+\[
+	-c_1 \varepsilon_i - c_k \varepsilon_k
+\]
+である．$i < k $と仮定する．$ 1 < c_1 < c_2 < \cdots < c_m$であることと，
+$	\varepsilon_i = \pm 1$であることから，この対角成分は
+$	\varepsilon_k = 1$であれば（$	\varepsilon_i$の正負にかかわらず）負である．
+このような$k$を1つ止めれば，対$(i,k)$は$k-1$個ある．したがって，$	\varepsilon_i	=1$
+であるような$k$を小さい順に
+\[
+	k_2 , \cdots , k_n	k_1 , \cdots k_n
+\]
+と並べておけば，Hesse 行列の指数は
+\[
+	(k_1 - 1 ) + ( k_2 -1) + \cdots + (k_0 -1)
+\]
+で与えられる．
+

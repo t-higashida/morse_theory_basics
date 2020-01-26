@@ -1,0 +1,266 @@
+\section{Morseの不等式}
+
+この節の目標は次の定理を証明することである．
+
+\定理{4.14}
+（Morseの不等式）$M$を閉じた$m$次元多様体とし，$f:	M	\to	\R$を
+$M$上のMorse関数とする．このとき，指数が$\lambda$であるような臨界点の
+個数$k_\lambda$と$M$の$\lambda$次元Betti数$b_\lambda	(M)$の間に次の不等式が成り立つ．
+\[
+	k_\lambda	\geqq	b_\lambda	(M).
+\]
+\■
+Betti数$b_\lambda(M)$は$M$のかたちによって決まる数だから，
+この不等式から，$M$上の Morse 関数の臨界点の個数$k_\lambda$は$M$の形状によって制約を受けると
+いうことがわかる．
+とくに，$b_\lambda(M)>0$ならば,，$M$上のMorse関数には，
+指数$\lambda$の臨界点が少なくとも1つ存在しなければならない．
+
+多様体のかたちと多様体上の関数の関わりを研究するのがMorse理論であるが，
+Morse不等式はMorse理論の典型的な結果であるといえる，
+
+\subsection{ハンドル体とセル複体}
+
+
+まず，ハンドル体とセル複体の関係を明らかにしておこう．結果を述べるために，
+写像柱という概念を定義しておく.
+
+\定義{4.15}（写像柱）
+位相空間の問の連続写像$h	:	K	\to	X $が与えられたとき，
+$K$の各点$x$につき，直積$K	\times [0,1]$の「底の点」$(x,0)$と$X$の点$h(x)$を同一視して，
+$K	\times [0,1]$を$X$に接着した空間
+\[
+	X	\cup_h	K	\times	[0,1]
+\]
+のことを$h$の\textbf{写像柱}（mapping cylinder）という．
+記号で，$M_h$と表す（図\ref{fig4x1}参照)．
+\■
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=92.0mm,height=32.2mm]{fig4x1.bmp}
+	\caption{$h	:	K	\to	X$の写像柱$M_h$}
+	\label{fig4x1}
+\end{figure}
+
+\補題{4.16}
+$h : K \to X$の写像柱$M_h$は$X$にホモトピー同値である．
+正確に言うと，$X$を$M_h$のなかの$X$と自然に同一 視する写像$i: X \to M_h$は，
+ホモトピー同値写像である．
+
+\証明
+連続写像$j: M_h \to X$を次のように構成する．すなわち，$M_h	=	K	\cup_h	K	\times	[0,1]$であることに注意して，
+$X$の点$p$については$j(p)=p$とおき，また，$K \times [0,1]$の点$(x,t)$については
+$j(x,t)	=	h(x)$とおくのである．そうすると，$M_h$から$X$への連続写像
+$j:	M_h	\to X$が確定することは明らかであろう．
+
+$j :X \to M_h$と$j	:M_h	\to X$が互いに他のホモトピー逆写像であることを示そう.
+\[
+	j	\circ i = \text{id}_X
+\]
+は明らかである．
+
+$i	\circ	j	\simeq	\text{id}_{M_h}$を示すため，
+$	i	\circ	j$から$\text{id}_{M_h}$へのホモトピー$H: M_h \times [0,1] \to M_h$を次のように構成する．
+すなわち，$X$の点$p$については$H(p,s)=p$とおき，$K \times [0,1]$の点$(x,t)$については
+\[
+	H((x,t),	s)	=	(x	,ts)
+\]
+とおく．$s$はホモトピーのパラメータであるが，右辺の$(x,ts)$は$K \times [0,1]$の
+点，したがって$M_h$の点である．
+
+すると，容易に確かめられるように，$s=1$のとき$H$は$M_h$の恒等写像を与え，
+$s=0$のとき$JH$は$i	\circ j $を与えるので，
+\[
+	i	\circ	j	=	\text{id}_{M_h}
+\]
+が示せた．要するに，$H$は$M_h$の直積部分$	K	\times [0,1]$をしだいに$K \times \{0\}$
+に縮める連続変形を表している．
+
+よって，$i	:X	\simeq M_h$であり，$i$と$j$とは互いに他のホモトピー逆写像である．
+\■
+
+
+\例{4.17}
+$m$次元円板 $D^m$は，$m-1$次元球面$S^{m-1}$を1点$p$につぶす写像
+$c:S^{m-1} \to \{	p	\}$の写像柱$M_c$に同相である．
+
+実際，$D^m$を半径$1$の$m$次元単位円板とみなして，$D^m$の中心$\boldsymbol{0}$を$M_c$の
+中の$p$に写し，また，$D^m$の中心$\boldsymbol{0}$と表面$S^{m-1}$の点$x$を結ぶ線分上で$\boldsymbol{0}$
+から$t$だけ離れた点$x_t$を$M_c$の点$(x,t)$に写す写像
+\[
+	D^m	\to	M_C
+\]
+を考えると，これが同相写像になる．
+
+補題4.16により，$D^m$は1点$\{p\}$にホモトピー同値である．
+
+もっとも，この事実$D^m	\cong	\{	p	\}$は，補題4.16を使わなくとも，
+簡単に証明できる．
+\■
+
+\定理{4.18}
+（ハンドル体とセル複体）
+$N$を$m$次元のハンドル体とする．
+$N$に含まれるハンドルのうち指数の最も大きいものが$l$であれば，$N$はある$l$
+次元セル複体$X$にホモトピー同値である．
+
+もう少し詳しく言うと，
+\begin{list}{}{}
+	\item	（ⅰ）$N$の境界$\partial N$から$X$へのある連続写像$h : \partial N \to X$が存在し，$N$は
+$h$の写像柱$M_h$に同相である．（したがって，補題4.16により,$N \cong X$である．）
+	\item	（ⅱ）$N$の$i$-ハンドルと$X$の$i$セルとは1対1に対応する.
+\end{list}
+\□
+
+\系{4.19}
+$N$を$m$次元のハンドル体とする．$N$に含まれる$i$-ハンドルの個数を$k_i$とすれば，
+$N$のEuler数は
+\[
+	\chi(N) =  \sum_{i=0}^{m}	(-1)^i	k_i
+\]
+の
+で与えられる.
+\□
+
+実際，定理4.18とEuler-Poincar\'{e}の公式を組み合わせればよい.
+
+定理4.18を証明しよう.
+
+\証明
+アイデアは単純で，ハンドルの太さを表す円板の半径をしだいに小さくしていって，
+ハンドルを心棒の円板にまで縮めてしまうのである.
+$X$は心棒の円板を次々に付けて得られるセル複体である．以下，少し詳しく議論しよう．
+
+前の章の補題3.33（ハンドルの整列）により，$N$は次のようなハンドル体であると仮定してよい．
+\[
+	N=	(h_1^0	\sqcup	\cdots	\sqcup	h_{k_0}^0	)	\cup
+			(h_1^1	\sqcup	\cdots	\sqcup	h_{k_1}^1	)	\cup
+			\cdots
+			(h_1^l	\sqcup	\cdots	\sqcup	h_{k_l}^l	)
+\]
+ここで，$h^\lambda$は$\lambda$ハンドル$D^\lambda	\times D^{m-\lambda}$を表している．
+$h_i^\lambda$は$i$番目の$\lambda$-ハンドルである．
+
+すなわち，$N$は，まず$0$-ハンドルの非交和$h_1^0	\sqcup	\cdots	\sqcup h_{k_0}^0$から出発し，
+そこに$1$-ハンドルの非交和$h_1^1	\sqcup \cdots	\sqcup	h_{k_1}^1$が付き，
+その上に$2$-ハンドルの非交和が付き，…，というように構成されている．
+定理4。18を，$N$に含まれるハンドルの最大指数$l$に関する帰納法で証明しよう．
+$l=0$のとき，
+\[
+	N	=	D^m	\sqcup	\cdots	\sqcup	D^m	\quad	\text{$k_0$個の$m$次元円板）}
+\]
+である．$k_0$個の点からなる集合$\{p1,p_2,	\cdots,	p_{k_0}	\}$を$0$次元セル複体$X$と見なすと，
+例4,17により，$N$は，球面をそれぞれ1点につぶす写像
+$c:	\partial N =	\partial D^m \sqcup \partial D^m \sqcup \cdots \sqcup \partial D^m
+	\to X = \{ p_1,	p_2,	\cdots	,	p_{k_0}	\}$の写像柱$M_c$に同相である．
+
+$l-1$以下の指数のハンドルだけからなるハンドル体について定理4.18が証明できたと仮定し，
+含まれるハンドルの最大指数が$l$Zであるようなハンドル体!>について定理4.18を証明しよう．
+
+$N$のなかの指数$l-1$以下のハンドルをすべて合わせた部分ハンドル体を
+$H$とする.$N$は
+\[
+	N	=	H	\cup_\psi		(	h_1^l	\sqcup	\cdots	\sqcup	h_{k_l}^l)
+\]
+と表される．
+
+帰納法の仮定により，あるセル複体$Y$と連続写像$g:\partial H \to Y$があって，
+$H$は$g$の写像柱$M_g$に同相である．いま，簡単のため，$H$に接着する$l$-ハンドルは1個であるとしよう:
+\[
+	N=H	\cup_\psi D^l	\times D^{m-l}.
+\]
+実は，ハンドル$D^l	t^imes D^{m-l}$も写像柱とみなせる．
+すなわち，$\forall (x,y)	\in D^l	\times \partial D^{m-l}$を
+$(x,	\boldsymbol{0}	\in	D^l	\times \boldsymbol{0}$写す写像を
+\[
+	c:D^l	\times	\partial D^{m-l}	\to	D^l	\times \boldsymbol{0}
+\]
+とすると，$D^l	\times D^{m-l}$'は$c$の写像柱$M_c$に同相である．
+例4.17により，$D^{m-l}$を$\partial D^{m-l} \to	\boldsymbol{0}$の写像柱とみなし，
+その写像柱に左から$D^l$を掛けたと思ってもよい．
+
+定理4.18の証明を続けよう．方針は，$Y$と$D^l \times \boldsymbol{0}$から$l$次元セル複体$X$
+を構成し，$g$と$c$から連続写像$h	:	\partial N \to X$を構成することである．そして，
+$N$が$h$の写像柱$M_h$に同相であることを示すのである．
+
+ハンドルの接着写像$\psi:	\partial D`\times D^{m-l}	\to \partial H$は$C^\infty$級の埋め込み写像である
+から，$\psi$によって$\partial D^l \times D^{m-l}$を$\partial H$の部分多様体と思うことができる．
+以下，そのように思う．
+
+すると，$\partial	D^l	\times \boldsymbol{0}$も$\partial H$の部分多様体である．
+$g:\partial H	\to	Y$の定義域を$\partial D^l	\times \boldsymbol{0}$に制限して考えた写像を再び
+$g$と書くことにする．求める$l$次元セル複体$X$は，セル複体$Y$に，
+$g:\partial D^l	\times \boldsymbol{0}	\to Y$	を接着写像として，ふちつき$l$セル
+$D^l	\times \boldsymbol{0}$を張り付けたものである．
+
+記号を簡単にするため
+\[
+	K	=	\partial H	-	(	\partial D^l	\times	\text{int } D^{m-l})
+\]
+とおくと，$N$の境界$\partial N$は
+\begin{equation}
+	\partial N = K \cup UD^l	\times D^{m-l}
+\label{eq4x1}
+\end{equation}
+と分解される（図\ref{fig4x2}参照）．
+
+求める連続写像$h	\partial N \to X$	は，$D^l	\times \partial D^{m-l}$の部分では
+$h	=	c: D^l \times \partial D^{m-l}	\to	D^l	\times \boldsymbol{0}$と決める．
+ただし，ここでは$D^l \times \boldsymbol{0}$を$X$の中の$l$セル（$Y$につけたもの）と思っている．
+また，$c$はハンドル$D^l	\times D^{m - l}$を写像柱$M_c$とみなすときに使った写像である．
+
+んをKの上で定義するため,Kを境界のあるm-1次元多様体とみなし,
+その境界$	\partial K=\partial D`\times \partial D^{m-l}$の$K$のなかでのカラー近傍（
+ここでは閉カラー近傍）$V$を考える．
+\[
+	V	\cong \partial K \times [0,1]
+\]
+であり
+\[
+	\partial = \partial  K \times \boldsymbol{0}	=	\partial D^l	\times \partial D^{m-l}
+\]
+である．
+
+ハンドルを写像柱と見なすときに使った写像$c$を$\partial K$に制限して考えたもの
+$c | \partial K: \ partial K = \partial D^l \times \partial D^{m -l} \to \partial D^l	\times \boldsymbol{0}$の
+写像柱を$V_c$と書くと，$V_c$は$\partial D^l	\times D^{m-1}$に同一視されるから，
+$\partial D^l \times D^{m-l}$の外側にカラーをつけた$\partial D^l	\times D^{m-l} \cup V$とも同相である．
+この同相写像を
+\[
+	j	;	V_c \to \partial D^l	\times D^{m-l}	\cup	V	(	\subset \partial H)
+\]
+としよう．$V	\cong \partial K \times [0,1]$を写像柱$V_c	=	\partial D^l	\times	\boldsymbol{0}	\cup \partial K \times [0,1]$
+のなかの$\partial K \times [0,1]$にうつすことにより，自然な写像$i : V	\to V_c$があることに注意する．
+$\partial K	\times \{	1	\}	(	\subset \partial K \times [0,1]=V)$の上では$j	\circ	i	=	\text{id }$である．
+また$\partial K \times \{ 0 \} ( \subset \partial K \times [0,1]=V)$の上では
+$j	\circ	i	=	c	| \partial K$である．
+
+さて，求める連続写像$h	:	\partial N	\to X$を$K$の上で次のように決める．
+\[
+	h(p)	=	\begin{cases}
+						\:	g	\circ	j	\circ	i(p)	\quad	(p	\in V \: \text{のとき})	\\
+						\:	g(p)									\quad	(p	\in	\partial H - \partial K \times [0,1) \: \text{のとき})
+					\end{cases}
+\]
+右辺の2つの領域の共通部分$ \partial K \times \{ 1 \}$で$g \circ j \circ i$と$g$は一致するから，
+$K$上で連続写像$h	|	K$が矛盾なく定義できた．
+
+$	\partial N$の分解（\ref{eq4x1}）のそれぞれの部分で定義された$h$は共通部分$	\partial D^l \times \partial D^{m-l}$
+で一致するから，求める連続写像$h	:	\partial N	\to X$が得られたことになる．
+
+$h$の構成から，$N$が写像柱$M_h$に同相であることと$l$次元セル複体の$i$セルが$N$の$i$-ハンドルと1対1に対応していることはほぼ明らかであろう．
+これで,定理4.18が証明できた.
+\■
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=88.0mm,height=53.0mm]{fig4x2.bmp}
+	\caption{連続写像$h : \partial N \to X$の構成}
+	\label{fig4x2}
+\end{figure}
+
+\注意{}
+定理4.18に出てきたセル複体$X$は，その構成から，ハンドル体$N$に埋め込まれていると考えられる．
+
+とくに，ハンドル体$N$が閉じた多様体であれば，$N$と$X$とを同一 視することができる．
+なぜなら，$\partial N	=	\varnothing $であれば，写像$\varnothing \to X$の写像柱は$X$自身に他ならないからである．
+例えば例4.2でみたように，$m$次元球面$S^m$それ自身を$m$次元セル複体とみなすことができる．

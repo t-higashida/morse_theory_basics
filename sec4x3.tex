@@ -1,0 +1,113 @@
+\section{Poincar\'{e}双対性}
+
+この節では，はじめにセル複体$X$のコホモロジー群$H^q(X)$を導入する．
+向きづけ可能で閉じた多様体については，ホモロジー群とコホモロジー群の間に
+Poincar\'{e}双対性と呼ばれるきれいな関係がある．その証明がこの節の目標である．
+
+\subsection{コホモロジー群}
+
+セル複体Xのチェイン複体
+\[
+	\cdots	C_{q+1}(X)	\stackrel{\partial_{q+1}}{\longrightarrow}
+					C_q	(X)			\stackrel{\partial_{q}}{\longrightarrow}
+					C_{q-1}(X)	\stackrel{\partial_{q-1}}{\longrightarrow}
+	\cdots							\stackrel{\partial_{1}}{\longrightarrow}
+					C_0(X)			\longrightarrow	\{	0	\}
+\]
+を考える．$C_q(X)$の階数（rank）は$X$の含む$q$セルの個数$K_q$に等しい．
+
+$C_q(X)$から$\Z$への準同型全体の集合を
+\[
+	C^q	(X)	=	\{	f	\:	|	\:	f	C_q	(X)	\to	\Z	\}
+\]
+と表すことにすると，$C^qq(X)$は準同型の足し算に関して加群になる．
+ただし，$f,	g	\in C^q$の和$f+g$は
+\[
+	(f+g)(c)	:=	f(c)	+	g(c),	\forall	c \in C_q(X)
+\]
+で定義する．引き算についても同様である．
+
+$C^q(X)$を\textbf{$q$次元コチェイン群}(cochain group)と呼び，$C^q(X)$の各元$f$を$q$コチェイン(cochain)という．
+
+任意の$q$コチェイン$f:	C_q(X)	\to	\Z$に，境界準同型$\partial_{q+1}	:	C_{q+1}	(X)	\to	C_q(X)$
+を合成して
+\[
+	f	\circ	\partial_{q+1}	:	C_{q+1}(X)	\to	\Z
+\]
+を考えると，$f	\circ	\partial_{q+1}$は$q+1$コチェインになる．$q$コチェイン$f$に$q+1$
+コチェイン$f	\circ \partial_{q+1}$を対応させる写像を
+\[
+	\delta^q	:	C^q	(X)	\to	C^{q+1}	(X)
+\]
+と書いて，余境界準同型またはコバウンダリー準同型（coboundary homomorphism）という．
+境界準同型と反対に，コバウンダリー準同型はコチェイン群の次元を$1$だけ増やす．
+コチェイン群とコバウンダリー準同型からなる系列
+\begin{align}
+	\{0	\}	\to	C^0	(X)	\stackrel{\delta^0}{\longrightarrow	}	C^1(X)	
+						&\longrightarrow	\cdots	\notag	\\
+						&\longrightarrow	C^{q-1}	(X)	\stackrel{\delta^{q-1}}{\longrightarrow	}	C^q	(X)
+																					\stackrel{\delta^q	}{\longrightarrow	}	C^{q+1}	(X)	
+																					\stackrel{\delta^{q+1}}{\longrightarrow	}
+						\cdots
+\label{eq4x2}	
+\end{align}
+を，$X$の\textbf{コチェイン複体}（cochain complex）という.
+
+\補題{4.20}
+\[
+	\delta^{q+1}	\circ	\delta^q	=	0	,	\quad	\forall	q.
+\]
+\証明
+補題4.4とコバウンダリー準同型の定義から容易に示せる.
+\■
+
+$\delta^q$の核$\Ker (\delta^q)$を$Z^q(X)$と書いて$X$の\textbf{$q$次元コサイクル群}（cocycles）という．
+$Z^q(X)$は$C^q(X)$の部分群である．また，$\delta^{q-1}$の像$\text{Im }(\delta^{q-1})$を$B^q(X)$と書いて
+\textbf{$q$次元コバウンダリー群}（coboundaries）という．$B^q(X)$も$C^q(X)$の部分群である．
+補題4.20により，
+\[
+	B^q(X)	\subset	Z^q(X)	\subset	C^q(X)
+\]
+が成り立つ．
+
+\定義{4.21}（コホモロジー群）
+剰余群$Z^q(X)/B^q(X)$のことを$X$の\textbf{$q$次元コホモロジー群}（cohomologygroup）と呼ぶ．
+記号で$H^q(X)$で表す．
+
+$H^q(X)$の元を\textbf{$q$次元コホモロジー類}（cohomology class）という．$q$次元コサイクル
+$f$の属するコホモロジー類を$[f]$で表す．
+\■
+
+$q$コチェインは，準同型$f:	C_q(X)	\to \Z$であるから，任意の$q$コチェイン$f$
+と$q$チェイン$c$について，$f(c)$という整数が決まる．コバウンダリー準同型の定義により
+\[
+	(	\delta^q	f)	(c)	=	f(\partial_{q+1}	c)
+\]
+が成り立つ．このことから容易に，$f$が$q$次元コサイクルで$c$が$q$次元サイクルのときは，
+$f(c)$の値は$f$のコホモロジー類$[f]$と$c$のホモロジー類$[c]$のみによって決まることが示せる．
+（次節の交点形式の所で，ホモロジー類の間に交点数が決まることを証明するとき，同様の議論をややていねいに行う．）
+したがって，$q$次元コホモロジー類$[f]$は準同型$[f]	:	H_q(X)	\to	\Z$を定める．
+
+$\text{Hom } (H_q(X),\Z)	=	\{\phi	:	\phi	H_q(X)	\to	Z \text{は準同型}	\}$とおいて，$[f]$に，
+準同型と思った$[f]$を対応させると，写像
+\[
+	\kappa	:	H^q	(X)	\to	\text{Hom	}	(H_q	(X),	\Z)
+\]
+を得る．$\kappa$は準同型である．次の定理は普遍係数定理と呼ばれる定理（[9]定理7.5）の弱い形である．
+
+\定理{4.22}（弱い形の普遍係数定理）
+準同型$\kappa :	H^q(X) \to \text{Hom }(H_q(X),\Z	)$は「上へ」の写像であり，
+その核$\Ker ( \kappa ) $は$H^q(X)$のねじれ部分である.
+\□
+
+普遍係数定理の証明は省略する.
+
+次の定理が目標である．この定理の証明には定理4.22は使わない．
+
+\定理{4.23}（Poincar\'{e} 双対性）
+向きづけ可能で閉じた$m$次元多様体$M$について，
+\[
+	H^q(M) \cong H_{m-q}	(M),	\forall q=0,1,	\cdots	,m
+\]
+が成り立つ.
+\□

@@ -1,0 +1,352 @@
+\section{Morseの補題}
+
+この節の目標は次の定理を証明することである．
+
+\定理{1.11}\textbf{（Morseの補題）}
+点$p_0$が2変数関数$f$の非退化な臨界点であるとき，
+$p_0$のまわりの局所座標系$(X,Y)$をうまく選んで，その局所座標系
+によって表した関数$f$の形が，次の3つの標準形のどれかになるようにできる．
+
+\begin{list}{}{}
+	\item	(ⅰ) $f = X^2 + Y^2 +c$
+	\item (ⅱ) $f = X^2 - Y^2 +c$
+	\item (ⅲ) $f= -X^2 - Y^2 +c$
+\end{list}
+ここに，$c$は定数$(=f(p_0))$である．また，$p_0$は$(X,Y)$の原点になっている
+$(p_0=(0,0))$.
+\□
+
+この定理は，非退化な臨界点の近傍では，関数の変化の様子がとても簡単であるということ
+を言っている．2変数関数の場合なら，それは例1.3で見た3つの簡単な関数のどれか1つと，
+座標変換で一致してしまうのである．
+
+これら3つの標準形では，原点が非退化な臨界点になっていて，
+原点の近くにほかに臨界点はない．したがって，次の系が得られる．
+
+\系{1.12}
+2変数関数$f$の非退化な臨界点は孤立した臨界点である．
+\□
+
+この事実は，2次元に限らず一般の$m$次元で成り立つ．
+
+定理1.11を証明しよう．
+
+\証明
+点$p_0$のまわりの局所座標系$(x,y)$を任意に選んでおく．
+点$p_0$はこの座標系の原点$(0,0)$であると仮定してよい．以下，簡単のため，
+$f(p_0)=0$であるものとしよう．さらに，
+\begin{equation}
+	\frac{\partial ^2 f }{\partial x^2}(p_0) \ne 0
+\label{eq1x15}
+\end{equation}
+を仮定してもよいことをまず証明しよう．もちろん，はじめから
+$\displaystyle \frac{\partial^2 f}{\partial x^2} (p_0) \ne 0$であれば
+何も証明する必要はない．また，$\displaystyle \frac{\partial ^2 f}{\partial x^2}(p_0) = 0$
+であっても，$\displaystyle \frac{\partial^2 f}{\partial y^2} (p_0) \ne 0$
+であれば，$x$軸と$y$軸を入れ替えることにより，
+条件(\ref{eq1x15})が満たされるとしてよい．
+そこで，$\displaystyle \frac{\partial^2 f}{\partial x^2} (p_0) = 0$，
+$\displaystyle \frac{\partial^2 f}{\partial y^2} (p_0) = 0$
+の両方が成立っている場合を考える．
+\footnote{	\small
+	Hesse 行列の$(1.1),(2.2)$成分が$0$の場合．
+}
+この場合，$(x,y)$で計算した
+（点$p_0$における）$f$のHesse行列$H_f$は
+\begin{equation}
+	H_f = \begin{pmatrix}
+		      0 & a \\
+		      a & 0
+				\end{pmatrix}
+        \quad \text{ただし} a \ne 0
+\label{eq1x16}
+\end{equation}
+の形をしている．ここで，$a \ne 0$であるのは点$p_0$が非退化だからである．
+新しい局所座標系$(X,Y)$を
+\begin{equation}
+	x= X- Y, \quad y = X+Y
+\label{eq1x17}
+\end{equation}
+となるように導入すると，$(X,Y)$から$(x,y)$への座標変換のJacobi行列$J$は
+\begin{equation}
+	J= \begin{pmatrix}
+		    1  & -1 \\
+		    1  & 1
+			\end{pmatrix}
+\label{eq1x18}
+\end{equation}
+であるから，$(X,Y)$によって計算した$f$のHesse行列${\cal H}_f$は
+\begin{equation}
+	{\cal H}_f = \tr{J} H_f J
+             = \begin{pmatrix}
+		               1 & 1 \\
+		              -1 & 1
+							 \end{pmatrix}
+               \begin{pmatrix}
+		               0 & a \\
+		               a & 0
+							 \end{pmatrix}
+               \begin{pmatrix}
+		               1 & -1 \\
+		               1 & 1
+							 \end{pmatrix}
+             = \begin{pmatrix}
+		               a & a \\
+		               a & -a
+							 \end{pmatrix}
+               \begin{pmatrix}
+		               1 & -1 \\
+		               1 & 1
+							 \end{pmatrix}
+             = \begin{pmatrix}
+		              2a & 0   \\
+		              0  & -2a
+								\end{pmatrix}
+\label{eq1x19}
+\end{equation}
+(補題1.8)．この式は，
+\begin{equation}
+	 \frac{\partial^2 f}{\partial X^2}(p_0) = 2a  \ne 0, \quad
+	 \frac{\partial^2 f}{\partial Y^2}(p_0) = -2a  \ne 0
+\label{eq1x20}
+\end{equation}
+であることを示している．$(X,Y)$の記号を改めて$(x,y)$と付け替えれば，
+条件(\ref{eq1x15})が確かに満たされることがわかる．
+以下，はじめからこの条件(\ref{eq1x15})を仮定して議論をすすめることにしよう．
+
+次の事実が多変数の微分積分で知られている．すなわち，原点$(0,0)$のまわりで関数
+$z= f(x,y)$が与えられていて，しかも，$f(0,0) = 0$であるとすると，
+別の関数$g(x,y)$と$h(x,y)$を使って，原点$(0,0)$の適当な近傍内で
+\begin{equation}
+	f(x,y) = x g(x,y) + y h (x,y)
+\label{eq1x21}
+\end{equation}
+と書ける．そして，
+\begin{equation}
+	\frac{\partial f}{\partial x} (0,0) = g(0,0), \quad
+	\frac{\partial f}{\partial y} (0,0) = h(0,0)
+\label{eq1x22}
+\end{equation}
+が成り立つ，ということである．一応，このことを証明しておこう．
+
+簡単のため，$z=f(x,y)$は$xy$平面全体で定義されているものとしよう．
+任意の点$(x,y)$をとり，止めておく．$t$をパラメータとして$f(tx,ty)$という
+$t$に関する1変数関数を考える．これを$t$で微分してから積分すると，元の$f(tx,	ty)$に戻る
+\footnote{\normalsize
+$\displaystyle
+	f(tx,ty)	=	\int	\frac{	df(tx,	ty)}{dt}	dt,
+$
+}
+から，とくに$t=0$から$t=1$までの定積分を考えて，$f(0,0)=0$であることを使うと
+\footnote{\normalsize
+$\displaystyle
+	f(x,y)	=	f(1	\cdot	x,	1	\cdot	y)	-	f(0	\cdot	x	,	0	\cdot	y)
+$}，
+\begin{align}
+	f(x,y) &= \int_0^1 \frac{d f(tx,ty)}{dt} dt \notag\\
+         &= \int_0^1 
+                \left\{
+                   x \frac{\partial f}{\partial x} (tx,ty) + y \frac{\partial f}{\partial y}(tx,ty)
+                \right\} dt \notag\\
+         &= x g(x,y) + y h(x,y)
+\label{eq1x23}	
+\end{align}
+となる．ただし，この式のまんなかの等号のところでは合成関数の微分の公式を使っている．
+ここに出てきた記号$\displaystyle \frac{\partial f}{\partial x}(tx,ty)$は少し紛らわしいが，
+関数$f(x,y)$の導関数$\displaystyle \frac{\partial f}{\partial x}$を計算したあとで，
+点$(tx,ty)$においてその値を求めたもの，という意味である．
+$\displaystyle \frac{\partial f}{\partial y}$についても同様である．
+また，最後の式では
+\begin{equation}
+	g(x,y) = \int_0^1 \frac{\partial f}{\partial x}(tx,ty) dt, \quad
+	h(x,y) = \int_0^1 \frac{\partial f}{\partial y}(tx,ty) dt
+\label{eq1x24}
+\end{equation}
+とおいた．これで，等式(\ref{eq1x21})が示された．
+また，$g(x,y)$と$h(x,y)$の定義式(\ref{eq1x24})において，
+$(x,y)=(0,0)$を代入してみれば，等式(\ref{eq1x22})もわかる．
+
+さて，我々の場合，原点$p_0 = (0,0)$は関数$f$の臨界点であると仮定してあるから
+\footnote{
+	\small
+	$	f_x	=	g(x,y),	f_y	=	h(x,y)$
+}，
+\begin{equation}
+	g(0,0) = \frac{\partial f}{\partial x}(0,0) = 0, \quad
+	h(0,0) = \frac{\partial f}{\partial y}(0,0) = 0
+\label{eq1x25}
+\end{equation}
+が成り立つ．したがって，関数$g(x,y)$と$h(x,y)$に再び上で証明した微分積分の基本事項
+を使うとことができて，適当な関数$h_{11}$と$h_{12}$を用いて
+\begin{equation}
+	g(x,y) = x h_{11} (x,y) + y h_{12} (x,y)
+\label{eq1x26}
+\end{equation}
+と書け，また別の適当な関数$h_{21}$と$h_{22}$を用いて
+\begin{equation}
+	h(x,y) = x h_{21}(x,y) + y h_{22} (x,y)
+\label{eq1x27}
+\end{equation}
+と書ける．式(\ref{eq1x21})と合わせると
+\begin{equation}
+	f(x,y) = x^2 h_{11} + xy (h_{21} + h_{21} ) + y^2 h_{22}
+\label{eq2x28}
+\end{equation}
+を得る．見やすくするため，$H_{11} =	h_{11},	H_{12}= (h_{12} + h_{21}) /2 , H_{22} = h_{22}$とおくと
+\begin{equation}
+	f(x,y) = x^2 H_{11} + 2xy H_{12} + y^2 H_{22}
+\label{eq1x29}
+\end{equation}
+となる．この式から簡単な計算で
+\begin{equation}
+	\begin{cases}
+		\: \displaystyle \frac{\partial^2 f}{\partial x^2} (0,0) = 2 H_{11}(0,0) \\ \\
+    \: \displaystyle \frac{\partial^2 f}{\partial x \partial y} (0,0)
+                 =\frac{\partial^2 f}{\partial x \partial y} (0,0)
+                 = 2H_{12}(0,0) \\ \\
+    \: \displaystyle \frac{\partial^2 f}{\partial y^2} (0,0) = 2 H_{22}(0,0)
+	\end{cases}
+\label{eq1x30}
+\end{equation}
+を得るが，はじめに注意しておいたように，いまは1番目の式の左辺は$0$でないと仮定している．
+したがって$H_{11}(0,0) \ne 0$.$H_{11}$は連続だから
+\begin{equation}
+	H_{11}(x,y) \text{は} (0,0) \text{の近傍で} 0 \text{でない}
+\label{eq1x31}
+\end{equation}
+\footnote{\small	十分に近い近傍を取れば$0$ではない}
+ということがわかる．
+
+そこで，原点$(0,0)$の近傍で新しい$x$座標$X$を
+\begin{equation}
+	X = \sqrt{|H_{11}|} \left( x + \frac{H_{12}}{H_{11}}	y	\right)
+\label{eq1x32}
+\end{equation}
+という式で導入する．$y$座標はそのままにしておく．$(x,y)$と$(X,y)$の間の
+Jacobi行列を計算してみると，
+\[
+	\begin{pmatrix}
+		\sqrt{|H_{11}|}	&	\displaystyle	\frac{H_{12}}{\sqrt{|H_{11}}|}	\\
+		0							&								1
+	\end{pmatrix}
+\]
+その行列式が原点$(0,0)$で$0$にならないことがわかるので，
+つまり
+\[
+	\frac{\partial(X,y)}{\partial	(x,y)}
+	=
+	\begin{pmatrix}
+			\sqrt{|H_{11}|}	&	\displaystyle	\sqrt{|H_{11}}	\frac{H_{12}}{H_{11}}	\\
+	\\
+			0								&	1
+	\end{pmatrix},
+	\quad
+	\det	\begin{pmatrix}
+					\displaystyle	\frac{\partial(X,y)}{\partial(x,y)}	=	\sqrt{|H_{11}}
+				\end{pmatrix}
+\]
+なので，確かに$(X,y)$は原点$(0,0)$の近傍の局所座標系である．
+
+$X$の2乗を計算すれば，
+\begin{align}
+X^2	
+&=	|	H_{11}	|
+	\left(
+		x^2	+	2	\frac{H_{12}}{H_{11}}	xy	+	\frac{H_{12}^2}{H_{11}^2}	y^2
+	\right)	\notag	\\
+&=	\begin{cases}
+			\displaystyle	\:	H_{11}	x^2	+	2H_{12}xy	+	\frac{H_{12}^2}{H_{11}}	y^2		&\quad	(H_{11}	>	0)	\\
+			\\
+			\displaystyle		\:	-H_{11}	x^2	-	2H_{12}xy	-	\frac{H_{12}^2}{H_{11}}	y^2	&\quad	(H_{11}	<	0)	\\
+		\end{cases}
+	\label{eq1x33}	
+\end{align}
+式（\ref{eq1x29}）と比較して
+\footnote{
+	$x$を$X$以下の式に置き換える.
+}
+，$H_{11}	>	0$のとき
+\begin{equation}
+	f	=	X^2	+	\left(	H_{22}	-	\frac{H_{12}}{H_{11}}
+						\right)	y^2
+\label{eq1x34}
+\end{equation}
+また，$H_{11}<	0$のとき
+\begin{equation}
+	f=	-X^2	+	\left(	H_{22}	-	\frac{H_{12}^2}{H_{11}}
+							\right)	y^2
+\label{eq1x35}
+\end{equation}
+を得て，$x$座標の書換えが完了した．
+
+まえに，式（\ref{eq1x30}）で見ておいたことから，
+\begin{equation}
+	H_{11}	(0,0)	H_{22}(0,0)	-	H_{12}^2(0,0)	=	\frac{1}{4}	\det	H_f	\ne	0
+\label{eq1x36}
+\end{equation}
+である．$\det	H_f	\ne	0$というところに，原点$p_0$が$f$の非退化な臨界点であるという仮定が使われている．
+原点$p_0	=	(0,0)$の近傍で新たな$y$座標$Y$を
+\begin{equation}
+	Y	=	\sqrt{	\left|	\frac{H_{11}	H_{22}	-	H_{12}^2}{H_{11}}
+							\right|	y
+					}
+\label{eq1x37}
+\end{equation}
+とう式で導入して，式（\ref{eq1x34}）と（\ref{eq1x35}）を書きなおせば，
+$f$は局所座標系$(X,Y)$によって次のように表わされる．
+なお便宜上，$H_{11}H_{22}	-	H_{12}^2	$を$K$と書いた．
+\begin{equation}
+	f	=	\begin{cases}
+				\:	X^2	+	Y^2	&\quad	(H_{11}	>	0	,	K>0)	\\
+				\:	X^2	-	Y^2	&\quad	(H_{11}	>	0	,	K<0)	\\
+				\:	-X^2	+	Y^2	&\quad	(H_{11}	<	0	,	K<0)	\\
+				\:	-X^2	-	Y^2	&\quad	(H_{11}	<	0	,	K>0)
+			\end{cases}
+\label{eq1x38}
+\end{equation}
+$X$軸と$Y$軸を「$90^\circ$回転」で入れ換えれば，$f=X^2	-	Y^2$と
+$f=-X^2	+	Y^2$とは本質的に同じ標準系と見なせる．これで目標の定理1.11が証明できた．
+\■
+
+\定義{1.13}（非退化な臨界点の指数）
+点$p_0$を2変数関数$f$の非退化な臨界点とする．点$p_0$の近傍で適当な局所座標系
+$(x,y)$により$f$を標準形に直したとき，$f=x^2	+	y^2	+c,	\:	f=	x^2	-	y^2	+	c,	\:
+f=	-	x^2	-	y^2	+	c$であるのに応じて，非退化な臨界点$p_0$の
+\textbf{指数}（index）をそれぞれ，$0,1,2$と定義する．言い換えれば，
+標準形に表れるマイナスの符号の個数が$p_0$の指数である．
+\□
+
+3つの関数$z=	x^2	+	y^2,	\:	z=	x^2	-	y^2	,	\:	z	=	-x^2	-	y^2$のグラフ
+（図\ref{fig1x4}）から明らかなように，点$p_0$の指数が$0$ならば，$f$は点$p_0$で極小値をとる．
+指数が$1$ならば，$f$は点$p_0$の近傍で$f(p_0)$より真に大きな値をとることもあるし，真に小さい
+値をとることもある．指数が$2$ならば，$f$は点$p_0$で極大値をとる．したがって，
+非退化な臨界点$p_0$の指数は，$p_0$のまわりでの$f$の振る舞いによって確定する．
+
+指数の確定性（well-definedness）は次のように証明することもできる．
+まえの例1.5で見たように，3つの関数$z	=	x^2	+	y^2	,	\:	z=x^2	-	y^2	,	\:	z=	-	x^2	-	y^2$の
+Hesse 行列はそれぞれ
+\[
+	\begin{pmatrix}
+		2	&	0	\\
+		0	&	2
+	\end{pmatrix},	\quad
+	\begin{pmatrix}
+		2	&	0	\\
+		0	&	-2
+	\end{pmatrix},	\quad
+	\begin{pmatrix}
+		-2	&	0	\\
+		0	&	-2
+	\end{pmatrix},	\quad
+\]
+であった．
+
+これらの行列は，$f$のHesse 行列$H_f	(p_0)$を対角化したものと考えられる．
+すなわち，適当な行列$J$を見つけて，$\tr{J}	H_f	(p_0)	J$を計算し，それが対角線の
+上だけに$0$でない数の並んだ「対角行列」になるようにしたものと思えるわけである．
+線形代数で知られた Sylvester の法則（巻末文献[14]）によれば，
+$H_f(p_0)$のような対称行列を対角行列に直したときに，対角線上に現れるマイナスの数の
+個数は，はじめの$H_f(p_0)$で決まり，対角化の仕方によらない．これが指数の確定性に他ならない．
+
+第2章で述べるように，定理1.11と同様な定理が一般の$m$次元でも証明され，非退化な臨界点
+$p_0$の指数が定義できる．その場合の指数の確定性も Sylvester の法則によって保証されるのである．
